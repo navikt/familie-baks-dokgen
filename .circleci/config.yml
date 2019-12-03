@@ -1,0 +1,84 @@
+version: 2.1
+orbs:
+  nais: navikt/nais-deployment@dev:master
+  env: christeredvartsen/persist-env@0.0.4
+
+executors:
+  docker-runner:
+    docker:
+      - image: circleci/node:latest
+  deployment-cli:
+    environment:
+      TEAM: teamfamilie
+      CLUSTER: dev-fss
+      REGISTRY: docker.pkg.github.com
+    docker:
+      - image: navikt/deployment-cli:latest
+
+
+jobs:
+  verify:
+    executor: docker-runner
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Verify that docker login works
+          command: echo "$DOCKER_PASSWORD" | docker login docker.pkg.github.com -u "$DOCKER_LOGIN" --password-stdin
+      - env/set-env-var:
+          var-name: RELEASE_VERSION
+          var-value: $(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M')_$(git log -n 1 --pretty=format:'%h')
+      - env/set-env-var:
+          var-name: IMAGE_NAME
+          var-value: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PROJECT_REPONAME
+      - env/persist-env
+
+  test:
+    executor: docker-runner
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Testing with docker-compose
+          command: chmod +x *.sh && ./up.sh
+
+  deploy:
+    executor: deployment-cli
+    steps:
+      - checkout
+      - env/attach-env
+      - run:
+          name: Unpack Private Key
+          command: echo $GITHUB_PRIVATE_KEY | base64 -d > .circleci/github.key.pem
+      - nais/docker:
+          registry: $REGISTRY
+          image: $IMAGE_NAME
+          tag: $RELEASE_VERSION
+      - nais/deploy-with-gh-app:
+          repo: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          nais-template: nais.yaml
+          team: $TEAM
+          github-app-id: 20250
+          image: $REGISTRY/$IMAGE_NAME
+          tag: $RELEASE_VERSION
+          environment: $CLUSTER
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - verify:
+          context: familie-ci
+      - test:
+          context: familie-ci
+          requires:
+            - verify
+      - deploy:
+          context: familie-ci
+          requires:
+            - test
+          filters:
+            branches:
+              only: master

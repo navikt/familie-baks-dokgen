@@ -1,12 +1,11 @@
 {
+  "fodselsnummer": 12345678910,
   "belop": 7600,
-  "startDato": "2019-07-08",
-  "begrunnelse": "du oppfyller alle krav",
+  "startDato": "februar 2020",
+  "fodselsdato": "24.12.19",
   "etterbetaling": true,
-  "etterbetalingsmaaned": "2019-06-01",
-  "etterbetalingsbelop": 0.50,
-  "antallTimer": 20,
-  "stotteProsent": 45,
+  "etterbetalingsmaaned": "januar",
+  "etterbetalingsbelop": 750,
   "enhet": "Enheten",
   "saksbehandler": "Jon Jonsen"
 }

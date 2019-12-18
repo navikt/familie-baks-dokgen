@@ -15,7 +15,7 @@ h1,h2,h3,h4,h5 {
     margin-top:1.33em;
     margin-bottom: 0.33em;
 }
-p {
+p, table {
     font-size: 0.875em; /* 14px/16=0.875em */
 }
 

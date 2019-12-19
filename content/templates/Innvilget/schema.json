@@ -20,7 +20,7 @@
       "title": "The Fodselsnummer Schema",
       "default": "",
       "examples": [
-        "08046234236"
+        "12345678910"
       ],
       "pattern": "^\\d{11}$",
     },

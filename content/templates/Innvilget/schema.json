@@ -16,12 +16,13 @@
   "properties": {
     "fodselsnummer": {
       "$id": "#/properties/fodselsnummer",
-      "type": "number",
+      "type": "string",
       "title": "The Fodselsnummer Schema",
       "default": "",
       "examples": [
-        12345678910
-      ]
+        "08046234236"
+      ],
+      "pattern": "^\\d{11}$",
     },
     "belop": {
       "$id": "#/properties/belop",
@@ -40,7 +41,7 @@
       "examples": [
         "februar 2020"
       ],
-      "pattern": "[a-z]{3,9} \\d{4}"
+      "pattern": "^[a-z]{3,9} \\d{4}$"
     },
     "fodselsdato": {
       "$id": "#/properties/fodselsdato",
@@ -69,7 +70,7 @@
       "examples": [
         "januar"
       ],
-      "pattern": "[a-z]{3,9}"
+      "pattern": "^[a-z]{3,9}$"
     },
     "etterbetalingsbelop": {
       "$id": "#/properties/etterbetalingsbelop",

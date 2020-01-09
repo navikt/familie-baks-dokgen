@@ -91,7 +91,9 @@ body::after {
 
 #fodselsnummer::before {
     content: "Fødselsnummer: ";
-}#footer {
+}
+
+#footer {
     position: absolute;
     margin: 0;
     bottom: 0;

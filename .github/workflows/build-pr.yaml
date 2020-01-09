@@ -3,7 +3,7 @@ name: Bygg og deploy PR
 on: [pull_request]
 
 env:
-  IMAGE: docker.pkg.github.com/${{ github.repository }}/familie-ba-maler:${GITHUB_REF##*/}
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/familie-ba-maler:$(echo ${GITHUB_REF#refs/heads/})
 
 jobs:
   build:

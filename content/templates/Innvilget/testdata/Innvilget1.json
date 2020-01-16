@@ -7,5 +7,9 @@
   "etterbetalingsmaaned": "januar",
   "etterbetalingsbelop": 750,
   "enhet": "Enheten",
-  "saksbehandler": "Jon Jonsen"
+  "saksbehandler": "Jon Jonsen",
+  "navn": "Navn Navesen",
+  "adresse": "Skogvegen 3",
+  "returadresse": "NAV Familie- og pensjonsytelser, Postboks 6600 Etterstad, 0607 OSLO",
+  "dokumentDato": "3. september 2019"
 }

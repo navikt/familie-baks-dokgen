@@ -10,8 +10,9 @@ html {
 
 body{
     height: 100%;
-    padding: 0;
     margin: 0;
+    padding-left: 4%;
+    padding-right: 4%;
     position: relative;
 }
 
@@ -28,6 +29,70 @@ body::after {
     margin: 0;
 }
 
+#returadresseOgLogo {
+    height: 27mm;
+}
+
+.returadresse {
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+}
+
+#logo_container {
+    width: 30mm;
+    height: 18.9mm;
+    margin: auto;
+    float: right;
+    text-align: right;
+}
+#nav_logo {
+    width: 90%;
+    height: 90%;
+}
+
+#dato {
+    text-align: right;
+    font-family: "Times New Roman", sans-serif;
+    padding-bottom: 5mm;
+}
+
+#dato::before {
+    content: "Dato: ";
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 8pt;
+}
+
+#mottakeradresse {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    padding-bottom: 18mm;
+}
+
+#overskrift {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.personinfo {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 10pt;
+    color: grey;
+}
+
+.personinfo::before {
+    /*font-family: Arial, sans-serif;*/
+    font-size: 8pt;
+}
+
+#navn::before {
+    content: "Navn: ";
+}
+
+#fodselsnummer::before {
+    content: "Fødselsnummer: ";
+}
+
 #footer {
     position: absolute;
     margin: 0;
@@ -36,12 +101,6 @@ body::after {
     height: 25mm;
 }
 
-#nav_logo {
-    width: 30mm;
-    height: 18.9mm;
-    margin: auto;
-    padding: 0 0 10mm 0;
-}
 
 .line_top {
     border-top: 1px black solid;

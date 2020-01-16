@@ -1,0 +1,35 @@
+name: Bygg og deploy
+
+on:
+  push:
+    branches:
+      - master         # Push events on master branch
+env:
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/familie-ba-maler:${{ github.sha }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Bygg og push docker-image
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          docker build --pull --tag ${IMAGE} .
+          echo "$GITHUB_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
+          docker push $IMAGE
+      - name: deploy to dev
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-fss
+          RESOURCE: .deploy/dev-fss-default.yaml
+      - name: deploy to prod
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-fss
+          RESOURCE: .deploy/prod-fss-default.yaml

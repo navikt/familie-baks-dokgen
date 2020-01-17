@@ -2,11 +2,12 @@ apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
   name: familie-ba-maler
-  namespace: default
+  namespace: teamfamilie
   labels:
     team: teamfamilie
 spec:
   image: {{ image }} # Required. Docker image.
+  team: teamfamilie
   port: 8080 # Required. The port number which is exposed by the container and should receive HTTP traffic.
   liveness: # HTTP endpoint that signals 200 OK when the application is running.
     path: /actuator/info
@@ -31,8 +32,6 @@ spec:
   prometheus: # Optional.
     enabled: true # if true the pod will be scraped for metrics by prometheus
     path: /internal/metrics/prometheus # Path to prometheus-metrics
-  istio: # Optional.
-    enabled: false # Optional. When true, envoy-proxy sidecar will be injected into pod and https urls envvars will be rewritten
   resources: # Optional. See: http://kubernetes.io/docs/user-guide/compute-resources/
     limits:
       cpu: "1000m" # app will have its cpu usage throttled if exceeding this limit
@@ -40,10 +39,15 @@ spec:
     requests: # App is guaranteed the requested resources and  will be scheduled on nodes with at least this amount of resources available
       cpu: "50m"
       memory: "1024Mi"
-  ingresses: # Optional. List of ingress URLs that will route HTTP traffic to the application.
-    - "https://familie-ba-dokgen.nais.preprod.local/"
   logformat: accesslog # Optional. The format of the logs from the container if the logs should be handled differently than plain text or json
   logtransform: dns_loglevel # Optional. The transformation of the logs, if they should be handled differently than plain text or json
+  ingresses: # Optional. List of ingress URLs that will route HTTP traffic to the application.
+    - "https://familie-ba-dokgen.dev-adeo.no/"
+  accessPolicy:
+    outbound:
+      external:
+        - host: familie-ba-sak.nais.preprod.local
+        - host: unleashproxy.nais.oera.no
   webproxy: false # Optional. Expose web proxy configuration to the application using the HTTP_PROXY, HTTPS_PROXY and NO_PROXY environment variables.
   vault:
     enabled: false

@@ -21,15 +21,15 @@ jobs:
           docker build --pull --tag ${IMAGE} .
           echo "$GITHUB_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
           docker push $IMAGE
-      - name: deploy to dev
+      - name: Deploy to GCP dev
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: dev-fss
-          RESOURCE: .deploy/dev-fss-default.yaml
-      - name: deploy to prod
+          CLUSTER: dev-gcp
+          RESOURCE: .deploy/dev-gcp-teamfamilie.yaml
+      - name: Deploy to GCP PROD
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: prod-fss
-          RESOURCE: .deploy/prod-fss-default.yaml
+          CLUSTER: prod-gcp
+          RESOURCE: .deploy/prod-gcp-teamfamilie.yaml

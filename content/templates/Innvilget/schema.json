@@ -10,6 +10,7 @@
     "startDato",
     "fodselsdato",
     "etterbetaling",
+    "fritekst",
     "enhet",
     "saksbehandler"
   ],
@@ -60,6 +61,15 @@
       "default": false,
       "examples": [
         true
+      ]
+    },
+    "fritekst": {
+      "$id": "#/properties/fritekst",
+      "type": "string",
+      "title": "The fritekst Schema",
+      "default": "fritekst",
+      "examples": [
+        "fritekst"
       ]
     },
     "etterbetalingsmaaned": {

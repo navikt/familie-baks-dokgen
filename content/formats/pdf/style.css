@@ -192,3 +192,31 @@ tr {
     text-align: center;
     font-size: 12px;
 }
+table {
+    width: 100%;
+}
+
+.td01 {
+    width: 110px;
+    font-size: 12px;
+}
+
+.td02 {
+    width: 150px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.new_page {
+    page-break-before: always;
+
+}
+td, th {
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px
+}

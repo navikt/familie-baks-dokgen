@@ -10,6 +10,7 @@
     "startDato",
     "fodselsdato",
     "etterbetaling",
+    "fritekst",
     "enhet",
     "saksbehandler"
   ],
@@ -22,7 +23,7 @@
       "examples": [
         "12345678910"
       ],
-      "pattern": "^\\d{11}$",
+      "pattern": "^\\d{11}$"
     },
     "belop": {
       "$id": "#/properties/belop",
@@ -51,7 +52,7 @@
       "examples": [
         "dd.MM.yy"
       ],
-      "pattern": "^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.]([0]?[1-9]|[1][0-2])[.]([0-9]{2})$",
+      "pattern": "^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.]([0]?[1-9]|[1][0-2])[.]([0-9]{2})$"
     },
     "etterbetaling": {
       "$id": "#/properties/etterbetaling",
@@ -60,6 +61,15 @@
       "default": false,
       "examples": [
         true
+      ]
+    },
+    "fritekst": {
+      "$id": "#/properties/fritekst",
+      "type": "string",
+      "title": "The fritekst Schema",
+      "default": "fritekst",
+      "examples": [
+        "fritekst"
       ]
     },
     "etterbetalingsmaaned": {

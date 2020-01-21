@@ -1,15 +1,18 @@
 {
+  "navn": "Navn Navesen",
+  "adresse": "Skogvegen 3",
   "fodselsnummer": "12345678910",
+  "dokumentDato": "3. september 2019",
+  "returadresse": "NAV Familie- og pensjonsytelser, Postboks 6600 Etterstad, 0607 OSLO",
+
   "belop": 7600,
   "startDato": "februar 2020",
   "fodselsdato": "24.12.19",
   "etterbetaling": true,
   "etterbetalingsmaaned": "januar",
   "etterbetalingsbelop": 750,
-  "enhet": "Enheten",
+  "fritekst": "**fritekst fritekst fritekst fritekst fritekst fritekst fritekst fritekst**",
+
   "saksbehandler": "Jon Jonsen",
-  "navn": "Navn Navesen",
-  "adresse": "Skogvegen 3",
-  "returadresse": "NAV Familie- og pensjonsytelser, Postboks 6600 Etterstad, 0607 OSLO",
-  "dokumentDato": "3. september 2019"
+  "enhet": "Enheten"
 }

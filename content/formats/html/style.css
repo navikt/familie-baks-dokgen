@@ -46,3 +46,27 @@ p, table {
         font-size: 0.750em;
     }
 }
+table {
+    width: 100%;
+    margin: 0 0;
+    border-collapse: collapse;
+}
+
+.td01 {
+    width: 110px;
+    font-size: 12px;
+}
+
+.td02 {
+    width: 150px;
+}
+
+.foo table{
+    background: blue;
+}
+td, th {
+    /*font-weight: bold;*/
+    /*border: 1px solid #cccccc;*/
+    text-align: left;
+    padding: 6px 13px
+}

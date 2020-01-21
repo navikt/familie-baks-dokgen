@@ -1,0 +1,69 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "navn",
+    "fodselsnummer",
+    "fritekst",
+    "hjemmel"
+  ],
+  "properties": {
+    "navn": {
+      "$id": "#/properties/navn",
+      "type": "string",
+      "title": "The navn Schema",
+      "default": "",
+      "examples": [
+        "Fornavn Etternavn"
+      ]
+    },
+    "fodselsnummer": {
+      "$id": "#/properties/fodselsnummer",
+      "type": "string",
+      "title": "The Fodselsnummer Schema",
+      "default": "",
+      "examples": [
+        "12345678910"
+      ]
+    },
+      "fritekst": {
+        "$id": "#/properties/fritekst",
+        "type": "string",
+        "title": "The fritekst Schema",
+        "default": "fritekst",
+        "examples": [
+          "fritekst"
+        ]
+    },
+    "hjemmel": {
+      "$id": "#/properties/hjemmel",
+      "type": "string",
+      "title": "The frist Schema",
+      "default": "2, 4 og 11",
+      "examples": [
+        "2, 4 og 11"
+      ]
+    },
+    "kontaktTelefonnummer": {
+      "$id": "#/properties/kontaktTelefonnummer",
+      "type": "string",
+      "title": "The kontaktTelefonnummer Schema",
+      "default": "55 55 33 33",
+      "examples": [
+        "55 55 33 33"
+      ]
+    },
+    "navnAvsenderEnhet": {
+      "$id": "#/properties/navnAvsenderEnhet",
+      "type": "string",
+      "title": "The navnAvsenderEnhet Schema",
+      "default": "NAV Familie- og pensjonsytelser",
+      "examples": [
+        "NAV Familie- og pensjonsytelser avd. Oslo"
+      ]
+    }
+  }
+}

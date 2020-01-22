@@ -7,10 +7,10 @@
   "required": [
     "navn",
     "fodselsnummer",
-    "soknadDato",
-    "fristDato",
-    "kontaktTelefonnummer",
-    "navnAvsenderEnhet"
+    "tdato",
+    "fritekst",
+    "hjemmel"
+
   ],
   "properties": {
     "navn": {
@@ -31,7 +31,7 @@
         "12345678910"
       ]
     },
-    "soknadDato": {
+    "tdato": {
       "$id": "#/properties/soknadDato",
       "type": "string",
       "title": "The dato Schema",
@@ -49,31 +49,13 @@
           "fritekst"
         ]
     },
-    "fristDato": {
-      "$id": "#/properties/fristDato",
+    "hjemmel": {
+      "$id": "#/properties/hjemmel",
       "type": "string",
       "title": "The frist Schema",
-      "default": "6 Uker",
+      "default": "2, 4 og 11",
       "examples": [
-        "6 Uker"
-      ]
-    },
-    "kontaktTelefonnummer": {
-      "$id": "#/properties/kontaktTelefonnummer",
-      "type": "string",
-      "title": "The kontaktTelefonnummer Schema",
-      "default": "55 55 33 33",
-      "examples": [
-        "55 55 33 33"
-      ]
-    },
-    "navnAvsenderEnhet": {
-      "$id": "#/properties/navnAvsenderEnhet",
-      "type": "string",
-      "title": "The navnAvsenderEnhet Schema",
-      "default": "NAV Familie- og pensjonsytelser",
-      "examples": [
-        "NAV Familie- og pensjonsytelser avd. Oslo"
+        "2, 4 og 11"
       ]
     }
   }

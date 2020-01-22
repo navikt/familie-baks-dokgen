@@ -215,7 +215,7 @@ table {
 }
 td, th {
     font-weight: bold;
-    border: 1px solid #cccccc;
+    /*border: 1px solid #cccccc;*/
     text-align: left;
     margin: 0;
     padding: 6px 13px

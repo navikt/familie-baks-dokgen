@@ -1,0 +1,88 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "fodselsnummer",
+    "navn",
+    "adresse",
+    "postnr",
+    "poststed",
+    "returadresse",
+    "dokumentDato"
+  ],
+  "properties": {
+    "fodselsnummer": {
+      "$id": "#/properties/fodselsnummer",
+      "type": "string",
+      "title": "The Fodselsnummer Schema",
+      "default": "",
+      "examples": [
+        "12345678910"
+      ],
+      "pattern": "^\\d{11}$"
+    },
+    "navn": {
+      "$id": "#/properties/navn",
+      "type": "string",
+      "title": "The Navn Schema",
+      "default": "",
+      "examples": [
+        ""
+      ],
+      "pattern": "^(.*)$"
+    },
+    "adresse": {
+      "$id": "#/properties/adresse",
+      "type": "string",
+      "title": "The Adresse Schema",
+      "default": "",
+      "examples": [
+        "Karl Johans gate 1"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "postnr": {
+      "$id": "#/properties/postnr",
+      "type": "string",
+      "title": "The Postnr Schema",
+      "default": "",
+      "examples": [
+        "1051"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "poststed": {
+      "$id": "#/properties/poststed",
+      "type": "string",
+      "title": "The Poststed Schema",
+      "default": "",
+      "examples": [
+        "Oslo"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "returadresse": {
+      "$id": "#/properties/returadresse",
+      "type": "string",
+      "title": "The Returadresse Schema",
+      "default": "",
+      "examples": [
+        "NAV Familie- og pensjonsytelser, Postboks 6600 Etterstad, 0607 OSLO"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "dokumentDato": {
+      "$id": "#/properties/dokumentDato",
+      "type": "string",
+      "title": "The DokumentDato Schema",
+      "default": "",
+      "examples": [
+        "3. september 2019"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

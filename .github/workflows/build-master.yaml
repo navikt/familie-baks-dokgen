@@ -5,7 +5,7 @@ on:
     branches:
       - master         # Push events on master branch
 env:
-  IMAGE: docker.pkg.github.com/${{ github.repository }}/familie-ba-maler:${{ github.sha }}
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/familie-ba-dokgen:${{ github.sha }}
 
 jobs:
   build:

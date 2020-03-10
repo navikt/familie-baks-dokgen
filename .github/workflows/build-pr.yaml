@@ -3,7 +3,7 @@ name: Bygg og deploy PR
 on: [pull_request]
 
 env:
-  IMAGE: docker.pkg.github.com/${{ github.repository }}/familie-ba-maler:${{ github.event.pull_request.head.sha }}
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/familie-ba-dokgen:${{ github.event.pull_request.head.sha }}
 
 jobs:
   build:

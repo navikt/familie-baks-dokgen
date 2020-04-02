@@ -6,7 +6,7 @@ on:
       - master         # Push events on master branch
 env:
   IMAGE: docker.pkg.github.com/${{ github.repository }}/familie-ba-dokgen:${{ github.sha }}
-
+  IMAGE_TAG_LATEST: docker.pkg.github.com/${{ github.repository }}/familie-ba-dokgen:latest
 jobs:
   build:
 
@@ -21,6 +21,7 @@ jobs:
           docker build --pull --tag ${IMAGE} .
           echo "$GITHUB_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
           docker push $IMAGE
+          docker push $IMAGE_TAG_LATEST
       - name: Deploy to GCP dev
         uses: nais/deploy/actions/deploy@v1
         env:

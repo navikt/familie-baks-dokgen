@@ -18,7 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          docker build --pull --tag ${IMAGE} .
+          docker build --pull --tag ${IMAGE} --tag ${IMAGE_TAG_LATEST} .
           echo "$GITHUB_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
           docker push $IMAGE
           docker push $IMAGE_TAG_LATEST

@@ -9,8 +9,8 @@
     "saksbehandler"
   ],
   "properties": {
-    "enhet": {
-      "$id": "#/properties/enhet",
+    "ENHET": {
+      "$id": "#/properties/ENHET",
       "type": "string",
       "title": "The Enhet Schema",
       "default": "",
@@ -19,8 +19,8 @@
       ],
       "pattern": "^(.*)$"
     },
-    "saksbehandler": {
-      "$id": "#/properties/saksbehandler",
+    "SAKSBEHANDLER": {
+      "$id": "#/properties/SAKSBEHANDLER",
       "type": "string",
       "title": "The Saksbehandler Schema",
       "default": "",

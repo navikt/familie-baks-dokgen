@@ -1,0 +1,20 @@
+<br>Du får {{belop}} kroner i måneden for {{antallBarn}} barn født {{fodselsdato}} fra 1.{{startDato}}.
+
+{{#if flereBarn}}
+<br>Du får barnetrygd fordi du og barnet er bosatt i Norge fra {{vilkarDato}}.
+{{/if}}
+
+{{#if flereBarn}}
+<br>Du får barnetrygd fordi du og barna er bosatt i Norge fra {{vilkarDato}}.
+{{/if}}
+
+{{#if etterbetaling}}
+<br>Etterbetalingen fra 1.{{startDato}} er {{etterbetalingBelop}} kroner, er på kontoen din innen en uke.
+{{/if}}
+
+<br>Barnetrygden er skattefri, og innvilges fra måneden etter at vilkårene er oppfylt.
+<br>Stortinget bestemmer satsene for barnetrygden hvert år, og satsene kan derfor bli endret. Du kan lese mer om dette på nav.no/satser.
+<br>Vedtaket er gjort etter barnetrygdloven {{hjemmel}}
+
+{{> Fellesmal-innvilget/template }}
+<br>

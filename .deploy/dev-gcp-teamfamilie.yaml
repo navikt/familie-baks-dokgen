@@ -42,7 +42,8 @@ spec:
   logformat: accesslog # Optional. The format of the logs from the container if the logs should be handled differently than plain text or json
   logtransform: dns_loglevel # Optional. The transformation of the logs, if they should be handled differently than plain text or json
   ingresses: # Optional. List of ingress URLs that will route HTTP traffic to the application.
-    - "https://familie-ba-dokgen.dev-adeo.no/"
+    - https://familie-ba-dokgen.dev-adeo.no
+    - https://familie-ba-dokgen.dev-fss.nais.io
   accessPolicy:
     outbound:
       external:

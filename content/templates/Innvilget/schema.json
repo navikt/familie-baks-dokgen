@@ -92,7 +92,7 @@
     },
     "hjemmel": {
       "$id": "#/properties/hjemmel",
-      "type": "number",
+      "type": "string",
       "title": "The hjemmel Schema",
       "default": "",
       "examples": [

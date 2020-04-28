@@ -5,54 +5,43 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
+    "fodselsnummer",
     "belop",
-    "antallBarn",
     "startDato",
-    "vilkarDato",
     "fodselsdato",
-    "flereBarn",
     "etterbetaling",
-    "etterbetalingBelop",
-    "hjemmel"
+    "enhet",
+    "saksbehandler"
   ],
   "properties": {
+    "fodselsnummer": {
+      "$id": "#/properties/fodselsnummer",
+      "type": "string",
+      "title": "The Fodselsnummer Schema",
+      "default": "",
+      "examples": [
+        "12345678910"
+      ],
+      "pattern": "^\\d{11}$"
+    },
     "belop": {
       "$id": "#/properties/belop",
       "type": "number",
       "title": "The Belop Schema",
       "default": "",
       "examples": [
-        "1054"
-      ]
-    },
-    "antallBarn": {
-      "$id": "#/properties/antallBarn",
-      "type": "number",
-      "title": "The antallbarn Schema",
-      "default": "",
-      "examples": [
-        "2"
+        ""
       ]
     },
     "startDato": {
       "$id": "#/properties/startDato",
       "type": "string",
-      "title": "The StartDato Schema",
+      "title": "The Startdato Schema",
       "default": "",
       "examples": [
         "februar 2020"
       ],
       "pattern": "^[a-z]{3,9} \\d{4}$"
-    },
-    "vilkarDato": {
-      "$id": "#/properties/vilkårDato",
-      "type": "string",
-      "title": "The Vilkårdato Schema",
-      "default": "",
-      "examples": [
-        "dd.MM.yy"
-      ],
-      "pattern": "^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.]([0]?[1-9]|[1][0-2])[.]([0-9]{2})$"
     },
     "fodselsdato": {
       "$id": "#/properties/fodselsdato",
@@ -61,17 +50,9 @@
       "default": "",
       "examples": [
         "dd.MM.yy"
-      ]
+      ],
+      "pattern": "^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.]([0]?[1-9]|[1][0-2])[.]([0-9]{2})$"
     },
-    "flereBarn": {
-      "$id": "#/properties/flerebarn",
-      "type": "string",
-      "title": "The Flerebarn Schema",
-      "default": "barnet",
-      "examples": [
-        "barna"
-      ]
-  },
     "etterbetaling": {
       "$id": "#/properties/etterbetaling",
       "type": "boolean",
@@ -81,24 +62,53 @@
         true
       ]
     },
-    "etterbetalingBelop": {
-      "$id": "#/properties/etterbetalingsBelop",
+    "fritekst": {
+      "$id": "#/properties/fritekst",
+      "type": "string",
+      "title": "The fritekst Schema",
+      "default": "fritekst",
+      "examples": [
+        "fritekst"
+      ]
+    },
+    "etterbetalingsmaaned": {
+      "$id": "#/properties/etterbetalingsmaaned",
+      "type": "string",
+      "title": "The Etterbetalingsmaaned Schema",
+      "default": "",
+      "examples": [
+        "januar"
+      ],
+      "pattern": "^[a-z]{3,9}$"
+    },
+    "etterbetalingsbelop": {
+      "$id": "#/properties/etterbetalingsbelop",
       "type": "number",
-      "title": "The Etterbetalings beløp Schema",
+      "title": "The Etterbetalingsbelop Schema",
       "default": "",
       "examples": [
         ""
       ]
     },
-    "hjemmel": {
-      "$id": "#/properties/hjemmel",
+    "enhet": {
+      "$id": "#/properties/enhet",
       "type": "string",
-      "title": "The hjemmel Schema",
+      "title": "The Enhet Schema",
       "default": "",
       "examples": [
-        "§2, 4 og 11"
-      ]
+        ""
+      ],
+      "pattern": "^(.*)$"
+    },
+    "saksbehandler": {
+      "$id": "#/properties/saksbehandler",
+      "type": "string",
+      "title": "The Saksbehandler Schema",
+      "default": "",
+      "examples": [
+        ""
+      ],
+      "pattern": "^(.*)$"
     }
+  }
 }
-}
-

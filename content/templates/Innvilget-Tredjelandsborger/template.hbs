@@ -1,9 +1,8 @@
-<br>Du får {{belop}} kroner i måneden for {{antallBarn}} barn født {{fodselsdato}} fra 1.{{startDato}}.
+<br>Du får {{belop}} kroner i måneden for {{antallBarn}} barn født {{barnasFodselsdatoer}} fra 1.{{virkningsdato}}.
 
-<br>Du får barnetrygd fordi du og {{flereBarn}} er bosatt i Norge fra {{vilkarDato}}.
-
-{{#if etterbetaling}}
-<br>Etterbetalingen fra 1.{{startDato}} er {{etterbetalingBelop}} kroner, er på kontoen din innen en uke.
+{{#if (flereBarn}}
+Du får barnetrygd fordi du og barna er bosatt i Norge fra {{vilkårsdato}}.
+{{else}}Du får barnetrygd fordi du og barnet er bosatt i Norge fra {{vilkårsdato}}.
 {{/if}}
 
 <br>Barnetrygden er skattefri, og innvilges fra måneden etter at vilkårene er oppfylt.

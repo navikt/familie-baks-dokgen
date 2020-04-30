@@ -1,11 +1,9 @@
 {
   "belop": 1054,
-  "startDato": "februar 2020",
-  "vilkarDato": "24.12.19",
+  "virkningsdato": "februar 2020",
+  "vilkårsdato": "24.12.19",
   "antallBarn": 1,
-  "flereBarn": "barnet",
-  "etterbetaling": true,
-  "etterbetalingBelop": 1054,
+  "flereBarn": true,
   "fodselsdato": "24.12.19",
   "hjemmel": "§2, 4 og 11"
 }

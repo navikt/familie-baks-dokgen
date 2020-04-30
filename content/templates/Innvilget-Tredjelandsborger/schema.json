@@ -7,12 +7,10 @@
   "required": [
     "belop",
     "antallBarn",
-    "startDato",
-    "vilkarDato",
-    "fodselsdato",
+    "virkningsdato",
+    "vilkårsdato",
+    "barnasFodselsdatoer",
     "flereBarn",
-    "etterbetaling",
-    "etterbetalingBelop",
     "hjemmel"
   ],
   "properties": {
@@ -34,7 +32,7 @@
         "2"
       ]
     },
-    "startDato": {
+    "virkningsdato": {
       "$id": "#/properties/startDato",
       "type": "string",
       "title": "The StartDato Schema",
@@ -44,7 +42,7 @@
       ],
       "pattern": "^[a-z]{3,9} \\d{4}$"
     },
-    "vilkarDato": {
+    "vilkårsdato": {
       "$id": "#/properties/vilkårDato",
       "type": "string",
       "title": "The Vilkårdato Schema",
@@ -54,7 +52,7 @@
       ],
       "pattern": "^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.]([0]?[1-9]|[1][0-2])[.]([0-9]{2})$"
     },
-    "fodselsdato": {
+    "barnasFodselsdatoer": {
       "$id": "#/properties/fodselsdato",
       "type": "string",
       "title": "The Fodselsdato Schema",
@@ -64,30 +62,12 @@
       ]
     },
     "flereBarn": {
-      "$id": "#/properties/flerebarn",
-      "type": "string",
-      "title": "The Flerebarn Schema",
-      "default": "barnet",
-      "examples": [
-        "barna"
-      ]
-  },
-    "etterbetaling": {
-      "$id": "#/properties/etterbetaling",
+      "$id": "#/properties/flereBarn",
       "type": "boolean",
-      "title": "The Etterbetaling Schema",
+      "title": "The flereBarn Schema",
       "default": false,
       "examples": [
         true
-      ]
-    },
-    "etterbetalingBelop": {
-      "$id": "#/properties/etterbetalingsBelop",
-      "type": "number",
-      "title": "The Etterbetalings beløp Schema",
-      "default": "",
-      "examples": [
-        ""
       ]
     },
     "hjemmel": {

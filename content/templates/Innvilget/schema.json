@@ -5,25 +5,13 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "fodselsnummer",
     "belop",
-    "startDato",
-    "fodselsdato",
+    "virkningsdato",
+    "barnasFodselsdatoer",
     "etterbetaling",
-    "enhet",
-    "saksbehandler"
+    "hjemmel"
   ],
   "properties": {
-    "fodselsnummer": {
-      "$id": "#/properties/fodselsnummer",
-      "type": "string",
-      "title": "The Fodselsnummer Schema",
-      "default": "",
-      "examples": [
-        "12345678910"
-      ],
-      "pattern": "^\\d{11}$"
-    },
     "belop": {
       "$id": "#/properties/belop",
       "type": "number",
@@ -33,20 +21,20 @@
         ""
       ]
     },
-    "startDato": {
-      "$id": "#/properties/startDato",
+    "virkningsdato": {
+      "$id": "#/properties/virkningsdato",
       "type": "string",
-      "title": "The Startdato Schema",
+      "title": "The Virkningsdato Schema",
       "default": "",
       "examples": [
         "februar 2020"
       ],
       "pattern": "^[a-z]{3,9} \\d{4}$"
     },
-    "fodselsdato": {
-      "$id": "#/properties/fodselsdato",
+    "barnasFodselsdatoer": {
+      "$id": "#/properties/barnasFodselsdatoer",
       "type": "string",
-      "title": "The Fodselsdato Schema",
+      "title": "The BarnasFodselsdatoer Schema",
       "default": "",
       "examples": [
         "dd.MM.yy"
@@ -60,15 +48,6 @@
       "default": false,
       "examples": [
         true
-      ]
-    },
-    "fritekst": {
-      "$id": "#/properties/fritekst",
-      "type": "string",
-      "title": "The fritekst Schema",
-      "default": "fritekst",
-      "examples": [
-        "fritekst"
       ]
     },
     "etterbetalingsmaaned": {
@@ -90,25 +69,23 @@
         ""
       ]
     },
-    "enhet": {
-      "$id": "#/properties/enhet",
+    "fritekst": {
+      "$id": "#/properties/fritekst",
       "type": "string",
-      "title": "The Enhet Schema",
-      "default": "",
+      "title": "The fritekst Schema",
+      "default": "fritekst",
       "examples": [
-        ""
-      ],
-      "pattern": "^(.*)$"
+        "fritekst"
+      ]
     },
-    "saksbehandler": {
-      "$id": "#/properties/saksbehandler",
-      "type": "string",
-      "title": "The Saksbehandler Schema",
-      "default": "",
-      "examples": [
-        ""
-      ],
-      "pattern": "^(.*)$"
+  "hjemmel": {
+    "$id": "#/properties/hjemmel",
+    "type": "string",
+    "title": "The hjemmel Schema",
+    "default": "",
+    "examples": [
+      "§2, 4 og 11"
+    ]
     }
   }
 }

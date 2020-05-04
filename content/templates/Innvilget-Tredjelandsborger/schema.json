@@ -26,16 +26,16 @@
     "antallBarn": {
       "$id": "#/properties/antallBarn",
       "type": "number",
-      "title": "The antallbarn Schema",
+      "title": "The Antallbarn Schema",
       "default": "",
       "examples": [
         "2"
       ]
     },
     "virkningsdato": {
-      "$id": "#/properties/startDato",
+      "$id": "#/properties/virkningsdato",
       "type": "string",
-      "title": "The StartDato Schema",
+      "title": "The Virkningsdato Schema",
       "default": "",
       "examples": [
         "februar 2020"
@@ -43,9 +43,9 @@
       "pattern": "^[a-z]{3,9} \\d{4}$"
     },
     "vilkårsdato": {
-      "$id": "#/properties/vilkårDato",
+      "$id": "#/properties/vilkårsdato",
       "type": "string",
-      "title": "The Vilkårdato Schema",
+      "title": "The Vilkårsdato Schema",
       "default": "",
       "examples": [
         "dd.MM.yy"
@@ -64,7 +64,7 @@
     "flereBarn": {
       "$id": "#/properties/flereBarn",
       "type": "boolean",
-      "title": "The flereBarn Schema",
+      "title": "The FlereBarn Schema",
       "default": false,
       "examples": [
         true
@@ -73,12 +73,12 @@
     "hjemmel": {
       "$id": "#/properties/hjemmel",
       "type": "string",
-      "title": "The hjemmel Schema",
+      "title": "The Hjemmel Schema",
       "default": "",
       "examples": [
         "§2, 4 og 11"
       ]
     }
-}
+  }
 }
 

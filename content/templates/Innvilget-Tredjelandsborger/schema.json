@@ -53,9 +53,9 @@
       "pattern": "^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.]([0]?[1-9]|[1][0-2])[.]([0-9]{2})$"
     },
     "barnasFodselsdatoer": {
-      "$id": "#/properties/fodselsdato",
+      "$id": "#/properties/barnasFodselsdatoer",
       "type": "string",
-      "title": "The Fodselsdato Schema",
+      "title": "The barnasFodselsdatoer Schema",
       "default": "",
       "examples": [
         "dd.MM.yy"

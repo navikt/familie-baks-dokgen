@@ -1,4 +1,5 @@
 {
-  "enhet": "<enhet>",
-  "saksbehandler": "<saksbehandler>"
+  "enhet": "enhet",
+  "saksbehandler": "saksbehandler",
+  "beslutter": "beslutter"
 }

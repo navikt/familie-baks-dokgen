@@ -28,6 +28,16 @@
         ""
       ],
       "pattern": "^(.*)$"
+    },
+    "beslutter": {
+      "$id": "#/properties/beslutter",
+      "type": "string",
+      "title": "The Beslutter Schema",
+      "default": "",
+      "examples": [
+        ""
+      ],
+      "pattern": "^(.*)$"
     }
   }
 }

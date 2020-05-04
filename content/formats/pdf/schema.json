@@ -7,9 +7,6 @@
   "required": [
     "fodselsnummer",
     "navn",
-    "adresse",
-    "postnr",
-    "poststed",
     "returadresse",
     "dokumentDato"
   ],
@@ -31,36 +28,6 @@
       "default": "",
       "examples": [
         ""
-      ],
-      "pattern": "^(.*)$"
-    },
-    "adresse": {
-      "$id": "#/properties/adresse",
-      "type": "string",
-      "title": "The Adresse Schema",
-      "default": "",
-      "examples": [
-        "Karl Johans gate 1"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "postnr": {
-      "$id": "#/properties/postnr",
-      "type": "string",
-      "title": "The Postnr Schema",
-      "default": "",
-      "examples": [
-        "1051"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "poststed": {
-      "$id": "#/properties/poststed",
-      "type": "string",
-      "title": "The Poststed Schema",
-      "default": "",
-      "examples": [
-        "Oslo"
       ],
       "pattern": "^(.*)$"
     },

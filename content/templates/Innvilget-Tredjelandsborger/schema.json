@@ -38,7 +38,7 @@
       "title": "The Virkningsdato Schema",
       "default": "",
       "examples": [
-        "februar 2020"
+        "1. februar 2020"
       ]
     },
     "vilkårsdato": {
@@ -47,7 +47,7 @@
       "title": "The Vilkårsdato Schema",
       "default": "",
       "examples": [
-        "dd.MM.yy"
+        "1. februar 2020"
       ]
     },
     "barnasFodselsdatoer": {

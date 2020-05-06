@@ -39,8 +39,7 @@
       "default": "",
       "examples": [
         "februar 2020"
-      ],
-      "pattern": "^[a-z]{3,9} \\d{4}$"
+      ]
     },
     "vilkårsdato": {
       "$id": "#/properties/vilkårsdato",

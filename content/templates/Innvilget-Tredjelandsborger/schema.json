@@ -16,11 +16,11 @@
   "properties": {
     "belop": {
       "$id": "#/properties/belop",
-      "type": "number",
+      "type": "string",
       "title": "The Belop Schema",
       "default": "",
       "examples": [
-        "1054"
+        "1 054"
       ]
     },
     "antallBarn": {

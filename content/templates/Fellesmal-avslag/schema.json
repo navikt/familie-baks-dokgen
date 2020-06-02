@@ -16,8 +16,7 @@
       "default": "",
       "examples": [
         ""
-      ],
-      "pattern": "^(.*)$"
+      ]
     },
     "saksbehandler": {
       "$id": "#/properties/saksbehandler",

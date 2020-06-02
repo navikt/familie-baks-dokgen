@@ -20,13 +20,7 @@ p {
     font-size: 0.875em; /* 14px/16=0.875em */
 }
 
-.returadresse {
-    font-family: Arial;
-    font-size: 8pt;
-    font-weight: normal;
-}
-
-#returadresseOgLogo {
+#Logo {
     height: auto;
     overflow: auto;
 }

@@ -7,7 +7,6 @@
   "required": [
     "fodselsnummer",
     "navn",
-    "returadresse",
     "dokumentDato"
   ],
   "properties": {
@@ -28,16 +27,6 @@
       "default": "",
       "examples": [
         ""
-      ],
-      "pattern": "^(.*)$"
-    },
-    "returadresse": {
-      "$id": "#/properties/returadresse",
-      "type": "string",
-      "title": "The Returadresse Schema",
-      "default": "",
-      "examples": [
-        "NAV Familie- og pensjonsytelser, Postboks 6600 Etterstad, 0607 OSLO"
       ],
       "pattern": "^(.*)$"
     },

@@ -6,19 +6,48 @@
   "title": "The Root Schema",
   "required": [
     "belop",
-    "virkningsdato",
+    "antallBarn",
     "barnasFodselsdatoer",
-    "etterbetaling",
+    "virkningsdato",
+    "flereBarn",
+    "vilkårsdato",
     "hjemmel"
   ],
   "properties": {
     "belop": {
       "$id": "#/properties/belop",
-      "type": "number",
+      "type": "string",
       "title": "The Belop Schema",
       "default": "",
       "examples": [
-        ""
+        "1 054"
+      ]
+    },
+    "antallBarn": {
+      "$id": "#/properties/antallBarn",
+      "type": "number",
+      "title": "The Antallbarn Schema",
+      "default": "",
+      "examples": [
+        "2"
+      ]
+    },
+    "barnasFodselsdatoer": {
+      "$id": "#/properties/barnasFodselsdatoer",
+      "type": "string",
+      "title": "The BarnasFodselsdatoer Schema",
+      "default": "",
+      "examples": [
+        "dd.MM.yy"
+      ]
+    },
+    "flereBarn": {
+      "$id": "#/properties/flereBarn",
+      "type": "boolean",
+      "title": "The FlereBarn Schema",
+      "default": false,
+      "examples": [
+        true
       ]
     },
     "virkningsdato": {
@@ -28,54 +57,6 @@
       "default": "",
       "examples": [
         "februar 2020"
-      ],
-      "pattern": "^[a-z]{3,9} \\d{4}$"
-    },
-    "barnasFodselsdatoer": {
-      "$id": "#/properties/barnasFodselsdatoer",
-      "type": "string",
-      "title": "The BarnasFodselsdatoer Schema",
-      "default": "",
-      "examples": [
-        "dd.MM.yy"
-      ],
-      "pattern": "^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.]([0]?[1-9]|[1][0-2])[.]([0-9]{2})$"
-    },
-    "etterbetaling": {
-      "$id": "#/properties/etterbetaling",
-      "type": "boolean",
-      "title": "The Etterbetaling Schema",
-      "default": false,
-      "examples": [
-        true
-      ]
-    },
-    "etterbetalingsmaaned": {
-      "$id": "#/properties/etterbetalingsmaaned",
-      "type": "string",
-      "title": "The Etterbetalingsmaaned Schema",
-      "default": "",
-      "examples": [
-        "januar"
-      ],
-      "pattern": "^[a-z]{3,9}$"
-    },
-    "etterbetalingsbelop": {
-      "$id": "#/properties/etterbetalingsbelop",
-      "type": "number",
-      "title": "The Etterbetalingsbelop Schema",
-      "default": "",
-      "examples": [
-        ""
-      ]
-    },
-    "fritekst": {
-      "$id": "#/properties/fritekst",
-      "type": "string",
-      "title": "The fritekst Schema",
-      "default": "fritekst",
-      "examples": [
-        "fritekst"
       ]
     },
   "hjemmel": {

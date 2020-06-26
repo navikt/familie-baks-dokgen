@@ -32,7 +32,7 @@ spec:
     enabled: true # if true the pod will be scraped for metrics by prometheus
     path: /internal/metrics/prometheus # Path to prometheus-metrics
   istio: # Optional.
-    enabled: false # Optional. When true, envoy-proxy sidecar will be injected into pod and https urls envvars will be rewritten
+    enabled: true # Optional. When true, envoy-proxy sidecar will be injected into pod and https urls envvars will be rewritten
   resources: # Optional. See: http://kubernetes.io/docs/user-guide/compute-resources/
     limits:
       cpu: "1000m" # app will have its cpu usage throttled if exceeding this limit
@@ -43,11 +43,10 @@ spec:
   logformat: accesslog # Optional. The format of the logs from the container if the logs should be handled differently than plain text or json
   logtransform: dns_loglevel # Optional. The transformation of the logs, if they should be handled differently than plain text or json
   ingresses: # Optional. List of ingress URLs that will route HTTP traffic to the application.
-    - "https://familie-ba-dokgen.adeo.no/"
+    - https://familie-ba-dokgen.adeo.no
   accessPolicy:
     outbound:
       external:
-        - host: familie-ba-sak.nais.adeo.no
         - host: unleashproxy.nais.oera.no
   webproxy: false # Optional. Expose web proxy configuration to the application using the HTTP_PROXY, HTTPS_PROXY and NO_PROXY environment variables.
   vault:

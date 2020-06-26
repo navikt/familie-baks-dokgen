@@ -11,7 +11,8 @@
     "virkningsdato",
     "flereBarn",
     "vilkårsdato",
-    "hjemmel"
+    "hjemmel",
+    "fritekst"
   ],
   "properties": {
     "belop": {
@@ -67,6 +68,15 @@
     "examples": [
       "§2, 4 og 11"
     ]
+    },
+    "fritekst": {
+      "$id": "#/properties/fritekst",
+      "type": "string",
+      "title": "The fritekst Schema",
+      "default": "",
+      "examples": [
+        "Hei! fritekst."
+      ]
     }
   }
 }

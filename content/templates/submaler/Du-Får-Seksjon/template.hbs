@@ -1,0 +1,11 @@
+{{#if duFaar.length}}
+{{#each duFaar}}
+Fra {{fom}} og til og med {{tom}} får du:
+<ul>
+    <li>
+        {{belop}} kroner i måneden for {{antallBarn}} barn født {{barnasFodselsdatoer}}.
+    </li>
+    {{#each begrunnelser}}<li>{{this}}</li>{{/each}}
+</ul>
+{{/each}}
+{{/if}}

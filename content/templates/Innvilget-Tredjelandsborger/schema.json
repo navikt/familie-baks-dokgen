@@ -1,73 +1,13 @@
 {
-  "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/root.json",
+  "$id": "root.json",
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "belop",
-    "antallBarn",
-    "virkningsdato",
-    "vilkårsdato",
-    "barnasFodselsdatoer",
-    "flereBarn",
-    "hjemmel"
+    "hjemmel",
+    "duFaar"
   ],
   "properties": {
-    "belop": {
-      "$id": "#/properties/belop",
-      "type": "string",
-      "title": "The Belop Schema",
-      "default": "",
-      "examples": [
-        "1 054"
-      ]
-    },
-    "antallBarn": {
-      "$id": "#/properties/antallBarn",
-      "type": "number",
-      "title": "The Antallbarn Schema",
-      "default": "",
-      "examples": [
-        "2"
-      ]
-    },
-    "virkningsdato": {
-      "$id": "#/properties/virkningsdato",
-      "type": "string",
-      "title": "The Virkningsdato Schema",
-      "default": "",
-      "examples": [
-        "1. februar 2020"
-      ]
-    },
-    "vilkårsdato": {
-      "$id": "#/properties/vilkårsdato",
-      "type": "string",
-      "title": "The Vilkårsdato Schema",
-      "default": "",
-      "examples": [
-        "1. februar 2020"
-      ]
-    },
-    "barnasFodselsdatoer": {
-      "$id": "#/properties/barnasFodselsdatoer",
-      "type": "string",
-      "title": "The barnasFodselsdatoer Schema",
-      "default": "",
-      "examples": [
-        "dd.MM.yy"
-      ]
-    },
-    "flereBarn": {
-      "$id": "#/properties/flereBarn",
-      "type": "boolean",
-      "title": "The FlereBarn Schema",
-      "default": false,
-      "examples": [
-        true
-      ]
-    },
     "hjemmel": {
       "$id": "#/properties/hjemmel",
       "type": "string",
@@ -76,6 +16,11 @@
       "examples": [
         "§2, 4 og 11"
       ]
+    },
+    "duFaar": {
+      "type": "array",
+      "title": "The duFår schema",
+      "items": { "$ref": "file:content/schemas/duFårSeksjon.json" }
     }
   }
 }

@@ -11,6 +11,7 @@ body {
     border: 0;
     vertical-align: baseline;
 }
+
 h1,h2,h3,h4,h5 {
     margin-top:1.33em;
     margin-bottom: 0.33em;
@@ -18,6 +19,11 @@ h1,h2,h3,h4,h5 {
 
 p {
     font-size: 0.875em; /* 14px/16=0.875em */
+}
+
+li {
+    font-size: 0.875em;
+    margin-left: 3em;
 }
 
 #Logo {

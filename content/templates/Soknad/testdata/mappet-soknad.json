@@ -1,0 +1,495 @@
+{
+  "label": "søknad",
+  "verdiliste": [
+    {
+      "label": "Personalia",
+      "verdiliste": [
+        {
+          "label": "fødselsnummer",
+          "verdi": "24117938529"
+        },
+        {
+          "label": "navn",
+          "verdi": "hei"
+        },
+        {
+          "label": "statsborgerskap",
+          "verdi": "hei"
+        },
+        {
+          "label": "adresse",
+          "verdiliste": [
+            {
+              "label": "gatenavn",
+              "verdi": "hei"
+            },
+            {
+              "label": "husnummer",
+              "verdi": "1"
+            },
+            {
+              "label": "husbokstav",
+              "verdi": "hei"
+            },
+            {
+              "label": "bolignummer",
+              "verdi": "hei"
+            },
+            {
+              "label": "postnummer",
+              "verdi": "hei"
+            },
+            {
+              "label": "poststedsnavn",
+              "verdi": "hei"
+            },
+            {
+              "label": "kommune",
+              "verdi": "hei"
+            }
+          ]
+        },
+        {
+          "label": "telefonnummer",
+          "verdi": "hei"
+        },
+        {
+          "label": "sivilstatus",
+          "verdi": "hei"
+        }
+      ]
+    },
+    {
+      "label": "Sivilstandsdetaljer",
+      "verdiliste": [
+        {
+          "label": "giftIUtlandet",
+          "verdi": "Ja"
+        },
+        {
+          "label": "dokument",
+          "verdi": "giftIUtlandetDokumentasjon"
+        },
+        {
+          "label": "separertEllerSkiltIUtlandet",
+          "verdi": "Ja"
+        },
+        {
+          "label": "dokument",
+          "verdi": "separertEllerSkiltIUtlandetDokumentasjon"
+        },
+        {
+          "label": "søktOmSkilsmisseSeparasjon",
+          "verdi": "Ja"
+        },
+        {
+          "label": "søknadsdato",
+          "verdi": "2020-01-22"
+        },
+        {
+          "label": "dokument",
+          "verdi": "separasjonsbekreftelse"
+        },
+        {
+          "label": "årsakEnslig",
+          "verdi": "hei"
+        },
+        {
+          "label": "dokument",
+          "verdi": "samlivsbruddsdokumentasjon"
+        },
+        {
+          "label": "samlivsbruddsdato",
+          "verdi": "2020-01-22"
+        },
+        {
+          "label": "fraflytningsdato",
+          "verdi": "2020-01-22"
+        },
+        {
+          "label": "spesifikasjonAnnet",
+          "verdi": "hei"
+        },
+        {
+          "label": "endringSamværsordningDato",
+          "verdi": "2020-01-22"
+        }
+      ]
+    },
+    {
+      "label": "Medlemskap",
+      "verdiliste": [
+        {
+          "label": "oppholderDuDegINorge",
+          "verdi": "Ja"
+        },
+        {
+          "label": "bosattNorgeSisteÅrene",
+          "verdi": "Ja"
+        },
+        {
+          "label": "flyktningstatus",
+          "verdi": "Ja"
+        },
+        {
+          "label": "dokument",
+          "verdi": "flyktningdokumentasjon"
+        }
+      ]
+    },
+    {
+      "label": "Bosituasjon",
+      "verdiliste": [
+        {
+          "label": "delerDuBolig",
+          "verdi": "hei"
+        },
+        {
+          "label": "samboerdetaljer",
+          "verdiliste": [
+            {
+              "label": "navn",
+              "verdi": "hei"
+            },
+            {
+              "label": "fødselsdato",
+              "verdi": "2020-01-22"
+            },
+            {
+              "label": "adresse",
+              "verdiliste": [
+                {
+                  "label": "gatenavn",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "husnummer",
+                  "verdi": "1"
+                },
+                {
+                  "label": "husbokstav",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "bolignummer",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "postnummer",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "poststedsnavn",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "kommune",
+                  "verdi": "hei"
+                }
+              ]
+            },
+            {
+              "label": "land",
+              "verdi": "hei"
+            }
+          ]
+        },
+        {
+          "label": "sammenflyttingsdato",
+          "verdi": "2020-01-22"
+        }
+      ]
+    },
+    {
+      "label": "Sivilstandsplaner",
+      "verdiliste": [
+        {
+          "label": "harPlaner",
+          "verdi": "Ja"
+        },
+        {
+          "label": "fraDato",
+          "verdi": "2020-01-22"
+        },
+        {
+          "label": "vordendeSamboerEktefelle",
+          "verdiliste": [
+            {
+              "label": "navn",
+              "verdi": "hei"
+            },
+            {
+              "label": "fødselsdato",
+              "verdi": "2020-01-22"
+            },
+            {
+              "label": "adresse",
+              "verdiliste": [
+                {
+                  "label": "gatenavn",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "husnummer",
+                  "verdi": "1"
+                },
+                {
+                  "label": "husbokstav",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "bolignummer",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "postnummer",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "poststedsnavn",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "kommune",
+                  "verdi": "hei"
+                }
+              ]
+            },
+            {
+              "label": "land",
+              "verdi": "hei"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "KommendeBarn",
+      "verdiliste": [
+        {
+          "label": "navn",
+          "verdi": "hei"
+        },
+        {
+          "label": "fnr",
+          "verdi": "hei"
+        },
+        {
+          "label": "annenForelder",
+          "verdiliste": [
+            {
+              "label": "kanIkkeOppgiAnnenForelderFar",
+              "verdi": "Ja"
+            },
+            {
+              "label": "ikkeOppgittAnnenForelderBegrunnelse",
+              "verdi": "hei"
+            },
+            {
+              "label": "bosattNorge",
+              "verdi": "Ja"
+            },
+            {
+              "label": "personalia",
+              "verdiliste": [
+                {
+                  "label": "navn",
+                  "verdi": "hei"
+                },
+                {
+                  "label": "fødselsdato",
+                  "verdi": "2020-01-22"
+                },
+                {
+                  "label": "adresse",
+                  "verdiliste": [
+                    {
+                      "label": "gatenavn",
+                      "verdi": "hei"
+                    },
+                    {
+                      "label": "husnummer",
+                      "verdi": "1"
+                    },
+                    {
+                      "label": "husbokstav",
+                      "verdi": "hei"
+                    },
+                    {
+                      "label": "bolignummer",
+                      "verdi": "hei"
+                    },
+                    {
+                      "label": "postnummer",
+                      "verdi": "hei"
+                    },
+                    {
+                      "label": "poststedsnavn",
+                      "verdi": "hei"
+                    },
+                    {
+                      "label": "kommune",
+                      "verdi": "hei"
+                    }
+                  ]
+                },
+                {
+                  "label": "land",
+                  "verdi": "hei"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "samvær",
+          "verdiliste": [
+            {
+              "label": "spørsmålAvtaleOmDeltBosted",
+              "verdi": "Ja"
+            },
+            {
+              "label": "dokument",
+              "verdi": "avtaleOmDeltBosted"
+            },
+            {
+              "label": "skalAnnenForelderHaSamvær",
+              "verdi": "hei"
+            },
+            {
+              "label": "harDereSkriftligAvtaleOmSamvær",
+              "verdi": "hei"
+            },
+            {
+              "label": "dokument",
+              "verdi": "samværsavtale"
+            },
+            {
+              "label": "hvordanPraktiseresSamværet",
+              "verdi": "hei"
+            },
+            {
+              "label": "borAnnenForelderISammeHus",
+              "verdi": "Ja"
+            },
+            {
+              "label": "harDereTidligereBoddSammen",
+              "verdi": "Ja"
+            },
+            {
+              "label": "nårFlyttetDereFraHverandre",
+              "verdi": "2020-01-22"
+            },
+            {
+              "label": "dokument",
+              "verdi": "erklæringOmSamlivsbrudd"
+            },
+            {
+              "label": "hvorMyeErDuSammenMedAnnenForelder",
+              "verdi": "hei"
+            },
+            {
+              "label": "beskrivSamværUtenBarn",
+              "verdi": "hei"
+            }
+          ]
+        },
+        {
+          "label": "erBarnetFødt",
+          "verdi": "Ja"
+        },
+        {
+          "label": "fødselTermindato",
+          "verdi": "2020-01-22"
+        },
+        {
+          "label": "skalBarnetBoHosSøker",
+          "verdi": "Ja"
+        },
+        {
+          "label": "dokument",
+          "verdi": "terminbekreftelse"
+        }
+      ]
+    },
+    {
+      "label": "Aktivitet",
+      "verdiliste": [
+        {
+          "label": "hvordanErArbeidssituasjonen",
+          "verdi": "A, B, C"
+        }
+      ]
+    },
+    {
+      "label": "Situasjon",
+      "verdiliste": [
+        {
+          "label": "gjelderDetteDeg",
+          "verdi": "A, B, C"
+        },
+        {
+          "label": "dokument",
+          "verdi": "sykdom"
+        },
+        {
+          "label": "dokument",
+          "verdi": "barnsSykdom"
+        },
+        {
+          "label": "dokument",
+          "verdi": "manglendeBarnepass"
+        },
+        {
+          "label": "dokument",
+          "verdi": "barnMedSærligeBehov"
+        },
+        {
+          "label": "dokument",
+          "verdi": "arbeidskontrakt"
+        },
+        {
+          "label": "oppstartNyJobb",
+          "verdi": "2020-01-22"
+        },
+        {
+          "label": "dokument",
+          "verdi": "utdanningstilbud"
+        },
+        {
+          "label": "oppstartUtdanning",
+          "verdi": "2020-01-22"
+        },
+        {
+          "label": "sagtOppEllerRedusertStilling",
+          "verdi": "hei"
+        },
+        {
+          "label": "oppsigelseReduksjonÅrsak",
+          "verdi": "hei"
+        },
+        {
+          "label": "oppsigelseReduksjonTidspunkt",
+          "verdi": "2020-01-22"
+        },
+        {
+          "label": "dokument",
+          "verdi": "oppsigelseReduksjonDokumentasjon"
+        }
+      ]
+    },
+    {
+      "label": "stønadsstart",
+      "verdiliste": [
+        {
+          "label": "måned",
+          "verdi": "august"
+        },
+        {
+          "label": "år",
+          "verdi": "1"
+        }
+      ]
+    }
+  ]
+}

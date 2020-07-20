@@ -1,0 +1,31 @@
+{{#each verdiliste}}
+# {{this.label}}
+{{#each this.verdiliste}}
+<div class="label-1">{{this.label}}</div>
+{{#if this.verdi}}
+<div class="verdi-1">{{this.verdi}}</div>
+{{/if}}
+{{#if this.verdiliste}}
+{{#each this.verdiliste}}
+<div class="label-2">{{this.label}}</div>
+{{#if this.verdi}}
+<div class="verdi-2">{{this.verdi}}</div>
+{{/if}}
+{{#if this.verdiliste}}
+{{#each this.verdiliste}}
+<div class="label-3">{{this.label}}</div>
+{{#if this.verdi}}
+<div class="verdi-3">{{this.verdi}}</div>
+{{/if}}
+{{#if this.verdiliste}}
+{{#each this.verdiliste}}
+<div class="label-4">{{this.label}}</div>
+<div class="verdi-4">{{this.verdi}}</div>
+{{/each}}
+{{/if}}
+{{/each}}
+{{/if}}
+{{/each}}
+{{/if}}
+{{/each}}
+{{/each}}

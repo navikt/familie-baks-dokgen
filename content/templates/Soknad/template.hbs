@@ -1,5 +1,8 @@
 {{#each verdiliste}}
-# {{this.label}}
+<h4>{{this.label}}</h4>
+{{#if this.verdi}}
+<div class="verdi-1">{{this.verdi}}</div>
+{{/if}}
 {{#each this.verdiliste}}
 <div class="label-1">{{this.label}}</div>
 {{#if this.verdi}}

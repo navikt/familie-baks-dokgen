@@ -147,6 +147,11 @@ h3 {
     margin: 3mm 0 1.5mm 0;
 }
 
+h4 {
+    font-size: 20px;
+    margin: 3mm 0 1.5mm 0;
+}
+
 p {
     font-size: 16px;
     margin: 0.5mm 0 0 0;
@@ -230,3 +235,44 @@ td, th {
     margin: 0;
     padding: 6px 13px
 }
+
+.label-1 {
+    font-weight: bold;
+    text-indent: 0px;
+}
+
+.verdi-1 {
+    font: SourceSansPro-Bold
+    margin-bottom: 10px;
+}
+
+.label-2 {
+    font-weight: bold;
+    text-indent: 20px;
+}
+
+.verdi-2 {
+    text-indent: 20px;
+    margin-bottom: 10px;
+}
+
+.label-3 {
+    font-weight: bold;
+    text-indent: 40px;
+}
+
+.verdi-3 {
+    text-indent: 40px;
+    margin-bottom: 10px;
+}
+
+.label-4 {
+    font-weight: bold;
+    text-indent: 80px;
+}
+
+.verdi-4 {
+    text-indent: 80px;
+    margin-bottom: 10px;
+}
+

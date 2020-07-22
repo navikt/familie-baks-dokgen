@@ -19,47 +19,57 @@
       ]
     },
     {
-      "label": "barn",
+      "label": "barna dine",
       "verdiliste": [
         {
-          "label": "Barnets fulle navn",
-          "verdi": "barn1"
+          "label": "barn",
+          "e": [
+            {
+              "label": "Barnets fulle navn",
+              "verdi": "barn1"
+            },
+            {
+              "label": "alder",
+              "verdi": "4 år"
+            },
+            {
+              "label": "Fødselsnummer",
+              "verdi": "12345678999"
+            },
+            {
+              "label": "Skal ha samme adresse",
+              "verdi": "bor med søker"
+            },
+            {
+              "label": "Jeg søker for dette barnet",
+              "verdi": "Ja"
+            }
+          ]
         },
         {
-          "label": "alder",
-          "verdi": "4 år"
-        },
-        {
-          "label": "Fødselsnummer",
-          "verdi": "12345678999"
-        },
-        {
-          "label": "Skal ha samme adresse",
-          "verdi": "bor med søker"
-        },
-        {
-          "label": "Jeg søker for dette barnet",
-          "verdi": "Ja"
-        },
-        {
-          "label": "Barnets fulle navn",
-          "verdi": "barn2"
-        },
-        {
-          "label": "alder",
-          "verdi": "1 år"
-        },
-        {
-          "label": "Fødselsnummer",
-          "verdi": "12345678987"
-        },
-        {
-          "label": "Skal ha samme adresse",
-          "verdi": "bor med søker"
-        },
-        {
-          "label": "Jeg søker for dette barnet",
-          "verdi": "Nei"
+          "label": "barn",
+          "verdiliste": [
+            {
+              "label": "Barnets fulle navn",
+              "verdi": "barn2"
+            },
+            {
+              "label": "alder",
+              "verdi": "1 år"
+            },
+            {
+              "label": "Fødselsnummer",
+              "verdi": "12345678987"
+            },
+            {
+              "label": "Skal ha samme adresse",
+              "verdi": "bor med søker"
+            },
+            {
+              "label": "Jeg søker for dette barnet",
+              "verdi": "Nei"
+            }
+          ]
         }
       ]
     }

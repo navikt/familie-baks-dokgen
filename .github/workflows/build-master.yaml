@@ -9,9 +9,7 @@ env:
   IMAGE_TAG_LATEST: docker.pkg.github.com/${{ github.repository }}/familie-ba-dokgen:latest
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
       - name: Bygg og push docker-image
@@ -22,6 +20,12 @@ jobs:
           echo "$GITHUB_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
           docker push $IMAGE
           docker push $IMAGE_TAG_LATEST
+      - name: Deploy to fss dev
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-fss
+          RESOURCE: .deploy/dev-fss-default.yaml
       - name: Deploy to GCP dev
         uses: nais/deploy/actions/deploy@v1
         env:

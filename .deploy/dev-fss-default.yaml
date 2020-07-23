@@ -37,8 +37,6 @@ spec:
     requests:
       cpu: "100m"
       memory: "1024Mi"
-  ingresses:
-    - "http://familie-ba-dokgen"
   logformat: accesslog
   logtransform: dns_loglevel
   webproxy: false

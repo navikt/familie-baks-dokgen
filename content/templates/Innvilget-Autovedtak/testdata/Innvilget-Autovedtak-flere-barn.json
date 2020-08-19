@@ -1,0 +1,12 @@
+{
+  "navn": "Navn Navesen",
+  "fodselsnummer": "12345678910",
+  "fodselsdato": "21.03.18 og 22.03.18",
+  "virkningstidspunkt": "april 2018",
+  "dokumentDato": "15.08.20",
+  "belop": "1 054",
+  "antallBarn": 2,
+  "erEtterbetaling": false,
+  "enhet": "NAV Drammen",
+  "erBehandletAutomatisk": true
+}

@@ -1,0 +1,28 @@
+<br>Navn: {{navn}}
+<br>Fødselsnummer: {{fodselsnummer}}
+<br>
+<br>
+<br>Fra 1. {{virkningstidspunkt}} får du:
+<br>{{belop}} kroner måneden for {{antallBarn}} barn født {{fodselsdato}}.
+{{#unless (eq antallBarn 1)}}
+<br>Du får mer barnetrygd fordi du har fått nytt barn, og barna bor sammen med deg.
+{{else}}
+<br>Du får barnetrygd fordi du har fått barn, og barnet bor sammen med deg.
+{{/unless}}
+<br>
+<br>Du får barnetrygden fra måneden etter at barnet er født.
+<br>
+<br>Vedtaket er gjort etter barnetrygdloven §§ 2, 4, 11 og 14.
+<br>
+{{#if erEtterbetaling}}
+<br>**Etterbetaling**
+<br>Etterbetalingen på {{etterbetalingsbelop}} er på kontoen din innen en uke.
+{{/if}}
+<br>**Informasjon om satser**
+<br>Stortinget bestemmer satsene for barnetrygden hvert år, og satsene kan derfor bli endret. Du kan lese mer om dette på nav.no/satser.
+<br>**Sjekk utbetalingene dine**
+<br>Du får utbetalt barnetrygd siste virkedag i måneden. Barnetrygden er skattefri.
+<br>Sjekk alle utbetalingene du har mottatt på nav.no/dittnav. Her kan du også endre kontonummeret ditt.
+
+{{> submaler/Fellesmal-innvilget/template }}
+<br>

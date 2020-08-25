@@ -10,8 +10,7 @@
     "fodselsdato",
     "virkningstidspunkt",
     "belop",
-    "antallBarn",
-    "erEtterbetaling"
+    "antallBarn"
   ],
   "properties": {
     "navn": {
@@ -77,15 +76,6 @@
       "default": 1,
       "examples": [
         1
-      ]
-    },
-    "erEtterbetaling": {
-      "$id": "#/properties/erEtterbetaling",
-      "type": "boolean",
-      "title": "The frist Schema",
-      "default": false,
-      "examples": [
-        true
       ]
     }
   }

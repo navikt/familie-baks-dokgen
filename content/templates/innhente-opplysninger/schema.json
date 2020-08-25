@@ -5,75 +5,46 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "navn",
-    "fodselsnummer",
     "soknadDato",
-    "fristDato",
-    "kontaktTelefonnummer",
-    "navnAvsenderEnhet"
+    "fritekst",
+    "enhet",
+    "saksbehandler"
   ],
   "properties": {
-    "navn": {
-      "$id": "#/properties/navn",
-      "type": "string",
-      "title": "The navn Schema",
-      "default": "",
-      "examples": [
-        "Fornavn Etternavn"
-      ]
-    },
-    "fodselsnummer": {
-      "$id": "#/properties/fodselsnummer",
-      "type": "string",
-      "title": "The Fodselsnummer Schema",
-      "default": "",
-      "examples": [
-        "12345678910"
-      ]
-    },
     "soknadDato": {
       "$id": "#/properties/soknadDato",
       "type": "string",
       "title": "The dato Schema",
-      "default": "DATO",
+      "default": "SØKNADSDATO",
       "examples": [
         "DD.MM.YY"
       ]
     },
-      "fritekst": {
-        "$id": "#/properties/fritekst",
-        "type": "string",
-        "title": "The fritekst Schema",
-        "default": "fritekst",
-        "examples": [
-          "fritekst"
-        ]
-    },
-    "fristDato": {
-      "$id": "#/properties/fristDato",
+    "fritekst": {
+      "$id": "#/properties/fritekst",
       "type": "string",
-      "title": "The frist Schema",
-      "default": "6 Uker",
+      "title": "The fritekst Schema",
+      "default": "",
       "examples": [
-        "6 Uker"
+        "Fritekst her"
       ]
     },
-    "kontaktTelefonnummer": {
-      "$id": "#/properties/kontaktTelefonnummer",
+    "enhet": {
+      "$id": "#/properties/enhet",
       "type": "string",
-      "title": "The kontaktTelefonnummer Schema",
-      "default": "55 55 33 33",
-      "examples": [
-        "55 55 33 33"
-      ]
-    },
-    "navnAvsenderEnhet": {
-      "$id": "#/properties/navnAvsenderEnhet",
-      "type": "string",
-      "title": "The navnAvsenderEnhet Schema",
+      "title": "The enhet Schema",
       "default": "NAV Familie- og pensjonsytelser",
       "examples": [
         "NAV Familie- og pensjonsytelser avd. Oslo"
+      ]
+    },
+    "saksbehandler": {
+      "$id": "#/properties/saksbehandler",
+      "type": "string",
+      "title": "The saksbehandler Schema",
+      "default": "",
+      "examples": [
+        "Navn Navnesen"
       ]
     }
   }

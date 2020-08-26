@@ -1,0 +1,82 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "navn",
+    "fodselsnummer",
+    "fodselsdato",
+    "virkningstidspunkt",
+    "belop",
+    "antallBarn"
+  ],
+  "properties": {
+    "navn": {
+      "$id": "#/properties/navn",
+      "type": "string",
+      "title": "The navn Schema",
+      "default": "",
+      "examples": [
+        "Fornavn Etternavn"
+      ]
+    },
+    "fodselsnummer": {
+      "$id": "#/properties/fodselsnummer",
+      "type": "string",
+      "title": "The Fodselsnummer Schema",
+      "default": "",
+      "examples": [
+        "12345678910"
+      ]
+    },
+    "fodselsdato": {
+      "$id": "#/properties/fodselsdato",
+      "type": "string",
+      "title": "The Fodselsdato Schema",
+      "default": "",
+      "examples": [
+        "21.03.18",
+        "21.03.05 og 21.03.05",
+        "03.02.20, 12.10.18 og 21.03.05"
+      ]
+    },
+    "virkningstidspunkt": {
+      "$id": "#/properties/virkningstidspunkt",
+      "type": "string",
+      "title": "The Virkningstidspunkt Schema",
+      "default": "",
+      "examples": [
+        "mars 2020"
+      ]
+    },
+    "belop": {
+      "$id": "#/properties/belop",
+      "type": "string",
+      "title": "The Belop Schema",
+      "default": "",
+      "examples": [
+        "1 054"
+      ]
+    },
+    "etterbetalingsbelop": {
+      "$id": "#/properties/etterbetalingsbelop",
+      "type": "string",
+      "title": "The Etterbetalingsbelop Schema",
+      "default": "",
+      "examples": [
+        "1 054"
+      ]
+    },
+    "antallBarn": {
+      "$id": "#/properties/antallBarn",
+      "type": "number",
+      "title": "The AntallBarn Schema",
+      "default": 1,
+      "examples": [
+        1
+      ]
+    }
+  }
+}

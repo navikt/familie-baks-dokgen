@@ -1,0 +1,10 @@
+{
+  "duFaar": [{
+    "fom": "1. februar 2020",
+    "tom": "1. januar 2038",
+    "belop": "1 054",
+    "antallBarn": 1,
+    "barnasFodselsdatoer": "24.12.19",
+    "begrunnelser": ["Du får barnetrygd fordi du og barna er bosatt i Norge fra 10. oktober 2019"]
+  }]
+}

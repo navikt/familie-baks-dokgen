@@ -1,1 +1,5 @@
-VI HAR ENDRET BARNETRYGDEN DIN 
+{{#eq maalform "NB" }}
+    {{> innvilget-revurdering/nb/headline }}
+{{else}}
+    {{> innvilget-revurdering/nn/headline }}
+{{/eq}}

@@ -6,7 +6,8 @@
   "title": "The Root Schema",
   "required": [
     "hjemmel",
-    "duFaar"
+    "duFaar",
+    "maalform"
   ],
   "properties": {
     "hjemmel": {
@@ -22,6 +23,11 @@
       "type": "array",
       "title": "The duFår schema",
       "items": { "$ref": "file:content/schemas/duFårSeksjon.json" }
+    },
+    "maalform": {
+      "type": "string",
+      "title": "The maalform schema",
+      "default": "NB"
     }
   }
 }

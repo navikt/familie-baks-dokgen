@@ -1,22 +1,13 @@
 {
+  "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "root.json",
+  "$id": "http://example.com/root.json",
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "hjemmel",
     "duFaar"
   ],
   "properties": {
-    "hjemmel": {
-      "$id": "#/properties/hjemmel",
-      "type": "string",
-      "title": "The Hjemmel Schema",
-      "default": "",
-      "examples": [
-        "§2, 4 og 11"
-      ]
-    },
     "duFaar": {
       "type": "array",
       "title": "The duFår schema",
@@ -24,4 +15,3 @@
     }
   }
 }
-

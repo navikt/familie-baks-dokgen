@@ -29,7 +29,7 @@
       "title": "The maalform schema",
       "default": "NB"
     },
-    "etterbetalingsbeloep": {
+    "etterbetalingsbelop": {
       "type": "string",
       "title": "The etterbetalingsbeløp schema",
       "default": ""

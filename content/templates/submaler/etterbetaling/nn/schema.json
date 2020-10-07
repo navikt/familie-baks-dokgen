@@ -5,10 +5,10 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "etterbetalingsbeloep"
+    "etterbetalingsbelop"
   ],
   "properties": {
-    "etterbetalingsbeloep": {
+    "etterbetalingsbelop": {
       "type": "string",
       "title": "The etterbetalingsbeløp schema",
       "default": ""

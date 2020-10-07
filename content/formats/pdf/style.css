@@ -242,7 +242,8 @@ td, th {
 }
 
 .verdi-1 {
-    font: SourceSansPro-Bold
+    font-weight: bold;
+    font-family: "Source Sans Pro", sans-serif;
     margin-bottom: 10px;
 }
 

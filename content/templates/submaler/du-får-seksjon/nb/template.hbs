@@ -1,11 +1,23 @@
 {{#if duFaar.length}}
-{{#each duFaar}}
-Fra {{fom}}{{#if tom}} og til og med {{tom}}{{/if}} får du:
-<ul>
-    <li>
-        {{belop}} kroner i måneden for {{antallBarn}} barn født {{barnasFodselsdatoer}}.
-    </li>
-    {{#each begrunnelser}}<li>{{this}}</li>{{/each}}
-</ul>
-{{/each}}
+
+    {{#eq duFaar.length 1}}
+        Fra {{duFaar.0.fom}} får du:
+        <ul>
+            <li>{{duFaar.0.belop}} kroner i måneden for {{duFaar.0.antallBarn}} barn født {{duFaar.0.barnasFodselsdatoer}}</li>
+            {{#each duFaar.0.begrunnelser}}
+                <li>{{this}}</li>{{/each}}
+        </ul>
+
+    {{else}}
+        {{#each duFaar}}
+            Fra {{fom}}{{#if tom}} til og med {{tom}}{{/if}} **får du**:
+            <ul>
+                <li>
+                    {{belop}} kroner i måneden for {{antallBarn}} barn født {{barnasFodselsdatoer}}.
+                </li>
+                {{#each begrunnelser}}
+                    <li>{{this}}</li>{{/each}}
+            </ul>
+        {{/each}}
+    {{/eq}}
 {{/if}}

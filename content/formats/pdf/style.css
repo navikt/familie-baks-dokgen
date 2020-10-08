@@ -88,6 +88,14 @@ body::after {
     content: "Fødselsnummer: ";
 }
 
+#hilsen #saksbehandler {
+    float: left;
+}
+
+#hilsen #beslutter {
+    float: right;
+}
+
 #footer {
     position: fixed;
     margin: 0;

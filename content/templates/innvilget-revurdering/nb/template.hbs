@@ -1,10 +1,13 @@
 {{> submaler/du-får-seksjon/nb/template }}
 
-<br/>Barnetrygden er skattefri, og innvilges fra måneden etter at vilkårene er oppfylt.
-
-<br/>Stortinget bestemmer satsene for barnetrygden hvert år, og satsene kan derfor bli endret. Du kan lese mer om dette på nav.no/satser.
-
 <br/>Vedtaket er gjort etter barnetrygdloven {{hjemmel}}
+
+{{> submaler/etterbetaling/nb/template }}
+
+{{#if erFeilutbetaling}}
+<br>**Feilutbetaling**
+<br>Dersom du har fått utbetalt for mye barnetrygd, vil du få et eget brev om dette.
+{{/if}}
 
 {{> submaler/fellesmal-innvilget/nb/template }}
 <br/>

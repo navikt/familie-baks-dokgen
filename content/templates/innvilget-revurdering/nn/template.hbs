@@ -2,9 +2,12 @@
 
 <br/>Vedtaket er gjort etter barnetrygdlova {{hjemmel}}
 
-<br/>**Informasjon om satsar**
-<br/>Stortinget fastset satsane for barnetrygda kvart år, og satsane kan derfor bli endra.
-<br/>Du kan lese meir om dette på nav.no/satser.
+{{> submaler/etterbetaling/nn/template }}
+
+{{#if erFeilutbetaling}}
+<br>**Feilutbetaling**
+<br>Dersom du har fått utbetalt for mykje barnetrygd, vil du få eit eige brev om dette.
+{{/if}}
 
 {{> submaler/fellesmal-innvilget/nb/template }}
 <br/>

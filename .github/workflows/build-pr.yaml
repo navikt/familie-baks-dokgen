@@ -14,8 +14,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          docker build --pull --tag ${IMAGE} .
           echo "$GITHUB_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
+          docker build --pull --tag ${IMAGE} .
           docker push $IMAGE
       - name: Deploy to fss dev
         uses: nais/deploy/actions/deploy@v1

@@ -15,7 +15,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOKGEN_READ_TOKEN: ${{ secrets.DOKGEN_READ_TOKEN }}
         run: |
-          echo "DOKGEN_READ_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
+          echo $"DOKGEN_READ_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
           docker build --pull --tag ${IMAGE} .
           echo "$GITHUB_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
           docker push $IMAGE

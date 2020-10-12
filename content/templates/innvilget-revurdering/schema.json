@@ -5,19 +5,17 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "hjemmel",
+    "hjemler",
     "duFaar",
     "maalform"
   ],
   "properties": {
-    "hjemmel": {
+    "hjemler": {
       "$id": "#/properties/hjemmel",
-      "type": "string",
+      "type": "array",
       "title": "The Hjemmel Schema",
-      "default": "",
-      "examples": [
-        "§2, 4 og 11"
-      ]
+      "default": [2],
+      "examples": [2,4,11]
     },
     "duFaar": {
       "type": "array",

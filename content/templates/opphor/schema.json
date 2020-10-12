@@ -9,7 +9,7 @@
     "fodselsnummer",
     "tdato",
     "fritekst",
-    "hjemmel"
+    "hjemler"
 
   ],
   "properties": {
@@ -49,14 +49,12 @@
           "fritekst"
         ]
     },
-    "hjemmel": {
+    "hjemler": {
       "$id": "#/properties/hjemmel",
-      "type": "string",
-      "title": "The frist Schema",
-      "default": "2, 4 og 11",
-      "examples": [
-        "2, 4 og 11"
-      ]
+      "type": "array",
+      "title": "The Hjemmel Schema",
+      "default": [2],
+      "examples": [2,4,11]
     }
   }
 }

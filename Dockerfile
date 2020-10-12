@@ -1,2 +1,2 @@
-FROM docker.pkg.github.com/navikt/dokgen-kotlin:latest
+FROM docker.pkg.github.com/navikt/dokgen:latest
 COPY content content

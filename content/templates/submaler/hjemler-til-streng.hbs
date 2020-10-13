@@ -1,0 +1,5 @@
+{{#eq hjemler.length 1 ~}}
+    § {{hjemler.0.value}}
+{{else ~}}
+    §§ {{#each hjemler}}{{#if @first}}{{this}}{{else}}{{#if @last}}og {{this}} {{else}}, {{this}} {{/if}}{{/if}}{{/each}}
+{{/eq}}

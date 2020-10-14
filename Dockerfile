@@ -1,2 +1,2 @@
-FROM docker.pkg.github.com/navikt/dokgen:latest
+FROM docker.pkg.github.com/navikt/dokgen:559cd537c5f13597d98e12ad6342376c0849d081
 COPY content content

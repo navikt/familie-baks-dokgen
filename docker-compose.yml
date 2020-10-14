@@ -1,7 +1,7 @@
 version: '3'
 services:
   dokgen:
-    image: docker.pkg.github.com/navikt/dokgen/dokgen:latest
+    image: docker.pkg.github.com/navikt/dokgen/dokgen:559cd537c5f13597d98e12ad6342376c0849d081
     ports:
       - "5914:8080"
     volumes:

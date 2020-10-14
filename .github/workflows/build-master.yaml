@@ -15,7 +15,9 @@ jobs:
       - name: Bygg og push docker-image
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOKGEN_READ_TOKEN: ${{ secrets.DOKGEN_READ_TOKEN }}
         run: |
+          echo "$DOKGEN_READ_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
           docker build --pull --tag ${IMAGE} --tag ${IMAGE_TAG_LATEST} .
           echo "$GITHUB_TOKEN" | docker login --username "x-access-token" --password-stdin https://docker.pkg.github.com
           docker push $IMAGE

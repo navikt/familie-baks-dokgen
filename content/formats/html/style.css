@@ -73,20 +73,19 @@ li {
     color: grey;
 }
 
-.personinfo::before {
-    font-family: Arial, sans-serif;
+.personinfo_small{
     font-size: 8pt;
 }
 
-#navn::before {
-    content: "Navn: ";
+.personinfo::before {
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
 }
 
 #fodselsnummer::before {
     content: "Fødselsnummer: ";
 
 }
-
 
 @media only screen and (max-width: 480px) {
     h1 {

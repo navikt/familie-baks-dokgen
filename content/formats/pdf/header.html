@@ -57,7 +57,10 @@
     <div style="margin-bottom: 1em;">
         <h2 id="overskrift">{{> (stringFormat "%s/%s" (lookup . 'templateName') "headline")}}</h2>
 
-        <p id="navn" class="personinfo">{{upper navn}}</p>
+        <div>
+            <span class="personinfo personinfo_small">{{#eq maalform "NB" }}Navn:{{else}}Namn:{{/eq}} </span>
+            <span id="navn" class="personinfo">{{upper navn}}</span>
+        </div>
         <p id="fodselsnummer" class="personinfo">{{fodselsnummer}}</p>
     </div>
 </div>

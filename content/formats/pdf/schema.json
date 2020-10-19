@@ -7,7 +7,8 @@
   "required": [
     "fodselsnummer",
     "navn",
-    "dokumentDato"
+    "dokumentDato",
+    "maalform"
   ],
   "properties": {
     "fodselsnummer": {
@@ -39,6 +40,11 @@
         "3. september 2019"
       ],
       "pattern": "^(.*)$"
+    },
+    "maalform": {
+      "type": "string",
+      "title": "The maalform schema",
+      "default": "NB"
     }
   }
 }

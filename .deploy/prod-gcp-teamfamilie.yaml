@@ -30,7 +30,7 @@ spec:
   # Compare this value with the $HOSTNAME to see if the current instance is the leader
   prometheus: # Optional.
     enabled: true # if true the pod will be scraped for metrics by prometheus
-    path: /internal/metrics/prometheus # Path to prometheus-metrics
+    path: /actuator/metrics/prometheus # Path to prometheus-metrics
   istio: # Optional.
     enabled: true # Optional. When true, envoy-proxy sidecar will be injected into pod and https urls envvars will be rewritten
   resources: # Optional. See: http://kubernetes.io/docs/user-guide/compute-resources/

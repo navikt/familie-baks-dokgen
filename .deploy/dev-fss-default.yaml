@@ -27,7 +27,7 @@ spec:
   leaderElection: false
   prometheus:
     enabled: true
-    path: /internal/metrics/prometheus
+    path: /actuator/metrics/prometheus
   istio:
     enabled: false
   resources:

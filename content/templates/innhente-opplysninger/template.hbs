@@ -1,18 +1,5 @@
-<br>Vi fikk søknaden din om barnetrygd {{soknadDato}}, men mangler opplysninger for å kunne behandle den.
-
-<br>**Du må sende oss**
-<br>{{fritekst}}
-
-<br>**Søknaden kan bli avslått**
-<br>Hvis vi ikke får opplysningene innen to uker, kan søknaden bli avslått.
-
-<br>Dette går fram av folketrygdloven § 21-3.
-
-<br>**Har du spørsmål?**
-<br>Du finner nyttig informasjon på nav.no/barnetrygd.
-<br>Du kan også kontakte oss på 55 55 33 33.
-<br>
-
-<br>Med vennlig hilsen
-<br>{{enhet}}
-<br>{{saksbehandler}}
+{{#eq maalform "NB" }}
+    {{> innhente-opplysninger/nb/template }}
+{{else}}
+    {{> innhente-opplysninger/nn/template }}
+{{/eq}}

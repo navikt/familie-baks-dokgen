@@ -5,19 +5,23 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "soknadDato",
+    "dokumenter",
     "fritekst",
     "enhet",
-    "saksbehandler"
+    "saksbehandler",
+    "maalform"
   ],
   "properties": {
-    "soknadDato": {
-      "$id": "#/properties/soknadDato",
-      "type": "string",
-      "title": "The dato Schema",
-      "default": "SØKNADSDATO",
+    "dokumenter": {
+      "$id": "#/properties/fritekst",
+      "type": "array",
+      "title": "The dokumenter Schema",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
       "examples": [
-        "DD.MM.YY"
+        "Dokument 1"
       ]
     },
     "fritekst": {
@@ -28,6 +32,11 @@
       "examples": [
         "Fritekst her"
       ]
+    },
+    "maalform": {
+      "type": "string",
+      "title": "The maalform schema",
+      "default": "NB"
     },
     "enhet": {
       "$id": "#/properties/enhet",

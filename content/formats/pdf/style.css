@@ -167,7 +167,9 @@ p {
 
 li {
     font-size: 0.875em;
-    margin-left: 3em;
+    margin-left: 2em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 tr {

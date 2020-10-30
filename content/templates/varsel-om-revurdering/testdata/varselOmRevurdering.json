@@ -3,8 +3,10 @@
   "adresse": "Skogvegen 3",
   "fodselsnummer": "12345678910",
   "dokumentDato": "3. september 2019",
+  "returadresse": "NAV Familie- og pensjonsytelser, Postboks 6600 Etterstad, 0607 OSLO",
 
-  "fritekst": "**fritekst fritekst fritekst fritekst fritekst fritekst**",
+  "soknadDato": "17.01.20",
+  "fritekst": "fritekst fritekst fritekst fritekst fritekst fritekst",
   "fristDato": "6 uker",
 
   "kontaktTelefonnummer": "55 55 33 33",

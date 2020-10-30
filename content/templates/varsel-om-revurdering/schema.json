@@ -5,65 +5,55 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "navn",
-    "fodselsnummer",
-    "fristDato",
-    "kontaktTelefonnummer",
-    "navnAvsenderEnhet"
+    "aarsaker",
+    "fritekst",
+    "enhet",
+    "saksbehandler",
+    "maalform"
   ],
   "properties": {
-    "navn": {
-      "$id": "#/properties/navn",
+    "aarsaker": {
+      "$id": "#/properties/fritekst",
+      "type": "array",
+      "title": "The årsaker Schema",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "examples": [
+        "Årsak 1"
+      ]
+    },
+    "fritekst": {
+      "$id": "#/properties/fritekst",
       "type": "string",
-      "title": "The navn Schema",
+      "title": "The fritekst Schema",
       "default": "",
       "examples": [
-        "Fornavn Etternavn"
+        "Fritekst her"
       ]
     },
-    "fodselsnummer": {
-      "$id": "#/properties/fodselsnummer",
+    "maalform": {
       "type": "string",
-      "title": "The Fodselsnummer Schema",
-      "default": "",
-      "examples": [
-        "12345678910"
-      ]
+      "title": "The maalform schema",
+      "default": "NB"
     },
-      "fritekst": {
-        "$id": "#/properties/fritekst",
-        "type": "string",
-        "title": "The fritekst Schema",
-        "default": "fritekst",
-        "examples": [
-          "fritekst"
-        ]
-    },
-    "fristDato": {
-      "$id": "#/properties/fristDato",
+    "enhet": {
+      "$id": "#/properties/enhet",
       "type": "string",
-      "title": "The frist Schema",
-      "default": "6 Uker",
-      "examples": [
-        "6 Uker"
-      ]
-    },
-    "kontaktTelefonnummer": {
-      "$id": "#/properties/kontaktTelefonnummer",
-      "type": "string",
-      "title": "The kontaktTelefonnummer Schema",
-      "default": "55 55 33 33",
-      "examples": [
-        "55 55 33 33"
-      ]
-    },
-    "navnAvsenderEnhet": {
-      "$id": "#/properties/navnAvsenderEnhet",
-      "type": "string",
-      "title": "The navnAvsenderEnhet Schema",
+      "title": "The enhet Schema",
       "default": "NAV Familie- og pensjonsytelser",
       "examples": [
         "NAV Familie- og pensjonsytelser avd. Oslo"
+      ]
+    },
+    "saksbehandler": {
+      "$id": "#/properties/saksbehandler",
+      "type": "string",
+      "title": "The saksbehandler Schema",
+      "default": "",
+      "examples": [
+        "Navn Navnesen"
       ]
     }
   }

@@ -287,3 +287,6 @@ td, th {
     margin-bottom: 10px;
 }
 
+.ingen_topmargin{
+    margin-top: 0;
+}

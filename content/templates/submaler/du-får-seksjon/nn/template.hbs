@@ -1,7 +1,7 @@
 {{#if duFaar.length}}
 
 {{#eq duFaar.length 1}}
-Frå {{duFaar.0.fom}} får du:
+Frå {{duFaar.0.fom}}{{#if duFaar.0.tom}} til og med {{duFaar.0.tom}}{{/if}} får du:
 <ul>
 <li>{{duFaar.0.belop}} kroner i månaden for {{duFaar.0.antallBarn}} barn fødd {{duFaar.0.barnasFodselsdatoer}}</li>
 {{#each duFaar.0.begrunnelser}}

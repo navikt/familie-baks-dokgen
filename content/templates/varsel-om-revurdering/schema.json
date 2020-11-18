@@ -6,7 +6,6 @@
   "title": "The Root Schema",
   "required": [
     "aarsaker",
-    "fritekst",
     "enhet",
     "saksbehandler",
     "maalform"
@@ -22,15 +21,6 @@
       "default": [],
       "examples": [
         "Årsak 1"
-      ]
-    },
-    "fritekst": {
-      "$id": "#/properties/fritekst",
-      "type": "string",
-      "title": "The fritekst Schema",
-      "default": "",
-      "examples": [
-        "Fritekst her"
       ]
     },
     "maalform": {

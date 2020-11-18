@@ -12,7 +12,7 @@
   ],
   "properties": {
     "aarsaker": {
-      "$id": "#/properties/fritekst",
+      "$id": "#/properties/aarsaker",
       "type": "array",
       "title": "The årsaker Schema",
       "items": {

@@ -12,7 +12,7 @@
   ],
   "properties": {
     "dokumenter": {
-      "$id": "#/properties/fritekst",
+      "$id": "#/properties/dokumenter",
       "type": "array",
       "title": "The dokumenter Schema",
       "items": {

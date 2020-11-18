@@ -6,14 +6,13 @@
   "title": "The Root Schema",
   "required": [
     "dokumenter",
-    "fritekst",
     "enhet",
     "saksbehandler",
     "maalform"
   ],
   "properties": {
     "dokumenter": {
-      "$id": "#/properties/fritekst",
+      "$id": "#/properties/dokumenter",
       "type": "array",
       "title": "The dokumenter Schema",
       "items": {
@@ -22,15 +21,6 @@
       "default": [],
       "examples": [
         "Dokument 1"
-      ]
-    },
-    "fritekst": {
-      "$id": "#/properties/fritekst",
-      "type": "string",
-      "title": "The fritekst Schema",
-      "default": "",
-      "examples": [
-        "Fritekst her"
       ]
     },
     "maalform": {

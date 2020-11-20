@@ -5,46 +5,32 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "navn",
-    "fodselsnummer",
-    "kontaktTelefonnummer",
-    "navnAvsenderEnhet"
+    "enhet",
+    "saksbehandler",
+    "maalform"
   ],
   "properties": {
-    "navn": {
-      "$id": "#/properties/navn",
+    "maalform": {
       "type": "string",
-      "title": "The navn Schema",
-      "default": "",
-      "examples": [
-        "Fornavn Etternavn"
-      ]
+      "title": "The maalform schema",
+      "default": "NB"
     },
-    "fodselsnummer": {
-      "$id": "#/properties/fodselsnummer",
+    "enhet": {
+      "$id": "#/properties/enhet",
       "type": "string",
-      "title": "The Fodselsnummer Schema",
-      "default": "",
-      "examples": [
-        "12345678910"
-      ]
-    },
-    "kontaktTelefonnummer": {
-      "$id": "#/properties/kontaktTelefonnummer",
-      "type": "string",
-      "title": "The kontaktTelefonnummer Schema",
-      "default": "55 55 33 33",
-      "examples": [
-        "55 55 33 33"
-      ]
-    },
-    "navnAvsenderEnhet": {
-      "$id": "#/properties/navnAvsenderEnhet",
-      "type": "string",
-      "title": "The navnAvsenderEnhet Schema",
+      "title": "The enhet Schema",
       "default": "NAV Familie- og pensjonsytelser",
       "examples": [
         "NAV Familie- og pensjonsytelser avd. Oslo"
+      ]
+    },
+    "saksbehandler": {
+      "$id": "#/properties/saksbehandler",
+      "type": "string",
+      "title": "The saksbehandler Schema",
+      "default": "",
+      "examples": [
+        "Navn Navnesen"
       ]
     }
   }

@@ -47,7 +47,7 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: unleashproxy.nais.oera.no
+        - host: https://unleash.nais.io/api
   webproxy: false # Optional. Expose web proxy configuration to the application using the HTTP_PROXY, HTTPS_PROXY and NO_PROXY environment variables.
   vault:
     enabled: false

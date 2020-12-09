@@ -1,0 +1,107 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "enhet",
+    "maalform",
+    "navnPaaSakspart",
+    "fnr",
+    "virkningstidspunkt",
+    "belop",
+    "antallBarn",
+    "fodselsdato",
+    "barnetsFodselsdato",
+    "alder"
+  ],
+  "properties": {
+    "maalform": {
+      "type": "string",
+      "title": "The maalform schema",
+      "default": "NB"
+    },
+    "enhet": {
+      "$id": "#/properties/enhet",
+      "type": "string",
+      "title": "The enhet Schema",
+      "default": "NAV Familie- og pensjonsytelser",
+      "examples": [
+        "NAV Familie- og pensjonsytelser avd. Oslo"
+      ]
+    },
+    "navnPaaSakspart": {
+      "$id": "#/properties/navnPaaSakspart",
+      "type": "string",
+      "title": "The navnPaaSakspart Schema",
+      "default": "",
+      "examples": [
+        "Navn Navnesen"
+      ]
+    },
+    "fnr": {
+      "$id": "#/properties/fnr",
+      "type": "string",
+      "title": "The fnr Schema",
+      "default": "",
+      "examples": [
+        "12345678910"
+      ]
+    },
+    "virkningstidspunkt": {
+      "$id": "#/properties/virkningstidspunkt",
+      "type": "string",
+      "title": "The virkningstidspunkt Schema",
+      "default": "",
+      "examples": [
+        "januar 2020"
+      ]
+    },
+    "belop": {
+      "$id": "#/properties/belop",
+      "type": "string",
+      "title": "The belop Schema",
+      "default": "",
+      "examples": [
+        "1354"
+      ]
+    },
+    "antallBarn": {
+      "$id": "#/properties/antallBarn",
+      "type": "number",
+      "title": "The antallBarn Schema",
+      "default": "",
+      "examples": [
+        "2"
+      ]
+    },
+    "fodselsdato": {
+      "$id": "#/properties/fodselsdato",
+      "type": "string",
+      "title": "The fodselsdato Schema",
+      "default": "",
+      "examples": [
+        "12.10.2014"
+      ]
+    },
+    "barnetsFodselsdato": {
+      "$id": "#/properties/barnetsFodselsdato",
+      "type": "string",
+      "title": "The barnetsFodselsdato Schema",
+      "default": "",
+      "examples": [
+        "12.10.2014"
+      ]
+    },
+    "alder": {
+      "$id": "#/properties/alder",
+      "type": "string",
+      "title": "The alder Schema",
+      "default": "",
+      "examples": [
+        "6"
+      ]
+    }
+  }
+}

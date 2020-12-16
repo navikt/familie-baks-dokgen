@@ -1,0 +1,49 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "hjemler",
+    "opphor",
+    "maalform"
+  ],
+  "properties": {
+    "hjemler": {
+      "$id": "#/properties/hjemmel",
+      "type": "array",
+      "title": "The hjemmel schema",
+      "default": [
+        2
+      ],
+      "examples": [
+        2,
+        4,
+        11
+      ]
+    },
+    "opphor": {
+      "type": "object",
+      "title": "The opphor schema",
+      "properties": {
+        "dato": {
+          "type": "string",
+          "title": "Opphor dato"
+        },
+        "begrunnelser": {
+          "type": "array",
+          "title": "Begrunnelser for opphor",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "maalform": {
+      "type": "string",
+      "title": "The maalform schema",
+      "default": "NB"
+    }
+  }
+}

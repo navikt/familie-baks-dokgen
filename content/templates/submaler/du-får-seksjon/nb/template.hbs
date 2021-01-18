@@ -2,19 +2,30 @@
 
 {{#eq duFaar.length 1}}
 Fra {{duFaar.0.fom}}{{#if duFaar.0.tom}} til og med {{duFaar.0.tom}}{{/if}} får du:
-<ul>
 <li>{{duFaar.0.belop}} kroner i måneden for {{duFaar.0.antallBarn}} barn født {{duFaar.0.barnasFodselsdatoer}}</li>
+
 {{#each duFaar.0.begrunnelser}}
 <li>{{this}}</li>{{/each}}
-</ul>
 
 {{else}}
 {{#each duFaar}}
+
+{{#eq begrunnelseType "INNVILGET"}}
 Fra {{fom}}{{#if tom}} til og med {{tom}}{{/if}} **får du**:
-<ul>
 <li>{{belop}} kroner i måneden for {{antallBarn}} barn født {{barnasFodselsdatoer}}.</li>
-{{#each begrunnelser}}<li>{{this}}</li>{{/each}}
-</ul>
+{{/eq}}
+
+{{#eq begrunnelseType "OPPHØR"}}
+Fra {{fom}}{{#if tom}} til og med {{tom}}{{/if}} **opphører** barnetrygden din fordi:
+{{/eq}}
+
+{{#eq begrunnelseType "AVSLAG"}}
+Fra {{fom}}{{#if tom}} til og med {{tom}}{{/if}} **får du ikke**:
+{{/eq}}
+
+{{#each begrunnelser}}
+<li>{{this}}</li>{{/each}}
+<br>
 {{/each}}
 {{/eq}}
 {{/if}}

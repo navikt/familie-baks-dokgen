@@ -4,6 +4,9 @@
   "type": "object",
   "title": "Skjemaet for du får seksjoner",
   "properties": {
+    "begrunnelseType": {
+      "type": "string"
+    },
     "fom": {
       "type": "string"
     },

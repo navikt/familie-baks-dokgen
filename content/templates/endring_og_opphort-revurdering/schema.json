@@ -36,6 +36,11 @@
       "type": "boolean",
       "title": "The erFeilutbetaling schema",
       "default": false
+    },
+    "erKlage": {
+      "type": "boolean",
+      "title": "The erKlage schema",
+      "default": false
     }
   }
 }

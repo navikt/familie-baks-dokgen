@@ -1,34 +1,24 @@
-{{#each verdiliste}}
-<h4>{{this.label}}</h4>
-{{#if this.verdi}}
-<div class="verdi-1">{{this.verdi}}</div>
-{{/if}}
-{{#each this.verdiliste}}
-<div class="label-1">{{this.label}}</div>
-{{#if this.verdi}}
-<div class="verdi-1">{{this.verdi}}</div>
-{{/if}}
-{{#if this.verdiliste}}
-{{#each this.verdiliste}}
-<div class="label-2">{{this.label}}</div>
-{{#if this.verdi}}
-<div class="verdi-2">{{this.verdi}}</div>
-{{/if}}
-{{#if this.verdiliste}}
-{{#each this.verdiliste}}
-<div class="label-3">{{this.label}}</div>
-{{#if this.verdi}}
-<div class="verdi-3">{{this.verdi}}</div>
-{{/if}}
-{{#if this.verdiliste}}
-{{#each this.verdiliste}}
-<div class="label-4">{{this.label}}</div>
-<div class="verdi-4">{{this.verdi}}</div>
+<h3>Søker</h3>
+<table>
+<tr>
+<td>
+Navn<br/>
+<b>{{navn}}</b>
+</td>
+</tr>
+<tr>
+<td>
+{{søker.spørsmål.erklæring.label}}<br/>
+<b>{{søker.spørsmål.erklæring.verdi}}</b>
+</td>
+</tr>
+</table>
+
+{{> soknad/omdeg søker }}
+{{> soknad/hvilke-barn søknad }}
+{{> soknad/om-barna søknad }}
+{{#with spørsmål as | søknadspørsmål | }}
+{{#each barn as | barn | }}
+{{> soknad/om-barnet barn }}
 {{/each}}
-{{/if}}
-{{/each}}
-{{/if}}
-{{/each}}
-{{/if}}
-{{/each}}
-{{/each}}
+{{/with}}

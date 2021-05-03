@@ -1,0 +1,16 @@
+<h3>2. Hvilke barn søker du for?</h3>
+
+{{#each barn}}
+<section class="soknad-section">
+<table>
+<tr>
+{{> soknad/felt-celle navn }}
+{{> soknad/felt-celle alder }}
+</tr>
+<tr>
+{{> soknad/felt-celle ident }}
+{{> soknad/felt-celle-boolsk borMedSøker yes="Registrert på søkers adresse" no="Ikke registrert på søkers adresse" }}
+</tr>
+</table>
+</section>
+{{/each}}

@@ -1,0 +1,24 @@
+<h3>Søker</h3>
+<table>
+    <tr>
+        <td>
+            Navn<br/>
+            <b>{{navn}}</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{søker.spørsmål.erklæring.label}}<br/>
+            <b>{{søker.spørsmål.erklæring.verdi}}</b>
+        </td>
+    </tr>
+</table>
+
+{{> soknad/omdeg søker }}
+{{> soknad/hvilke-barn søknad }}
+{{> soknad/om-barna søknad }}
+{{#with spørsmål as | søknadspørsmål | }}
+    {{#each barn as | barn | }}
+        {{> soknad/om-barnet barn }}
+    {{/each}}
+{{/with}}

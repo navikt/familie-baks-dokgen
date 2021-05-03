@@ -1,77 +1,177 @@
 {
-  "label": "Søknad barnetrygd - 33-00.07",
-  "verdiliste": [
-    {
-      "label": "Søknadstype",
-      "verdi": "ORDINÆR"
+  "søknadstype": "IKKE_SATT",
+  "spørsmål": {
+    "erNoenAvBarnaFosterbarn": {
+      "label": "Er noen av barna fosterbarn?",
+      "verdi": false
     },
-    {
-      "label": "søker",
-      "verdiliste": [
-        {
-          "label": "navn",
-          "verdi": "Navn Navnessen"
-        },
-        {
-          "label": "fødselsnummer",
-          "verdi": "1234578901"
-        }
-      ]
+    "erSøktAsylForBarn": {
+      "label": "Er det søkt om asyl i Norge for noen av barna?",
+      "verdi": false
     },
-    {
-      "label": "barna dine",
-      "verdiliste": [
-        {
-          "label": "barn",
-          "e": [
-            {
-              "label": "Barnets fulle navn",
-              "verdi": "barn1"
-            },
-            {
-              "label": "alder",
-              "verdi": "4 år"
-            },
-            {
-              "label": "Fødselsnummer",
-              "verdi": "12345678999"
-            },
-            {
-              "label": "Skal ha samme adresse",
-              "verdi": "bor med søker"
-            },
-            {
-              "label": "Jeg søker for dette barnet",
-              "verdi": "Ja"
-            }
-          ]
-        },
-        {
-          "label": "barn",
-          "verdiliste": [
-            {
-              "label": "Barnets fulle navn",
-              "verdi": "barn2"
-            },
-            {
-              "label": "alder",
-              "verdi": "1 år"
-            },
-            {
-              "label": "Fødselsnummer",
-              "verdi": "12345678987"
-            },
-            {
-              "label": "Skal ha samme adresse",
-              "verdi": "bor med søker"
-            },
-            {
-              "label": "Jeg søker for dette barnet",
-              "verdi": "Nei"
-            }
-          ]
-        }
-      ]
+    "oppholderBarnSegIInstitusjon": {
+      "label": "Oppholder noen av barna seg i barnverninstitusjon \neller i annen institusjon?",
+      "verdi": true
+    },
+    "barnOppholdtSegTolvMndSammenhengendeINorge": {
+      "label": "Har barna bodd sammenhengende i Norge de siste tolv månedene?",
+      "verdi": true
+    },
+    "erBarnAdoptertFraUtland": {
+      "label": "Er noen av barna adoptert fra utlandet?",
+      "verdi": false
+    },
+    "mottarBarnetrygdForBarnFraAnnetEøsland": {
+      "label": "Får du eller er det søkt om barnetrygd for noen av barna fra et annet EU/EØS land?",
+      "verdi": false
+    },
+    "oppholderBarnSegIUtland": {
+      "label": "Oppholder noen av barna seg i utlandet?",
+      "verdi": false
+    },
+    "oppfølgingsspørsmåltekster": {
+      "label": "Tekster som ellers trengs til pdf-gen, typ \"Du har opplyst at {navn} oppholder seg i institusjon\"",
+      "verdi": {
+        "ombarnet.fosterbarn": "Du har opplyst at {navn} er fosterbarn",
+        "ombarnet.institusjon": "Du har opplyst at {navn} oppholder seg i institusjon.",
+        "ombarnet.oppholdutland": "Du har opplyst at {barns navn} oppholder seg i utlandet",
+        "ombarnet.sammenhengende-opphold": "Du har opplyst at {barns navn} ikke har bodd\nsammenhengende i Norge de siste tolv månedene"
+      }
     }
-  ]
+  },
+  "søker": {
+    "ident": {
+      "label": "Ident",
+      "verdi": "12345678901"
+    },
+    "navn": {
+      "label": "Navn",
+      "verdi": "Voksen Voksnessen"
+    },
+    "statsborgerskap": {
+      "label": "Statsborgerskap",
+      "verdi": [
+        "NOR",
+        "AFG"
+      ]
+    },
+    "adresse": {
+      "label": "Adresse",
+      "verdi": {
+        "adressenavn": "Solveien",
+        "postnummer": "2304",
+        "husbokstav": "A",
+        "bruksenhetsnummer": null,
+        "husnummer": "2",
+        "poststed": "HAMAR"
+      }
+    },
+    "sivilstand": {
+      "label": "Sivilstand",
+      "verdi": "GIFT"
+    },
+    "telefonnummer": {
+      "label": "Telefonnummer",
+      "verdi": "40123456"
+    },
+    "spørsmål": {
+      "borPåRegistrertAdresse": {
+        "label": "Bor du på denne adressen?",
+        "verdi": "JA"
+      },
+      "oppholderSegINorge": {
+        "label": "Oppholder du deg i Norge?",
+        "verdi": "JA"
+      },
+      "værtINorgeITolvMåneder": {
+        "label": "Har du bodd sammenhengende i Norge de siste tolv månedene?",
+        "verdi": "JA"
+      },
+      "erAsylsøker": {
+        "label": "Er du asylsøker?",
+        "verdi": "NEI"
+      },
+      "jobberPåBåt": {
+        "label": "Arbeider du i utlandet, på utenlandsk skip eller på utenlandsk kontinentalsokkel?",
+        "verdi": "NEI"
+      },
+      "mottarUtenlandspensjon": {
+        "label": "Får du pensjon fra utlandet?",
+        "verdi": "NEI"
+      }
+    }
+  },
+  "barn": [
+    {
+      "ident": {
+        "label": "Ident",
+        "verdi": "12345678987"
+      },
+      "navn": {
+        "label": "Navn",
+        "verdi": "Barn Barnessen III"
+      },
+      "borMedSøker": {
+        "label": "Bor med søker",
+        "verdi": false
+      },
+      "alder": {
+        "label": "Alder",
+        "verdi": "31 år"
+      },
+      "spørsmål": {
+        "erFosterbarn": {
+          "label": "Hvem av barna er fosterbarn?",
+          "verdi": "NEI"
+        },
+        "erAdoptertFraUtland": {
+          "label": "Hvem av barna er adoptert fra utlandet?",
+          "verdi": "NEI"
+        },
+        "erAsylsøker": {
+          "label": "Hvem av barna er det søkt om asyl for?",
+          "verdi": "NEI"
+        },
+        "barnetrygdFraAnnetEøsland": {
+          "label": "Hvem av barna får eller er det søkt om barnetrygd for?",
+          "verdi": "NEI"
+        },
+        "oppholderSegIInstitusjon": {
+          "label": "Hvem av barna oppholder seg i institusjon?",
+          "verdi": "JA"
+        },
+        "oppholdtSegINorgeSammenhengendeTolvMnd": {
+          "label": "Hvem av barna har bodd mindre enn tolv måneder sammenhengende i Norge?",
+          "verdi": "NEI"
+        },
+        "oppholderSegIUtland": {
+          "label": "Hvem av barna oppholder seg i utlandet?",
+          "verdi": "NEI"
+        },
+        "institusjonsnavn": {
+          "label": "Navnet på institusjonen",
+          "verdi": "a"
+        },
+        "institusjonsadresse": {
+          "label": "Adressen til institusjonen",
+          "verdi": "a"
+        },
+        "institusjonspostnummer": {
+          "label": "Postnummer",
+          "verdi": "1234"
+        },
+        "institusjonOppholdStart": {
+          "label": "Når begynte oppholdet? (format dd.mm.åååå)",
+          "verdi": "2021-04-01"
+        },
+        "institusjonOppholdSlutt": {
+          "label": "Når skal oppholdet avsluttes? (format dd.mm.åååå)",
+          "verdi": "2021-04-01"
+        }
+      }
+    }
+  ],
+  "dokumentDato": "30.04.2021",
+  "navn": "Voksen Voksnessen",
+  "fodselsnummer": "12345678901"
 }

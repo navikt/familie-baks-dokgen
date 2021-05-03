@@ -1,8 +1,13 @@
 version: '3'
 services:
   dokgen:
-    image: docker.pkg.github.com/navikt/dokgen/dokgen:latest
+    build:
+      dockerfile: ./Dockerfile
+      context: .
     ports:
       - "5914:8080"
     volumes:
       - ./content:/app/content
+      - ./logs:/secure-logs
+    environment:
+      RUNTIME_OPTS: "--write.access=true"

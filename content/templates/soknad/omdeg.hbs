@@ -1,0 +1,52 @@
+<h3>1. Om deg</h3>
+<section class="soknad-section">
+<table>
+<tr>
+{{> soknad/felt-celle ident}}
+{{> soknad/felt-celle statsborgerskap }}
+</tr>
+<tr>
+{{> soknad/felt-celle sivilstand }}
+<td rowspan="2">
+<h4>{{adresse.label}}</h4>
+{{#with adresse.verdi}}
+{{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
+{{~join postnummer poststed " "}}
+{{/with}}
+</td>
+</tr>
+<tr>
+{{> soknad/felt-celle telefonnummer }}
+</tr>
+</table>
+</section>
+
+<section class="soknad-section">
+<table>
+{{#with spørsmål}}
+<tr>
+{{#> soknad/ja-nei oppholderSegINorge oppfølgingCondition="NEI" }}
+{{> soknad/oppfolging oppholdsland }}
+{{> soknad/oppfolging-dato oppholdslandDato }}
+{{/soknad/ja-nei}}
+
+{{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
+{{> soknad/oppfolging arbeidsland }}
+{{/soknad/ja-nei}}
+</tr>
+<tr>
+{{#> soknad/ja-nei værtINorgeITolvMåneder oppfølgingCondition="NEI" }}
+{{> soknad/oppfolging-dato komTilNorgeDato }}
+{{> soknad/oppfolging planleggerÅBoINorgeTolvMnd }}
+{{/soknad/ja-nei}}
+
+{{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
+{{> soknad/oppfolging pensjonsland }}
+{{/soknad/ja-nei}}
+</tr>
+<tr>
+{{> soknad/ja-nei erAsylsøker }}
+</tr>
+{{/with}}
+</table>
+</section>

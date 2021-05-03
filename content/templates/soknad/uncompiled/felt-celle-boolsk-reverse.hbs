@@ -1,0 +1,7 @@
+<td>
+    <h4>{{label}}</h4>
+    {{yesno verdi yes=yes no=no}}
+    {{#unless verdi}}
+        {{> @partial-block }}
+    {{/unless}}
+</td>

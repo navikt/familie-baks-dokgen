@@ -2,6 +2,8 @@
     <h4>{{label}}</h4>
     {{verdi}}
     {{#eq verdi oppfølgingCondition}}
-        {{> @partial-block }}
+        {{#if @partial-block}}
+            {{> @partial-block }}
+        {{/if}}
     {{/eq}}
 </td>

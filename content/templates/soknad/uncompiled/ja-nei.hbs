@@ -1,9 +1,7 @@
 <td class="ja-nei">
     <h4>{{label}}</h4>
     {{verdi}}
-    {{#eq verdi oppfølgingCondition}}
-        {{#if @partial-block}}
-            {{> @partial-block }}
-        {{/if}}
+    {{#eq verdi oppfølgingCondition }}
+        {{> @partial-block }}
     {{/eq}}
 </td>

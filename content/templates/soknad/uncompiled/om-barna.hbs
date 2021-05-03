@@ -14,9 +14,9 @@
 
 {{#*inline "oppsamlingspørsmål"}}
     {{#with (lookup spørsmål oppsamling) as | oppsamling |}}
-        {{#> soknad/felt-celle-boolsk oppsamling yes="JA" no="NEI"}}
+        {{#> soknad/ja-nei oppsamling oppfølgingCondition="JA"}}
             {{> oppsamling-oppfølging barnFelt=barnFelt }}
-        {{/soknad/felt-celle-boolsk}}
+        {{/soknad/ja-nei}}
     {{/with}}
 {{/inline}}
 
@@ -29,9 +29,9 @@
         <tr>
             {{> oppsamlingspørsmål oppsamling="oppholderBarnSegIInstitusjon" barnFelt="oppholderSegIInstitusjon" }}
             {{! Den eneste med reversert condition, behandles for seg selv }}
-            {{#> soknad/felt-celle-boolsk-reverse spørsmål.barnOppholdtSegTolvMndSammenhengendeINorge yes="JA" no="NEI"}}
+            {{#> soknad/ja-nei spørsmål.barnOppholdtSegTolvMndSammenhengendeINorge oppfølgingCondition="NEI"}}
                 {{> oppsamling-oppfølging barnFelt="oppholdtSegINorgeSammenhengendeTolvMnd" }}
-            {{/soknad/felt-celle-boolsk-reverse}}
+            {{/soknad/ja-nei}}
         </tr>
         <tr>
             {{> oppsamlingspørsmål oppsamling="erBarnAdoptertFraUtland" barnFelt="erAdoptertFraUtland" }}

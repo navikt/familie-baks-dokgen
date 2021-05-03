@@ -1,18 +1,20 @@
 <h3>Søker</h3>
-<table>
-    <tr>
-        <td>
-            Navn<br/>
-            <b>{{navn}}</b>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            {{søker.spørsmål.erklæring.label}}<br/>
-            <b>{{søker.spørsmål.erklæring.verdi}}</b>
-        </td>
-    </tr>
-</table>
+<section class="soknad-section">
+    <table>
+        <tr>
+            <td>
+                Navn<br/>
+                <b>{{navn}}</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{søker.spørsmål.erklæring.label}}<br/>
+                <b>{{søker.spørsmål.erklæring.verdi}}</b>
+            </td>
+        </tr>
+    </table>
+</section>
 
 {{> soknad/omdeg søker }}
 {{> soknad/hvilke-barn søknad }}

@@ -1,0 +1,23 @@
+{{#*inline "titteltekst"}}
+{{#with søknadspørsmål.oppfølgingsspørsmåltekster.verdi as | titteltekster | }}
+{{#with (lookup titteltekster klammeTekstId) as | tekst | }}
+{{~ replace tekst "{navn}" navn.verdi ~}}
+{{/with}}
+{{/with }}
+{{/inline}}
+
+<h3>{{add @index 4 }}. Om {{upper navn.verdi}}</h3>
+<section class="soknad-section">
+{{#table columns=2}}
+{{#eq spørsmål.oppholderSegIInstitusjon.verdi "JA"}}
+<td>
+<h4>{{> titteltekst klammeTekstId="[ombarnet.fosterbarn]" }}</h4>
+{{> soknad/oppfolging spørsmål.institusjonsnavn }}
+{{> soknad/oppfolging spørsmål.institusjonsadresse }}
+{{> soknad/oppfolging spørsmål.institusjonspostnummer }}
+{{> soknad/oppfolging-dato spørsmål.institusjonOppholdStart }}
+{{> soknad/oppfolging-dato spørsmål.institusjonOppholdSlutt }}
+</td>
+{{/eq}}
+{{/table}}
+</section>

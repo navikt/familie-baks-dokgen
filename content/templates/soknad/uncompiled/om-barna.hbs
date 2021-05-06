@@ -1,0 +1,45 @@
+<h3>3. Om barna dine</h3>
+
+{{#*inline "oppsamling-oppfølging"}}
+    <div class="oppfølging">
+        {{#each barn }}
+            {{#with (lookup this.spørsmål barnFelt) as | barnFelt |}}
+                {{#if @first }}<h4>{{barnFelt.label}}</h4><ul>{{/if}}
+                {{#eq barnFelt.verdi "JA"}}<li>{{ navn.verdi }}</li>{{/eq}}
+                {{#if @last}}</ul>{{/if}}
+            {{/with}}
+        {{/each}}
+    </div>
+{{/inline}}
+
+{{#*inline "oppsamlingspørsmål"}}
+    {{#with (lookup spørsmål oppsamling) as | oppsamling |}}
+        {{#> soknad/ja-nei oppsamling oppfølgingCondition="JA"}}
+            {{> oppsamling-oppfølging barnFelt=barnFelt }}
+        {{/soknad/ja-nei}}
+    {{/with}}
+{{/inline}}
+
+<section class="soknad-section">
+    <table>
+        <tr>
+            {{> oppsamlingspørsmål oppsamling="erNoenAvBarnaFosterbarn" barnFelt="erFosterbarn" }}
+            {{> oppsamlingspørsmål oppsamling="erSøktAsylForBarn" barnFelt="erAsylsøker" }}
+        </tr>
+        <tr>
+            {{> oppsamlingspørsmål oppsamling="oppholderBarnSegIInstitusjon" barnFelt="oppholderSegIInstitusjon" }}
+            {{! Den eneste med reversert condition, behandles for seg selv }}
+            {{#> soknad/ja-nei spørsmål.barnOppholdtSegTolvMndSammenhengendeINorge oppfølgingCondition="NEI"}}
+                {{> oppsamling-oppfølging barnFelt="oppholdtSegINorgeSammenhengendeTolvMnd" }}
+            {{/soknad/ja-nei}}
+        </tr>
+        <tr>
+            {{> oppsamlingspørsmål oppsamling="erBarnAdoptertFraUtland" barnFelt="erAdoptertFraUtland" }}
+            {{> oppsamlingspørsmål oppsamling="mottarBarnetrygdForBarnFraAnnetEøsland" barnFelt="barnetrygdFraAnnetEøsland" }}
+        </tr>
+        <tr>
+            {{> oppsamlingspørsmål oppsamling="oppholderBarnSegIUtland" barnFelt="oppholderSegIUtland" }}
+        </tr>
+    </table>
+</section>
+

@@ -11,12 +11,31 @@
     {{#table columns=2}}
         {{#eq spørsmål.oppholderSegIInstitusjon.verdi "JA"}}
             <td>
-                <h4>{{> titteltekst klammeTekstId="[ombarnet.fosterbarn]" }}</h4>
+                <h4>{{> titteltekst klammeTekstId="[ombarnet.institusjon]" }}</h4>
                 {{> soknad/oppfolging spørsmål.institusjonsnavn }}
                 {{> soknad/oppfolging spørsmål.institusjonsadresse }}
                 {{> soknad/oppfolging spørsmål.institusjonspostnummer }}
-                {{> soknad/oppfolging-dato spørsmål.institusjonOppholdStart }}
-                {{> soknad/oppfolging-dato spørsmål.institusjonOppholdSlutt }}
+                {{> soknad/oppfolging-dato spørsmål.institusjonOppholdStartdato }}
+                {{> soknad/oppfolging-dato spørsmål.institusjonOppholdSluttdato }}
+            </td>
+        {{/eq}}
+        {{#eq spørsmål.boddMindreEnn12MndINorge.verdi "JA"}}
+            <td>
+                <h4>{{> titteltekst klammeTekstId="[ombarnet.sammenhengende-opphold]" }}</h4>
+                {{> soknad/oppfolging-dato spørsmål.nårKomBarnTilNorgeDato }}
+                {{> soknad/oppfolging spørsmål.planleggerÅBoINorge12Mnd }}
+            </td>
+        {{/eq}}
+        {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
+            <td>
+                <h4>{{> titteltekst klammeTekstId="[ombarnet.barnetrygd-eøs]" }}</h4>
+                {{> soknad/oppfolging spørsmål.barnetrygdFraEøslandHvilketLand }}
+            </td>
+        {{/eq}}
+        {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
+            <td>
+                <h4>{{> titteltekst klammeTekstId="[ombarnet.oppholdutland]" }}</h4>
+                {{> soknad/oppfolging spørsmål.barnetrygdFraEøslandHvilketLand }}
             </td>
         {{/eq}}
     {{/table}}

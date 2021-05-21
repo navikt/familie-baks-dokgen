@@ -50,15 +50,11 @@
       },
       "erAsylsøker": {
         "label": "Er du asylsøker?",
-        "verdi": "JA"
+        "verdi": "NEI"
       },
       "jobberPåBåt": {
         "label": "Arbeider du i utlandet, på utenlandsk skip eller på utenlandsk kontinentalsokkel?",
-        "verdi": "JA"
-      },
-      "arbeidsland": {
-        "label": "Hvilket land arbeider du i?",
-        "verdi": "AUS"
+        "verdi": "NEI"
       },
       "mottarUtenlandspensjon": {
         "label": "Får du pensjon fra utlandet?",
@@ -70,48 +66,40 @@
     {
       "ident": {
         "label": "Ident",
-        "verdi": "23051518298"
+        "verdi": "23456789876"
       },
       "navn": {
         "label": "Navn",
-        "verdi": "Barn Barnessen III"
+        "verdi": "Barn Barnessen II"
       },
       "borMedSøker": {
         "label": "Bor med søker",
-        "verdi": false
+        "verdi": true
       },
       "alder": {
         "label": "Alder",
-        "verdi": "11 år"
+        "verdi": "12 år"
       },
       "spørsmål": {
         "erFosterbarn": {
           "label": "Hvem av barna er fosterbarn?",
-          "verdi": "NEI"
+          "verdi": "JA"
         },
         "erAdoptertFraUtland": {
           "label": "Hvem av barna er adoptert fra utlandet?",
-          "verdi": "NEI"
+          "verdi": "JA"
         },
         "erAsylsøker": {
           "label": "Hvem av barna er det søkt om asyl for?",
-          "verdi": "NEI"
+          "verdi": "JA"
         },
         "barnetrygdFraAnnetEøsland": {
           "label": "Hvem av barna får eller er det søkt om barnetrygd for?",
-          "verdi": "NEI"
+          "verdi": "JA"
         },
         "oppholderSegIInstitusjon": {
           "label": "Hvem av barna oppholder seg i institusjon?",
           "verdi": "JA"
-        },
-        "oppholdtSegINorgeSammenhengendeTolvMnd": {
-          "label": "Hvem av barna har bodd mindre enn tolv måneder sammenhengende i Norge?",
-          "verdi": "NEI"
-        },
-        "oppholderSegIUtland": {
-          "label": "Hvem av barna oppholder seg i utlandet?",
-          "verdi": "NEI"
         },
         "institusjonsnavn": {
           "label": "Navnet på institusjonen",
@@ -125,13 +113,89 @@
           "label": "Postnummer",
           "verdi": "1234"
         },
-        "institusjonOppholdStart": {
+        "institusjonOppholdStartdato": {
           "label": "Når begynte oppholdet? (format dd.mm.åååå)",
           "verdi": "2021-05-01"
         },
-        "institusjonOppholdSlutt": {
+        "institusjonOppholdSluttdato": {
           "label": "Når skal oppholdet avsluttes? (format dd.mm.åååå)",
+          "verdi": "UKJENT"
+        },
+        "oppholderSegIUtland": {
+          "label": "Hvem av barna oppholder seg i utlandet?",
+          "verdi": "JA"
+        },
+        "oppholdsland": {
+          "label": "Hvilket land oppholder barnet seg i?",
+          "verdi": "ARG"
+        },
+        "oppholdslandSluttdato": {
+          "label": "Når skal oppholdet avsluttes? (format dd.mm.åååå)",
+          "verdi": "2021-05-30"
+        },
+        "oppholdslandStartdato": {
+          "label": "Når begynte oppholdet? (format dd.mm.åååå)",
+          "verdi": "2021-05-19"
+        },
+        "boddMindreEnn12MndINorge": {
+          "label": "Hvem av barna har bodd mindre enn tolv måneder sammenhengende i Norge?",
+          "verdi": "JA"
+        },
+        "nårKomBarnTilNorgeDato": {
+          "label": "Når kom barnet til Norge? (format dd.mm.yyy)",
           "verdi": "2021-05-01"
+        },
+        "planleggerÅBoINorge12Mnd": {
+          "label": "Er det planlagt at barnet skal bo sammenhengende i Norge i mer enn tolv måneder?",
+          "verdi": "JA"
+        },
+        "barnetrygdFraEøslandHvilketLand": {
+          "label": "Hvilket land får eller har du søkt om barnetrygd fra?",
+          "verdi": "ARG"
+        },
+        "andreForelderNavn": {
+          "label": "Navn ",
+          "verdi": "Anders Andersen"
+        },
+        "andreForelderFnr": {
+          "label": "Fødselsnummer eller d-nummer",
+          "verdi": "UKJENT"
+        },
+        "andreForelderFødselsdato": {
+          "label": "Fødselsdato (format dd.mm.åååå)",
+          "verdi": "2002-05-01"
+        },
+        "andreForelderArbeidUtlandet": {
+          "label": "Arbeider den andre forelderen til {navn} i utlandet, på utenlandsk skip eller på utenlandsk kontinentalsokkel?",
+          "verdi": "JA"
+        },
+        "andreForelderArbeidUtlandetHvilketLand": {
+          "label": "Hvilket land arbeider den andre forelderen i?",
+          "verdi": "ATA"
+        },
+        "andreForelderPensjonUtland": {
+          "label": "Får den andre forelderen til {navn} pensjon fra utlandet?",
+          "verdi": "JA"
+        },
+        "andreForelderPensjonHvilketLand": {
+          "label": "Hvilket land får den andre forelderen pensjon fra?",
+          "verdi": "AZE"
+        },
+        "borFastMedSøker": {
+          "label": "Bor {navn} fast sammen med deg?",
+          "verdi": "JA"
+        },
+        "skriftligAvtaleOmDeltBosted": {
+          "label": "Har du og den andre forelderen skriftlig avtale om delt \nbosted for {navn}?",
+          "verdi": "JA"
+        },
+        "søkerForTidsromStartdato": {
+          "label": "Fra og med (format dd.mm.åååå)",
+          "verdi": "2021-05-01"
+        },
+        "søkerForTidsromSluttdato": {
+          "label": "Til og med (format dd.mm.åååå)",
+          "verdi": "2021-05-23"
         }
       }
     }
@@ -139,44 +203,45 @@
   "spørsmål": {
     "erNoenAvBarnaFosterbarn": {
       "label": "Er noen av barna fosterbarn?",
-      "verdi": "NEI"
+      "verdi": "JA"
     },
-    "erSøktAsylForBarn": {
+    "søktAsylForBarn": {
       "label": "Er det søkt om asyl i Norge for noen av barna?",
-      "verdi": "NEI"
+      "verdi": "JA"
     },
     "oppholderBarnSegIInstitusjon": {
-      "label": "Oppholder noen av barna seg i barnverninstitusjon eller i annen institusjon?",
+      "label": "Oppholder noen av barna seg i barnverninstitusjon \neller i annen institusjon?",
       "verdi": "JA"
     },
     "barnOppholdtSegTolvMndSammenhengendeINorge": {
       "label": "Har barna bodd sammenhengende i Norge de siste tolv månedene?",
-      "verdi": "JA"
+      "verdi": "NEI"
     },
     "erBarnAdoptertFraUtland": {
       "label": "Er noen av barna adoptert fra utlandet?",
-      "verdi": "NEI"
+      "verdi": "JA"
     },
     "mottarBarnetrygdForBarnFraAnnetEøsland": {
       "label": "Får du eller er det søkt om barnetrygd for noen av barna fra et annet EU/EØS land?",
-      "verdi": "NEI"
+      "verdi": "JA"
     },
     "oppholderBarnSegIUtland": {
       "label": "Oppholder noen av barna seg i utlandet?",
-      "verdi": "NEI"
+      "verdi": "JA"
     },
-    "skjemaGruppeTekster": {
+    "oppfølgingsspørsmåltekster": {
       "label": "Tekster som ellers trengs til pdf-gen, typ \"Du har opplyst at {navn} oppholder seg i institusjon\"",
       "verdi": {
         "ombarnet.fosterbarn": "Du har opplyst at {navn} er fosterbarn",
         "ombarnet.institusjon": "Du har opplyst at {navn} oppholder seg i institusjon.",
-        "ombarnet.oppholdutland": "Du har opplyst at {barns navn} oppholder seg i utlandet",
-        "ombarnet.sammenhengende-opphold": "Du har opplyst at {barns navn} ikke har bodd\nsammenhengende i Norge de siste tolv månedene"
+        "ombarnet.oppholdutland": "Du har opplyst at {navn} oppholder seg i utlandet",
+        "ombarnet.sammenhengende-opphold": "Du har opplyst at {navn} ikke har bodd\nsammenhengende i Norge de siste tolv månedene",
+        "ombarnet.barnetrygd-eøs": "Du har opplyst at du får eller har søkt om barnetrygd\nfor {navn} fra et annet EU/EØS land."
       }
     }
   },
   "vedleggReferanser": {},
-  "dokumentDato": "03.05.2021",
+  "dokumentDato": "20.05.2021",
   "navn": "Voksen Voksnessen",
   "fodselsnummer": "12345678901"
 }

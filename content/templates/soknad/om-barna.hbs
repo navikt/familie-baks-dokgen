@@ -24,13 +24,13 @@
 <table>
 <tr>
 {{> oppsamlingspørsmål oppsamling="erNoenAvBarnaFosterbarn" barnFelt="erFosterbarn" }}
-{{> oppsamlingspørsmål oppsamling="erSøktAsylForBarn" barnFelt="erAsylsøker" }}
+{{> oppsamlingspørsmål oppsamling="søktAsylForBarn" barnFelt="erAsylsøker" }}
 </tr>
 <tr>
 {{> oppsamlingspørsmål oppsamling="oppholderBarnSegIInstitusjon" barnFelt="oppholderSegIInstitusjon" }}
 {{! Den eneste med reversert condition, behandles for seg selv }}
 {{#> soknad/ja-nei spørsmål.barnOppholdtSegTolvMndSammenhengendeINorge oppfølgingCondition="NEI"}}
-{{> oppsamling-oppfølging barnFelt="oppholdtSegINorgeSammenhengendeTolvMnd" }}
+{{> oppsamling-oppfølging barnFelt="boddMindreEnn12MndINorge" }}
 {{/soknad/ja-nei}}
 </tr>
 <tr>

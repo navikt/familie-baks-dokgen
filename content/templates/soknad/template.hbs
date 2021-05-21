@@ -22,5 +22,13 @@ Navn<br/>
 {{#with spørsmål as | søknadspørsmål | }}
 {{#each barn as | barn | }}
 {{> soknad/om-barnet barn }}
+{{> soknad/andre-forelder barn }}
+<h4>Søker du barnetrygd for et spesielt tidsrom for {{upper barn.navn.verdi}}?</h4>
+<section class="soknad-section">
+{{# table columns=2}}
+{{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromStartdato}}
+{{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromSluttdato}}
+{{/table}}
+</section>
 {{/each}}
 {{/with}}

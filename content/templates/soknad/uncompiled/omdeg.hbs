@@ -3,7 +3,14 @@
     <table>
         <tr>
             {{> soknad/felt-celle ident}}
-            {{> soknad/felt-celle statsborgerskap }}
+            <td>
+                <h5>{{statsborgerskap.label}}</h5>
+                <p>
+                    {{#each statsborgerskap.verdi }}
+                        {{~ this}}{{#if @last}}{{else}}, {{/if}}
+                    {{/each}}
+                </p>
+            </td>
         </tr>
         <tr>
             {{> soknad/felt-celle sivilstand }}

@@ -3,7 +3,7 @@
     <div class="oppfølging">
         {{#each barn }}
             {{#with (lookup this.spørsmål barnFelt) as | barnFelt |}}
-                {{#if @first }}<h4>{{barnFelt.label}}</h4><ul>{{/if}}
+                {{#if @first }}<h5>{{barnFelt.label}}</h5><ul>{{/if}}
                 {{#eq barnFelt.verdi "JA"}}<li>{{ navn.verdi }}</li>{{/eq}}
                 {{#if @last}}</ul>{{/if}}
             {{/with}}

@@ -1,0 +1,17 @@
+<div class="soknad-section">
+<h3>6. Liste over vedlegg</h3>
+{{#table columns=2}}
+{{#each dokumentasjon }}
+<td>
+<h5>Vedlegg {{ add @index 1 }} av {{ dokumentasjon.length }}: {{ capitalizeFirst ( lower (replace this.dokumentasjonsbehov "_" " ") ) }}</h5>
+<p>
+{{#if harSendtInn}}
+Jeg har sendt inn denne dokumentasjonen til NAV tidligere
+{{ else }}
+Lastet opp {{ this.opplastedeVedlegg.length }} vedlegg
+{{/if}}
+</p>
+</td>
+{{/each}}
+{{/table}}
+</div>

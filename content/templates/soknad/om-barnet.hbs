@@ -11,7 +11,7 @@
 {{#table columns=2}}
 {{#eq spørsmål.oppholderSegIInstitusjon.verdi "JA"}}
 <td>
-<h4>{{> titteltekst klammeTekstId="[ombarnet.institusjon]" }}</h4>
+<h5>{{> titteltekst klammeTekstId="[ombarnet.institusjon]" }}</h5>
 {{> soknad/oppfolging spørsmål.institusjonsnavn }}
 {{> soknad/oppfolging spørsmål.institusjonsadresse }}
 {{> soknad/oppfolging spørsmål.institusjonspostnummer }}
@@ -21,22 +21,28 @@
 {{/eq}}
 {{#eq spørsmål.boddMindreEnn12MndINorge.verdi "JA"}}
 <td>
-<h4>{{> titteltekst klammeTekstId="[ombarnet.sammenhengende-opphold]" }}</h4>
+<h5>{{> titteltekst klammeTekstId="[ombarnet.sammenhengende-opphold]" }}</h5>
 {{> soknad/oppfolging-dato spørsmål.nårKomBarnTilNorgeDato }}
 {{> soknad/oppfolging spørsmål.planleggerÅBoINorge12Mnd }}
 </td>
 {{/eq}}
 {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
 <td>
-<h4>{{> titteltekst klammeTekstId="[ombarnet.barnetrygd-eøs]" }}</h4>
+<h5>{{> titteltekst klammeTekstId="[ombarnet.barnetrygd-eøs]" }}</h5>
 {{> soknad/oppfolging spørsmål.barnetrygdFraEøslandHvilketLand }}
 </td>
 {{/eq}}
 {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
 <td>
-<h4>{{> titteltekst klammeTekstId="[ombarnet.oppholdutland]" }}</h4>
+<h5>{{> titteltekst klammeTekstId="[ombarnet.oppholdutland]" }}</h5>
 {{> soknad/oppfolging spørsmål.barnetrygdFraEøslandHvilketLand }}
 </td>
 {{/eq}}
+{{/table}}
+{{> soknad/andre-forelder barn }}
+<h4>Søker du barnetrygd for et spesielt tidsrom for {{upper barn.navn.verdi}}?</h4>
+{{# table columns=2}}
+{{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromStartdato}}
+{{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromSluttdato}}
 {{/table}}
 </section>

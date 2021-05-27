@@ -299,12 +299,9 @@ ul {
     page-break-inside: avoid;
 }
 
-.soknad-section h3 {
-    -fs-page-break-min-height: 3cm;
-}
-
 .oppfølging {
-    margin-left: 13px;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 .oppfølging ul, .oppfølging li {
@@ -329,5 +326,13 @@ ul {
 }
 
 .soknad-section h4 {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.soknad-section h5 {
+    font-size: 1rem;
     font-weight: 400;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
 }

@@ -199,6 +199,27 @@
           "tittel": "ANNEN_DOKUMENTASJON"
         }
       ]
+    },
+    {
+      "dokumentasjonsbehov": "BEKREFTELSE_FRA_BARNEVERN",
+      "harSendtInn": false,
+      "opplastedeVedlegg": [
+        {
+          "dokumentId": "611e0b91-334a-4d30-903e-6ef67a361d87",
+          "navn": "helicopter birb.jpg",
+          "tittel": "BEKREFTELSE_FRA_BARNEVERN"
+        },
+        {
+          "dokumentId": "611e0b91-334a-4d30-903e-6ef67a361d87",
+          "navn": "helicopter birb.jpg",
+          "tittel": "BEKREFTELSE_FRA_BARNEVERN"
+        },
+        {
+          "dokumentId": "611e0b91-334a-4d30-903e-6ef67a361d87",
+          "navn": "helicopter birb.jpg",
+          "tittel": "BEKREFTELSE_FRA_BARNEVERN"
+        }
+      ]
     }
   ],
   "dokumentDato": "27.05.2021",

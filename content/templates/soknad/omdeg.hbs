@@ -1,5 +1,5 @@
-<h3>1. Om deg</h3>
 <section class="soknad-section">
+<h3>1. Om deg</h3>
 <table>
 <tr>
 {{> soknad/felt-celle ident}}
@@ -8,10 +8,12 @@
 <tr>
 {{> soknad/felt-celle sivilstand }}
 <td rowspan="2">
-<h4>{{adresse.label}}</h4>
+<h5>{{adresse.label}}</h5>
 {{#with adresse.verdi}}
+<p>
 {{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
 {{~join postnummer poststed " "}}
+</p>
 {{/with}}
 </td>
 </tr>

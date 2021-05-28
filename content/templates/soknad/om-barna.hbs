@@ -1,10 +1,9 @@
-<h3>3. Om barna dine</h3>
 
 {{#*inline "oppsamling-oppfølging"}}
 <div class="oppfølging">
 {{#each barn }}
 {{#with (lookup this.spørsmål barnFelt) as | barnFelt |}}
-{{#if @first }}<h4>{{barnFelt.label}}</h4><ul>{{/if}}
+{{#if @first }}<h5>{{barnFelt.label}}</h5><ul>{{/if}}
 {{#eq barnFelt.verdi "JA"}}<li>{{ navn.verdi }}</li>{{/eq}}
 {{#if @last}}</ul>{{/if}}
 {{/with}}
@@ -21,6 +20,7 @@
 {{/inline}}
 
 <section class="soknad-section">
+<h3>3. Om barna dine</h3>
 <table>
 <tr>
 {{> oppsamlingspørsmål oppsamling="erNoenAvBarnaFosterbarn" barnFelt="erFosterbarn" }}

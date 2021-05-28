@@ -1,16 +1,14 @@
 {{#*inline "ja-nei-barnenavn"}}
 <td class="ja-nei">
-<h4>{{replace label "{navn}" (upper navn.verdi)}}</h4>
-{{verdi}}
+<h5>{{replace label "{navn}" (upper navn.verdi)}}</h5>
+<p>{{verdi}}</p>
 {{#eq verdi oppfølgingCondition }}
 {{> @partial-block }}
 {{/eq}}
 </td>
 {{/inline}}
 
-
 <h4>Barnets andre forelder</h4>
-<section class="soknad-section">
 {{#table columns=2}}
 {{> soknad/felt-celle spørsmål.andreForelderNavn }}
 {{#> soknad/felt-celle-med-oppfølging spørsmål.andreForelderFnr }}
@@ -27,4 +25,3 @@
 {{> ja-nei-barnenavn spørsmål.borFastMedSøker }}
 {{> ja-nei-barnenavn spørsmål.skriftligAvtaleOmDeltBosted }}
 {{/table}}
-</section>

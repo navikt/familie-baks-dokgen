@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/navikt/dokgen:latest
+FROM docker.pkg.github.com/navikt/dokgen/dokgen:latest
 
 USER root
 RUN mkdir /secure-logs && chown apprunner /secure-logs

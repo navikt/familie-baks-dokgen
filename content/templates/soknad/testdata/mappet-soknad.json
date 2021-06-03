@@ -177,6 +177,10 @@
       "label": "Oppholder noen av barna seg i utlandet?",
       "verdi": "NEI"
     },
+    "lestOgForståttBekreftelse": {
+      "label": "Jeg er klar over at jeg kan miste retten til barnetrygd dersom jeg gir feil opplysninger. Jeg er også klar over at jeg må betale tilbake dersom jeg får penger jeg ikke har rett til, fordi jeg har latt være å informere eller har gitt feil opplysninger.",
+      "verdi": "Jeg bekrefter at jeg har lest og forstått."
+    },
     "oppfølgingsspørsmåltekster": {
       "label": "Tekster som ellers trengs til pdf-gen, typ \"Du har opplyst at {navn} oppholder seg i institusjon\"",
       "verdi": {

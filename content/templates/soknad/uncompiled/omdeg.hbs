@@ -14,7 +14,7 @@
         </tr>
         <tr>
             {{> soknad/felt-celle sivilstand }}
-            <td rowspan="2">
+            <td>
                 <h5>{{adresse.label}}</h5>
                 {{#with adresse.verdi}}
                     <p>
@@ -23,9 +23,6 @@
                     </p>
                 {{/with}}
             </td>
-        </tr>
-        <tr>
-            {{> soknad/felt-celle telefonnummer }}
         </tr>
     </table>
 </section>

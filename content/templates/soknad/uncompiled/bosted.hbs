@@ -1,0 +1,16 @@
+{{#*inline "ja-nei-barnenavn"}}
+    <td class="ja-nei">
+        <h5>{{replace label "{navn}" (upper navn.verdi)}}</h5>
+        <p>{{verdi}}</p>
+        {{#eq verdi oppfølgingCondition }}
+            {{> @partial-block }}
+        {{/eq}}
+    </td>
+{{/inline}}
+
+{{#table cols=2}}
+    {{> ja-nei-barnenavn spørsmål.borFastMedSøker }}
+    {{#eq spørsmål.erFosterbarn.verdi "NEI"}}
+        {{> ja-nei-barnenavn spørsmål.skriftligAvtaleOmDeltBosted }}
+    {{/eq}}
+{{/table}}

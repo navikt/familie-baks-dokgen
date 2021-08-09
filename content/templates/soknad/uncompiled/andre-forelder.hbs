@@ -10,18 +10,16 @@
 
 <h4>Barnets andre forelder</h4>
 {{#table columns=2}}
-    {{#eq spørsmål.erFosterbarn.verdi "NEI"}}
-        {{> soknad/felt-celle spørsmål.andreForelderNavn }}
-        {{#> soknad/felt-celle-med-oppfølging spørsmål.andreForelderFnr }}
-            {{#if spørsmål.andreForelderFødselsdato}}
-                {{> soknad/oppfolging-dato spørsmål.andreForelderFødselsdato}}
-            {{/if}}
-        {{/soknad/felt-celle-med-oppfølging}}
-        {{#> ja-nei-barnenavn spørsmål.andreForelderArbeidUtlandet oppfølgingCondition="JA"}}
-            {{> soknad/oppfolging spørsmål.andreForelderArbeidUtlandetHvilketLand }}
-        {{/ja-nei-barnenavn}}
-        {{#> ja-nei-barnenavn spørsmål.andreForelderPensjonUtland oppfølgingCondition="JA"}}
-            {{> soknad/oppfolging spørsmål.andreForelderPensjonHvilketLand }}
-        {{/ja-nei-barnenavn}}
-    {{/eq}}
+    {{> soknad/felt-celle spørsmål.andreForelderNavn }}
+    {{#> soknad/felt-celle-med-oppfølging spørsmål.andreForelderFnr }}
+        {{#if spørsmål.andreForelderFødselsdato}}
+            {{> soknad/oppfolging-dato spørsmål.andreForelderFødselsdato}}
+        {{/if}}
+    {{/soknad/felt-celle-med-oppfølging}}
+    {{#> ja-nei-barnenavn spørsmål.andreForelderArbeidUtlandet oppfølgingCondition="JA"}}
+        {{> soknad/oppfolging spørsmål.andreForelderArbeidUtlandetHvilketLand }}
+    {{/ja-nei-barnenavn}}
+    {{#> ja-nei-barnenavn spørsmål.andreForelderPensjonUtland oppfølgingCondition="JA"}}
+        {{> soknad/oppfolging spørsmål.andreForelderPensjonHvilketLand }}
+    {{/ja-nei-barnenavn}}
 {{/table}}

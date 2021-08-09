@@ -39,7 +39,9 @@
             </td>
         {{/eq}}
     {{/table}}
-    {{> soknad/andre-forelder barn }}
+    {{#eq spørsmål.erFosterbarn.verdi "NEI"}}
+        {{> soknad/andre-forelder barn }}
+    {{/eq}}
 
     <h4>Bosted</h4>
     {{> soknad/bosted }}

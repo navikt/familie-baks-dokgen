@@ -39,7 +39,13 @@
 </td>
 {{/eq}}
 {{/table}}
+{{#eq spørsmål.erFosterbarn.verdi "NEI"}}
 {{> soknad/andre-forelder barn }}
+{{/eq}}
+
+<h4>Bosted</h4>
+{{> soknad/bosted }}
+
 <h4>Søker du barnetrygd for et spesielt tidsrom for {{upper barn.navn.verdi}}?</h4>
 {{# table columns=2}}
 {{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromStartdato}}

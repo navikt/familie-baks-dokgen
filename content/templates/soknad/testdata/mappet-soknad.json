@@ -1,6 +1,14 @@
 {
-  "søknadstype": "ORDINÆR",
+  "søknadstype": "UTVIDET",
   "søker": {
+    "utvidet": {
+      "spørsmål": {
+        "årsak": {
+          "label": "Hvorfor søker du om utvidet barnetrygd?",
+          "verdi" : "Jeg er skilt"
+        }
+      }
+    },
     "ident": {
       "label": "Ident",
       "verdi": "16017725274"
@@ -228,5 +236,6 @@
   ],
   "dokumentDato": "27.05.2021",
   "navn": "TVILSOM SKILPADDE",
-  "fodselsnummer": "16017725274"
+  "fodselsnummer": "16017725274",
+  "templateName": "S0Knad om utvidet Barnetrygd"
 }

@@ -5,13 +5,13 @@
 {{> soknad/felt-celle spørsmål.lestOgForståttBekreftelse }}
 {{/table}}
 </section>
-
-{{> soknad/omdeg søker }}
-{{> soknad/hvilke-barn søknad }}
-{{> soknad/om-barna søknad }}
+{{> soknad/omdeg søker section-number=1 }}
+{{#if søker.utvidet}}{{> soknad/din-livssituasjon søker.utvidet}}{{/if}}
+{{> soknad/hvilke-barn søknad section-number=2 }}
+{{> soknad/om-barna søknad section-number=3 }}
 {{#with spørsmål as | søknadspørsmål | }}
 {{#each barn as | barn | }}
-{{> soknad/om-barnet barn }}
+{{> soknad/om-barnet barn section-number-start=4 }}
 {{/each}}
 {{/with}}
-{{> soknad/vedlegg }}
+{{> soknad/vedlegg section-number=(add barn.length 4) }}

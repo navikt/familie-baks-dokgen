@@ -1,0 +1,38 @@
+<section class="soknad-section">
+    <h3>{{section-number}}. Din livssituasjon</h3>
+    {{#table columns=2}}
+        <td>
+            <h5>{{spørsmål.årsak.label}}</h5>
+            <p>{{spørsmål.årsak.verdi}}</p>
+        </td>
+        <td>
+            <h5>{{spørsmål.harSamboerNå.label}}</h5>
+            <p>{{spørsmål.harSamboerNå.verdi}}</p>
+            {{#if nåværendeSamboer}}
+                <h5>{{nåværendeSamboer.navn.label}}</h5>
+                <p>{{nåværendeSamboer.navn.verdi}}</p>
+                <h5>{{nåværendeSamboer.ident.label}}</h5>
+                <p>{{nåværendeSamboer.ident.verdi}}</p>
+                {{#eq nåværendeSamboer.ident.verdi "UKJENT"}}
+                    <h5>{{nåværendeSamboer.fødselsdato.label}}</h5>
+                    <p>{{nåværendeSamboer.fødselsdato.verdi}}</p>
+                {{/eq}}
+                <h5>{{nåværendeSamboer.samboerFraDato.label}}</h5>
+                <p>{{nåværendeSamboer.samboerFraDato.verdi}}</p>
+            {{/if}}
+        </td>
+
+        <td>
+            <h5>{{spørsmål.separertEnkeSkilt.label}}</h5>
+            <p>{{spørsmål.separertEnkeSkilt.verdi}}</p>
+            {{#if spørsmål.separertEnkeSkiltUtland}}
+                <h5>{{spørsmål.separertEnkeSkiltUtland.label}}</h5>
+                <p>{{spørsmål.separertEnkeSkiltUtland.verdi}}</p>
+            {{/if}}
+            {{#if spørsmål.separertEnkeSkiltDato}}
+                <h5>{{spørsmål.separertEnkeSkiltDato.label}}</h5>
+                <p>{{spørsmål.separertEnkeSkiltDato.verdi}}</p>
+            {{/if}}
+        </td>
+    {{/table}}
+</section>

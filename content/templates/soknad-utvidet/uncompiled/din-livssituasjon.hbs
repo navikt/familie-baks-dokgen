@@ -9,16 +9,24 @@
             <h5>{{spørsmål.harSamboerNå.label}}</h5>
             <p>{{spørsmål.harSamboerNå.verdi}}</p>
             {{#if nåværendeSamboer}}
-                <h5>{{nåværendeSamboer.navn.label}}</h5>
-                <p>{{nåværendeSamboer.navn.verdi}}</p>
-                <h5>{{nåværendeSamboer.ident.label}}</h5>
-                <p>{{nåværendeSamboer.ident.verdi}}</p>
+                <div class="extra-cell-content">
+                    <h5>{{nåværendeSamboer.navn.label}}</h5>
+                    <p>{{nåværendeSamboer.navn.verdi}}</p>
+                </div>
+                <div class="extra-cell-content">
+                    <h5>{{nåværendeSamboer.ident.label}}</h5>
+                    <p>{{nåværendeSamboer.ident.verdi}}</p>
+                </div>
                 {{#eq nåværendeSamboer.ident.verdi "UKJENT"}}
-                    <h5>{{nåværendeSamboer.fødselsdato.label}}</h5>
-                    <p>{{nåværendeSamboer.fødselsdato.verdi}}</p>
+                    <div class="extra-cell-content">
+                        <h5>{{nåværendeSamboer.fødselsdato.label}}</h5>
+                        <p>{{nåværendeSamboer.fødselsdato.verdi}}</p>
+                    </div>
                 {{/eq}}
-                <h5>{{nåværendeSamboer.samboerFraDato.label}}</h5>
-                <p>{{nåværendeSamboer.samboerFraDato.verdi}}</p>
+                <div class="extra-cell-content">
+                    <h5>{{nåværendeSamboer.samboerFraDato.label}}</h5>
+                    <p>{{nåværendeSamboer.samboerFraDato.verdi}}</p>
+                </div>
             {{/if}}
         </td>
 
@@ -26,12 +34,16 @@
             <h5>{{spørsmål.separertEnkeSkilt.label}}</h5>
             <p>{{spørsmål.separertEnkeSkilt.verdi}}</p>
             {{#if spørsmål.separertEnkeSkiltUtland}}
-                <h5>{{spørsmål.separertEnkeSkiltUtland.label}}</h5>
-                <p>{{spørsmål.separertEnkeSkiltUtland.verdi}}</p>
+                <div class="extra-cell-content">
+                    <h5>{{spørsmål.separertEnkeSkiltUtland.label}}</h5>
+                    <p>{{spørsmål.separertEnkeSkiltUtland.verdi}}</p>
+                </div>
             {{/if}}
             {{#if spørsmål.separertEnkeSkiltDato}}
-                <h5>{{spørsmål.separertEnkeSkiltDato.label}}</h5>
-                <p>{{spørsmål.separertEnkeSkiltDato.verdi}}</p>
+                <div class="extra-cell-content">
+                    <h5>{{spørsmål.separertEnkeSkiltDato.label}}</h5>
+                    <p>{{spørsmål.separertEnkeSkiltDato.verdi}}</p>
+                </div>
             {{/if}}
         </td>
     {{/table}}

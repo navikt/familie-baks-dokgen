@@ -336,3 +336,8 @@ ul {
     margin-bottom: 0.5rem;
     margin-top: 0.2rem;
 }
+
+.extra-cell-content {
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}

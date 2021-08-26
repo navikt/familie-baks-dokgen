@@ -6,22 +6,24 @@
             <p>{{ spørsmål.årsak.verdi}}</p>
         </td>
         <td>
-            <h5>Har du samboer nå?</h5>
-            <p>Ja</p>
-            <h5>Samboerens navn</h5>
-            <p>Dolly Duck</p>
-            <h5>Fødselsnummer / d-nummer</h5>
-            <p>12345678903</p>
-            <h5>Når startet samboerforholdet?</h5>
-            <p>08.06.2015</p>
+            <h5>{{spørsmål.harSamboerNå.label}}</h5>
+            <p>{{spørsmål.harSamboerNå.verdi}}</p>
+            <h5>{{nåværendeSamboer.navn.label}}</h5>
+            <p>{{nåværendeSamboer.navn.verdi}}</p>
+            <h5>{{nåværendeSamboer.ident.label}}</h5>
+            <p>{{nåværendeSamboer.ident.verdi}}</p>
+            <h5>{{nåværendeSamboer.fødselsdato.label}}</h5>
+            <p>{{nåværendeSamboer.fødselsdato.verdi}}</p>
+            <h5>{{nåværendeSamboer.samboerFraDato.label}}</h5>
+            <p>{{nåværendeSamboer.samboerFraDato.verdi}}</p>
         </td>
         <td>
-            <h5>Er du separert, skilt, eller enke/enkemann uten at dette er registrert i folkeregisteret i Norge?</h5>
-            <p>Ja</p>
-            <h5>Er du separert, skilt eller enke/enkemann i utlandet?</h5>
-            <p>Nei</p>
-            <h5>Fra hvilken dato er du separert, skilt eller enke/enkemann?</h5>
-            <p>08.06.2015</p>
+            <h5>{{ spørsmål.separertEnkeSkilt.label}}</h5>
+            <p>{{spørsmål.separertEnkeSkilt.verdi}}</p>
+            <h5>{{spørsmål.separertEnkeSkiltUtland.label}}</h5>
+            <p>{{spørsmål.separertEnkeSkiltUtland.verdi}}</p>
+            <h5>{{spørsmål.separertEnkeSkiltDato.label}}</h5>
+            <p>{{spørsmål.separertEnkeSkiltDato.verdi}}</p>
         </td>
     {{/table}}
 </section>

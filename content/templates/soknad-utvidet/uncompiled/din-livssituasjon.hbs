@@ -6,31 +6,6 @@
             <p>{{spørsmål.årsak.verdi}}</p>
         </td>
         <td>
-            <h5>{{spørsmål.harSamboerNå.label}}</h5>
-            <p>{{spørsmål.harSamboerNå.verdi}}</p>
-            {{#if nåværendeSamboer}}
-                <div class="extra-cell-content">
-                    <h5>{{nåværendeSamboer.navn.label}}</h5>
-                    <p>{{nåværendeSamboer.navn.verdi}}</p>
-                </div>
-                <div class="extra-cell-content">
-                    <h5>{{nåværendeSamboer.ident.label}}</h5>
-                    <p>{{nåværendeSamboer.ident.verdi}}</p>
-                </div>
-                {{#eq nåværendeSamboer.ident.verdi "UKJENT"}}
-                    <div class="extra-cell-content">
-                        <h5>{{nåværendeSamboer.fødselsdato.label}}</h5>
-                        <p>{{nåværendeSamboer.fødselsdato.verdi}}</p>
-                    </div>
-                {{/eq}}
-                <div class="extra-cell-content">
-                    <h5>{{nåværendeSamboer.samboerFraDato.label}}</h5>
-                    <p>{{nåværendeSamboer.samboerFraDato.verdi}}</p>
-                </div>
-            {{/if}}
-        </td>
-
-        <td>
             <h5>{{spørsmål.separertEnkeSkilt.label}}</h5>
             <p>{{spørsmål.separertEnkeSkilt.verdi}}</p>
             {{#if spørsmål.separertEnkeSkiltUtland}}
@@ -46,5 +21,27 @@
                 </div>
             {{/if}}
         </td>
+
+        <td>
+            <h5>{{spørsmål.harSamboerNå.label}}</h5>
+            <p>{{spørsmål.harSamboerNå.verdi}}</p>
+            {{> soknad-utvidet/samboer nåværendeSamboer}}
+        </td>
+        <td>
+            <h5>Har du hatt annen samboer i perioden du søker barnetrygd for?</h5>
+            {{#if tidligereSamboere.length}}
+                <p>Ja</p>
+            {{else}}
+                <p>Nei</p>
+            {{/if}}
+        </td>
+        {{#each tidligereSamboere as | tidligereSamboer | }}
+            <td>
+                <h5>Tidligere samboer {{add @index 1}}</h5>
+                {{> soknad-utvidet/samboer tidligereSamboer }}
+            </td>
+        {{/each}}
+
+
     {{/table}}
 </section>

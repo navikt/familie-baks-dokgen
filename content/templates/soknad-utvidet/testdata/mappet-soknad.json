@@ -5,7 +5,7 @@
       "spørsmål": {
         "årsak": {
           "label": "Hvorfor søker du om utvidet barnetrygd?",
-          "verdi" : "Jeg er skilt"
+          "verdi": "Jeg er skilt"
         },
         "separertEnkeSkilt": {
           "label": "Er du separert, skilt eller enke/enkemann uten at dette er registrert i folkeregisteret i Norge?",
@@ -41,7 +41,53 @@
           "label": "Når startet samboerforholdet?",
           "verdi": "02.02.2014"
         }
-      }
+      },
+      "tidligereSamboere": [
+        {
+          "navn": {
+            "label": "Samboerens navn",
+            "verdi": "Tidligere samboer 1"
+          },
+          "ident": {
+            "label": "Fødselsnummer eller d-nummer",
+            "verdi": "VET IKKE"
+          },
+          "fødselsdato": {
+            "label": "Fødselsnummer eller d-nummer",
+            "verdi": "VET IKKE"
+          },
+          "samboerFraDato": {
+            "label": "Når startet samboerforholdet?",
+            "verdi": "02.02.2014"
+          },
+          "samboerTilDato": {
+            "label": "Når ble samboerforholdet avsluttet?",
+            "verdi": "03.02.2014"
+          }
+        },
+        {
+          "navn": {
+            "label": "Samboerens navn",
+            "verdi": "Tideligere samboer 2"
+          },
+          "ident": {
+            "label": "Fødselsnummer eller d-nummer",
+            "verdi": "VET IKKE"
+          },
+          "fødselsdato": {
+            "label": "Fødselsnummer eller d-nummer",
+            "verdi": "VET IKKE"
+          },
+          "samboerFraDato": {
+            "label": "Når startet samboerforholdet?",
+            "verdi": "02.02.2014"
+          },
+          "samboerTilDato": {
+            "label": "Når ble samboerforholdet avsluttet?",
+            "verdi": "03.02.2014"
+          }
+        }
+      ]
     },
     "ident": {
       "label": "Ident",

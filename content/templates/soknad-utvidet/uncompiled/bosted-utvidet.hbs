@@ -14,4 +14,14 @@
     {{#eq spørsmål.erFosterbarn.verdi "NEI"}}
         {{> ja-nei-barnenavn spørsmål.skriftligAvtaleOmDeltBosted }}
     {{/eq}}
+    <td class="ja-nei">
+        <h5>{{spørsmål.søkerHarBoddMedAndreForelder.label}}</h5>
+        <p>{{spørsmål.søkerHarBoddMedAndreForelder.verdi}}</p>
+        {{#eq spørsmål.søkerHarBoddMedAndreForelder.verdi "JA" }}
+            <div class="extra-cell-content">
+                <h5>{{spørsmål.søkerFlyttetFraAndreForelderDato.label}}</h5>
+                <p>{{spørsmål.søkerFlyttetFraAndreForelderDato.verdi}}</p>
+            </div>
+        {{/eq}}
+    </td>
 {{/table}}

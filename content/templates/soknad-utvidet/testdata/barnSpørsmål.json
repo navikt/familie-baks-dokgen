@@ -1,0 +1,96 @@
+{
+  "spørsmål": {
+    "erFosterbarn": {
+      "label": "Hvem av barna er fosterbarn?",
+      "verdi": "NEI"
+    },
+    "erAdoptertFraUtland": {
+      "label": "Hvem av barna er adoptert fra utlandet?",
+      "verdi": "NEI"
+    },
+    "erAsylsøker": {
+      "label": "Hvem av barna er det søkt om asyl for?",
+      "verdi": "NEI"
+    },
+    "barnetrygdFraAnnetEøsland": {
+      "label": "Hvem av barna får eller er det søkt om barnetrygd for?",
+      "verdi": "NEI"
+    },
+    "oppholderSegIInstitusjon": {
+      "label": "Hvem av barna oppholder seg i institusjon?",
+      "verdi": "JA"
+    },
+    "institusjonsnavn": {
+      "label": "Navnet på institusjonen",
+      "verdi": "Pengebingen"
+    },
+    "institusjonsadresse": {
+      "label": "Adressen til institusjonen",
+      "verdi": "Andeby"
+    },
+    "institusjonspostnummer": {
+      "label": "Postnummer",
+      "verdi": "1234"
+    },
+    "institusjonOppholdStartdato": {
+      "label": "Når begynte oppholdet? ",
+      "verdi": "01.01.1800"
+    },
+    "institusjonOppholdSluttdato": {
+      "label": "Når skal oppholdet avsluttes? ",
+      "verdi": "31.12.2222"
+    },
+    "oppholderSegIUtland": {
+      "label": "Hvem av barna oppholder seg i utlandet?",
+      "verdi": "NEI"
+    },
+    "boddMindreEnn12MndINorge": {
+      "label": "Hvem av barna har bodd mindre enn tolv måneder sammenhengende i Norge?",
+      "verdi": "JA"
+    },
+    "nårKomBarnTilNorgeDato": {
+      "label": "Når kom barnet til Norge?",
+      "verdi": "01-01-1998"
+    },
+    "planleggerÅBoINorge12Mnd": {
+      "label": "Er det planlagt at barnet skal bo sammenhengende i Norge i mer enn tolv måneder?",
+      "verdi": "JA"
+    },
+    "andreForelderNavn": {
+      "label": "Navn ",
+      "verdi": "UKJENT"
+    },
+    "andreForelderFnr": {
+      "label": "Fødselsnummer eller d-nummer",
+      "verdi": "UKJENT"
+    },
+    "andreForelderFødselsdato": {
+      "label": "Fødselsdato (format dd.mm.åååå)",
+      "verdi": "UKJENT"
+    },
+    "andreForelderArbeidUtlandet": {
+      "label": "Arbeider den andre forelderen til {navn} i utlandet, på utenlandsk skip eller på utenlandsk kontinentalsokkel?",
+      "verdi": "NEI"
+    },
+    "andreForelderPensjonUtland": {
+      "label": "Får den andre forelderen til {navn} pensjon fra utlandet?",
+      "verdi": "NEI"
+    },
+    "borFastMedSøker": {
+      "label": "Bor {navn} fast sammen med deg?",
+      "verdi": "JA"
+    },
+    "skriftligAvtaleOmDeltBosted": {
+      "label": "Har du og den andre forelderen skriftlig avtale om delt \nbosted for {navn}?",
+      "verdi": "NEI"
+    },
+    "søkerForTidsromStartdato": {
+      "label": "Fra og med (format dd.mm.åååå)",
+      "verdi": "UKJENT"
+    },
+    "søkerForTidsromSluttdato": {
+      "label": "Til og med (format dd.mm.åååå)",
+      "verdi": "UKJENT"
+    }
+  }
+}

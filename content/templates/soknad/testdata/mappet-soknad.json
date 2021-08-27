@@ -99,7 +99,27 @@
         },
         "oppholderSegIInstitusjon": {
           "label": "Hvem av barna oppholder seg i institusjon?",
-          "verdi": "NEI"
+          "verdi": "JA"
+        },
+        "institusjonsnavn": {
+          "label": "Navnet på institusjonen",
+          "verdi": "Pengebingen"
+        },
+        "institusjonsadresse": {
+          "label": "Adressen til institusjonen",
+          "verdi": "Andeby"
+        },
+        "institusjonspostnummer":  {
+          "label": "Postnummer",
+          "verdi": "1234"
+        },
+        "institusjonOppholdStartdato": {
+          "label": "Når begynte oppholdet? ",
+          "verdi": "01.01.1800"
+        },
+        "institusjonOppholdSluttdato":  {
+          "label": "Når skal oppholdet avsluttes? ",
+          "verdi": "31.12.2222"
         },
         "oppholderSegIUtland": {
           "label": "Hvem av barna oppholder seg i utlandet?",
@@ -107,7 +127,15 @@
         },
         "boddMindreEnn12MndINorge": {
           "label": "Hvem av barna har bodd mindre enn tolv måneder sammenhengende i Norge?",
-          "verdi": "NEI"
+          "verdi": "JA"
+        },
+        "nårKomBarnTilNorgeDato": {
+          "label": "Når kom barnet til Norge?",
+          "verdi": "01-01-1998"
+        },
+        "planleggerÅBoINorge12Mnd": {
+          "label": "Er det planlagt at barnet skal bo sammenhengende i Norge i mer enn tolv måneder?",
+          "verdi": "JA"
         },
         "andreForelderNavn": {
           "label": "Navn ",

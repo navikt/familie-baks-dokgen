@@ -1,54 +1,7 @@
-{{#*inline "titteltekst"}}
-{{#with søknadspørsmål.oppfølgingsspørsmåltekster.verdi as | titteltekster | }}
-{{#with (lookup titteltekster klammeTekstId) as | tekst | }}
-{{~ replace tekst "{navn}" navn.verdi ~}}
-{{/with}}
-{{/with }}
-{{/inline}}
-
 <section class="soknad-section">
 <h3>{{add @index section-number-start }}. Om {{upper navn.verdi}}</h3>
-{{#table columns=2}}
-{{#eq spørsmål.oppholderSegIInstitusjon.verdi "JA"}}
-<td>
-<h5>{{> titteltekst klammeTekstId="[ombarnet.institusjon]" }}</h5>
-{{> soknad/oppfolging spørsmål.institusjonsnavn }}
-{{> soknad/oppfolging spørsmål.institusjonsadresse }}
-{{> soknad/oppfolging spørsmål.institusjonspostnummer }}
-{{> soknad/oppfolging-dato spørsmål.institusjonOppholdStartdato }}
-{{> soknad/oppfolging-dato spørsmål.institusjonOppholdSluttdato }}
-</td>
-{{/eq}}
-{{#eq spørsmål.boddMindreEnn12MndINorge.verdi "JA"}}
-<td>
-<h5>{{> titteltekst klammeTekstId="[ombarnet.sammenhengende-opphold]" }}</h5>
-{{> soknad/oppfolging-dato spørsmål.nårKomBarnTilNorgeDato }}
-{{> soknad/oppfolging spørsmål.planleggerÅBoINorge12Mnd }}
-</td>
-{{/eq}}
-{{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
-<td>
-<h5>{{> titteltekst klammeTekstId="[ombarnet.barnetrygd-eøs]" }}</h5>
-{{> soknad/oppfolging spørsmål.barnetrygdFraEøslandHvilketLand }}
-</td>
-{{/eq}}
-{{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
-<td>
-<h5>{{> titteltekst klammeTekstId="[ombarnet.oppholdutland]" }}</h5>
-{{> soknad/oppfolging spørsmål.oppholdsland }}
-</td>
-{{/eq}}
-{{/table}}
-{{#eq spørsmål.erFosterbarn.verdi "NEI"}}
-{{> soknad/andre-forelder barn }}
-{{/eq}}
-
-<h4>Bosted</h4>
+{{> soknad/om-barnet-info }}
+{{> soknad/om-barnet-fosterbarn }}
 {{> soknad/bosted }}
-
-<h4>Søker du barnetrygd for et spesielt tidsrom for {{upper barn.navn.verdi}}?</h4>
-{{# table columns=2}}
-{{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromStartdato}}
-{{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromSluttdato}}
-{{/table}}
+{{> soknad/om-barnet-barnetrygd-tidsrom }}
 </section>

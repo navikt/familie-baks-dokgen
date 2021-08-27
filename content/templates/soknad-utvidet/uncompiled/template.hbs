@@ -11,7 +11,7 @@
 {{> soknad/om-barna søknad section-number=4 }}
 {{#with spørsmål as | søknadspørsmål | }}
     {{#each barn as | barn | }}
-        {{> soknad/om-barnet barn section-number-start=5 }}
+        {{> soknad-utvidet/om-barnet-utvidet barn section-number-start=5 }}
     {{/each}}
 {{/with}}
 {{> soknad/vedlegg section-number=(add barn.length 5) }}

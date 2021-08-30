@@ -25,7 +25,9 @@
         <td>
             <h5>{{spørsmål.harSamboerNå.label}}</h5>
             <p>{{spørsmål.harSamboerNå.verdi}}</p>
-            {{> soknad-utvidet/samboer nåværendeSamboer}}
+            {{#if nåværendeSamboer}}
+                {{> soknad-utvidet/samboer nåværendeSamboer}}
+            {{/if}}
         </td>
         <td>
             <h5>Har du hatt annen samboer i perioden du søker barnetrygd for?</h5>

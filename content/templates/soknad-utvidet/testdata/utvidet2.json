@@ -1,0 +1,21 @@
+{
+  "utvidet": {
+    "spørsmål": {
+      "årsak": {
+        "label": "Hvorfor søker du om utvidet barnetrygd?",
+        "verdi" : "Samboeren min/ektefellen min er i varetekt/fengsel"
+      },
+      "separertEnkeSkilt": {
+        "label": "Er du separert, skilt eller enke/enkemann uten at dette er registrert i folkeregisteret i Norge?",
+        "verdi": "Nei"
+      },
+      "separertEnkeSkiltUtland": null,
+      "separertEnkeSkiltDato": null,
+      "harSamboerNå": {
+        "label": "Har du samboer nå?",
+        "verdi": "Nei"
+      }
+    },
+    "nåværendeSamboer": null
+  }
+}

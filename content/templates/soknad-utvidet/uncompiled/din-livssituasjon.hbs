@@ -1,0 +1,50 @@
+<section class="soknad-section">
+    <h3>{{section-number}}. Din livssituasjon</h3>
+    {{#table columns=2}}
+        <td>
+            <h5>{{spørsmål.årsak.label}}</h5>
+            <p>{{spørsmål.årsak.verdi}}</p>
+        </td>
+        <td>
+            <h5>{{spørsmål.harSamboerNå.label}}</h5>
+            <p>{{spørsmål.harSamboerNå.verdi}}</p>
+            {{#if nåværendeSamboer}}
+                <div class="extra-cell-content">
+                    <h5>{{nåværendeSamboer.navn.label}}</h5>
+                    <p>{{nåværendeSamboer.navn.verdi}}</p>
+                </div>
+                <div class="extra-cell-content">
+                    <h5>{{nåværendeSamboer.ident.label}}</h5>
+                    <p>{{nåværendeSamboer.ident.verdi}}</p>
+                </div>
+                {{#eq nåværendeSamboer.ident.verdi "UKJENT"}}
+                    <div class="extra-cell-content">
+                        <h5>{{nåværendeSamboer.fødselsdato.label}}</h5>
+                        <p>{{nåværendeSamboer.fødselsdato.verdi}}</p>
+                    </div>
+                {{/eq}}
+                <div class="extra-cell-content">
+                    <h5>{{nåværendeSamboer.samboerFraDato.label}}</h5>
+                    <p>{{nåværendeSamboer.samboerFraDato.verdi}}</p>
+                </div>
+            {{/if}}
+        </td>
+
+        <td>
+            <h5>{{spørsmål.separertEnkeSkilt.label}}</h5>
+            <p>{{spørsmål.separertEnkeSkilt.verdi}}</p>
+            {{#if spørsmål.separertEnkeSkiltUtland}}
+                <div class="extra-cell-content">
+                    <h5>{{spørsmål.separertEnkeSkiltUtland.label}}</h5>
+                    <p>{{spørsmål.separertEnkeSkiltUtland.verdi}}</p>
+                </div>
+            {{/if}}
+            {{#if spørsmål.separertEnkeSkiltDato}}
+                <div class="extra-cell-content">
+                    <h5>{{spørsmål.separertEnkeSkiltDato.label}}</h5>
+                    <p>{{spørsmål.separertEnkeSkiltDato.verdi}}</p>
+                </div>
+            {{/if}}
+        </td>
+    {{/table}}
+</section>

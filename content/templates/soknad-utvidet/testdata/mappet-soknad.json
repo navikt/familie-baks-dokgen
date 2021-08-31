@@ -9,11 +9,11 @@
         },
         "separertEnkeSkilt": {
           "label": "Er du separert, skilt eller enke/enkemann uten at dette er registrert i folkeregisteret i Norge?",
-          "verdi": "Ja"
+          "verdi": "JA"
         },
         "separertEnkeSkiltUtland": {
           "label": "Er du separert, skilt eller enke/enkemann i utlandet?",
-          "verdi": "Nei"
+          "verdi": "NEI"
         },
         "separertEnkeSkiltDato": {
           "label": "Fra hvilken dato er du separert, skilt eller enke/enkemann?",
@@ -21,7 +21,7 @@
         },
         "harSamboerNå": {
           "label": "Har du samboer nå?",
-          "verdi": "Ja"
+          "verdi": "JA"
         }
       },
       "nåværendeSamboer": {

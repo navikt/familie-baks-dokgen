@@ -26,7 +26,7 @@
             <h5>{{spørsmål.harSamboerNå.label}}</h5>
             <p>{{spørsmål.harSamboerNå.verdi}}</p>
             {{#if nåværendeSamboer}}
-                {{> soknad-utvidet/samboer nåværendeSamboer}}
+                {{> soknad-utvidet/samboer nåværendeSamboer.verdi}}
             {{/if}}
         </td>
         <td>
@@ -40,7 +40,7 @@
         {{#each tidligereSamboere as | tidligereSamboer | }}
             <td>
                 <h5>Tidligere samboer {{add @index 1}}</h5>
-                {{> soknad-utvidet/samboer tidligereSamboer }}
+                {{> soknad-utvidet/samboer tidligereSamboer.verdi }}
             </td>
         {{/each}}
 

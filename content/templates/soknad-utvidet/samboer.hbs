@@ -1,0 +1,18 @@
+<div class="extra-cell-content">
+<h5>{{navn.label}}</h5>
+<p>{{navn.verdi}}</p>
+</div>
+<div class="extra-cell-content">
+<h5>{{ident.label}}</h5>
+<p>{{ident.verdi}}</p>
+</div>
+{{#eq ident.verdi "UKJENT"}}
+<div class="extra-cell-content">
+<h5>{{fødselsdato.label}}</h5>
+<p>{{fødselsdato.verdi}}</p>
+</div>
+{{/eq}}
+<div class="extra-cell-content">
+<h5>{{samboerFraDato.label}}</h5>
+<p>{{samboerFraDato.verdi}}</p>
+</div>

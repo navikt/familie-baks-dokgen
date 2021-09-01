@@ -6,12 +6,12 @@
     {{/table}}
 </section>
 {{> soknad/omdeg søker section-number=1 }}
-{{> soknad-utvidet/din-livssituasjon søker.utvidet section-number=2}}
+{{> soknad-utvidet/din-livssituasjon søker.utvidet.verdi section-number=2}}
 {{> soknad/hvilke-barn søknad section-number=3 }}
 {{> soknad/om-barna søknad section-number=4 }}
 {{#with spørsmål as | søknadspørsmål | }}
     {{#each barn as | barn | }}
-        {{> soknad/om-barnet barn section-number-start=5 }}
+        {{> soknad-utvidet/om-barnet-utvidet barn section-number-start=5 }}
     {{/each}}
 {{/with}}
 {{> soknad/vedlegg section-number=(add barn.length 5) }}

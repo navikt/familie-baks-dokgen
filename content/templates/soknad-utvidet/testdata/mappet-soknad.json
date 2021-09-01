@@ -207,7 +207,7 @@
         "spørsmål": {
           "årsak": {
             "label": "Hvorfor søker du om utvidet barnetrygd?",
-            "verdi": "BRUDD_SAMBOER"
+            "verdi": "Jeg er separert"
           },
           "separertEnkeSkilt": {
             "label": "Er du separert, skilt eller enke/enkemann uten at dette er registrert i folkeregisteret i Norge?",

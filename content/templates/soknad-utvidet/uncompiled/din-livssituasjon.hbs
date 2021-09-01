@@ -5,22 +5,24 @@
             <h5>{{spørsmål.årsak.label}}</h5>
             <p>{{spørsmål.årsak.verdi}}</p>
         </td>
-        <td>
-            <h5>{{spørsmål.separertEnkeSkilt.label}}</h5>
-            <p>{{spørsmål.separertEnkeSkilt.verdi}}</p>
-            {{#if spørsmål.separertEnkeSkiltUtland}}
-                <div class="extra-cell-content">
-                    <h5>{{spørsmål.separertEnkeSkiltUtland.label}}</h5>
-                    <p>{{spørsmål.separertEnkeSkiltUtland.verdi}}</p>
-                </div>
-            {{/if}}
-            {{#if spørsmål.separertEnkeSkiltDato}}
-                <div class="extra-cell-content">
-                    <h5>{{spørsmål.separertEnkeSkiltDato.label}}</h5>
-                    <p>{{spørsmål.separertEnkeSkiltDato.verdi}}</p>
-                </div>
-            {{/if}}
-        </td>
+        {{#eq ../søker.sivilstand.verdi "GIFT"}}
+            <td>
+                <h5>{{spørsmål.separertEnkeSkilt.label}}</h5>
+                <p>{{spørsmål.separertEnkeSkilt.verdi}}</p>
+                {{#if spørsmål.separertEnkeSkiltUtland}}
+                    <div class="extra-cell-content">
+                        <h5>{{spørsmål.separertEnkeSkiltUtland.label}}</h5>
+                        <p>{{spørsmål.separertEnkeSkiltUtland.verdi}}</p>
+                    </div>
+                {{/if}}
+                {{#if spørsmål.separertEnkeSkiltDato}}
+                    <div class="extra-cell-content">
+                        <h5>{{spørsmål.separertEnkeSkiltDato.label}}</h5>
+                        <p>{{spørsmål.separertEnkeSkiltDato.verdi}}</p>
+                    </div>
+                {{/if}}
+            </td>
+        {{/eq}}
 
         <td>
             <h5>{{spørsmål.harSamboerNå.label}}</h5>

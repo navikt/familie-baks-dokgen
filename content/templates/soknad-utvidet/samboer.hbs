@@ -9,16 +9,16 @@
 {{#eq ident.verdi "UKJENT"}}
 <div class="extra-cell-content">
 <h5>{{fødselsdato.label}}</h5>
-<p>{{fødselsdato.verdi}}</p>
+<p>{{norwegian-date fødselsdato.verdi}}</p>
 </div>
 {{/eq}}
 <div class="extra-cell-content">
 <h5>{{samboerFraDato.label}}</h5>
-<p>{{samboerFraDato.verdi}}</p>
+<p>{{norwegian-date samboerFraDato.verdi}}</p>
 </div>
 {{#if samboerTilDato}}
 <div class="extra-cell-content">
 <h5>{{samboerTilDato.label}}</h5>
-<p>{{samboerTilDato.verdi}}</p>
+<p>{{norwegian-date samboerTilDato.verdi}}</p>
 </div>
 {{/if}}

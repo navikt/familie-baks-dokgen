@@ -24,9 +24,12 @@
                 {{/with}}
             </td>
         </tr>
-        <tr>
-            {{> soknad/ja-nei spørsmål.borPåRegistrertAdresse}}
-        </tr>
+<!-- Bare inkluder hvis adresse er annet enn tomt object {} -->
+        {{#if adresse.verdi.poststed}}
+            <tr>
+                {{> soknad/ja-nei spørsmål.borPåRegistrertAdresse}}
+            </tr>
+        {{/if}}
     </table>
 </section>
 

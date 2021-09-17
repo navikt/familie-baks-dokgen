@@ -24,12 +24,18 @@
 {{/with}}
 </td>
 </tr>
+{{#if adresse.verdi.poststed}}
+<tr>
+{{> soknad/ja-nei spørsmål.borPåRegistrertAdresse}}
+</tr>
+{{/if}}
 </table>
 </section>
 
 <section class="soknad-section">
 <table>
 {{#with spørsmål}}
+
 <tr>
 {{#> soknad/ja-nei oppholderSegINorge oppfølgingCondition="NEI" }}
 {{> soknad/oppfolging oppholdsland }}

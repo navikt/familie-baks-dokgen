@@ -45,3 +45,5 @@ spec:
   env:
     - name: APP_TEAM
       value: teamfamilie
+  secureLogs:
+    enabled: true

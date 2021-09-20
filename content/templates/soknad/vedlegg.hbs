@@ -1,14 +1,21 @@
 <div class="soknad-section">
-<h3>{{section-number}}. Liste over vedlegg</h3>
+<h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[pdf.vedlegg.seksjonstittel]}}</h3>
 {{#table columns=2}}
 {{#each dokumentasjon }}
 <td>
-<h5>Vedlegg {{ add @index 1 }} av {{ dokumentasjon.length }}: {{ capitalizeFirst ( lower (replace this.dokumentasjonsbehov "_" " ") ) }}</h5>
+<h5>
+<!-- Eneste måten jeg fant som lot meg putte en java Integer inn i en String på... -->
+{{#with (replace (replace @root.teksterUtenomSpørsmål.[pdf.vedlegg.nummerering] "{x}" "%s") "{total}" "%s") as | fstring | }}
+{{stringFormat fstring (add @index 1) dokumentasjon.length}}: {{ replace dokumentasjonSpråkTittel "{barn}" }}
+{{/with}}
+</h5>
 <p>
 {{#if harSendtInn}}
-Jeg har sendt inn denne dokumentasjonen til NAV tidligere
+{{@root.teksterUtenomSpørsmål.[dokumentasjon.har-sendt-inn.spm]}}
 {{ else }}
-Lastet opp {{ this.opplastedeVedlegg.length }} vedlegg
+{{#with (replace @root.teksterUtenomSpørsmål.[pdf.vedlegg.lastet-opp-antall] "{antall}" "%s") as | fstring | }}
+{{stringFormat fstring opplastedeVedlegg.length }}
+{{/with}}
 {{/if}}
 </p>
 </td>

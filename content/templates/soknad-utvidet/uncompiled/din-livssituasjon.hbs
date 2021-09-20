@@ -1,14 +1,14 @@
 <section class="soknad-section">
-    <h3>{{section-number}}. Din livssituasjon</h3>
+    <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[dinlivssituasjon.sidetittel]}}</h3>
     {{#table columns=2}}
         <td>
             <h5>{{spørsmål.årsak.label}}</h5>
             <p>{{spørsmål.årsak.verdi}}</p>
         </td>
-        {{#eq ../søker.sivilstand.verdi "GIFT"}}
+        {{#eq sivilstand.verdi "GIFT"}}
             <td>
                 <h5>{{spørsmål.separertEnkeSkilt.label}}</h5>
-                <p>{{spørsmål.separertEnkeSkilt.verdi}}</p>
+                <p>{{> soknad/ja-nei-språktekst spørsmål.separertEnkeSkilt.verdi}}</p>
                 {{#if spørsmål.separertEnkeSkiltUtland}}
                     <div class="extra-cell-content">
                         <h5>{{spørsmål.separertEnkeSkiltUtland.label}}</h5>
@@ -26,22 +26,24 @@
 
         <td>
             <h5>{{spørsmål.harSamboerNå.label}}</h5>
-            <p>{{spørsmål.harSamboerNå.verdi}}</p>
+            <p>{{> soknad/ja-nei-språktekst spørsmål.harSamboerNå.verdi}}</p>
             {{#if nåværendeSamboer}}
                 {{> soknad-utvidet/samboer nåværendeSamboer.verdi}}
             {{/if}}
         </td>
         <td>
-            <h5>Har du hatt annen samboer i perioden du søker barnetrygd for?</h5>
+            <h5>{{@root.teksterUtenomSpørsmål.[omdeg.annensamboer.spm]}}</h5>
             {{#if tidligereSamboere.length}}
-                <p>JA</p>
+                <p>{{ @root.teksterUtenomSpørsmål.[felles.svaralternativ.ja] }}</p>
             {{else}}
-                <p>NEI</p>
+                <p>{{ @root.teksterUtenomSpørsmål.[felles.svaralternativ.nei] }}</p>
             {{/if}}
         </td>
         {{#each tidligereSamboere as | tidligereSamboer | }}
             <td>
-                <h5>Tidligere samboer {{add @index 1}}</h5>
+                {{# with (replace @root.teksterUtenomSpørsmål.[pdf.dinlivssituasjon.tidligeresamboer.seksjonstittel] "{x}" "%s") as | fstring |}}
+                    <h5>{{stringFormat fstring (add @index 1)}}</h5>
+                {{/with}}
                 {{> soknad-utvidet/samboer tidligereSamboer.verdi }}
             </td>
         {{/each}}

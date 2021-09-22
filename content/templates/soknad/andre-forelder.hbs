@@ -7,9 +7,9 @@
 <h4>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h4>
 {{#table columns=2}}
 {{> soknad/felt-celle spørsmål.andreForelderNavn }}
-{{#if spørsmål.andreForelderFnr}}
+{{#if spørsmål.andreForelderFnr.verdi}}
 {{#> soknad/felt-celle-med-oppfølging spørsmål.andreForelderFnr }}
-{{#if spørsmål.andreForelderFødselsdato}}
+{{#if spørsmål.andreForelderFødselsdato.verdi}}
 {{> soknad/oppfolging-dato spørsmål.andreForelderFødselsdato}}
 {{/if}}
 {{/soknad/felt-celle-med-oppfølging}}

@@ -6,22 +6,14 @@
 <p>{{spørsmål.årsak.verdi}}</p>
 </td>
 {{#eq sivilstand.verdi "GIFT"}}
-<td>
-<h5>{{spørsmål.separertEnkeSkilt.label}}</h5>
-<p>{{> soknad/ja-nei-språktekst spørsmål.separertEnkeSkilt.verdi}}</p>
+{{#> soknad/ja-nei spørsmål.separertEnkeSkilt oppfølgingCondition="JA" }}
 {{#if spørsmål.separertEnkeSkiltUtland}}
-<div class="extra-cell-content">
-<h5>{{spørsmål.separertEnkeSkiltUtland.label}}</h5>
-<p>{{spørsmål.separertEnkeSkiltUtland.verdi}}</p>
-</div>
+{{> soknad/oppfolging-ja-nei spørsmål.separertEnkeSkiltUtland }}
 {{/if}}
 {{#if spørsmål.separertEnkeSkiltDato}}
-<div class="extra-cell-content">
-<h5>{{spørsmål.separertEnkeSkiltDato.label}}</h5>
-<p>{{spørsmål.separertEnkeSkiltDato.verdi}}</p>
-</div>
+{{> soknad/oppfolging-dato spørsmål.separertEnkeSkiltDato }}
 {{/if}}
-</td>
+{{/soknad/ja-nei}}
 {{/eq}}
 
 <td>
@@ -47,7 +39,5 @@
 {{> soknad-utvidet/samboer tidligereSamboer.verdi }}
 </td>
 {{/each}}
-
-
 {{/table}}
 </section>

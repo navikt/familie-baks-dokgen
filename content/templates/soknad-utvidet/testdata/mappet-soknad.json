@@ -1,22 +1,228 @@
 {
-  "søknadstype": "UTVIDET",
+  "barn": [
+    {
+      "ident": {
+        "label": "Ident",
+        "verdi": "12345678987"
+      },
+      "navn": {
+        "label": "Navn",
+        "verdi": "Barn Barnessen III"
+      },
+      "borMedSøker": {
+        "label": "Bor med søker",
+        "verdi": true
+      },
+      "alder": {
+        "label": "Alder",
+        "verdi": "11 år"
+      },
+      "spørsmål": {
+        "erFosterbarn": {
+          "label": "Kven av barna er fosterbarn?",
+          "verdi": "NEI"
+        },
+        "erAdoptertFraUtland": {
+          "label": "Kven av barna er adoptert frå utlandet?",
+          "verdi": "JA"
+        },
+        "erAsylsøker": {
+          "label": "Kven av barna er det søkt om asyl for?",
+          "verdi": "JA"
+        },
+        "barnetrygdFraAnnetEøsland": {
+          "label": "Kven av barna får du eller er det søkt om barnetrygd for?",
+          "verdi": "JA"
+        },
+        "oppholderSegIInstitusjon": {
+          "label": "Kven av barna oppheld seg i institusjon?",
+          "verdi": "JA"
+        },
+        "institusjonsnavn": {
+          "label": "Namn på institusjonen",
+          "verdi": "Narvesen"
+        },
+        "institusjonsadresse": {
+          "label": "Adressa til institusjonen",
+          "verdi": "Agnjka"
+        },
+        "institusjonspostnummer": {
+          "label": "Postnummer",
+          "verdi": "1234"
+        },
+        "institusjonOppholdStartdato": {
+          "label": "Når byrja opphaldet? ",
+          "verdi": "2021-09-02"
+        },
+        "oppholderSegIUtland": {
+          "label": "Kven av barna oppheld seg i utlandet?",
+          "verdi": "JA"
+        },
+        "oppholdsland": {
+          "label": "Kva land oppheld barnet seg i?",
+          "verdi": "Andorra"
+        },
+        "oppholdslandStartdato": {
+          "label": "Når byrja opphaldet?",
+          "verdi": "2021-09-03"
+        },
+        "boddMindreEnn12MndINorge": {
+          "label": "Kven av barna har budd mindre enn tolv månader samanhengande i Noreg?",
+          "verdi": "JA"
+        },
+        "planleggerÅBoINorge12Mnd": {
+          "label": "Er det planlagd at barnet skal bu i Noreg samanhengande i meir enn tolv månadar?",
+          "verdi": "JA"
+        },
+        "barnetrygdFraEøslandHvilketLand": {
+          "label": "Kva land får eller har du søkt barnetrygd frå?",
+          "verdi": "Antarktis"
+        },
+        "andreForelderArbeidUtlandet": {
+          "label": "Arbeidar den andre forelderen til Barn Barnessen III i utlandet, på utanlandsk skip eller på utanlandsk kontinentalsokkel?",
+          "verdi": "JA"
+        },
+        "andreForelderArbeidUtlandetHvilketLand": {
+          "label": "Kva land arbeidar den andre forelderen i?",
+          "verdi": "Angola"
+        },
+        "andreForelderPensjonUtland": {
+          "label": "Får den andre forelderen til Barn Barnessen III pensjon frå utlandet?",
+          "verdi": "JA"
+        },
+        "andreForelderPensjonHvilketLand": {
+          "label": "Kva land får den andre forelderen pensjon frå?",
+          "verdi": "Aust-Timor"
+        },
+        "borFastMedSøker": {
+          "label": "Bur Barn Barnessen III fast saman med deg?",
+          "verdi": "NEI"
+        },
+        "skriftligAvtaleOmDeltBosted": {
+          "label": "Har du og den andre forelderen skriftleg avtale om delt bustad for Barn Barnessen III?",
+          "verdi": "NEI"
+        },
+        "søkerHarBoddMedAndreForelder": {
+          "label": "Har du budd saman med den andre forelderen?",
+          "verdi": "JA"
+        },
+        "søkerFlyttetFraAndreForelderDato": {
+          "label": "Når flytta de frå kvarandre?",
+          "verdi": "Vi bor sammen nå"
+        },
+        "søkerForTidsromStartdato": {
+          "label": "Frå og med",
+          "verdi": "Ikke oppgitt"
+        },
+        "søkerForTidsromSluttdato": {
+          "label": "Til og med ",
+          "verdi": "Ikke oppgitt"
+        },
+        "andreForelderNavn": {
+          "label": "Namn ",
+          "verdi": "Heieieie"
+        },
+        "andreForelderFnr": {
+          "label": "Fødselsnummer eller d-nummer",
+          "verdi": "16108321184"
+        },
+        "andreForelderFødselsdato": {
+          "label": "Fødselsdato ",
+          "verdi": ""
+        },
+        "institusjonOppholdSluttdato": {
+          "label": "Når skal opphaldet avsluttast? ",
+          "verdi": "Eg veit ikkje når opphaldet skal avsluttast"
+        },
+        "oppholdslandSluttdato": {
+          "label": "Når skal opphaldet avsluttast?",
+          "verdi": "Eg veit ikkje når opphaldet skal avsluttast"
+        },
+        "nårKomBarnTilNorgeDato": {
+          "label": "Når kom barnet til Noreg?",
+          "verdi": "Barnet har ikkje komme til Noreg endå"
+        }
+      }
+    }
+  ],
+  "dokumentDato": "22.09.2021",
+  "dokumentasjon": [
+    {
+      "dokumentasjonsbehov": "VEDTAK_OPPHOLDSTILLATELSE",
+      "harSendtInn": true,
+      "opplastedeVedlegg": [],
+      "dokumentasjonSpråkTittel": "Vedtak om opphaldsløyve"
+    },
+    {
+      "dokumentasjonsbehov": "ADOPSJON_DATO",
+      "harSendtInn": true,
+      "opplastedeVedlegg": [],
+      "dokumentasjonSpråkTittel": "Stadfesting på dato du overtok omsorga ved adopsjon"
+    },
+    {
+      "dokumentasjonsbehov": "SEPARERT_SKILT_ENKE",
+      "harSendtInn": true,
+      "opplastedeVedlegg": [],
+      "dokumentasjonSpråkTittel": "Stadfesting på at {barn} bur saman med deg"
+    },
+    {
+      "dokumentasjonsbehov": "ANNEN_DOKUMENTASJON",
+      "harSendtInn": false,
+      "opplastedeVedlegg": [],
+      "dokumentasjonSpråkTittel": "Anna dokumentasjon"
+    }
+  ],
+  "fodselsnummer": "12345678901",
+  "label": "Søknad om utvidet barnetrygd",
+  "navn": "Voksen Voksnessen",
+  "originalSpråk": "nn",
+  "spørsmål": {
+    "erNoenAvBarnaFosterbarn": {
+      "label": "Er nokre av barna fosterbarn?",
+      "verdi": "NEI"
+    },
+    "søktAsylForBarn": {
+      "label": "Er det søkt om asyl i Noreg for nokre av barna?",
+      "verdi": "JA"
+    },
+    "oppholderBarnSegIInstitusjon": {
+      "label": "Oppheld nokre av barna seg i barneverninstitusjon eller i anna institusjon?",
+      "verdi": "JA"
+    },
+    "barnOppholdtSegTolvMndSammenhengendeINorge": {
+      "label": "Har barna budd samanhengande i Noreg dei siste tolv månadane?",
+      "verdi": "NEI"
+    },
+    "erBarnAdoptertFraUtland": {
+      "label": "Er nokre av barna adoptert frå utlandet?",
+      "verdi": "JA"
+    },
+    "mottarBarnetrygdForBarnFraAnnetEøsland": {
+      "label": "Får du eller er det søkt om barnetrygd for nokre av barna frå eit anna EØS land?",
+      "verdi": "JA"
+    },
+    "oppholderBarnSegIUtland": {
+      "label": "Oppheld nokre av barna seg i utlandet?",
+      "verdi": "JA"
+    },
+    "lestOgForståttBekreftelse": {
+      "label": "Eg er klar over at eg kan miste retten til barnetrygd dersom eg gjev feil opplysningar. Eg er også klar over at eg må betale tilbake dersom eg får pengar eg ikkje har rett til hvis eg har latt vere å informere eller har gjeve feil opplysningar.",
+      "verdi": "Eg stadfestar at eg har lese og forstått"
+    }
+  },
   "søker": {
+    "ident": {
+      "label": "Ident",
+      "verdi": "12345678901"
+    },
     "navn": {
       "label": "Navn",
       "verdi": "Voksen Voksnessen"
     },
-    "ident": {
-      "label": "Ident",
-      "verdi": "23058518298"
-    },
-    "sivilstand": {
-      "label": "Sivilstand",
-      "verdi": "GIFT"
-    },
     "statsborgerskap": {
       "label": "Statsborgerskap",
       "verdi": [
-        "Norge",
+        "Noreg",
         "Afghanistan"
       ]
     },
@@ -25,402 +231,171 @@
       "verdi": {
         "adressenavn": "Solveien",
         "postnummer": "2304",
-        "husnummer": "2",
         "husbokstav": "A",
-        "bruksenhetnummer": "H0101",
-        "bostedskommune": null,
+        "bruksenhetsnummer": null,
+        "husnummer": "2",
         "poststed": "HAMAR"
       }
     },
+    "sivilstand": {
+      "label": "Sivilstand",
+      "verdi": "GIFT"
+    },
     "spørsmål": {
       "borPåRegistrertAdresse": {
-        "label": "Bor du på denne adressen?",
+        "label": "Bur du på denne adressa?",
         "verdi": "JA"
       },
       "oppholderSegINorge": {
-        "label": "Oppholder du deg i Norge?",
-        "verdi": "JA"
+        "label": "Oppheld du deg i Noreg?",
+        "verdi": "NEI"
+      },
+      "oppholdsland": {
+        "label": "Kva land oppheld du deg i?",
+        "verdi": "Aust-Timor"
+      },
+      "oppholdslandDato": {
+        "label": "Når byrja opphaldet?",
+        "verdi": "2021-09-10"
       },
       "værtINorgeITolvMåneder": {
-        "label": "Har du bodd sammenhengende i Norge de siste tolv månedene?",
+        "label": "Har du budd samanhengande i Noreg dei siste tolv månadane?",
+        "verdi": "NEI"
+      },
+      "komTilNorgeDato": {
+        "label": "Når kom du til Noreg? ",
+        "verdi": "2021-09-09"
+      },
+      "planleggerÅBoINorgeTolvMnd": {
+        "label": "Planlegg du å bu samanhengande i Noreg i meir enn tolv månader?",
         "verdi": "JA"
       },
       "erAsylsøker": {
-        "label": "Er du asylsøker?",
+        "label": "Er du asylsøkar?",
         "verdi": "NEI"
       },
       "jobberPåBåt": {
-        "label": "Arbeider du i utlandet, på utenlandsk skip eller på utenlandsk kontinentalsokkel?",
-        "verdi": "NEI"
+        "label": "Arbeidar du i utlandet, på utanlandsk skip eller på utanlandsk kontinentalsokkel?",
+        "verdi": "JA"
+      },
+      "arbeidsland": {
+        "label": "Kva land arbeidar du i?",
+        "verdi": "Antarktis"
       },
       "mottarUtenlandspensjon": {
-        "label": "Får du pensjon fra utlandet?",
-        "verdi": "NEI"
+        "label": "Får du pensjon frå utlandet?",
+        "verdi": "JA"
+      },
+      "pensjonsland": {
+        "label": "Kva land får du pensjon frå?",
+        "verdi": "Bahamas"
+      },
+      "årsak": {
+        "label": "Kvifor søker du om utvida barnetrygd?",
+        "verdi": "Eg er gift, men det er brot i forholdet"
+      },
+      "separertEnkeSkilt": {
+        "label": "Er du separert, skilt eller enke/enkemann utan at dette er registrert i folkeregisteret i Noreg?",
+        "verdi": "JA"
+      },
+      "separertEnkeSkiltUtland": {
+        "label": "Er du separert, skilt eller enke/enkemann i utlandet?",
+        "verdi": "JA"
+      },
+      "separertEnkeSkiltDato": {
+        "label": "Frå kva dato er du separert, skilt eller enke/enkemann? ",
+        "verdi": "2021-09-03"
+      },
+      "harSamboerNå": {
+        "label": "Har du sambuar no?",
+        "verdi": "JA"
       }
     },
-    "utvidet": {
-      "label": "Utvidet",
+    "nåværendeSamboer": {
+      "label": "Samboer",
       "verdi": {
-        "spørsmål": {
-          "årsak": {
-            "label": "Hvorfor søker du om utvidet barnetrygd?",
-            "verdi": "Samboeren/ektefellen min er i fengsel/varetekt"
+        "navn": {
+          "label": "Sambuaren sitt namn",
+          "verdi": "Aaaa"
+        },
+        "ident": {
+          "label": "Fødselsnummer eller d-nummer",
+          "verdi": "16108321184"
+        },
+        "fødselsdato": {
+          "label": "Fødselsdato ",
+          "verdi": ""
+        },
+        "samboerFraDato": {
+          "label": "Når starta sambuarforholdet?",
+          "verdi": "2021-09-03"
+        }
+      }
+    },
+    "tidligereSamboere": [
+      {
+        "label": "Tidligere samboer: Aaa",
+        "verdi": {
+          "navn": {
+            "label": "Sambuaren sitt namn",
+            "verdi": "Aaa"
           },
-          "separertEnkeSkilt": {
-            "label": "Er du separert, skilt eller enke/enkemann uten at dette er registrert i folkeregisteret i Norge?",
-            "verdi": "NEI"
+          "ident": {
+            "label": "Fødselsnummer eller d-nummer",
+            "verdi": "Eg kjenner ikkje fødselsnummer eller d-nummer "
           },
-          "harSamboerNå": {
-            "label": "Har du samboer nå?",
-            "verdi": "JA"
-          }
-        },
-        "tidligereSamboere": [
-          {
-            "label": "Tidligere samboer: asdasdasd",
-            "verdi": {
-              "navn": {
-                "label": "Samboerens navn",
-                "verdi": "asdasdasd"
-              },
-              "ident": {
-                "label": "Fødselsnummer eller d-nummer",
-                "verdi": "UKJENT"
-              },
-              "fødselsdato": {
-                "label": "Fødselsdato",
-                "verdi": "2012-09-12"
-              },
-              "samboerFraDato": {
-                "label": "Når startet samboerforholdet?",
-                "verdi": "2018-09-06"
-              },
-              "samboerTilDato": {
-                "label": "Når ble samboerforholdet avsluttet?",
-                "verdi": "2020-09-05"
-              }
-            }
-          }
-        ],
-        "nåværendeSamboer": {
-          "label": "Samboer",
-          "verdi": {
-            "navn": {
-              "label": "Samboerens navn",
-              "verdi": "asdasd"
-            },
-            "ident": {
-              "label": "Fødselsnummer eller d-nummer",
-              "verdi": "UKJENT"
-            },
-            "fødselsdato": {
-              "label": "Fødselsdato",
-              "verdi": "2014-05-06"
-            },
-            "samboerFraDato": {
-              "label": "Når startet samboerforholdet?",
-              "verdi": "2019-09-05"
-            }
+          "fødselsdato": {
+            "label": "Fødselsdato ",
+            "verdi": "2021-09-02"
+          },
+          "samboerFraDato": {
+            "label": "Når starta sambuarforholdet?",
+            "verdi": "2021-09-02"
+          },
+          "samboerTilDato": {
+            "label": "Når vart sambuarforholdet avslutta?",
+            "verdi": "2021-09-03"
           }
         }
       }
-    }
+    ]
   },
-  "barn": [
-    {
-      "navn": {
-        "label": "Navn",
-        "verdi": "Barn 234567 89876"
-      },
-      "ident": {
-        "label": "Ident",
-        "verdi": "23456789876"
-      },
-      "borMedSøker": {
-        "label": "Bor med søker",
-        "verdi": false
-      },
-      "alder": {
-        "label": "Alder",
-        "verdi": "12"
-      },
-      "spørsmål": {
-        "erFosterbarn": {
-          "label": "Hvem av barna er fosterbarn?",
-          "verdi": "JA"
-        },
-        "erAdoptertFraUtland": {
-          "label": "Hvem av barna er adoptert fra utlandet?",
-          "verdi": "JA"
-        },
-        "erAsylsøker": {
-          "label": "Hvem av barna er det søkt om asyl for?",
-          "verdi": "JA"
-        },
-        "barnetrygdFraAnnetEøsland": {
-          "label": "Hvem av barna får du eller er det søkt om barnetrygd for?",
-          "verdi": "NEI"
-        },
-        "oppholderSegIInstitusjon": {
-          "label": "Hvem av barna oppholder seg i institusjon?",
-          "verdi": "JA"
-        },
-        "institusjonsnavn": {
-          "label": "Navnet på institusjonen",
-          "verdi": "qwerqwer"
-        },
-        "institusjonsadresse": {
-          "label": "Adressen til institusjonen",
-          "verdi": "qwer"
-        },
-        "institusjonspostnummer": {
-          "label": "Postnummer",
-          "verdi": "4433"
-        },
-        "institusjonOppholdStartdato": {
-          "label": "Når begynte oppholdet? ",
-          "verdi": "2018-09-12"
-        },
-        "institusjonOppholdSluttdato": {
-          "label": "Når skal oppholdet avsluttes? ",
-          "verdi": "UKJENT"
-        },
-        "oppholderSegIUtland": {
-          "label": "Hvem av barna oppholder seg i utlandet?",
-          "verdi": "JA"
-        },
-        "oppholdsland": {
-          "label": "Hvilket land oppholder barnet seg i?",
-          "verdi": "Mexico"
-        },
-        "oppholdslandSluttdato": {
-          "label": "Når skal oppholdet avsluttes?",
-          "verdi": "2021-09-22"
-        },
-        "oppholdslandStartdato": {
-          "label": "Når begynte oppholdet?",
-          "verdi": "2018-09-06"
-        },
-        "boddMindreEnn12MndINorge": {
-          "label": "Hvem av barna har bodd mindre enn tolv måneder sammenhengende i Norge?",
-          "verdi": "NEI"
-        },
-        "borFastMedSøker": {
-          "label": "Bor {navn} fast sammen med deg?",
-          "verdi": "NEI"
-        },
-        "søkerForTidsromStartdato": {
-          "label": "Fra og med ",
-          "verdi": "2004-09-16"
-        },
-        "søkerForTidsromSluttdato": {
-          "label": "Til og med ",
-          "verdi": "2017-09-07"
-        }
-      },
-      "utvidet": {
-        "søkerHarBoddMedAndreForelder": {
-          "label": "Har du bodd sammen med den andre forelderen?",
-          "verdi": "NEI"
-        }
-      }
-    },
-    {
-      "navn": {
-        "label": "Navn",
-        "verdi": "Barn Barnessen III"
-      },
-      "ident": {
-        "label": "Ident",
-        "verdi": "12345678987"
-      },
-      "borMedSøker": {
-        "label": "Bor med søker",
-        "verdi": true
-      },
-      "alder": {
-        "label": "Alder",
-        "verdi": "11"
-      },
-      "spørsmål": {
-        "erFosterbarn": {
-          "label": "Hvem av barna er fosterbarn?",
-          "verdi": "JA"
-        },
-        "erAdoptertFraUtland": {
-          "label": "Hvem av barna er adoptert fra utlandet?",
-          "verdi": "JA"
-        },
-        "erAsylsøker": {
-          "label": "Hvem av barna er det søkt om asyl for?",
-          "verdi": "JA"
-        },
-        "barnetrygdFraAnnetEøsland": {
-          "label": "Hvem av barna får du eller er det søkt om barnetrygd for?",
-          "verdi": "NEI"
-        },
-        "oppholderSegIInstitusjon": {
-          "label": "Hvem av barna oppholder seg i institusjon?",
-          "verdi": "JA"
-        },
-        "institusjonsnavn": {
-          "label": "Navnet på institusjonen",
-          "verdi": "qwerqwer"
-        },
-        "institusjonsadresse": {
-          "label": "Adressen til institusjonen",
-          "verdi": "qwerqwer"
-        },
-        "institusjonspostnummer": {
-          "label": "Postnummer",
-          "verdi": "2233"
-        },
-        "institusjonOppholdStartdato": {
-          "label": "Når begynte oppholdet? ",
-          "verdi": "2021-07-13"
-        },
-        "institusjonOppholdSluttdato": {
-          "label": "Når skal oppholdet avsluttes? ",
-          "verdi": "2021-08-04"
-        },
-        "oppholderSegIUtland": {
-          "label": "Hvem av barna oppholder seg i utlandet?",
-          "verdi": "JA"
-        },
-        "oppholdsland": {
-          "label": "Hvilket land oppholder barnet seg i?",
-          "verdi": "Moldova"
-        },
-        "oppholdslandSluttdato": {
-          "label": "Når skal oppholdet avsluttes?",
-          "verdi": "2019-09-05"
-        },
-        "oppholdslandStartdato": {
-          "label": "Når begynte oppholdet?",
-          "verdi": "2014-08-14"
-        },
-        "boddMindreEnn12MndINorge": {
-          "label": "Hvem av barna har bodd mindre enn tolv måneder sammenhengende i Norge?",
-          "verdi": "NEI"
-        },
-        "borFastMedSøker": {
-          "label": "Bor {navn} fast sammen med deg?",
-          "verdi": "JA"
-        },
-        "søkerForTidsromStartdato": {
-          "label": "Fra og med ",
-          "verdi": "2017-09-07"
-        },
-        "søkerForTidsromSluttdato": {
-          "label": "Til og med ",
-          "verdi": "2020-09-18"
-        }
-      },
-      "utvidet": {
-        "søkerHarBoddMedAndreForelder": {
-          "label": "Har du bodd sammen med den andre forelderen?",
-          "verdi": "JA"
-        },
-        "søkerFlyttetFraAndreForelderDato": {
-          "label": "Når flyttet dere fra hverandre?",
-          "verdi": "Vi bor sammen nå"
-        }
-      }
-    }
-  ],
-  "spørsmål": {
-    "erNoenAvBarnaFosterbarn": {
-      "label": "Er noen av barna fosterbarn?",
-      "verdi": "JA"
-    },
-    "søktAsylForBarn": {
-      "label": "Er det søkt om asyl i Norge for noen av barna?",
-      "verdi": "JA"
-    },
-    "oppholderBarnSegIInstitusjon": {
-      "label": "Oppholder noen av barna seg i barnverninstitusjon eller i annen institusjon?",
-      "verdi": "JA"
-    },
-    "barnOppholdtSegTolvMndSammenhengendeINorge": {
-      "label": "Har barna bodd sammenhengende i Norge de siste tolv månedene?",
-      "verdi": "JA"
-    },
-    "erBarnAdoptertFraUtland": {
-      "label": "Er noen av barna adoptert fra utlandet?",
-      "verdi": "JA"
-    },
-    "mottarBarnetrygdForBarnFraAnnetEøsland": {
-      "label": "Får du eller er det søkt om barnetrygd for noen av barna fra et annet EØS land?",
-      "verdi": "NEI"
-    },
-    "oppholderBarnSegIUtland": {
-      "label": "Oppholder noen av barna seg i utlandet?",
-      "verdi": "JA"
-    },
-    "lestOgForståttBekreftelse": {
-      "label": "Jeg er klar over at jeg kan miste retten til barnetrygd dersom jeg gir feil opplysninger. Jeg er også klar over at jeg må betale tilbake dersom jeg får penger jeg ikke har rett til hvis jeg lar være å informere eller gir feil opplysninger.",
-      "verdi": "Jeg bekrefter at jeg har lest og forstått."
-    },
-    "oppfølgingsspørsmåltekster": {
-      "label": "Tekster som ellers trengs til pdf-gen, typ \"Du har opplyst at {navn} oppholder seg i institusjon\"",
-      "verdi": {
-        "ombarnet.fosterbarn": "Du har opplyst at {navn} er fosterbarn",
-        "ombarnet.institusjon": "Du har opplyst at {navn} oppholder seg i institusjon.",
-        "ombarnet.oppholdutland": "Du har opplyst at {navn} oppholder seg i utlandet",
-        "ombarnet.sammenhengende-opphold": "Du har opplyst at {navn} ikke har bodd sammenhengende i Norge de siste tolv månedene",
-        "ombarnet.barnetrygd-eøs": "Du har opplyst at du får eller har søkt om barnetrygd for {navn} fra et annet EØS land."
-      }
-    }
-  },
-  "dokumentasjon": [
-    {
-      "dokumentasjonsbehov": "VEDTAK_OPPHOLDSTILLATELSE",
-      "harSendtInn": false,
-      "opplastedeVedlegg": [
-        {
-          "navn": "1.png",
-          "dokumentId": "2bf8680c-00ba-4f19-bdd0-9f5fdf0ca15f",
-          "tittel": "VEDTAK_OPPHOLDSTILLATELSE"
-        }
-      ]
-    },
-    {
-      "dokumentasjonsbehov": "ADOPSJON_DATO",
-      "harSendtInn": false,
-      "opplastedeVedlegg": [
-        {
-          "navn": "2.png",
-          "dokumentId": "9dc92e3b-9ff1-4bd2-b7c9-45a49eba2492",
-          "tittel": "ADOPSJON_DATO"
-        },
-        {
-          "navn": "3.png",
-          "dokumentId": "e0d646cc-a5f1-4753-8130-4fdee5c87429",
-          "tittel": "ADOPSJON_DATO"
-        }
-      ]
-    },
-    {
-      "dokumentasjonsbehov": "BEKREFTELSE_FRA_BARNEVERN",
-      "harSendtInn": false,
-      "opplastedeVedlegg": [
-        {
-          "navn": "4.png",
-          "dokumentId": "c1a84f58-9ea8-4169-a6c7-840ad44e931c",
-          "tittel": "BEKREFTELSE_FRA_BARNEVERN"
-        }
-      ]
-    },
-    {
-      "dokumentasjonsbehov": "ANNEN_DOKUMENTASJON",
-      "harSendtInn": false,
-      "opplastedeVedlegg": [
-        {
-          "navn": "6.png",
-          "dokumentId": "f1645a8d-c93a-424f-80a0-6ca3e7574b33",
-          "tittel": "ANNEN_DOKUMENTASJON"
-        }
-      ]
-    }
-  ]
+  "søknadstype": "UTVIDET",
+  "teksterUtenomSpørsmål": {
+    "ombarnet.fosterbarn": "Du har opplyst at {navn} er fosterbarn",
+    "ombarnet.institusjon": "Du har opplyst at {navn} oppheld seg i institusjon.",
+    "ombarnet.oppholdutland": "Du har opplyst at {navn} oppheld seg i utlandet",
+    "ombarnet.sammenhengende-opphold": "Du har opplyst at {navn} ikkje har budd\nsamanhengande i Noreg dei siste tolv månadene.",
+    "ombarnet.barnetrygd-eøs": "Du har opplyst at du får eller har søkt om barnetrygd\nfor {navn} frå eit anna EØS land.",
+    "omdeg.annensamboer.spm": "Har du hatt sambuar tidligare i perioden du søker barnetrygd for?",
+    "pdf.andreforelder.seksjonstittel": "Barnets andre forelder",
+    "pdf.hvilkebarn.seksjonstittel": "Hvilke barn søker du for?",
+    "pdf.hvilkebarn.registrert-på-adresse": "Registrert på søkers adresse",
+    "pdf.hvilkebarn.ikke-registrert-på-adresse": "Ikke registrert på søkers adresse",
+    "pdf.ombarnet.seksjonstittel": "Om {navn}",
+    "pdf.omdeg.seksjonstittel": "Om deg",
+    "pdf.bosted.seksjonstittel": "Bosted",
+    "pdf.ombarna.seksjonstittel": "Om barna dine",
+    "pdf.søker-for-tidsrom.seksjonstittel": "Søker du barnetrygd for et spesielt tidsrom for {navn}?",
+    "pdf.søker.seksjonstittel": "Søker",
+    "pdf.vedlegg.seksjonstittel": "Liste over vedlegg",
+    "pdf.vedlegg.lastet-opp-antall": "Lastet opp {antall} vedlegg",
+    "pdf.vedlegg.nummerering": "Vedlegg {x} av {total}",
+    "dokumentasjon.har-sendt-inn.spm": "Eg har sendt inn denne dokumentasjonen til NAV tidlegare",
+    "dinlivssituasjon.sidetittel": "Livssituasjonen din",
+    "pdf.dinlivssituasjon.tidligeresamboer.seksjonstittel": "Tidligere samboer {x}",
+    "felles.sivilstatus.kode.GIFT": "Gift",
+    "felles.sivilstatus.kode.ENKE_ELLER_ENKEMANN": "Enke/enkemann",
+    "felles.sivilstatus.kode.SKILT": "Skilt",
+    "felles.sivilstatus.kode.SEPARERT": "Separert",
+    "felles.sivilstatus.kode.REGISTRERT_PARTNER": "Registrert partner",
+    "felles.sivilstatus.kode.SEPARERT_PARTNER": "Separert partner",
+    "felles.sivilstatus.kode.SKILT_PARTNER": "Skilt partner",
+    "felles.sivilstatus.kode.GJENLEVENDE_PARTNER": "Attlevande partner",
+    "felles.sivilstatus.kode.UGIFT": "Ugift",
+    "felles.sivilstatus.kode.UOPPGITT": "Ikkje oppgitt",
+    "felles.svaralternativ.ja": "Ja",
+    "felles.svaralternativ.nei": "Nei",
+    "felles.svaralternativ.vetikke": "Eg veit ikkje   "
+  }
 }

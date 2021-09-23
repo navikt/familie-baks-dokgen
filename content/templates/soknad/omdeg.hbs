@@ -1,5 +1,5 @@
 <section class="soknad-section">
-<h3>{{section-number}}. Om deg</h3>
+<h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[pdf.omdeg.seksjonstittel]}}</h3>
 <table>
 <tr>
 {{> soknad/felt-celle ident}}
@@ -13,7 +13,9 @@
 </td>
 </tr>
 <tr>
-{{> soknad/felt-celle sivilstand }}
+{{# with (join "felles.sivilstatus.kode" sivilstand.verdi "." prefix='[' suffix=']') as | sivilstandkode | }}
+{{> soknad/felt-celle label=sivilstand.label verdi=(lookup @root.teksterUtenomSpørsmål sivilstandkode) }}
+{{/with}}
 <td>
 <h5>{{adresse.label}}</h5>
 {{#with adresse.verdi}}
@@ -35,7 +37,6 @@
 <section class="soknad-section">
 <table>
 {{#with spørsmål}}
-
 <tr>
 {{#> soknad/ja-nei oppholderSegINorge oppfølgingCondition="NEI" }}
 {{> soknad/oppfolging oppholdsland }}
@@ -49,7 +50,7 @@
 <tr>
 {{#> soknad/ja-nei værtINorgeITolvMåneder oppfølgingCondition="NEI" }}
 {{> soknad/oppfolging-dato komTilNorgeDato }}
-{{> soknad/oppfolging planleggerÅBoINorgeTolvMnd }}
+{{> soknad/oppfolging-ja-nei planleggerÅBoINorgeTolvMnd }}
 {{/soknad/ja-nei}}
 
 {{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}

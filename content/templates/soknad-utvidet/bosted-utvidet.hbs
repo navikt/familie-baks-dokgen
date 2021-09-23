@@ -1,27 +1,14 @@
 {{#*inline "ja-nei-barnenavn"}}
-<td class="ja-nei">
-<h5>{{replace label "{navn}" (upper navn.verdi)}}</h5>
-<p>{{verdi}}</p>
-{{#eq verdi oppfølgingCondition }}
-{{> @partial-block }}
-{{/eq}}
-</td>
+{{#> soknad/ja-nei label=(replace label "{navn}" (upper navn.verdi)) }}{{/soknad/ja-nei}}
 {{/inline}}
 
-<h4>Bosted</h4>
+<h4>{{@root.teksterUtenomSpørsmål.[pdf.bosted.seksjonstittel]}}</h4>
 {{#table columns=2}}
 {{> ja-nei-barnenavn spørsmål.borFastMedSøker }}
 {{#eq spørsmål.erFosterbarn.verdi "NEI"}}
 {{> ja-nei-barnenavn spørsmål.skriftligAvtaleOmDeltBosted }}
 {{/eq}}
-<td class="ja-nei">
-<h5>{{utvidet.søkerHarBoddMedAndreForelder.label}}</h5>
-<p>{{utvidet.søkerHarBoddMedAndreForelder.verdi}}</p>
-{{#eq utvidet.søkerHarBoddMedAndreForelder.verdi "JA" }}
-<div class="extra-cell-content">
-<h5>{{utvidet.søkerFlyttetFraAndreForelderDato.label}}</h5>
-<p>{{norwegian-date utvidet.søkerFlyttetFraAndreForelderDato.verdi}}</p>
-</div>
-{{/eq}}
-</td>
+{{#> soknad/ja-nei spørsmål.søkerHarBoddMedAndreForelder oppfølgingCondition="JA" }}
+{{> soknad/oppfolging-dato spørsmål.søkerFlyttetFraAndreForelderDato }}
+{{/soknad/ja-nei}}
 {{/table}}

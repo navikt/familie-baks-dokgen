@@ -1,5 +1,5 @@
 <section class="soknad-section">
-<h3>{{add @index section-number-start }}. Om {{upper navn.verdi}}</h3>
+<h3>{{add @index section-number-start }}. {{ replace @root.teksterUtenomSpørsmål.[pdf.ombarnet.seksjonstittel] "{navn}" (upper navn.verdi)}}</h3>
 {{> soknad/om-barnet-info }}
 {{> soknad/om-barnet-fosterbarn }}
 {{> soknad/bosted }}

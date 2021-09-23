@@ -46,10 +46,6 @@
           "label": "Which of the children have lived in Norway for less than 12 consecutive months?",
           "verdi": "NEI"
         },
-        "andreForelderNavn": {
-          "label": "Name",
-          "verdi": "UKJENT"
-        },
         "andreForelderArbeidUtlandet": {
           "label": "Does Barn Barnessen III’s other parent work abroad, on a foreign ship or on a foreign continental shelf?",
           "verdi": "VET_IKKE"
@@ -66,6 +62,10 @@
           "label": "Do you and the other parent have a written agreement on dual\n residence for Barn Barnessen III?",
           "verdi": "NEI"
         },
+        "søkerHarBoddMedAndreForelder": {
+          "label": "Have you ever lived with the other parent?",
+          "verdi": "NEI"
+        },
         "søkerForTidsromStartdato": {
           "label": "From",
           "verdi": "Not provided"
@@ -77,11 +77,35 @@
         "søkerFlyttetFraAndreForelderDato": {
           "label": "When did you move apart?",
           "verdi": ""
+        },
+        "andreForelderNavn": {
+          "label": "Name",
+          "verdi": "I am unable to provide information about the other parent"
+        },
+        "andreForelderFnr": {
+          "label": "Norwegian National identity number or D number",
+          "verdi": ""
+        },
+        "andreForelderFødselsdato": {
+          "label": "Date of birth",
+          "verdi": ""
+        },
+        "institusjonOppholdSluttdato": {
+          "label": "When is the stay expected to end? ",
+          "verdi": ""
+        },
+        "oppholdslandSluttdato": {
+          "label": "When is the stay expected to end? ",
+          "verdi": ""
+        },
+        "nårKomBarnTilNorgeDato": {
+          "label": "When did the child come to Norway?",
+          "verdi": ""
         }
       }
     }
   ],
-  "dokumentDato": "20.09.2021",
+  "dokumentDato": "22.09.2021",
   "dokumentasjon": [
     {
       "dokumentasjonsbehov": "ANNEN_DOKUMENTASJON",
@@ -91,7 +115,7 @@
     }
   ],
   "fodselsnummer": "12345678901",
-  "label": "Søknad om ordinær barnetrygd",
+  "label": "Søknad om utvidet barnetrygd",
   "navn": "Voksen Voksnessen",
   "originalSpråk": "en",
   "spørsmål": {
@@ -172,6 +196,10 @@
         "label": "Have you lived in Norway continuously for the past 12 months?",
         "verdi": "JA"
       },
+      "planleggerÅBoINorgeTolvMnd": {
+        "label": "Are you planning to live in Norway continuously for more than 12 months?",
+        "verdi": "JA"
+      },
       "erAsylsøker": {
         "label": "Are you an asylum seeker?",
         "verdi": "NEI"
@@ -183,18 +211,31 @@
       "mottarUtenlandspensjon": {
         "label": "Do you receive a pension from abroad?",
         "verdi": "NEI"
+      },
+      "årsak": {
+        "label": "Why are you applying for extended child benefit?",
+        "verdi": "I am married, but we have broken up"
+      },
+      "separertEnkeSkilt": {
+        "label": "Are you separated or divorced without this having been registered in the Norwegian National Registry (folkeregisteret)?",
+        "verdi": "NEI"
+      },
+      "harSamboerNå": {
+        "label": "Are you currently living with a partner?",
+        "verdi": "NEI"
       }
     },
     "nåværendeSamboer": null,
     "tidligereSamboere": []
   },
-  "søknadstype": "ORDINÆR",
+  "søknadstype": "UTVIDET",
   "teksterUtenomSpørsmål": {
     "ombarnet.fosterbarn": "You have stated that {navn} is a foster child",
     "ombarnet.institusjon": "You have stated that {navn} is currently living in an institution.",
     "ombarnet.oppholdutland": "You have stated that {navn} is currently living abroad",
     "ombarnet.sammenhengende-opphold": "You have stated that {navn} has not lived\n in Norway continuously for the past 12 months",
     "ombarnet.barnetrygd-eøs": "You have stated that you are receiving or have applied for child benefit\n for {navn} from another EEA country.",
+    "omdeg.annensamboer.spm": "Have you had a cohabiting partner during the period for which you are applying for child benefit?",
     "pdf.andreforelder.seksjonstittel": "Child's other parent",
     "pdf.hvilkebarn.seksjonstittel": "Which children are you applying for?",
     "pdf.hvilkebarn.registrert-på-adresse": "Registered on applicant's address",
@@ -206,8 +247,11 @@
     "pdf.søker-for-tidsrom.seksjonstittel": "Are you applying for a specific time period for {navn}?",
     "pdf.søker.seksjonstittel": "Applicant",
     "pdf.vedlegg.seksjonstittel": "List of attachments",
-    "dokumentasjon.har-sendt-inn.spm": "I have already submitted this documentation to NAV in the past",
     "pdf.vedlegg.lastet-opp-antall": "Uploaded {antall} attachments",
+    "pdf.vedlegg.nummerering": "Attachment {x} of {total}",
+    "dokumentasjon.har-sendt-inn.spm": "I have already submitted this documentation to NAV in the past",
+    "dinlivssituasjon.sidetittel": "Your life situation",
+    "pdf.dinlivssituasjon.tidligeresamboer.seksjonstittel": "Former cohabitant {x}",
     "felles.sivilstatus.kode.GIFT": "Married",
     "felles.sivilstatus.kode.ENKE_ELLER_ENKEMANN": "Widow(er)",
     "felles.sivilstatus.kode.SKILT": "Divorced",

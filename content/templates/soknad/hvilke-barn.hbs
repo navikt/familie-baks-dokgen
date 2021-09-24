@@ -1,5 +1,5 @@
 <section class="soknad-section">
-<h3>{{section-number}}. Hvilke barn søker du for?</h3>
+<h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.seksjonstittel]}}</h3>
 {{#each barn}}
 <table>
 <tr>
@@ -8,7 +8,7 @@
 </tr>
 <tr>
 {{> soknad/felt-celle ident }}
-{{#> soknad/felt-celle-boolsk borMedSøker yes="Registrert på søkers adresse" no="Ikke registrert på søkers adresse" }}{{/soknad/felt-celle-boolsk}}
+{{#> soknad/felt-celle-boolsk borMedSøker yes=@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse] no=@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse] }}{{/soknad/felt-celle-boolsk}}
 </tr>
 </table>
 {{/each}}

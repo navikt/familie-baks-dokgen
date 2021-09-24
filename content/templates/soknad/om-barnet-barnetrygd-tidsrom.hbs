@@ -8,7 +8,7 @@
 </td>
 {{/inline}}
 
-<h4>Søker du barnetrygd for et spesielt tidsrom for {{upper barn.navn.verdi}}?</h4>
+<h4>{{replace @root.teksterUtenomSpørsmål.[pdf.søker-for-tidsrom.seksjonstittel] "{navn}" (upper barn.navn.verdi)}}</h4>
 {{# table columns=2}}
 {{#if barn.spørsmål.søkerForTidsrom}}
 {{> ja-nei-barnenavn barn.spørsmål.søkerForTidsrom }}

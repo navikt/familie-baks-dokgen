@@ -1,0 +1,5 @@
+{{# with (lower (cut this "_")) as | lower_esvar | }}
+    {{# with (join "felles.svaralternativ" lower_esvar "." prefix='[' suffix=']') as | esvar_språktekst | }}
+        <p>{{ lookup @root.teksterUtenomSpørsmål esvar_språktekst }}</p>
+    {{/with}}
+{{/with}}

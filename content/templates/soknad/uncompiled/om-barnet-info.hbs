@@ -1,5 +1,5 @@
 {{#*inline "titteltekst"}}
-    {{#with søknadspørsmål.oppfølgingsspørsmåltekster.verdi as | titteltekster | }}
+    {{#with @root.teksterUtenomSpørsmål as | titteltekster | }}
         {{#with (lookup titteltekster klammeTekstId) as | tekst | }}
             {{~ replace tekst "{navn}" navn.verdi ~}}
         {{/with}}
@@ -21,7 +21,7 @@
         <td>
             <h5>{{> titteltekst klammeTekstId="[ombarnet.sammenhengende-opphold]" }}</h5>
             {{> soknad/oppfolging-dato spørsmål.nårKomBarnTilNorgeDato }}
-            {{> soknad/oppfolging spørsmål.planleggerÅBoINorge12Mnd }}
+            {{> soknad/oppfolging-ja-nei spørsmål.planleggerÅBoINorge12Mnd }}
         </td>
     {{/eq}}
     {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
@@ -30,10 +30,12 @@
             {{> soknad/oppfolging spørsmål.barnetrygdFraEøslandHvilketLand }}
         </td>
     {{/eq}}
-    {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
+    {{#eq spørsmål.oppholderSegIUtland.verdi "JA"}}
         <td>
             <h5>{{> titteltekst klammeTekstId="[ombarnet.oppholdutland]" }}</h5>
             {{> soknad/oppfolging spørsmål.oppholdsland }}
+            {{> soknad/oppfolging-dato spørsmål.oppholdslandStartdato }}
+            {{> soknad/oppfolging-dato spørsmål.oppholdslandSluttdato }}
         </td>
     {{/eq}}
 {{/table}}

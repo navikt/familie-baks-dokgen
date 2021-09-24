@@ -17,6 +17,7 @@ For å løse dette kan man skrive templates med ønsket indentering under `conte
 og så compile de med `compiler.py`. Output legges i filer med samme navn i mappen over `uncompiled`.
 Compileren krever at watchdog-pakken er installert i python-miljøet.
 En pipenv-fil følger også med for å forenkle oppsett av kompilering.
+
 ```shell
 $ pipenv install
 $ pipenv run ./compiler.py

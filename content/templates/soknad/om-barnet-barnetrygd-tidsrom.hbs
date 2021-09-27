@@ -6,9 +6,11 @@
 {{# table columns=2}}
 {{#if barn.spørsmål.søkerForTidsrom}}
 {{> ja-nei-barnenavn barn.spørsmål.søkerForTidsrom }}
-{{#eq barn.spørsmål.søkerForTidsrom.verdi "JA"}}
+{{/if}}
+{{#if barn.spørsmål.søkerForTidsromStartdato}}
 {{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromStartdato}}
+{{/if}}
+{{#if barn.spørsmål.søkerForTidsromSluttdato}}
 {{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromSluttdato}}
-{{/eq}}
 {{/if}}
 {{/table}}

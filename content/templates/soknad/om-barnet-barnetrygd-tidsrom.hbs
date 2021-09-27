@@ -1,16 +1,16 @@
 {{#*inline "ja-nei-barnenavn"}}
 {{#> soknad/ja-nei label=(replace label "{navn}" (upper navn.verdi)) }}{{/soknad/ja-nei}}
 {{/inline}}
-
 <h4>{{replace @root.teksterUtenomSpørsmål.[pdf.søker-for-tidsrom.seksjonstittel] "{navn}" (upper barn.navn.verdi)}}</h4>
 {{# table columns=2}}
 {{#if barn.spørsmål.søkerForTidsrom}}
 {{> ja-nei-barnenavn barn.spørsmål.søkerForTidsrom }}
-{{/if}}
-{{#if barn.spørsmål.søkerForTidsromStartdato}}
+{{#eq barn.spørsmål.søkerForTidsrom.verdi "JA"}}
 {{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromStartdato}}
-{{/if}}
-{{#if barn.spørsmål.søkerForTidsromSluttdato}}
+{{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromSluttdato}}
+{{/eq}}
+{{ else }}
+{{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromStartdato}}
 {{> soknad/felt-celle-dato barn.spørsmål.søkerForTidsromSluttdato}}
 {{/if}}
 {{/table}}

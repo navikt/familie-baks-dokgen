@@ -28,7 +28,7 @@
         </tr>
         {{#if adresse.verdi.poststed}}
             <tr>
-                {{> soknad/ja-nei spørsmål.borPåRegistrertAdresse}}
+                {{#> soknad/ja-nei spørsmål.borPåRegistrertAdresse}}{{/soknad/ja-nei}}
             </tr>
         {{/if}}
     </table>
@@ -58,7 +58,7 @@
                 {{/soknad/ja-nei}}
             </tr>
             <tr>
-                {{> soknad/ja-nei erAsylsøker }}
+                {{#> soknad/ja-nei erAsylsøker }}{{/soknad/ja-nei}}
             </tr>
         {{/with}}
     </table>

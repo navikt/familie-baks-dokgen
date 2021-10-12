@@ -6,7 +6,7 @@
 <h5>
 <!-- Eneste måten jeg fant som lot meg putte en java Integer inn i en String på... -->
 {{#with (replace (replace @root.teksterUtenomSpørsmål.[pdf.vedlegg.nummerering] "{x}" "%s") "{total}" "%s") as | fstring | }}
-{{stringFormat fstring (add @index 1) dokumentasjon.length}}: {{ dokumentasjonsSpråkTittel }}
+{{stringFormat fstring (add @index 1) dokumentasjon.length}}: {{ dokumentasjonSpråkTittel }}
 {{/with}}
 </h5>
 <p>

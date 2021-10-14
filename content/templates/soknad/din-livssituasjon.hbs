@@ -1,0 +1,27 @@
+<section class="soknad-section">
+<h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[dinlivssituasjon.sidetittel]}}</h3>
+{{#with spørsmål}}
+<table>
+<tr>
+<td rowspan="3">
+<h5>{{harSamboerNå.label}}</h5>
+<p>{{> soknad/ja-nei-språktekst harSamboerNå.verdi}}</p>
+{{#if nåværendeSamboer}}
+{{> soknad/samboer nåværendeSamboer.verdi}}
+{{/if}}
+</td>
+{{#> soknad/ja-nei erAsylsøker }}{{/soknad/ja-nei}}
+</tr>
+<tr>
+{{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
+{{> soknad/oppfolging arbeidsland }}
+{{/soknad/ja-nei}}
+</tr>
+<tr>
+{{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
+{{> soknad/oppfolging pensjonsland }}
+{{/soknad/ja-nei}}
+</tr>
+</table>
+{{/with}}
+</section>

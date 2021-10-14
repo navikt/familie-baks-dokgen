@@ -43,22 +43,10 @@
                     {{> soknad/oppfolging-dato oppholdslandDato }}
                 {{/soknad/ja-nei}}
 
-                {{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
-                    {{> soknad/oppfolging arbeidsland }}
-                {{/soknad/ja-nei}}
-            </tr>
-            <tr>
                 {{#> soknad/ja-nei værtINorgeITolvMåneder oppfølgingCondition="NEI" }}
                     {{> soknad/oppfolging-dato komTilNorgeDato }}
                     {{> soknad/oppfolging-ja-nei planleggerÅBoINorgeTolvMnd }}
                 {{/soknad/ja-nei}}
-
-                {{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
-                    {{> soknad/oppfolging pensjonsland }}
-                {{/soknad/ja-nei}}
-            </tr>
-            <tr>
-                {{#> soknad/ja-nei erAsylsøker }}{{/soknad/ja-nei}}
             </tr>
         {{/with}}
     </table>

@@ -6,12 +6,12 @@
 <h5>{{ident.label}}</h5>
 <p>{{ident.verdi}}</p>
 </div>
-{{#eq ident.verdi "UKJENT"}}
+{{#if fødselsdato.verdi}}
 <div class="extra-cell-content">
 <h5>{{fødselsdato.label}}</h5>
 <p>{{norwegian-date fødselsdato.verdi}}</p>
 </div>
-{{/eq}}
+{{/if}}
 <div class="extra-cell-content">
 <h5>{{samboerFraDato.label}}</h5>
 <p>{{norwegian-date samboerFraDato.verdi}}</p>

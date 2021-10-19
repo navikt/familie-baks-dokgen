@@ -39,6 +39,9 @@
 </tr>
 <tr>
 {{> oppsamlingspørsmål oppsamling="oppholderBarnSegIUtland" barnFelt="oppholderSegIUtland" }}
+{{#if spørsmål.erAvdødPartnerForelder.verdi}}
+{{> oppsamlingspørsmål oppsamling="erAvdødPartnerForelder" barnFelt="andreForelderErDød" }}
+{{/if}}
 </tr>
 </table>
 </section>

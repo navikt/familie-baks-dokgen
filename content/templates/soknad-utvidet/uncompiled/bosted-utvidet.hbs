@@ -8,9 +8,11 @@
     {{#if spørsmål.skriftligAvtaleOmDeltBosted.verdi}}
         {{> ja-nei-barnenavn spørsmål.skriftligAvtaleOmDeltBosted }}
     {{/if}}
-    {{#> soknad/ja-nei spørsmål.søkerHarBoddMedAndreForelder oppfølgingCondition="JA"}}
-        {{#if spørsmål.søkerFlyttetFraAndreForelderDato.verdi }}
-            {{> soknad/oppfolging-dato spørsmål.søkerFlyttetFraAndreForelderDato }}
-        {{/if}}
-    {{/soknad/ja-nei}}
+    {{#if spørsmål.søkerHarBoddMedAndreForelder.verdi }}
+            {{#> soknad/ja-nei spørsmål.søkerHarBoddMedAndreForelder oppfølgingCondition="JA"}}
+            {{#if spørsmål.søkerFlyttetFraAndreForelderDato.verdi }}
+                {{> soknad/oppfolging-dato spørsmål.søkerFlyttetFraAndreForelderDato }}
+            {{/if}}
+        {{/soknad/ja-nei}}
+    {{/if}}
 {{/table}}

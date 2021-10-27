@@ -5,10 +5,14 @@
 <h4>{{@root.teksterUtenomSpørsmål.[pdf.bosted.seksjonstittel]}}</h4>
 {{#table columns=2}}
     {{> ja-nei-barnenavn spørsmål.borFastMedSøker }}
-    {{#eq spørsmål.erFosterbarn.verdi "NEI"}}
+    {{#if spørsmål.skriftligAvtaleOmDeltBosted.verdi}}
         {{> ja-nei-barnenavn spørsmål.skriftligAvtaleOmDeltBosted }}
-    {{/eq}}
-    {{#> soknad/ja-nei spørsmål.søkerHarBoddMedAndreForelder oppfølgingCondition="JA" }}
-        {{> soknad/oppfolging-dato spørsmål.søkerFlyttetFraAndreForelderDato }}
-    {{/soknad/ja-nei}}
+    {{/if}}
+    {{#if spørsmål.søkerHarBoddMedAndreForelder.verdi }}
+            {{#> soknad/ja-nei spørsmål.søkerHarBoddMedAndreForelder oppfølgingCondition="JA"}}
+            {{#if spørsmål.søkerFlyttetFraAndreForelderDato.verdi }}
+                {{> soknad/oppfolging-dato spørsmål.søkerFlyttetFraAndreForelderDato }}
+            {{/if}}
+        {{/soknad/ja-nei}}
+    {{/if}}
 {{/table}}

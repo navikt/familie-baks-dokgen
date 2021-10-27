@@ -5,7 +5,7 @@
 <h4>{{ @root.teksterUtenomSpørsmål.[pdf.bosted.seksjonstittel] }}</h4>
 {{#table columns=2}}
     {{> ja-nei-barnenavn spørsmål.borFastMedSøker }}
-    {{#eq spørsmål.erFosterbarn.verdi "NEI"}}
+    {{#if spørsmål.skriftligAvtaleOmDeltBosted.verdi}}
         {{> ja-nei-barnenavn spørsmål.skriftligAvtaleOmDeltBosted }}
-    {{/eq}}
+    {{/if}}
 {{/table}}

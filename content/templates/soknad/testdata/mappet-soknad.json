@@ -11,7 +11,7 @@
       },
       "borMedSøker": {
         "label": "Lives with applicant",
-        "verdi": true
+        "verdi": "ADRESSESPERRE"
       },
       "alder": {
         "label": "Age",
@@ -183,13 +183,39 @@
       "mottarUtenlandspensjon": {
         "label": "Do you receive a pension from abroad?",
         "verdi": "NEI"
+      },
+      "harSamboerNå": {
+        "label": "Are you currently living with a partner?",
+        "verdi": "JA"
       }
     },
-    "nåværendeSamboer": null,
+    "nåværendeSamboer": {
+      "label": "Samboer",
+      "verdi": {
+        "navn": {
+          "label": "Sambuaren sitt namn",
+          "verdi": "Aaaa"
+        },
+        "ident": {
+          "label": "Fødselsnummer eller d-nummer",
+          "verdi": "16108321184"
+        },
+        "fødselsdato": {
+          "label": "Fødselsdato ",
+          "verdi": ""
+        },
+        "samboerFraDato": {
+          "label": "Når starta sambuarforholdet?",
+          "verdi": "2021-09-03"
+        }
+      }
+    },
     "tidligereSamboere": []
   },
   "søknadstype": "ORDINÆR",
   "teksterUtenomSpørsmål": {
+    "dinlivssituasjon.sidetittel": "Your life situation",
+    "hvilkebarn.barn.bosted.adressesperre": "The child is registered with a blocked address.",
     "ombarnet.fosterbarn": "You have stated that {navn} is a foster child",
     "ombarnet.institusjon": "You have stated that {navn} is currently living in an institution.",
     "ombarnet.oppholdutland": "You have stated that {navn} is currently living abroad",

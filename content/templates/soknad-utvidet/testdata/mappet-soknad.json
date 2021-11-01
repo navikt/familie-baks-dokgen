@@ -11,7 +11,7 @@
       },
       "borMedSøker": {
         "label": "Bor med søker",
-        "verdi": true
+        "verdi": "REGISTRERT_ANNEN_ADRESSE"
       },
       "alder": {
         "label": "Alder",
@@ -362,6 +362,7 @@
   },
   "søknadstype": "UTVIDET",
   "teksterUtenomSpørsmål": {
+    "hvilkebarn.barn.bosted.adressesperre": "The child is registered with a blocked address.",
     "ombarnet.fosterbarn": "Du har opplyst at {navn} er fosterbarn",
     "ombarnet.institusjon": "Du har opplyst at {navn} oppheld seg i institusjon.",
     "ombarnet.oppholdutland": "Du har opplyst at {navn} oppheld seg i utlandet",

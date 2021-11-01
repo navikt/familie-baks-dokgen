@@ -9,9 +9,9 @@
         "label": "Navn",
         "verdi": "Barn Barnessen III"
       },
-      "borMedSøker": {
+      "registrertBostedType": {
         "label": "Bor med søker",
-        "verdi": true
+        "verdi": "ADRESSESPERRE"
       },
       "alder": {
         "label": "Alder",

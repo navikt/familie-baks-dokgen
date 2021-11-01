@@ -9,7 +9,7 @@
         "label": "Name",
         "verdi": "Barn Barnessen III"
       },
-      "borMedSøker": {
+      "registrertBostedType": {
         "label": "Lives with applicant",
         "verdi": "ADRESSESPERRE"
       },

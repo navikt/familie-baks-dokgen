@@ -8,10 +8,10 @@
             </tr>
             <tr>
                 {{> soknad/felt-celle ident }}
-                {{#neq borMedSøker.verdi "IKKE_FYLT_INN"}}
+                {{#neq registrertBostedType.verdi "IKKE_FYLT_INN"}}
                 <td>
                     <h5>{{ borMedSøker.label }}</h5>
-                    {{#switch borMedSøker.verdi}}
+                    {{#switch registrertBostedType.verdi}}
                         {{#case "REGISTRERT_SOKERS_ADRESSE" }}
                         {{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse]}}
                         {{/case}}

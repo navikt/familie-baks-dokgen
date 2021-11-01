@@ -10,7 +10,7 @@
                 {{> soknad/felt-celle ident }}
                 {{#neq registrertBostedType.verdi "IKKE_FYLT_INN"}}
                 <td>
-                    <h5>{{ borMedSøker.label }}</h5>
+                    <h5>{{ registrertBostedType.label }}</h5>
                     {{#switch registrertBostedType.verdi}}
                         {{#case "REGISTRERT_SOKERS_ADRESSE" }}
                         {{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse]}}

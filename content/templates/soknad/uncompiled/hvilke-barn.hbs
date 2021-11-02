@@ -8,7 +8,22 @@
             </tr>
             <tr>
                 {{> soknad/felt-celle ident }}
-                {{#> soknad/felt-celle-boolsk borMedSøker yes=@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse] no=@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse] }}{{/soknad/felt-celle-boolsk}}
+                {{#neq registrertBostedType.verdi "IKKE_FYLT_INN"}}
+                <td>
+                    <h5>{{ registrertBostedType.label }}</h5>
+                    {{#switch registrertBostedType.verdi}}
+                        {{#case "REGISTRERT_SOKERS_ADRESSE" }}
+                        {{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse]}}
+                        {{/case}}
+                        {{#case "REGISTRERT_ANNEN_ADRESSE"}}
+                        {{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.ikke-registrert-på-adresse]}}
+                        {{/case}}
+                        {{#case "ADRESSESPERRE"}}
+                        {{@root.teksterUtenomSpørsmål.[hvilkebarn.barn.bosted.adressesperre]}}
+                        {{/case}}
+                    {{/switch}}
+                </td>
+                {{/neq}}
             </tr>
         </table>
     {{/each}}

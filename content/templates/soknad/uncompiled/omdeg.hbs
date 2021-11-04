@@ -35,19 +35,12 @@
 </section>
 
 <section class="soknad-section">
-    <table>
-        {{#with spørsmål}}
-            <tr>
-                {{#> soknad/ja-nei oppholderSegINorge oppfølgingCondition="NEI" }}
-                    {{> soknad/oppfolging oppholdsland }}
-                    {{> soknad/oppfolging-dato oppholdslandDato }}
-                {{/soknad/ja-nei}}
-
-                {{#> soknad/ja-nei værtINorgeITolvMåneder oppfølgingCondition="NEI" }}
-                    {{> soknad/oppfolging-dato komTilNorgeDato }}
-                    {{> soknad/oppfolging-ja-nei planleggerÅBoINorgeTolvMnd }}
-                {{/soknad/ja-nei}}
-            </tr>
-        {{/with}}
-    </table>
+    {{#with spørsmål}}
+        {{#table}}
+            {{#> soknad/ja-nei værtINorgeITolvMåneder oppfølgingCondition="NEI" }}
+                {{> soknad/oppfolging-dato komTilNorgeDato }}
+                {{> soknad/oppfolging-ja-nei planleggerÅBoINorgeTolvMnd }}
+            {{/soknad/ja-nei}}
+        {{/table}}
+    {{/with}}
 </section>

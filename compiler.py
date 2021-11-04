@@ -19,15 +19,15 @@ def find_paths_from_event(event_src_path: str) -> tuple[Path, Path]:
     output = parent_dir / file
     return path, output
 
+def read_compile_and_write_template(path: Path, write_to: Path):
+    contents = path.read_text()
+    compiled = compile_hbs(contents)
+    write_to.write_text(compiled)
+    print(f"Compiled \u001b[37;1m{path}\u001b[0m, output: \u001b[37;1m{write_to}\u001b[0m")
 
 def on_modified(event):
     modified_file, output = find_paths_from_event(event.src_path)
-
-    contents = modified_file.read_text()
-    compiled = compile_hbs(contents)
-    output.write_text(compiled)
-    print(f"Compiled \u001b[37;1m{modified_file}\u001b[0m, output: \u001b[37;1m{output}\u001b[0m")
-
+    read_compile_and_write_template(modified_file, output)
 
 def on_deleted(event):
     deleted_file, output = find_paths_from_event(event.src_path)
@@ -47,6 +47,14 @@ if __name__ == "__main__":
     observer = Observer()
     observer.schedule(event_handler, path, recursive=True)
 
+    print("Compiling all found uncompiled files...")
+    for pattern in patterns:
+        regex = compile(pattern)
+        for file in Path(path).rglob("*.hbs"):
+            if regex.match(str(file.resolve())):
+                read_compile_and_write_template(file, file.parent.parent / file.name)
+    
+    print("")
     print("Watching for changes to uncompiled files...")
     observer.start()
 

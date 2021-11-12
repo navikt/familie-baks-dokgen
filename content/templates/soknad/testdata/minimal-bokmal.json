@@ -189,7 +189,11 @@
         "verdi": "JA"
       },
       "værtINorgeITolvMåneder": {
-        "label": "Har du bodd sammenhengende i Norge de siste tolv månedene?",
+        "label": "Har du oppholdt deg sammenhengende i Norge de siste tolv månedene?",
+        "verdi": "JA"
+      },
+      "planleggerÅBoINorgeTolvMnd": {
+        "label": "Planlegger du å bo sammenhengende i Norge i mer enn tolv måneder?",
         "verdi": "JA"
       },
       "erAsylsøker": {
@@ -203,9 +207,33 @@
       "mottarUtenlandspensjon": {
         "label": "Får du pensjon fra utlandet?",
         "verdi": "NEI"
+      },
+      "harSamboerNå": {
+        "label": "Har du en annen samboer enn din ektefelle nå?",
+        "verdi": "JA"
       }
     },
-    "nåværendeSamboer": null,
+    "nåværendeSamboer": {
+      "label": "Samboer",
+      "verdi": {
+        "navn": {
+          "label": "Sambuaren sitt namn",
+          "verdi": "Aaaa"
+        },
+        "ident": {
+          "label": "Fødselsnummer eller d-nummer",
+          "verdi": "16108321184"
+        },
+        "fødselsdato": {
+          "label": "Fødselsdato ",
+          "verdi": ""
+        },
+        "samboerFraDato": {
+          "label": "Når starta sambuarforholdet?",
+          "verdi": "2021-09-03"
+        }
+      }
+    },
     "tidligereSamboere": []
   },
   "søknadstype": "ORDINÆR",

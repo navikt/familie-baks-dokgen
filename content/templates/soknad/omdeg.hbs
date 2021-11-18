@@ -35,10 +35,18 @@
 </section>
 
 <section class="soknad-section">
-{{#with spørsmål}}
 {{#table}}
+{{#with spørsmål}}
 {{#> soknad/ja-nei værtINorgeITolvMåneder oppfølgingCondition="NEI" }}{{/soknad/ja-nei}}
+{{#if planleggerÅBoINorgeTolvMnd}}
 {{#> soknad/ja-nei planleggerÅBoINorgeTolvMnd oppfølgingCondition="NEI" }}{{/soknad/ja-nei}}
-{{/table}}
+{{/if}}
 {{/with}}
+{{#each utenlandsperioder as | utenlandsperiode | }}
+<td>
+<h5>{{ utenlandsperiode.label }}</h5>
+{{> soknad/utenlandsperiode utenlandsperiode.verdi }}
+</td>
+{{/each}}
+{{/table}}
 </section>

@@ -1,0 +1,20 @@
+<div class="extra-cell-content">
+    <h5>{{utenlandsoppholdÅrsak.label}}</h5>
+    <p>{{utenlandsoppholdÅrsak.verdi}}</p>
+</div>
+<div class="extra-cell-content">
+    <h5>{{oppholdsland.label}}</h5>
+    <p>{{oppholdsland.verdi}}</p>
+</div>
+{{#if oppholdslandFraDato.verdi}}
+    <div class="extra-cell-content">
+        <h5>{{oppholdslandFraDato.label}}</h5>
+        <p>{{norwegian-date oppholdslandFraDato.verdi}}</p>
+    </div>
+{{/if}}
+{{#if oppholdslandTilDato.verdi}}
+    <div class="extra-cell-content">
+        <h5>{{oppholdslandTilDato.label}}</h5>
+        <p>{{norwegian-date oppholdslandTilDato.verdi}}</p>
+    </div>
+{{/if}}

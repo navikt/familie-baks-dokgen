@@ -18,24 +18,22 @@
 </td>
 {{/eq}}
 {{#eq spørsmål.boddMindreEnn12MndINorge.verdi "JA"}}
+{{#each utenlandsperioder as | utenlandsperiode | }}
 <td>
-<h5>{{> titteltekst klammeTekstId="[ombarnet.sammenhengende-opphold]" }}</h5>
-{{> soknad/oppfolging-dato spørsmål.nårKomBarnTilNorgeDato }}
+<h5>{{ utenlandsperiode.label }}</h5>
+{{> soknad/utenlandsperiode utenlandsperiode.verdi }}
+</td>
+{{/each}}
+{{#if spørsmål.planleggerÅBoINorge12Mnd}}
+<td>
 {{> soknad/oppfolging-ja-nei spørsmål.planleggerÅBoINorge12Mnd }}
 </td>
+{{/if}}
 {{/eq}}
 {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
 <td>
 <h5>{{> titteltekst klammeTekstId="[ombarnet.barnetrygd-eøs]" }}</h5>
 {{> soknad/oppfolging spørsmål.barnetrygdFraEøslandHvilketLand }}
-</td>
-{{/eq}}
-{{#eq spørsmål.oppholderSegIUtland.verdi "JA"}}
-<td>
-<h5>{{> titteltekst klammeTekstId="[ombarnet.oppholdutland]" }}</h5>
-{{> soknad/oppfolging spørsmål.oppholdsland }}
-{{> soknad/oppfolging-dato spørsmål.oppholdslandStartdato }}
-{{> soknad/oppfolging-dato spørsmål.oppholdslandSluttdato }}
 </td>
 {{/eq}}
 {{/table}}

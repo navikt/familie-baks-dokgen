@@ -169,7 +169,11 @@
         "verdi": "JA"
       },
       "værtINorgeITolvMåneder": {
-        "label": "Have you lived in Norway continuously for the past 12 months?",
+        "label": "Have you stayed continuously in Norway for the last twelve months?",
+        "verdi": "JA"
+      },
+      "planleggerÅBoINorgeTolvMnd": {
+        "label": "Are you planning to live in Norway continuously for more than 12 months?",
         "verdi": "JA"
       },
       "erAsylsøker": {

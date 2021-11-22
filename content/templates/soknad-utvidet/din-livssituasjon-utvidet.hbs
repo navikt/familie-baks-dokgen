@@ -33,7 +33,8 @@
 </td>
 {{#each tidligereSamboere as | tidligereSamboer | }}
 <td>
-{{# with (replace @root.teksterUtenomSpørsmål.[pdf.dinlivssituasjon.tidligeresamboer.seksjonstittel] "{x}" "%s") as | fstring |}}
+{{# with
+(replace @root.teksterUtenomSpørsmål.[pdf.dinlivssituasjon.tidligeresamboer.seksjonstittel] "{x}" "%s") as | fstring |}}
 <h5>{{stringFormat fstring (add @index 1)}}</h5>
 {{/with}}
 {{> soknad/samboer tidligereSamboer.verdi }}

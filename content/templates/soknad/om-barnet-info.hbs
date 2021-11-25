@@ -10,9 +10,21 @@
 {{#eq spørsmål.oppholderSegIInstitusjon.verdi "JA"}}
 <td>
 <h5>{{> titteltekst klammeTekstId="[ombarnet.institusjon]" }}</h5>
+
+{{#if spørsmål.institusjonIUtland}}
+{{#eq spørsmål.institusjonIUtland.verdi "JA" }}
+<p>{{spørsmål.institusjonIUtland.label}}</p>
+{{else}}
 {{> soknad/oppfolging spørsmål.institusjonsnavn }}
 {{> soknad/oppfolging spørsmål.institusjonsadresse }}
 {{> soknad/oppfolging spørsmål.institusjonspostnummer }}
+{{/eq}}
+{{else}}
+{{> soknad/oppfolging spørsmål.institusjonsnavn }}
+{{> soknad/oppfolging spørsmål.institusjonsadresse }}
+{{> soknad/oppfolging spørsmål.institusjonspostnummer }}
+{{/if}}
+
 {{> soknad/oppfolging-dato spørsmål.institusjonOppholdStartdato }}
 {{> soknad/oppfolging-dato spørsmål.institusjonOppholdSluttdato }}
 </td>

@@ -1,3 +1,4 @@
+{{#if andreForelder}}
 {{#*inline "ja-nei-barnenavn"}}
 {{#> soknad/ja-nei label=(replace label "{navn}" (upper navn.verdi)) }}
 {{> @partial-block }}
@@ -6,18 +7,21 @@
 
 <h4>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h4>
 {{#table columns=2}}
-{{> soknad/felt-celle spørsmål.andreForelderNavn }}
-{{#if spørsmål.andreForelderFnr.verdi}}
-{{#> soknad/felt-celle-med-oppfølging spørsmål.andreForelderFnr }}
-{{#if spørsmål.andreForelderFødselsdato.verdi}}
-{{> soknad/oppfolging-dato spørsmål.andreForelderFødselsdato}}
+{{#with andreForelder }}
+{{> soknad/felt-celle navn }}
+{{#if fnr.verdi}}
+{{#> soknad/felt-celle-med-oppfølging fnr }}
+{{#if fødselsdato.verdi}}
+{{> soknad/oppfolging-dato fødselsdato}}
 {{/if}}
 {{/soknad/felt-celle-med-oppfølging}}
 {{/if}}
-{{#> ja-nei-barnenavn spørsmål.andreForelderArbeidUtlandet oppfølgingCondition="JA"}}
-{{> soknad/oppfolging spørsmål.andreForelderArbeidUtlandetHvilketLand }}
+{{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA"}}
+{{> soknad/oppfolging arbeidUtlandetHvilketLand }}
 {{/ja-nei-barnenavn}}
-{{#> ja-nei-barnenavn spørsmål.andreForelderPensjonUtland oppfølgingCondition="JA"}}
-{{> soknad/oppfolging spørsmål.andreForelderPensjonHvilketLand }}
+{{#> ja-nei-barnenavn pensjonUtland oppfølgingCondition="JA"}}
+{{> soknad/oppfolging pensjonHvilketLand }}
 {{/ja-nei-barnenavn}}
+{{/with}}
 {{/table}}
+{{/if}}

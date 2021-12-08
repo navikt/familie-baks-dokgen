@@ -1,0 +1,9 @@
+replicas:
+  min: 1
+  max: 2
+resources:
+  requests:
+    cpu: "50m"
+ingresses:
+  - https://familie-ba-dokgen.dev.intern.nav.no
+  - https://familie-ba-dokgen.dev-gcp.nais.io

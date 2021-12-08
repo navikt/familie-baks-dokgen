@@ -1,0 +1,8 @@
+replicas:
+  min: 2
+  max: 3
+resources:
+  requests:
+    cpu: "100m"
+ingresses:
+  - https://familie-ba-dokgen.intern.nav.no

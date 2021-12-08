@@ -1,10 +1,12 @@
 apiVersion: "nais.io/v1alpha1"
 kind: "Application"
+
 metadata:
   name: familie-ba-dokgen
-  namespace: default
+  namespace: teamfamilie
   labels:
     team: teamfamilie
+
 spec:
   image: {{ image }}
   port: 8080
@@ -21,27 +23,26 @@ spec:
     periodSeconds: 10
     failureThreshold: 27
   replicas:
-    min: 1
-    max: 2
+    min: {{replicas.min}}
+    max: {{replicas.max}}
     cpuThresholdPercentage: 80
   leaderElection: false
   prometheus:
     enabled: true
     path: /actuator/metrics/prometheus
-  istio:
-    enabled: false
   resources:
     limits:
       cpu: "1000m"
       memory: "2048Mi"
     requests:
-      cpu: "100m"
+      cpu: {{resources.requests.cpu}}
       memory: "1024Mi"
   logformat: accesslog
   logtransform: dns_loglevel
-  webproxy: false
-  vault:
-    enabled: false
+  ingresses:
+  {{#each ingresses as |url|}}
+     - {{url}}
+  {{/each}}
   env:
     - name: APP_TEAM
       value: teamfamilie

@@ -28,6 +28,7 @@ jobs:
           tags: |
             ${{ env.IMAGE }}
             ${{ env.IMAGE_TAG_LATEST }}
+          pull: true
           push: true
 
   deploy-preprod:

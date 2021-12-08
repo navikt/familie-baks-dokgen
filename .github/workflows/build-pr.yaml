@@ -22,6 +22,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           tags: ${{ env.IMAGE }}
+          pull: true
           push: true
 
       - name: Deploy to GCP dev

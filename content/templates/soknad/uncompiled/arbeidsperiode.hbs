@@ -1,0 +1,24 @@
+<div class="extra-cell-content">
+    <h5>{{arbeidsperiodeAvsluttet.label}}</h5>
+    <p>{{arbeidsperiodeAvsluttet.verdi}}</p>
+</div>
+<div class="extra-cell-content">
+    <h5>{{arbeidsperiodeland.label}}</h5>
+    <p>{{arbeidsperiodeland.verdi}}</p>
+</div>
+<div class="extra-cell-content">
+    <h5>{{arbeidsgiver.label}}</h5>
+    <p>{{arbeidsgiver.verdi}}</p>
+</div>
+{{#if fraDatoArbeidsperiode.verdi}}
+    <div class="extra-cell-content">
+        <h5>{{fraDatoArbeidsperiode.label}}</h5>
+        <p>{{norwegian-date fraDatoArbeidsperiode.verdi}}</p>
+    </div>
+{{/if}}
+{{#if tilDatoArbeidsperiode.verdi}}
+    <div class="extra-cell-content">
+        <h5>{{tilDatoArbeidsperiode.label}}</h5>
+        <p>{{norwegian-date tilDatoArbeidsperiode.verdi}}</p>
+    </div>
+{{/if}}

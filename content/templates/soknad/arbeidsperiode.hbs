@@ -1,7 +1,7 @@
 {{#if arbeidsperiodeAvsluttet.verdi}}
 <div class="extra-cell-content">
 <h5>{{arbeidsperiodeAvsluttet.label}}</h5>
-<p>{{arbeidsperiodeAvsluttet.verdi}}</p>
+<p>{{> soknad/ja-nei-språktekst arbeidsperiodeAvsluttet.verdi}}</p>
 </div>
 {{/if}}
 {{#if arbeidsperiodeland.verdi}}

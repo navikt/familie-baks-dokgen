@@ -42,6 +42,7 @@
 </td>
 {{/each}}
 {{#> soknad/ja-nei erAsylsøker }}{{/soknad/ja-nei}}
+{{!-- TODO Fjerne if check når eøs er lansert --}}
 {{#eq @root.kontraktVersjon 7}}
 {{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
 {{/soknad/ja-nei}}

@@ -1,15 +1,21 @@
+{{#if arbeidsperiodeAvsluttet.verdi}}
 <div class="extra-cell-content">
     <h5>{{arbeidsperiodeAvsluttet.label}}</h5>
     <p>{{arbeidsperiodeAvsluttet.verdi}}</p>
 </div>
+{{/if}}
+{{#if arbeidsperiodeland.verdi}}
 <div class="extra-cell-content">
     <h5>{{arbeidsperiodeland.label}}</h5>
     <p>{{arbeidsperiodeland.verdi}}</p>
 </div>
+{{/if}}
+{{#if arbeidsgiver.verdi}}
 <div class="extra-cell-content">
     <h5>{{arbeidsgiver.label}}</h5>
     <p>{{arbeidsgiver.verdi}}</p>
 </div>
+{{/if}}
 {{#if fraDatoArbeidsperiode.verdi}}
     <div class="extra-cell-content">
         <h5>{{fraDatoArbeidsperiode.label}}</h5>

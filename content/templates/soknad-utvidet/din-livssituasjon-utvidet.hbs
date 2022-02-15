@@ -41,11 +41,20 @@
 </td>
 {{/each}}
 {{#> soknad/ja-nei spørsmål.erAsylsøker }}{{/soknad/ja-nei}}
-
+{{#eq @root.kontraktVersjon 7}}
+{{#> soknad/ja-nei spørsmål.jobberPåBåt oppfølgingCondition="JA" }}
+{{/soknad/ja-nei}}
+{{#each arbeidsperioderUtland as | arbeidsperiode | }}
+<td>
+<h5>{{ arbeidsperiode.label }}</h5>
+{{> soknad/arbeidsperiode arbeidsperiode.verdi }}
+</td>
+{{/each}}
+{{ else }}
 {{#> soknad/ja-nei spørsmål.jobberPåBåt oppfølgingCondition="JA" }}
 {{> soknad/oppfolging spørsmål.arbeidsland }}
 {{/soknad/ja-nei}}
-
+{{/eq}}
 {{#> soknad/ja-nei spørsmål.mottarUtenlandspensjon oppfølgingCondition="JA" }}
 {{> soknad/oppfolging spørsmål.pensjonsland }}
 {{/soknad/ja-nei}}

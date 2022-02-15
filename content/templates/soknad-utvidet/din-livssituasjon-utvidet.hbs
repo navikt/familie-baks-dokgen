@@ -1,24 +1,25 @@
 <section class="soknad-section">
 <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[dinlivssituasjon.sidetittel]}}</h3>
+{{#with spørsmål}}
 {{#table columns=2}}
 <td>
-<h5>{{spørsmål.årsak.label}}</h5>
-<p>{{spørsmål.årsak.verdi}}</p>
+<h5>{{årsak.label}}</h5>
+<p>{{årsak.verdi}}</p>
 </td>
 {{#eq sivilstand.verdi "GIFT"}}
-{{#> soknad/ja-nei spørsmål.separertEnkeSkilt oppfølgingCondition="JA" }}
-{{#if spørsmål.separertEnkeSkiltUtland}}
-{{> soknad/oppfolging-ja-nei spørsmål.separertEnkeSkiltUtland }}
+{{#> soknad/ja-nei separertEnkeSkilt oppfølgingCondition="JA" }}
+{{#if separertEnkeSkiltUtland}}
+{{> soknad/oppfolging-ja-nei separertEnkeSkiltUtland }}
 {{/if}}
-{{#if spørsmål.separertEnkeSkiltDato}}
-{{> soknad/oppfolging-dato spørsmål.separertEnkeSkiltDato }}
+{{#if separertEnkeSkiltDato}}
+{{> soknad/oppfolging-dato separertEnkeSkiltDato }}
 {{/if}}
 {{/soknad/ja-nei}}
 {{/eq}}
 
 <td>
-<h5>{{spørsmål.harSamboerNå.label}}</h5>
-<p>{{> soknad/ja-nei-språktekst spørsmål.harSamboerNå.verdi}}</p>
+<h5>{{harSamboerNå.label}}</h5>
+<p>{{> soknad/ja-nei-språktekst harSamboerNå.verdi}}</p>
 {{#if nåværendeSamboer}}
 {{> soknad/samboer nåværendeSamboer.verdi}}
 {{/if}}
@@ -40,14 +41,25 @@
 {{> soknad/samboer tidligereSamboer.verdi }}
 </td>
 {{/each}}
-{{#> soknad/ja-nei spørsmål.erAsylsøker }}{{/soknad/ja-nei}}
-
-{{#> soknad/ja-nei spørsmål.jobberPåBåt oppfølgingCondition="JA" }}
-{{> soknad/oppfolging spørsmål.arbeidsland }}
+{{#> soknad/ja-nei erAsylsøker }}{{/soknad/ja-nei}}
+{{!-- TODO Fjerne if check når eøs er lansert --}}
+{{#eq @root.kontraktVersjon 7}}
+{{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
 {{/soknad/ja-nei}}
-
-{{#> soknad/ja-nei spørsmål.mottarUtenlandspensjon oppfølgingCondition="JA" }}
-{{> soknad/oppfolging spørsmål.pensjonsland }}
+{{#each arbeidsperioderUtland as | arbeidsperiode | }}
+<td>
+<h5>{{ arbeidsperiode.label }}</h5>
+{{> soknad/arbeidsperiode arbeidsperiode.verdi }}
+</td>
+{{/each}}
+{{ else }}
+{{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
+{{> soknad/oppfolging arbeidsland }}
+{{/soknad/ja-nei}}
+{{/eq}}
+{{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
+{{> soknad/oppfolging pensjonsland }}
 {{/soknad/ja-nei}}
 {{/table}}
+{{/with}}
 </section>

@@ -1,53 +1,65 @@
 <section class="soknad-section">
     <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[dinlivssituasjon.sidetittel]}}</h3>
-    {{#table columns=2}}
-        <td>
-            <h5>{{spørsmål.årsak.label}}</h5>
-            <p>{{spørsmål.årsak.verdi}}</p>
-        </td>
-        {{#eq sivilstand.verdi "GIFT"}}
-            {{#> soknad/ja-nei spørsmål.separertEnkeSkilt oppfølgingCondition="JA" }}
-                {{#if spørsmål.separertEnkeSkiltUtland}}
-                    {{> soknad/oppfolging-ja-nei spørsmål.separertEnkeSkiltUtland }}
-                {{/if}}
-                {{#if spørsmål.separertEnkeSkiltDato}}
-                    {{> soknad/oppfolging-dato spørsmål.separertEnkeSkiltDato }}
-                {{/if}}
-            {{/soknad/ja-nei}}
-        {{/eq}}
-
-        <td>
-            <h5>{{spørsmål.harSamboerNå.label}}</h5>
-            <p>{{> soknad/ja-nei-språktekst spørsmål.harSamboerNå.verdi}}</p>
-            {{#if nåværendeSamboer}}
-                {{> soknad/samboer nåværendeSamboer.verdi}}
-            {{/if}}
-        </td>
-        <td>
-            <h5>{{@root.teksterUtenomSpørsmål.[omdeg.annensamboer.spm]}}</h5>
-            {{#if tidligereSamboere.length}}
-                <p>{{ @root.teksterUtenomSpørsmål.[felles.svaralternativ.ja] }}</p>
-            {{else}}
-                <p>{{ @root.teksterUtenomSpørsmål.[felles.svaralternativ.nei] }}</p>
-            {{/if}}
-        </td>
-        {{#each tidligereSamboere as | tidligereSamboer | }}
+    {{#with spørsmål}}
+        {{#table columns=2}}
             <td>
-                {{# with
-                        (replace @root.teksterUtenomSpørsmål.[pdf.dinlivssituasjon.tidligeresamboer.seksjonstittel] "{x}" "%s") as | fstring |}}
-                    <h5>{{stringFormat fstring (add @index 1)}}</h5>
-                {{/with}}
-                {{> soknad/samboer tidligereSamboer.verdi }}
+                <h5>{{årsak.label}}</h5>
+                <p>{{årsak.verdi}}</p>
             </td>
-        {{/each}}
-        {{#> soknad/ja-nei spørsmål.erAsylsøker }}{{/soknad/ja-nei}}
+            {{#eq sivilstand.verdi "GIFT"}}
+                {{#> soknad/ja-nei separertEnkeSkilt oppfølgingCondition="JA" }}
+                    {{#if separertEnkeSkiltUtland}}
+                        {{> soknad/oppfolging-ja-nei separertEnkeSkiltUtland }}
+                    {{/if}}
+                    {{#if separertEnkeSkiltDato}}
+                        {{> soknad/oppfolging-dato separertEnkeSkiltDato }}
+                    {{/if}}
+                {{/soknad/ja-nei}}
+            {{/eq}}
 
-        {{#> soknad/ja-nei spørsmål.jobberPåBåt oppfølgingCondition="JA" }}
-            {{> soknad/oppfolging spørsmål.arbeidsland }}
-        {{/soknad/ja-nei}}
-
-        {{#> soknad/ja-nei spørsmål.mottarUtenlandspensjon oppfølgingCondition="JA" }}
-            {{> soknad/oppfolging spørsmål.pensjonsland }}
-        {{/soknad/ja-nei}}
-    {{/table}}
+            <td>
+                <h5>{{harSamboerNå.label}}</h5>
+                <p>{{> soknad/ja-nei-språktekst harSamboerNå.verdi}}</p>
+                {{#if nåværendeSamboer}}
+                    {{> soknad/samboer nåværendeSamboer.verdi}}
+                {{/if}}
+            </td>
+            <td>
+                <h5>{{@root.teksterUtenomSpørsmål.[omdeg.annensamboer.spm]}}</h5>
+                {{#if tidligereSamboere.length}}
+                    <p>{{ @root.teksterUtenomSpørsmål.[felles.svaralternativ.ja] }}</p>
+                {{else}}
+                    <p>{{ @root.teksterUtenomSpørsmål.[felles.svaralternativ.nei] }}</p>
+                {{/if}}
+            </td>
+            {{#each tidligereSamboere as | tidligereSamboer | }}
+                <td>
+                    {{# with
+                            (replace @root.teksterUtenomSpørsmål.[pdf.dinlivssituasjon.tidligeresamboer.seksjonstittel] "{x}" "%s") as | fstring |}}
+                        <h5>{{stringFormat fstring (add @index 1)}}</h5>
+                    {{/with}}
+                    {{> soknad/samboer tidligereSamboer.verdi }}
+                </td>
+            {{/each}}
+            {{#> soknad/ja-nei erAsylsøker }}{{/soknad/ja-nei}}
+            {{!-- TODO Fjerne if check når eøs er lansert --}}
+            {{#eq @root.kontraktVersjon 7}}
+                {{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
+                {{/soknad/ja-nei}}
+                {{#each arbeidsperioderUtland as | arbeidsperiode | }}
+                    <td>
+                        <h5>{{ arbeidsperiode.label }}</h5>
+                        {{> soknad/arbeidsperiode arbeidsperiode.verdi }}
+                    </td>
+                {{/each}}
+            {{ else }}
+                {{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
+                    {{> soknad/oppfolging arbeidsland }}
+                {{/soknad/ja-nei}}
+            {{/eq}}
+            {{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
+                {{> soknad/oppfolging pensjonsland }}
+            {{/soknad/ja-nei}}
+        {{/table}}
+    {{/with}}
 </section>

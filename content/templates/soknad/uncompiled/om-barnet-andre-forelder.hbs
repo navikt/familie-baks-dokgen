@@ -8,7 +8,6 @@
     <h4>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h4>
     {{#table columns=2}}
         {{#with andreForelder }}
-        {{log}}
             {{> soknad/felt-celle navn }}
             {{#if fnr.verdi}}
                 {{#> soknad/felt-celle-med-oppfølging fnr }}

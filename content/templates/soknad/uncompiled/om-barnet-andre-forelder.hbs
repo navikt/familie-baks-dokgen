@@ -16,11 +16,21 @@
                     {{/if}}
                 {{/soknad/felt-celle-med-oppfølging}}
             {{/if}}
-            {{#if arbeidUtlandet.verdi}}
-                {{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA"}}
-                    {{> soknad/oppfolging arbeidUtlandetHvilketLand }}
+            {{!-- TODO Fjerne if check når eøs er lansert --}}
+            {{#eq @root.kontraktVersjon 7}}
+                {{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
                 {{/ja-nei-barnenavn}}
-            {{/if}}
+                {{#each arbeidsperioderUtland as | arbeidsperiode | }}
+                    <td>
+                        <h5>{{ arbeidsperiode.label }}</h5>
+                        {{> soknad/arbeidsperiode arbeidsperiode.verdi }}
+                    </td>
+                {{/each}}
+            {{ else }}
+                {{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
+                        {{> soknad/oppfolging arbeidUtlandetHvilketLand }}
+                {{/ja-nei-barnenavn }}
+            {{/eq}}
             {{#if pensjonUtland.verdi}}
                 {{#> ja-nei-barnenavn pensjonUtland oppfølgingCondition="JA"}}
                     {{> soknad/oppfolging pensjonHvilketLand }}

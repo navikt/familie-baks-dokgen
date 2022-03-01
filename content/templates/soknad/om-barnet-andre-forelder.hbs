@@ -33,11 +33,21 @@
 {{> soknad/oppfolging arbeidUtlandetHvilketLand }}
 {{/ja-nei-barnenavn }}
 {{/eq}}
-{{#if pensjonUtland.verdi}}
-{{#> ja-nei-barnenavn pensjonUtland oppfølgingCondition="JA"}}
+{{!-- TODO Fjerne if check når eøs er lansert --}}
+{{#eq @root.kontraktVersjon 7}}
+{{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
+{{/soknad/ja-nei}}
+{{#each pensjonsperioderUtland as | pensjonsperiode | }}
+<td>
+<h5>{{ pensjonsperiode.label }}</h5>
+{{> soknad/pensjonsperiode pensjonsperiode.verdi }}
+</td>
+{{/each}}
+{{ else }}
+{{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
 {{> soknad/oppfolging pensjonHvilketLand }}
-{{/ja-nei-barnenavn}}
-{{/if}}
+{{/soknad/ja-nei}}
+{{/eq}}
 {{/with}}
 {{/table}}
 {{/if}}

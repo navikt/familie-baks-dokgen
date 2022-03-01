@@ -18,8 +18,10 @@
             {{/if}}
             {{!-- TODO Fjerne if check når eøs er lansert --}}
             {{#eq @root.kontraktVersjon 7}}
-                {{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
-                {{/ja-nei-barnenavn}}
+                {{#if arbeidUtlandet.verdi}}
+                    {{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
+                    {{/ja-nei-barnenavn}}
+                {{/if}}
                 {{#each arbeidsperioderUtland as | arbeidsperiode | }}
                     <td>
                         <h5>{{ arbeidsperiode.label }}</h5>
@@ -31,11 +33,23 @@
                         {{> soknad/oppfolging arbeidUtlandetHvilketLand }}
                 {{/ja-nei-barnenavn }}
             {{/eq}}
-            {{#if pensjonUtland.verdi}}
-                {{#> ja-nei-barnenavn pensjonUtland oppfølgingCondition="JA"}}
+            {{!-- TODO Fjerne if check når eøs er lansert --}}
+            {{#eq @root.kontraktVersjon 7}}
+                {{#if pensjonUtland.verdi}}
+                    {{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
+                    {{/soknad/ja-nei}}
+                {{/if}}
+                {{#each pensjonsperioderUtland as | pensjonsperiode | }}
+                    <td>
+                        <h5>{{ pensjonsperiode.label }}</h5>
+                        {{> soknad/pensjonsperiode pensjonsperiode.verdi }}
+                    </td>
+                {{/each}}
+            {{ else }}
+                {{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
                     {{> soknad/oppfolging pensjonHvilketLand }}
-                {{/ja-nei-barnenavn}}
-            {{/if}}
+                {{/soknad/ja-nei}}
+            {{/eq}}
         {{/with}}
     {{/table}}
 {{/if}}

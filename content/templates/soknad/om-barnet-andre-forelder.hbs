@@ -18,8 +18,10 @@
 {{/if}}
 {{!-- TODO Fjerne if check når eøs er lansert --}}
 {{#eq @root.kontraktVersjon 7}}
+{{#if arbeidUtlandet.verdi}}
 {{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
 {{/ja-nei-barnenavn}}
+{{/if}}
 {{#each arbeidsperioderUtland as | arbeidsperiode | }}
 <td>
 <h5>{{ arbeidsperiode.label }}</h5>

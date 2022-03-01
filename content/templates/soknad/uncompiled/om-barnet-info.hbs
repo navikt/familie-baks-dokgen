@@ -34,10 +34,22 @@
         </td>
         {{/if}}
     {{/eq}}
+
+    {{!-- TODO Fjerne if check når eøs er lansert --}}
     {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
-        <td>
-            <h5>{{> titteltekst klammeTekstId="[ombarnet.barnetrygd-eøs]" }}</h5>
-            {{> soknad/oppfolging spørsmål.barnetrygdFraEøslandHvilketLand }}
-        </td>
+        {{#eq @root.kontraktVersjon 7}}
+            {{#> soknad/ja-nei spørsmål.mottarEllerMottokEøsBarnetrygd oppfølgingCondition="JA" }}
+            {{/soknad/ja-nei}}
+            {{#each eøsBarnetrygdsperioder as | eos-barnetrygdsperiode | }}
+                <td>
+                    <h5>{{ eos-barnetrygdsperiode.label }}</h5>
+                    {{> soknad/eos-barnetrygdsperiode eos-barnetrygdsperiode.verdi }}
+                </td>
+            {{/each}}
+        {{ else }}
+           {{#> soknad/ja-nei spørsmål.barnetrygdFraAnnetEøsland oppfølgingCondition="JA" }}
+                {{> soknad/oppfolging spørsmål.barnetrygdFraEøslandHvilketLand }}
+           {{/soknad/ja-nei}}
+        {{/eq}}
     {{/eq}}
 {{/table}}

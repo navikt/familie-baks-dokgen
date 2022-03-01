@@ -35,8 +35,10 @@
 {{/eq}}
 {{!-- TODO Fjerne if check når eøs er lansert --}}
 {{#eq @root.kontraktVersjon 7}}
+{{#if pensjonUtland.verdi}}
 {{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
 {{/soknad/ja-nei}}
+{{/if}}
 {{#each pensjonsperioderUtland as | pensjonsperiode | }}
 <td>
 <h5>{{ pensjonsperiode.label }}</h5>

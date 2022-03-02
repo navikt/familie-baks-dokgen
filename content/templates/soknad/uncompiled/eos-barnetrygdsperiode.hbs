@@ -1,0 +1,30 @@
+{{#if mottarEøsBarnetrygdNå.verdi}}
+    <div class="extra-cell-content">
+        <h5>{{mottarEøsBarnetrygdNå.label}}</h5>
+        <p>{{> soknad/ja-nei-språktekst mottarEøsBarnetrygdNå.verdi}}</p>
+    </div>
+{{/if}}
+{{#if barnetrygdsland.verdi}}
+    <div class="extra-cell-content">
+        <h5>{{barnetrygdsland.label}}</h5>
+        <p>{{barnetrygdsland.verdi}}</p>
+    </div>
+{{/if}}
+{{#if fraDatoBarnetrygdperiode.verdi}}
+    <div class="extra-cell-content">
+        <h5>{{fraDatoBarnetrygdperiode.label}}</h5>
+        <p>{{norwegian-date fraDatoBarnetrygdperiode.verdi}}</p>
+    </div>
+{{/if}}
+{{#if tilDatoBarnetrygdperiode.verdi}}
+    <div class="extra-cell-content">
+        <h5>{{tilDatoBarnetrygdperiode.label}}</h5>
+        <p>{{norwegian-date tilDatoBarnetrygdperiode.verdi}}</p>
+    </div>
+{{/if}}
+{{#if månedligBeløp.verdi}}
+    <div class="extra-cell-content">
+        <h5>{{månedligBeløp.label}}</h5>
+        <p>{{månedligBeløp.verdi}}</p>
+    </div>
+{{/if}}

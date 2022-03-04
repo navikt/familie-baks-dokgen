@@ -5,13 +5,32 @@
         {{> soknad/felt-celle spørsmål.lestOgForståttBekreftelse }}
     {{/table}}
 </section>
+
 {{> soknad/omdeg søker section-number=1 }}
 {{> soknad/din-livssituasjon søker section-number=2}}
-{{> soknad/hvilke-barn søknad section-number=2 }}
-{{> soknad/om-barna søknad section-number=3 }}
+{{> soknad/hvilke-barn søknad section-number=3 }}
+{{> soknad/om-barna søknad section-number=4 }}
 {{#with spørsmål as | søknadspørsmål | }}
     {{#each barn as | barn | }}
-        {{> soknad/om-barnet barn section-number-start=4 }}
+        {{> soknad/om-barnet barn section-number-start=5 }}
     {{/each}}
 {{/with}}
-{{> soknad/vedlegg section-number=(add barn.length 4) }}
+
+{{!-- TODO Fjerne if check når eøs er lansert --}}
+{{#eq @root.kontraktVersjon 7}}
+    {{#if søker.harEøsSteg}}
+        {{> soknad/eos-for-soker søknad section-number=(add barn.length 5) }}
+    {{/if}}
+
+    {{#with spørsmål as | søknadspørsmål | }}
+        {{#each barn as | enkeltBarn | }}
+            {{#if enkeltBarn.harEøsSteg}}
+                {{> soknad/eos-for-barn enkeltBarn section-number-start=(add (add barn.length 5) 1) }}
+            {{/if}}
+        {{/each}}
+    {{/with}}
+
+    {{> soknad/vedlegg section-number=(add (add antallEøsSteg barn.length) 5) }}
+{{else}}
+    {{> soknad/vedlegg section-number=(add barn.length 5) }}
+{{/eq}}

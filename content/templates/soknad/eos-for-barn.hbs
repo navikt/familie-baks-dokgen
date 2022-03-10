@@ -1,7 +1,5 @@
-<section class="soknad-seksjon">
-<h2 class="soknad-seksjon-tittel">{{add @index section-number-start }}. {{ replace @root.teksterUtenomSpørsmål.[eøs-om-barn.sidetittel] "{barn}" (upper navn.verdi)}}</h2>
+{{#> soknad/seksjon seksjon-nummer=(add @index seksjon-nummer-start) tittel=(replace @root.teksterUtenomSpørsmål.[eøs-om-barn.sidetittel] "{barn}" (upper navn.verdi)) }}
 <div class="soknad-sporsmal-med-svar">
 <p>Her kommer det en del oppramsing av spørsmål</p>
 </div>
-<hr class="soknad-seksjon-slutt-linje">
-</section>
+{{/soknad/seksjon}}

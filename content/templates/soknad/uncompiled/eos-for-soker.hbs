@@ -1,15 +1,44 @@
 {{#> soknad/seksjon seksjon-nummer=seksjon-nummer tittel=@root.teksterUtenomSpørsmål.[eøs-om-deg.sidetittel] }}
-    {{#each idNummer as | idNummer | }}
-        <div class="soknad-sporsmal-med-svar">
-            <p class="soknad-sporsmal">{{ idNummer.verdi.idNummer.label }}</p>
-            <p>{{ idNummer.verdi.idNummer.verdi }}</p>
-        </div>
-    {{/each}}
+    {{#with spørsmål}}
 
-    {{#if spørsmål.adresseISøkeperiode.verdi}}
-        <div class="soknad-sporsmal-med-svar">
-            <p class="soknad-sporsmal">{{ spørsmål.adresseISøkeperiode.label }}</p>
-            <p>{{ spørsmål.adresseISøkeperiode.verdi }}</p>
-        </div>
-    {{/if}}
+        {{#each idNummer as | idNummer | }}
+            {{> soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
+        {{/each}}
+        {{> soknad/sporsmal-med-svar felt=adresseISøkeperiode svar-type="normal" }}
+
+        {{> soknad/sporsmal-med-svar felt=arbeidINorge svar-type="ja-nei" }}
+        {{#each arbeidsperioderNorge as | arbeidsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> soknad/sporsmal-med-svar felt=arbeidsperiodeland svar-type="normal" }}
+                {{> soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+                {{> soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+                {{> soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+                {{> soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+        {{> soknad/sporsmal-med-svar felt=pensjonNorge svar-type="ja-nei" }}
+        {{#each pensjonsperioderNorge as | pensjonsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+                {{> soknad/sporsmal-med-svar felt=pensjonsland svar-type="normal" }}
+                {{> soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+                {{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+        {{> soknad/sporsmal-med-svar felt=andreUtbetalinger svar-type="ja-nei" }}
+        {{#each andreUtbetalingsperioder as | utbetalingsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> soknad/sporsmal-med-svar felt=fårUtbetalingNå svar-type="ja-nei" }}
+                {{> soknad/sporsmal-med-svar felt=utbetalingLand svar-type="normal" }}
+                {{> soknad/sporsmal-med-svar felt=utbetalingFraDato svar-type="dato" }}
+                {{> soknad/sporsmal-med-svar felt=utbetalingTilDato svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+    {{/with}}
 {{/soknad/seksjon}}

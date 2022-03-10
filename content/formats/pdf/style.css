@@ -368,3 +368,8 @@ ul {
     border: 1px solid #6A6A6A;
     margin: 1.25rem 0;
 }
+
+.periode-tittel {
+    color: #262626;
+    font-weight: 600;
+}

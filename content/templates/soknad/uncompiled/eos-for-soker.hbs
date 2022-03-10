@@ -1,3 +1,10 @@
 <section class="soknad-section">
-    <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[eøs-om-deg.sidetittel]}}</h3>
+    <h2 class="soknad-seksjon-tittel">{{section-number}}. {{@root.teksterUtenomSpørsmål.[eøs-om-deg.sidetittel]}}</h2>
+
+    {{#each idNummer as | idNummer | }}
+        <div class="soknad-sporsmal-med-svar">
+            <p class="soknad-sporsmal">{{ idNummer.verdi.idNummer.label }}</p>
+            <p>{{ idNummer.verdi.idNummer.verdi }}</p>
+        </div>
+    {{/each}}
 </section>

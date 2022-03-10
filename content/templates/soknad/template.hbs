@@ -19,7 +19,7 @@
 {{!-- TODO Fjerne if check når eøs er lansert --}}
 {{#eq @root.kontraktVersjon 7}}
 {{#if søker.harEøsSteg}}
-{{> soknad/eos-for-soker søknad section-number=(add barn.length 5) }}
+{{> soknad/eos-for-soker søker section-number=(add barn.length 5) }}
 {{/if}}
 
 {{#with spørsmål as | søknadspørsmål | }}

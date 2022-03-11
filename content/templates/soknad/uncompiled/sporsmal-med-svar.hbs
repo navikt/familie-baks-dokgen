@@ -1,0 +1,19 @@
+{{!-- svar-type kan være: 'dato', 'ja-nei', 'normal' --}}
+{{#if felt.verdi}}
+    {{#with felt }}
+        <div class="soknad-sporsmal-med-svar">
+            <p class="soknad-sporsmal">{{ label }}</p>
+            {{#switch svar-type}}
+                {{#case "ja-nei"}}
+                    {{> soknad/ja-nei-språktekst verdi}}
+                {{/case}}
+                {{#case "dato"}}
+                    <p>{{norwegian-date verdi}}</p>
+                {{/case}}
+                {{#case "normal"}}
+                    <p>{{verdi}}</p>
+                {{/case}}
+            {{/switch}}
+        </div>
+    {{/with}}
+{{/if}}

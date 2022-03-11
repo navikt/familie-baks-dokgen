@@ -341,3 +341,35 @@ ul {
     margin-top: 0.5rem;
     margin-left: 0.5rem;
 }
+
+.soknad-seksjon {
+    width: 100%;
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+}
+
+.soknad-seksjon-tittel {
+    color: #262626;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1.33rem;
+}
+
+.soknad-sporsmal {
+    font-weight: 600;
+}
+
+.soknad-sporsmal-med-svar {
+    margin-bottom: 1.25rem;
+    color: #262626;
+}
+
+.soknad-seksjon-slutt-linje {
+    border: 1px solid #6A6A6A;
+    margin: 1.25rem 0;
+}
+
+.periode-tittel {
+    color: #262626;
+    font-weight: 600;
+}

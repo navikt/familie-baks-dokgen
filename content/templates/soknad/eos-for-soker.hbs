@@ -10,7 +10,6 @@
 {{#each arbeidsperioderNorge as | arbeidsperiode | }}
 <p class="periode-tittel">{{label}}</p>
 {{#with verdi}}
-{{> soknad/sporsmal-med-svar felt=arbeidsperiodeland svar-type="normal" }}
 {{> soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
 {{> soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
 {{> soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
@@ -23,7 +22,6 @@
 <p class="periode-tittel">{{label}}</p>
 {{#with verdi}}
 {{> soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
-{{> soknad/sporsmal-med-svar felt=pensjonsland svar-type="normal" }}
 {{> soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
 {{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
 {{/with}}

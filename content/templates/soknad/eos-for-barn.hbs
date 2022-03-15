@@ -1,2 +1,48 @@
 {{#> soknad/seksjon seksjon-nummer=(add @index seksjon-nummer-start) tittel=(replace @root.teksterUtenomSpørsmål.[eøs-om-barn.sidetittel] "{barn}" (upper navn.verdi)) }}
+{{#with spørsmål }}
+{{#each idNummer as | idNummer | }}
+{{> soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
+{{/each}}
+
+{{> soknad/sporsmal-med-svar felt=søkersSlektsforhold svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=søkersSlektsforholdSpesifisering svar-type="normal" }}
+
+{{> soknad/sporsmal-med-svar felt=borMedAndreForelder svar-type="ja-nei" }}
+
+{{#if andreForelder }}
+<p>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</p>
+
+{{> soknad/sporsmal-med-svar felt=andreForelder.arbeidNorge svar-type="ja-nei" }}
+{{#each andreForelder.arbeidsperioderNorge as | arbeidsperiode | }}
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+{{/with}}
+{{/each}}
+
+{{> soknad/sporsmal-med-svar felt=andreForelder.pensjonNorge svar-type="ja-nei" }}
+{{#each andreForelder.pensjonsperioderNorge as | pensjonsperiode | }}
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+{{/with}}
+{{/each}}
+
+{{> soknad/sporsmal-med-svar felt=andreForelder.andreUtbetalinger svar-type="ja-nei" }}
+{{#each andreForelder.andreUtbetalingsperioder as | utbetalingsperiode | }}
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=fårUtbetalingNå svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=utbetalingLand svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=utbetalingFraDato svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=utbetalingTilDato svar-type="dato" }}
+{{/with}}
+{{/each}}
+{{/if}}
+{{/with}}
 {{/soknad/seksjon}}

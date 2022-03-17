@@ -10,8 +10,9 @@
         {{> soknad/sporsmal-med-svar felt=borMedAndreForelder svar-type="ja-nei" }}
 
         {{#if andreForelder }}
-            <p>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</p>
-
+            {{#if andreForelder.arbeidNorge.verdi }}
+                <p>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</p>
+            {{/if}}
             {{> soknad/sporsmal-med-svar felt=andreForelder.arbeidNorge svar-type="ja-nei" }}
             {{#each andreForelder.arbeidsperioderNorge as | arbeidsperiode | }}
                 <p class="periode-tittel">{{label}}</p>

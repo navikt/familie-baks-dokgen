@@ -10,9 +10,12 @@
         {{> soknad/sporsmal-med-svar felt=borMedAndreForelder svar-type="ja-nei" }}
 
         {{#if andreForelder }}
-            {{#if andreForelder.arbeidNorge.verdi }}
+            {{#unless andreForelder.kanIkkeGiOpplysninger }}
                 <p>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</p>
-            {{/if}}
+            {{/unless}}
+            {{#each andreForelder.idNummer as | idNummer | }}
+                {{> soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
+            {{/each}}
             {{> soknad/sporsmal-med-svar felt=andreForelder.arbeidNorge svar-type="ja-nei" }}
             {{#each andreForelder.arbeidsperioderNorge as | arbeidsperiode | }}
                 <p class="periode-tittel">{{label}}</p>

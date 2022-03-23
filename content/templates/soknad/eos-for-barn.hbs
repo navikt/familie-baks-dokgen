@@ -9,6 +9,14 @@
 
 {{> soknad/sporsmal-med-svar felt=borMedAndreForelder svar-type="ja-nei" }}
 
+{{#if omsorgsperson}}
+{{> soknad/sporsmal-med-svar felt=omsorgsperson.omsorgspersonNavn svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=omsorgsperson.omsorgspersonSlektsforhold svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=omsorgsperson.omsorgpersonSlektsforholdSpesifisering svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=omsorgsperson.omsorgspersonIdNummer svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=omsorgsperson.omsorgspersonAdresse svar-type="normal" }}
+{{/if}}
+
 {{#if andreForelder }}
 {{#unless andreForelder.kanIkkeGiOpplysninger }}
 <p>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</p>

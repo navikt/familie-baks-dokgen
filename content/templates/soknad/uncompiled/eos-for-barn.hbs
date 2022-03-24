@@ -24,6 +24,9 @@
             {{#each andreForelder.idNummer as | idNummer | }}
                 {{> soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
             {{/each}}
+
+            {{> soknad/sporsmal-med-svar felt=andreForelder.adresse svar-type="normal" }}
+
             {{> soknad/sporsmal-med-svar felt=andreForelder.arbeidNorge svar-type="ja-nei" }}
             {{#each andreForelder.arbeidsperioderNorge as | arbeidsperiode | }}
                 <p class="periode-tittel">{{label}}</p>

@@ -17,6 +17,8 @@
 {{> soknad/sporsmal-med-svar felt=omsorgsperson.omsorgspersonAdresse svar-type="normal" }}
 {{/if}}
 
+{{> soknad/sporsmal-med-svar felt=adresse svar-type="normal" }}
+
 {{#if andreForelder }}
 {{#unless andreForelder.kanIkkeGiOpplysninger }}
 <p>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</p>

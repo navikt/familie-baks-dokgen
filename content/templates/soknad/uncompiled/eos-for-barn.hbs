@@ -9,6 +9,8 @@
 
         {{> soknad/sporsmal-med-svar felt=borMedAndreForelder svar-type="ja-nei" }}
 
+        {{> soknad/sporsmal-med-svar felt=borMedOmsorgsperson svar-type="ja-nei" }}
+
         {{#if omsorgsperson}}
             {{> soknad/sporsmal-med-svar felt=omsorgsperson.navn svar-type="normal" }}
             {{> soknad/sporsmal-med-svar felt=omsorgsperson.slektsforhold svar-type="normal" }}

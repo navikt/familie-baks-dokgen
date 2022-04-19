@@ -355,6 +355,13 @@ ul {
     margin-bottom: 1.33rem;
 }
 
+.soknad-seksjon-undertittel {
+    color: #262626;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+}
+
 .soknad-sporsmal {
     font-weight: 600;
 }

@@ -23,7 +23,7 @@
 
         {{#if andreForelder }}
             {{#unless andreForelder.kanIkkeGiOpplysninger }}
-                <p>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</p>
+                <h3 class="soknad-seksjon-undertittel">{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h3>
             {{/unless}}
             {{#each andreForelder.idNummer as | idNummer | }}
                 {{> soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}

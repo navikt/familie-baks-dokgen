@@ -4,8 +4,11 @@
 <table>
 <tr>
 {{> soknad/felt-celle navn }}
+{{#neq alder.verdi "UKJENT"}}
 {{> soknad/felt-celle alder }}
+{{/neq}}
 </tr>
+
 <tr>
 {{> soknad/felt-celle ident }}
 {{#neq registrertBostedType.verdi "IKKE_FYLT_INN"}}

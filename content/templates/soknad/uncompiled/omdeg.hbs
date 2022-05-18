@@ -17,8 +17,8 @@
                 {{> soknad/felt-celle label=sivilstand.label verdi=(lookup @root.teksterUtenomSpørsmål sivilstandkode) }}
             {{/with}}
             <td>
-                <h5>{{adresse.label}}</h5>
                 {{#with adresse.verdi}}
+                <h5>{{adresse.label}}</h5>
                     <p>
                         {{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
                         {{~join postnummer poststed " "}}

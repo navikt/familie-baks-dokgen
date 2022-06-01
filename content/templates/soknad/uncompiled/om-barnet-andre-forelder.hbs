@@ -16,44 +16,26 @@
                     {{/if}}
                 {{/soknad/felt-celle-med-oppfølging}}
             {{/if}}
-            {{!-- TODO Fjerne if check når eøs er lansert --}}
-            {{#eq @root.kontraktVersjon 7}}
-                {{#if arbeidUtlandet.verdi}}
-                    {{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
-                    {{/ja-nei-barnenavn}}
-                {{/if}}
-                {{#each arbeidsperioderUtland as | arbeidsperiode | }}
-                    <td>
-                        <h5>{{ arbeidsperiode.label }}</h5>
-                        {{> soknad/arbeidsperiode arbeidsperiode.verdi }}
-                    </td>
-                {{/each}}
-            {{ else }}
-                {{#if arbeidUtlandet.verdi}}
-                    {{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
-                            {{> soknad/oppfolging arbeidUtlandetHvilketLand }}
-                    {{/ja-nei-barnenavn }}
-                {{/if}}
-            {{/eq}}
-            {{!-- TODO Fjerne if check når eøs er lansert --}}
-            {{#eq @root.kontraktVersjon 7}}
-                {{#if pensjonUtland.verdi}}
-                    {{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
-                    {{/soknad/ja-nei}}
-                {{/if}}
-                {{#each pensjonsperioderUtland as | pensjonsperiode | }}
-                    <td>
-                        <h5>{{ pensjonsperiode.label }}</h5>
-                        {{> soknad/pensjonsperiode pensjonsperiode.verdi }}
-                    </td>
-                {{/each}}
-            {{ else }}
-                {{#if pensjonUtland.verdi}}
-                    {{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
-                        {{> soknad/oppfolging pensjonHvilketLand }}
-                    {{/soknad/ja-nei}}
-                 {{/if}}
-            {{/eq}}
+            {{#if arbeidUtlandet.verdi}}
+                {{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
+                {{/ja-nei-barnenavn}}
+            {{/if}}
+            {{#each arbeidsperioderUtland as | arbeidsperiode | }}
+                <td>
+                    <h5>{{ arbeidsperiode.label }}</h5>
+                    {{> soknad/arbeidsperiode arbeidsperiode.verdi }}
+                </td>
+            {{/each}}
+            {{#if pensjonUtland.verdi}}
+                {{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
+                {{/soknad/ja-nei}}
+            {{/if}}
+            {{#each pensjonsperioderUtland as | pensjonsperiode | }}
+                <td>
+                    <h5>{{ pensjonsperiode.label }}</h5>
+                    {{> soknad/pensjonsperiode pensjonsperiode.verdi }}
+                </td>
+            {{/each}}
         {{/with}}
     {{/table}}
 {{/if}}

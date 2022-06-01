@@ -16,8 +16,6 @@
 {{/if}}
 {{/soknad/felt-celle-med-oppfølging}}
 {{/if}}
-{{!-- TODO Fjerne if check når eøs er lansert --}}
-{{#eq @root.kontraktVersjon 7}}
 {{#if arbeidUtlandet.verdi}}
 {{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
 {{/ja-nei-barnenavn}}
@@ -28,15 +26,6 @@
 {{> soknad/arbeidsperiode arbeidsperiode.verdi }}
 </td>
 {{/each}}
-{{ else }}
-{{#if arbeidUtlandet.verdi}}
-{{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
-{{> soknad/oppfolging arbeidUtlandetHvilketLand }}
-{{/ja-nei-barnenavn }}
-{{/if}}
-{{/eq}}
-{{!-- TODO Fjerne if check når eøs er lansert --}}
-{{#eq @root.kontraktVersjon 7}}
 {{#if pensjonUtland.verdi}}
 {{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
 {{/soknad/ja-nei}}
@@ -47,13 +36,6 @@
 {{> soknad/pensjonsperiode pensjonsperiode.verdi }}
 </td>
 {{/each}}
-{{ else }}
-{{#if pensjonUtland.verdi}}
-{{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
-{{> soknad/oppfolging pensjonHvilketLand }}
-{{/soknad/ja-nei}}
-{{/if}}
-{{/eq}}
 {{/with}}
 {{/table}}
 {{/if}}

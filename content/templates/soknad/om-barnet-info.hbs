@@ -37,9 +37,7 @@
 {{/if}}
 {{/eq}}
 
-{{!-- TODO Fjerne if check når eøs er lansert --}}
 {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
-{{#eq @root.kontraktVersjon 7}}
 {{#> soknad/ja-nei spørsmål.pågåendeSøknadFraAnnetEøsLand oppfølgingCondition="JA" }}
 {{> soknad/oppfolging spørsmål.pågåendeSøknadHvilketLand }}
 {{/soknad/ja-nei}}
@@ -51,10 +49,5 @@
 {{> soknad/eos-barnetrygdsperiode eos-barnetrygdsperiode.verdi }}
 </td>
 {{/each}}
-{{ else }}
-{{#> soknad/ja-nei spørsmål.barnetrygdFraAnnetEøsland oppfølgingCondition="JA" }}
-{{> soknad/oppfolging spørsmål.barnetrygdFraEøslandHvilketLand }}
-{{/soknad/ja-nei}}
-{{/eq}}
 {{/eq}}
 {{/table}}

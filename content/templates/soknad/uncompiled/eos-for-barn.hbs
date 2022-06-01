@@ -18,6 +18,8 @@
             {{> soknad/sporsmal-med-svar felt=omsorgsperson.idNummer svar-type="normal" }}
             {{> soknad/sporsmal-med-svar felt=omsorgsperson.adresse svar-type="normal" }}
 
+            {{!-- TODO Fjerne check når v8 er lansert --}}
+            {{#eq @root.kontraktVersjon 8}}
             {{> soknad/sporsmal-med-svar felt=omsorgsperson.arbeidUtland svar-type="ja-nei" }}
             {{#each omsorgsperson.arbeidsperioderUtland as | arbeidsperiode | }}
                 <p class="periode-tittel">{{label}}</p>
@@ -133,6 +135,24 @@
                     {{> soknad/sporsmal-med-svar felt=utbetalingTilDato svar-type="dato" }}
                 {{/with}}
             {{/each}}
+
+            {{!-- TODO Fjerne check når v8 er lansert --}}
+            {{#eq @root.kontraktVersjon 8}}
+                {{> soknad/sporsmal-med-svar felt=andreForelder.pågåendeSøknadFraAnnetEøsLand svar-type="ja-nei" }}
+                {{> soknad/sporsmal-med-svar felt=andreForelder.pågåendeSøknadHvilketLand svar-type="normal" }}
+
+                {{> soknad/sporsmal-med-svar felt=andreForelder.barnetrygdFraEøs svar-type="ja-nei" }}
+                {{#each andreForelder.eøsBarnetrygdsperioder as | eos-barnetrygdsperiode | }}
+                    <p class="periode-tittel">{{label}}</p>
+                    {{#with verdi}}
+                        {{> soknad/sporsmal-med-svar felt=mottarEøsBarnetrygdNå svar-type="ja-nei" }}
+                        {{> soknad/sporsmal-med-svar felt=barnetrygdsland svar-type="normal" }}
+                        {{> soknad/sporsmal-med-svar felt=fraDatoBarnetrygdperiode svar-type="dato" }}
+                        {{> soknad/sporsmal-med-svar felt=tilDatoBarnetrygdperiode svar-type="dato" }}
+                        {{> soknad/sporsmal-med-svar felt=månedligBeløp svar-type="normal" }}
+                    {{/with}}
+                {{/each}}
+            {{/eq}}
         {{/if}}
     {{/with}}
 {{/soknad/seksjon}}

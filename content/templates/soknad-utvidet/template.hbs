@@ -15,8 +15,6 @@
 {{/each}}
 {{/with}}
 
-{{!-- TODO Fjerne if check når eøs er lansert --}}
-{{#eq @root.kontraktVersjon 7}}
 {{#if søker.harEøsSteg}}
 {{> soknad/eos-for-soker søker seksjon-nummer=(add barn.length 5) }}
 {{/if}}
@@ -30,6 +28,3 @@
 {{/with}}
 
 {{> soknad/vedlegg section-number=(add (add antallEøsSteg barn.length) 5) }}
-{{else}}
-{{> soknad/vedlegg section-number=(add barn.length 5) }}
-{{/eq}}

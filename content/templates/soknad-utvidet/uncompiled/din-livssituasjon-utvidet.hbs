@@ -42,36 +42,22 @@
                 </td>
             {{/each}}
             {{#> soknad/ja-nei erAsylsøker }}{{/soknad/ja-nei}}
-            {{!-- TODO Fjerne if check når eøs er lansert --}}
-            {{#eq @root.kontraktVersjon 7}}
-                {{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
-                {{/soknad/ja-nei}}
-                {{#each arbeidsperioderUtland as | arbeidsperiode | }}
-                    <td>
-                        <h5>{{ arbeidsperiode.label }}</h5>
-                        {{> soknad/arbeidsperiode arbeidsperiode.verdi }}
-                    </td>
-                {{/each}}
-            {{ else }}
-                {{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
-                    {{> soknad/oppfolging arbeidsland }}
-                {{/soknad/ja-nei}}
-            {{/eq}}
-            {{!-- TODO Fjerne if check når eøs er lansert --}}
-            {{#eq @root.kontraktVersjon 7}}
-                {{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
-                {{/soknad/ja-nei}}
-                {{#each pensjonsperioderUtland as | pensjonsperiode | }}
-                    <td>
-                        <h5>{{ pensjonsperiode.label }}</h5>
-                        {{> soknad/pensjonsperiode pensjonsperiode.verdi }}
-                    </td>
-                {{/each}}
-            {{ else }}
-                {{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
-                    {{> soknad/oppfolging pensjonsland }}
-                {{/soknad/ja-nei}}
-            {{/eq}}
+            {{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
+            {{/soknad/ja-nei}}
+            {{#each arbeidsperioderUtland as | arbeidsperiode | }}
+                <td>
+                    <h5>{{ arbeidsperiode.label }}</h5>
+                    {{> soknad/arbeidsperiode arbeidsperiode.verdi }}
+                </td>
+            {{/each}}
+            {{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
+            {{/soknad/ja-nei}}
+            {{#each pensjonsperioderUtland as | pensjonsperiode | }}
+                <td>
+                    <h5>{{ pensjonsperiode.label }}</h5>
+                    {{> soknad/pensjonsperiode pensjonsperiode.verdi }}
+                </td>
+            {{/each}}
         {{/table}}
     {{/with}}
 </section>

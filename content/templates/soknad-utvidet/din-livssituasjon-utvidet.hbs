@@ -42,8 +42,6 @@
 </td>
 {{/each}}
 {{#> soknad/ja-nei erAsylsøker }}{{/soknad/ja-nei}}
-{{!-- TODO Fjerne if check når eøs er lansert --}}
-{{#eq @root.kontraktVersjon 7}}
 {{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
 {{/soknad/ja-nei}}
 {{#each arbeidsperioderUtland as | arbeidsperiode | }}
@@ -52,13 +50,6 @@
 {{> soknad/arbeidsperiode arbeidsperiode.verdi }}
 </td>
 {{/each}}
-{{ else }}
-{{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
-{{> soknad/oppfolging arbeidsland }}
-{{/soknad/ja-nei}}
-{{/eq}}
-{{!-- TODO Fjerne if check når eøs er lansert --}}
-{{#eq @root.kontraktVersjon 7}}
 {{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
 {{/soknad/ja-nei}}
 {{#each pensjonsperioderUtland as | pensjonsperiode | }}
@@ -67,11 +58,6 @@
 {{> soknad/pensjonsperiode pensjonsperiode.verdi }}
 </td>
 {{/each}}
-{{ else }}
-{{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
-{{> soknad/oppfolging pensjonsland }}
-{{/soknad/ja-nei}}
-{{/eq}}
 {{/table}}
 {{/with}}
 </section>

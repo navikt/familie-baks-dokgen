@@ -95,9 +95,9 @@
         {{> soknad/sporsmal-med-svar felt=adresse svar-type="normal" }}
 
         {{#if andreForelder }}
-            {{#unless andreForelder.kanIkkeGiOpplysninger }}
+            {{#eq andreForelder.kanIkkeGiOpplysninger.verdi "NEI"}}
                 <h3 class="soknad-seksjon-undertittel">{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h3>
-            {{/unless}}
+            {{/eq}}
             {{#each andreForelder.idNummer as | idNummer | }}
                 {{> soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
             {{/each}}

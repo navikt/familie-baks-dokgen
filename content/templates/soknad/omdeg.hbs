@@ -18,12 +18,20 @@
 {{/with}}
 <td>
 <h5>{{adresse.label}}</h5>
+{{#if adresse.verdi}}
 {{#with adresse.verdi}}
 <p>
 {{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
 {{~join postnummer poststed " "}}
 </p>
 {{/with}}
+{{else}}
+{{#if adressebeskyttelse }}
+<p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.adressesperre.alert]}}</p>
+{{else}}
+<p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.ikke-registrert.alert]}}</p>
+{{/if}}
+{{/if}}
 </td>
 </tr>
 {{#if adresse.verdi.poststed}}

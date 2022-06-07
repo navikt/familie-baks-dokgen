@@ -1,60 +1,60 @@
 <section class="soknad-section">
     <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[pdf.omdeg.seksjonstittel]}}</h3>
-    <table>
-        <tr>
-            {{> soknad/felt-celle ident}}
-            <td>
-                <h5>{{statsborgerskap.label}}</h5>
-                <p>
-                    {{#each statsborgerskap.verdi }}
-                        {{~ this}}{{#if @last}}{{else}}, {{/if}}
-                    {{/each}}
-                </p>
-            </td>
-        </tr>
-        <tr>
+    {{> soknad/sporsmal-med-svar felt=ident svar-type="normal" }}
+
+    <div class="soknad-sporsmal-med-svar">
+        <p class="soknad-sporsmal">{{ statsborgerskap.label }}</p>
+        <p>
+        {{#each statsborgerskap.verdi }}
+            {{~ this}}{{#if @last}}{{else}}, {{/if}}
+        {{/each}}
+       </p>
+    </div>
+
+    <div class="soknad-sporsmal-med-svar">
+        <p class="soknad-sporsmal">{{ sivilstand.label }}</p>
+        <p>
             {{# with (join "felles.sivilstatus.kode" sivilstand.verdi "." prefix='[' suffix=']') as | sivilstandkode | }}
-                {{> soknad/felt-celle label=sivilstand.label verdi=(lookup @root.teksterUtenomSpørsmål sivilstandkode) }}
+                {{ lookup @root.teksterUtenomSpørsmål sivilstandkode }}
             {{/with}}
-            <td>
-                <h5>{{adresse.label}}</h5>
-                {{#if adresse.verdi}}
-                    {{#with adresse.verdi}}
-                        <p>
-                            {{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
-                            {{~join postnummer poststed " "}}
-                        </p>
-                    {{/with}}
+        </p>
+    </div>
+
+    <div class="soknad-sporsmal-med-svar">
+        <p class="soknad-sporsmal">{{ adresse.label }}</p>
+            {{#if adresse.verdi}}
+                {{#with adresse.verdi}}
+                    <p>
+                        {{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
+                        {{~join postnummer poststed " "}}
+                    </p>
+                {{/with}}
+            {{else}}
+                {{#if adressebeskyttelse }}
+                    <p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.adressesperre.alert]}}</p>
                 {{else}}
-                    {{#if adressebeskyttelse }}
-                        <p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.adressesperre.alert]}}</p>
-                    {{else}}
-                        <p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.ikke-registrert.alert]}}</p>
-                    {{/if}}
+                    <p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.ikke-registrert.alert]}}</p>
                 {{/if}}
-            </td>
-        </tr>
-        {{#if adresse.verdi.poststed}}
-            <tr>
-                {{#> soknad/ja-nei spørsmål.borPåRegistrertAdresse}}{{/soknad/ja-nei}}
-            </tr>
-        {{/if}}
-    </table>
+            {{/if}}
+    </div>
+
+    {{> soknad/sporsmal-med-svar felt=spørsmål.borPåRegistrertAdresse svar-type="ja-nei" }}
+
 </section>
 
 <section class="soknad-section">
-    {{#table}}
-        {{#with spørsmål}}
-            {{#> soknad/ja-nei værtINorgeITolvMåneder oppfølgingCondition="NEI" }}{{/soknad/ja-nei}}
-            {{#if planleggerÅBoINorgeTolvMnd}}
-                {{#> soknad/ja-nei planleggerÅBoINorgeTolvMnd oppfølgingCondition="NEI" }}{{/soknad/ja-nei}}
-            {{/if}}
+    {{#with spørsmål}}
+        {{> soknad/sporsmal-med-svar felt=værtINorgeITolvMåneder svar-type="ja-nei" }}
+        {{> soknad/sporsmal-med-svar felt=planleggerÅBoINorgeTolvMnd svar-type="ja-nei" }}
+    {{/with}}
+
+    {{#each utenlandsperioder as | utenlandsperiode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> soknad/sporsmal-med-svar felt=utenlandsoppholdÅrsak svar-type="normal" }}
+            {{> soknad/sporsmal-med-svar felt=oppholdsland svar-type="normal" }}
+            {{> soknad/sporsmal-med-svar felt=oppholdslandFraDato svar-type="dato" }}
+            {{> soknad/sporsmal-med-svar felt=oppholdslandTilDato svar-type="dato" }}
         {{/with}}
-            {{#each utenlandsperioder as | utenlandsperiode | }}
-                <td>
-                        <h5>{{ utenlandsperiode.label }}</h5>
-                    {{> soknad/utenlandsperiode utenlandsperiode.verdi }}
-                </td>
-            {{/each}}
-    {{/table}}
+    {{/each}}
 </section>

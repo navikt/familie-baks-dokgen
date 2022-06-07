@@ -1,9 +1,7 @@
 <section class="soknad-section">
     <h3>{{teksterUtenomSpørsmål.[pdf.søker.seksjonstittel]}}</h3>
-    {{#table columns=1}}
-        {{> soknad/felt-celle søker.navn }}
-        {{> soknad/felt-celle spørsmål.lestOgForståttBekreftelse }}
-    {{/table}}
+    {{> soknad/sporsmal-med-svar felt=søker.navn svar-type="normal" }}
+    {{> soknad/sporsmal-med-svar felt=spørsmål.lestOgForståttBekreftelse svar-type="normal" }}
 </section>
 {{> soknad/omdeg søker section-number=1 }}
 {{> soknad-utvidet/din-livssituasjon-utvidet søker section-number=2}}

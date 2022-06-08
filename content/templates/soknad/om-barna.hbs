@@ -1,47 +1,35 @@
-
 {{#*inline "oppsamling-oppfølging"}}
-<div class="oppfølging">
+<div class="soknad-sporsmal-med-svar">
 {{#each barn }}
 {{#with (lookup this.spørsmål barnFelt) as | barnFelt |}}
-{{#if @first }}<h5>{{barnFelt.label}}</h5><ul>{{/if}}
-{{#eq barnFelt.verdi "JA"}}<li>{{ navn.verdi }}</li>{{/eq}}
-{{#if @last}}</ul>{{/if}}
+{{#eq barnFelt.verdi "JA"}}
+{{#if @first }} <p class="soknad-sporsmal">{{ barnFelt.label }}</p>
+{{/if}}
+<p>{{ navn.verdi}}</p>
+{{/eq}}
 {{/with}}
 {{/each}}
 </div>
 {{/inline}}
 
+
 {{#*inline "oppsamlingspørsmål"}}
 {{#with (lookup spørsmål oppsamling) as | oppsamling |}}
-{{#> soknad/ja-nei oppsamling oppfølgingCondition="JA"}}
+{{> soknad/sporsmal-med-svar felt=oppsamling svar-type="ja-nei" }}
 {{> oppsamling-oppfølging barnFelt=barnFelt }}
-{{/soknad/ja-nei}}
 {{/with}}
 {{/inline}}
 
 <section class="soknad-section">
 <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[pdf.ombarna.seksjonstittel]}}</h3>
-<table>
-<tr>
 {{> oppsamlingspørsmål oppsamling="erNoenAvBarnaFosterbarn" barnFelt="erFosterbarn" }}
-{{> oppsamlingspørsmål oppsamling="søktAsylForBarn" barnFelt="erAsylsøker" }}
-</tr>
-<tr>
 {{> oppsamlingspørsmål oppsamling="oppholderBarnSegIInstitusjon" barnFelt="oppholderSegIInstitusjon" }}
-{{! Den eneste med reversert condition, behandles for seg selv }}
-{{#> soknad/ja-nei spørsmål.barnOppholdtSegTolvMndSammenhengendeINorge oppfølgingCondition="NEI"}}
-{{> oppsamling-oppfølging barnFelt="boddMindreEnn12MndINorge" }}
-{{/soknad/ja-nei}}
-</tr>
-<tr>
 {{> oppsamlingspørsmål oppsamling="erBarnAdoptertFraUtland" barnFelt="erAdoptertFraUtland" }}
+{{> oppsamlingspørsmål oppsamling="søktAsylForBarn" barnFelt="erAsylsøker" }}
+{{! Den eneste med reversert condition, behandles for seg selv }}
+{{> soknad/sporsmal-med-svar felt=spørsmål.barnOppholdtSegTolvMndSammenhengendeINorge svar-type="ja-nei" }}
+{{> oppsamling-oppfølging barnFelt="boddMindreEnn12MndINorge" }}
 {{> oppsamlingspørsmål oppsamling="mottarBarnetrygdForBarnFraAnnetEøsland" barnFelt="barnetrygdFraAnnetEøsland" }}
-</tr>
-<tr>
-{{#if spørsmål.erAvdødPartnerForelder.verdi}}
 {{> oppsamlingspørsmål oppsamling="erAvdødPartnerForelder" barnFelt="andreForelderErDød" }}
-{{/if}}
-</tr>
-</table>
 </section>
 

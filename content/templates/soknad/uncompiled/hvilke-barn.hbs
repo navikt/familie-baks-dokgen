@@ -1,32 +1,25 @@
 <section class="soknad-section">
     <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.seksjonstittel]}}</h3>
     {{#each barn}}
-        <table>
-            <tr>
-                {{> soknad/felt-celle navn }}
-                {{#if alder }}
-                    {{> soknad/felt-celle alder }}
-                {{/if}}
-            </tr>
-            <tr>
-                {{> soknad/felt-celle ident }}
-                {{#neq registrertBostedType.verdi "IKKE_FYLT_INN"}}
-                <td>
-                    <h5>{{ registrertBostedType.label }}</h5>
-                    {{#switch registrertBostedType.verdi}}
-                        {{#case "REGISTRERT_SOKERS_ADRESSE" }}
-                        {{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse]}}
-                        {{/case}}
-                        {{#case "REGISTRERT_ANNEN_ADRESSE"}}
-                        {{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.ikke-registrert-på-adresse]}}
-                        {{/case}}
-                        {{#case "ADRESSESPERRE"}}
-                        {{@root.teksterUtenomSpørsmål.[hvilkebarn.barn.bosted.adressesperre]}}
-                        {{/case}}
-                    {{/switch}}
-                </td>
-                {{/neq}}
-            </tr>
-        </table>
+        {{> soknad/sporsmal-med-svar felt=navn svar-type="normal" }}
+        {{> soknad/sporsmal-med-svar felt=alder svar-type="normal" }}
+        {{> soknad/sporsmal-med-svar felt=ident svar-type="normal" }}
+
+        {{#neq registrertBostedType.verdi "IKKE_FYLT_INN"}}
+            <div class="soknad-sporsmal-med-svar">
+                <p class="soknad-sporsmal">{{ registrertBostedType.label }}</p>
+                {{#switch registrertBostedType.verdi}}
+                    {{#case "REGISTRERT_SOKERS_ADRESSE" }}
+                        <p>{{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse]}}</p>
+                    {{/case}}
+                    {{#case "REGISTRERT_ANNEN_ADRESSE"}}
+                        <p>{{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.ikke-registrert-på-adresse]}}</p>
+                    {{/case}}
+                    {{#case "ADRESSESPERRE"}}
+                        <p>{{@root.teksterUtenomSpørsmål.[hvilkebarn.barn.bosted.adressesperre]}}</p>
+                    {{/case}}
+                {{/switch}}
+            </div>
+        {{/neq}}
     {{/each}}
 </section>

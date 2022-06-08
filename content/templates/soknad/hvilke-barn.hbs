@@ -10,13 +10,13 @@
 <p class="soknad-sporsmal">{{ registrertBostedType.label }}</p>
 {{#switch registrertBostedType.verdi}}
 {{#case "REGISTRERT_SOKERS_ADRESSE" }}
-<p> {{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse]}} </p>
+<p>{{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.registrert-på-adresse]}}</p>
 {{/case}}
 {{#case "REGISTRERT_ANNEN_ADRESSE"}}
-<p>  {{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.ikke-registrert-på-adresse]}} </p>
+<p>{{@root.teksterUtenomSpørsmål.[pdf.hvilkebarn.ikke-registrert-på-adresse]}}</p>
 {{/case}}
 {{#case "ADRESSESPERRE"}}
-<p>   {{@root.teksterUtenomSpørsmål.[hvilkebarn.barn.bosted.adressesperre]}} </p>
+<p>{{@root.teksterUtenomSpørsmål.[hvilkebarn.barn.bosted.adressesperre]}}</p>
 {{/case}}
 {{/switch}}
 </div>

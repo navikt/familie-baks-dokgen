@@ -2,21 +2,23 @@
     <div class="soknad-sporsmal-med-svar">
         {{#each barn }}
             {{#with (lookup this.spørsmål barnFelt) as | barnFelt |}}
+                {{#if @first }}
+                    <p class="soknad-sporsmal">{{ barnFelt.label }}</p>
+                {{/if}}
                 {{#eq barnFelt.verdi "JA"}}
-                    {{#if @first }} <p class="soknad-sporsmal">{{ barnFelt.label }}</p>
-                    {{/if}}
-                    <p>{{ navn.verdi}}</p>
+                    <p>{{ navn.verdi }}</p>
                 {{/eq}}
             {{/with}}
         {{/each}}
     </div>
 {{/inline}}
 
-
 {{#*inline "oppsamlingspørsmål"}}
     {{#with (lookup spørsmål oppsamling) as | oppsamling |}}
         {{> soknad/sporsmal-med-svar felt=oppsamling svar-type="ja-nei" }}
-        {{> oppsamling-oppfølging barnFelt=barnFelt }}
+        {{#eq oppsamling.verdi "JA"}}
+            {{> oppsamling-oppfølging barnFelt=barnFelt }}
+        {{/eq}}
     {{/with}}
 {{/inline}}
 
@@ -28,7 +30,9 @@
     {{> oppsamlingspørsmål oppsamling="søktAsylForBarn" barnFelt="erAsylsøker" }}
     {{! Den eneste med reversert condition, behandles for seg selv }}
     {{> soknad/sporsmal-med-svar felt=spørsmål.barnOppholdtSegTolvMndSammenhengendeINorge svar-type="ja-nei" }}
-    {{> oppsamling-oppfølging barnFelt="boddMindreEnn12MndINorge" }}
+    {{#eq spørsmål.barnOppholdtSegTolvMndSammenhengendeINorge.verdi "NEI"}}
+        {{> oppsamling-oppfølging barnFelt="boddMindreEnn12MndINorge" }}
+    {{/eq}}
     {{> oppsamlingspørsmål oppsamling="mottarBarnetrygdForBarnFraAnnetEøsland" barnFelt="barnetrygdFraAnnetEøsland" }}
     {{> oppsamlingspørsmål oppsamling="erAvdødPartnerForelder" barnFelt="andreForelderErDød" }}
 </section>

@@ -1,31 +1,40 @@
 <section class="soknad-section">
 <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[dinlivssituasjon.sidetittel]}}</h3>
 {{#with spørsmål}}
-{{#table}}
-<td>
-<h5>{{harSamboerNå.label}}</h5>
-<p>{{> soknad/ja-nei-språktekst harSamboerNå.verdi}}</p>
+{{> soknad/sporsmal-med-svar felt=harSamboerNå svar-type="ja-nei" }}
+
 {{#if nåværendeSamboer}}
-{{> soknad/samboer nåværendeSamboer.verdi}}
+{{#with nåværendeSamboer.verdi}}
+{{> soknad/sporsmal-med-svar felt=navn svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=ident svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=fødselsdato svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=samboerFraDato svar-type="dato" }}
+{{/with}}
 {{/if}}
-</td>
-{{#> soknad/ja-nei erAsylsøker }}{{/soknad/ja-nei}}
-{{#> soknad/ja-nei jobberPåBåt oppfølgingCondition="JA" }}
-{{/soknad/ja-nei}}
+
+{{> soknad/sporsmal-med-svar felt=erAsylsøker svar-type="ja-nei" }}
+
+{{> soknad/sporsmal-med-svar felt=jobberPåBåt svar-type="ja-nei" }}
 {{#each arbeidsperioderUtland as | arbeidsperiode | }}
-<td>
-<h5>{{ arbeidsperiode.label }}</h5>
-{{> soknad/arbeidsperiode arbeidsperiode.verdi }}
-</td>
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=arbeidsperiodeland svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+{{/with}}
 {{/each}}
-{{#> soknad/ja-nei mottarUtenlandspensjon oppfølgingCondition="JA" }}
-{{/soknad/ja-nei}}
+
+{{> soknad/sporsmal-med-svar felt=mottarUtenlandspensjon svar-type="ja-nei" }}
 {{#each pensjonsperioderUtland as | pensjonsperiode | }}
-<td>
-<h5>{{ pensjonsperiode.label }}</h5>
-{{> soknad/pensjonsperiode pensjonsperiode.verdi }}
-</td>
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=pensjonsland svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+{{/with}}
 {{/each}}
-{{/table}}
 {{/with}}
 </section>

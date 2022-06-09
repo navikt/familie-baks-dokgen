@@ -8,6 +8,10 @@
     {{/with }}
 {{/inline}}
 
+{{#eq spørsmål.erFosterbarn.verdi "JA"}}
+    {{> titteltekst klammeTekstId="[ombarnet.fosterbarn]" }}
+{{/eq}}
+
 {{#eq spørsmål.oppholderSegIInstitusjon.verdi "JA"}}
     {{> titteltekst klammeTekstId="[ombarnet.institusjon]" }}
     {{#eq spørsmål.institusjonIUtland.verdi "JA"}}

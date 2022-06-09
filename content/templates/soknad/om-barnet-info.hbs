@@ -23,7 +23,6 @@
 {{#eq spørsmål.boddMindreEnn12MndINorge.verdi "JA"}}
 {{> titteltekst klammeTekstId="[ombarnet.opplystatbarnutlandopphold.info]" }}
 {{/eq}}
-{{> soknad/sporsmal-med-svar felt=spørsmål.værtINorgeITolvMåneder svar-type="ja-nei" }}
 {{#each utenlandsperioder as | utenlandsperiode | }}
 <p class="periode-tittel">{{label}}</p>
 {{#with verdi}}

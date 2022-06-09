@@ -1,53 +1,56 @@
 {{#*inline "titteltekst"}}
 {{#with @root.teksterUtenomSpørsmål as | titteltekster | }}
 {{#with (lookup titteltekster klammeTekstId) as | tekst | }}
+<p class="soknad-sporsmal">
 {{~ replace tekst "{navn}" navn.verdi ~}}
+</p>
 {{/with}}
 {{/with }}
 {{/inline}}
 
-{{#table columns=2}}
-
 {{#eq spørsmål.oppholderSegIInstitusjon.verdi "JA"}}
-<td>
-<h5>{{> titteltekst klammeTekstId="[ombarnet.institusjon]" }}</h5>
-{{#eq spørsmål.institusjonIUtland.verdi "JA" }}
-<p>{{spørsmål.institusjonIUtland.label}}</p>
-{{else}}
-{{> soknad/oppfolging spørsmål.institusjonsnavn }}
-{{> soknad/oppfolging spørsmål.institusjonsadresse }}
-{{> soknad/oppfolging spørsmål.institusjonspostnummer }}
+{{> titteltekst klammeTekstId="[ombarnet.institusjon]" }}
+{{#eq spørsmål.institusjonIUtland.verdi "JA"}}
+<p class="soknad-sporsmal">{{spørsmål.institusjonIUtland.label}}</p>
 {{/eq}}
-{{> soknad/oppfolging-dato spørsmål.institusjonOppholdStartdato }}
-{{> soknad/oppfolging-dato spørsmål.institusjonOppholdSluttdato }}
-</td>
+{{> soknad/sporsmal-med-svar felt=spørsmål.institusjonsnavn svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=spørsmål.institusjonsadresse svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=spørsmål.institusjonspostnummer svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=spørsmål.institusjonOppholdStartdato svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=spørsmål.institusjonOppholdSluttdato svar-type="dato" }}
 {{/eq}}
 
 {{#eq spørsmål.boddMindreEnn12MndINorge.verdi "JA"}}
-{{#each utenlandsperioder as | utenlandsperiode | }}
-<td>
-<h5>{{ utenlandsperiode.label }}</h5>
-{{> soknad/utenlandsperiode utenlandsperiode.verdi }}
-</td>
-{{/each}}
-{{#if spørsmål.planleggerÅBoINorge12Mnd}}
-<td>
-{{> soknad/oppfolging-ja-nei spørsmål.planleggerÅBoINorge12Mnd }}
-</td>
-{{/if}}
+{{> titteltekst klammeTekstId="[ombarnet.opplystatbarnutlandopphold.info]" }}
 {{/eq}}
+{{> soknad/sporsmal-med-svar felt=spørsmål.værtINorgeITolvMåneder svar-type="ja-nei" }}
+{{#each utenlandsperioder as | utenlandsperiode | }}
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=utenlandsoppholdÅrsak svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=oppholdsland svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=oppholdslandFraDato svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=oppholdslandTilDato svar-type="dato" }}
+{{/with}}
+{{/each}}
+{{> soknad/sporsmal-med-svar felt=spørsmål.planleggerÅBoINorgeTolvMnd svar-type="ja-nei" }}
+
 
 {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
-{{#> soknad/ja-nei spørsmål.pågåendeSøknadFraAnnetEøsLand oppfølgingCondition="JA" }}
-{{> soknad/oppfolging spørsmål.pågåendeSøknadHvilketLand }}
-{{/soknad/ja-nei}}
-{{#> soknad/ja-nei spørsmål.mottarEllerMottokEøsBarnetrygd oppfølgingCondition="JA" }}
-{{/soknad/ja-nei}}
-{{#each eøsBarnetrygdsperioder as | eos-barnetrygdsperiode | }}
-<td>
-<h5>{{ eos-barnetrygdsperiode.label }}</h5>
-{{> soknad/eos-barnetrygdsperiode eos-barnetrygdsperiode.verdi }}
-</td>
-{{/each}}
+{{> titteltekst klammeTekstId="[ombarnet.barnetrygd-eøs]" }}
 {{/eq}}
-{{/table}}
+{{> soknad/sporsmal-med-svar felt=spørsmål.pågåendeSøknadFraAnnetEøsLand svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=spørsmål.pågåendeSøknadHvilketLand svar-type="normal" }}
+
+{{> soknad/sporsmal-med-svar felt=spørsmål.mottarEllerMottokEøsBarnetrygd svar-type="ja-nei" }}
+{{#each eøsBarnetrygdsperioder as | eos-barnetrygdsperiode | }}
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=mottarEøsBarnetrygdNå svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=barnetrygdsland svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=fraDatoBarnetrygdperiode svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=tilDatoBarnetrygdperiode svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=månedligBeløp svar-type="normal" }}
+{{/with}}
+{{/each}}
+

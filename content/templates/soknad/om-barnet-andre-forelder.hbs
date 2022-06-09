@@ -6,36 +6,32 @@
 {{/inline}}
 
 <h4>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h4>
-{{#table columns=2}}
 {{#with andreForelder }}
-{{> soknad/felt-celle navn }}
-{{#if fnr.verdi}}
-{{#> soknad/felt-celle-med-oppfølging fnr }}
-{{#if fødselsdato.verdi}}
-{{> soknad/oppfolging-dato fødselsdato}}
-{{/if}}
-{{/soknad/felt-celle-med-oppfølging}}
-{{/if}}
-{{#if arbeidUtlandet.verdi}}
-{{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
-{{/ja-nei-barnenavn}}
-{{/if}}
+{{> soknad/sporsmal-med-svar felt=navn svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=fnr svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=fødselsdato svar-type="dato" }}
+
+{{> soknad/sporsmal-med-svar felt=arbeidUtlandet svar-type="ja-nei" }}
 {{#each arbeidsperioderUtland as | arbeidsperiode | }}
-<td>
-<h5>{{ arbeidsperiode.label }}</h5>
-{{> soknad/arbeidsperiode arbeidsperiode.verdi }}
-</td>
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=arbeidsperiodeland svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+{{/with}}
 {{/each}}
-{{#if pensjonUtland.verdi}}
-{{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
-{{/soknad/ja-nei}}
-{{/if}}
+
+{{> soknad/sporsmal-med-svar felt=pensjonUtland svar-type="ja-nei" }}
 {{#each pensjonsperioderUtland as | pensjonsperiode | }}
-<td>
-<h5>{{ pensjonsperiode.label }}</h5>
-{{> soknad/pensjonsperiode pensjonsperiode.verdi }}
-</td>
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=pensjonsland svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+{{/with}}
 {{/each}}
 {{/with}}
-{{/table}}
 {{/if}}

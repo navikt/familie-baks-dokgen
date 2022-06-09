@@ -4,9 +4,11 @@
 {{> @partial-block }}
 {{/soknad/ja-nei}}
 {{/inline}}
-
 <h4>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h4>
 {{#with andreForelder }}
+{{#eq kanIkkeGiOpplysninger.verdi "JA"}}
+<p class="soknad-sporsmal">{{kanIkkeGiOpplysninger.label}}</p>
+{{else}}
 {{> soknad/sporsmal-med-svar felt=navn svar-type="normal" }}
 {{> soknad/sporsmal-med-svar felt=fnr svar-type="normal" }}
 {{> soknad/sporsmal-med-svar felt=fødselsdato svar-type="dato" }}
@@ -33,5 +35,6 @@
 {{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
 {{/with}}
 {{/each}}
+{{/eq}}
 {{/with}}
 {{/if}}

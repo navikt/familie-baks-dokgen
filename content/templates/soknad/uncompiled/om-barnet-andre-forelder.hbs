@@ -1,35 +1,32 @@
 {{#if andreForelder}}
     <h4>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h4>
-    {{#with andreForelder }}
-        {{#eq kanIkkeGiOpplysninger.verdi "JA"}}
-            <p class="soknad-sporsmal">{{kanIkkeGiOpplysninger.label}}</p>
-        {{else}}
-            {{> soknad/sporsmal-med-svar felt=navn svar-type="normal" }}
-            {{> soknad/sporsmal-med-svar felt=fnr svar-type="normal" }}
-            {{> soknad/sporsmal-med-svar felt=fødselsdato svar-type="dato" }}
+    {{#eq andreForelder.kanIkkeGiOpplysninger.verdi "JA"}}
+        <p class="soknad-sporsmal">{{andreForelder.kanIkkeGiOpplysninger.label}}</p>
+    {{/eq}}
+    {{> soknad/sporsmal-med-svar felt=andreForelder.navn svar-type="normal" }}
+    {{> soknad/sporsmal-med-svar felt=andreForelder.fnr svar-type="normal" }}
+    {{> soknad/sporsmal-med-svar felt=andreForelder.fødselsdato svar-type="dato" }}
 
-            {{> soknad/sporsmal-med-svar felt=arbeidUtlandet svar-type="ja-nei" }}
-            {{#each arbeidsperioderUtland as | arbeidsperiode | }}
-                <p class="periode-tittel">{{label}}</p>
-                {{#with verdi}}
-                    {{> soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
-                    {{> soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
-                    {{> soknad/sporsmal-med-svar felt=arbeidsperiodeland svar-type="normal" }}
-                    {{> soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
-                    {{> soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
-                {{/with}}
-            {{/each}}
+    {{> soknad/sporsmal-med-svar felt=andreForelder.arbeidUtlandet svar-type="ja-nei" }}
+    {{#each andreForelder.arbeidsperioderUtland as | arbeidsperiode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+            {{> soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+            {{> soknad/sporsmal-med-svar felt=arbeidsperiodeland svar-type="normal" }}
+            {{> soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+            {{> soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+        {{/with}}
+    {{/each}}
 
-            {{> soknad/sporsmal-med-svar felt=pensjonUtland svar-type="ja-nei" }}
-            {{#each pensjonsperioderUtland as | pensjonsperiode | }}
-                <p class="periode-tittel">{{label}}</p>
-                {{#with verdi}}
-                    {{> soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
-                    {{> soknad/sporsmal-med-svar felt=pensjonsland svar-type="normal" }}
-                    {{> soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
-                    {{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
-                {{/with}}
-            {{/each}}
-        {{/eq}}
-    {{/with}}
+    {{> soknad/sporsmal-med-svar felt=andreForelder.pensjonUtland svar-type="ja-nei" }}
+    {{#each andreForelder.pensjonsperioderUtland as | pensjonsperiode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+            {{> soknad/sporsmal-med-svar felt=pensjonsland svar-type="normal" }}
+            {{> soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+            {{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+        {{/with}}
+    {{/each}}
 {{/if}}

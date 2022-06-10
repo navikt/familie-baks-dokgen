@@ -1,9 +1,4 @@
 {{#if andreForelder}}
-    {{#*inline "ja-nei-barnenavn"}}
-        {{#> soknad/ja-nei label=(replace label "{navn}" (upper navn.verdi)) }}
-            {{> @partial-block }}
-        {{/soknad/ja-nei}}
-    {{/inline}}
     <h4>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h4>
     {{#with andreForelder }}
         {{#eq kanIkkeGiOpplysninger.verdi "JA"}}

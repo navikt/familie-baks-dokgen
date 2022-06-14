@@ -1,14 +1,13 @@
 <div class="soknad-section">
 <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[pdf.vedlegg.seksjonstittel]}}</h3>
-{{#table columns=2}}
 {{#each dokumentasjon }}
-<td>
-<h5>
+<div class="soknad-sporsmal-med-svar">
 <!-- Eneste måten jeg fant som lot meg putte en java Integer inn i en String på... -->
 {{#with (replace (replace @root.teksterUtenomSpørsmål.[pdf.vedlegg.nummerering] "{x}" "%s") "{total}" "%s") as | fstring | }}
+<p class="soknad-sporsmal">
 {{stringFormat fstring (add @index 1) dokumentasjon.length}}: {{ dokumentasjonSpråkTittel }}
+</p>
 {{/with}}
-</h5>
 <p>
 {{#if harSendtInn}}
 {{@root.teksterUtenomSpørsmål.[dokumentasjon.har-sendt-inn.spm]}}
@@ -18,7 +17,6 @@
 {{/with}}
 {{/if}}
 </p>
-</td>
+</div>
 {{/each}}
-{{/table}}
 </div>

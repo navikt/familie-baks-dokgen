@@ -8,15 +8,13 @@
                 {{stringFormat fstring (add @index 1) dokumentasjon.length}}: {{ dokumentasjonSpråkTittel }}
             </p>
         {{/with}}
-        <p>
-            {{#if harSendtInn}}
-                {{@root.teksterUtenomSpørsmål.[dokumentasjon.har-sendt-inn.spm]}}
-            {{ else }}
-                {{#with (replace @root.teksterUtenomSpørsmål.[pdf.vedlegg.lastet-opp-antall] "{antall}" "%s") as | fstring | }}
-                    {{stringFormat fstring opplastedeVedlegg.length }}
-                {{/with}}
-            {{/if}}
-        </p>
+        {{#if harSendtInn}}
+            {{@root.teksterUtenomSpørsmål.[dokumentasjon.har-sendt-inn.spm]}}
+        {{ else }}
+            {{#with (replace @root.teksterUtenomSpørsmål.[pdf.vedlegg.lastet-opp-antall] "{antall}" "%s") as | fstring | }}
+                {{stringFormat fstring opplastedeVedlegg.length }}
+            {{/with}}
+        {{/if}}
         </p>
     {{/each}}
 </div>

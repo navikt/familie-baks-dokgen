@@ -2,16 +2,15 @@
 <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[dinlivssituasjon.sidetittel]}}</h3>
 {{#with spørsmål}}
 {{> soknad/sporsmal-med-svar felt=harSamboerNå svar-type="ja-nei" }}
-
-{{#if nåværendeSamboer}}
-{{#with nåværendeSamboer.verdi}}
-{{> soknad/sporsmal-med-svar felt=navn svar-type="normal" }}
-{{> soknad/sporsmal-med-svar felt=ident svar-type="normal" }}
-{{> soknad/sporsmal-med-svar felt=fødselsdato svar-type="dato" }}
-{{> soknad/sporsmal-med-svar felt=samboerFraDato svar-type="dato" }}
 {{/with}}
+{{#if nåværendeSamboer}}
+{{> soknad/sporsmal-med-svar felt=nåværendeSamboer.navn svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=nåværendeSamboer.ident svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=nåværendeSamboer.fødselsdato svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=nåværendeSamboer.samboerFraDato svar-type="dato" }}
 {{/if}}
 
+{{#with spørsmål}}
 {{> soknad/sporsmal-med-svar felt=erAsylsøker svar-type="ja-nei" }}
 
 {{> soknad/sporsmal-med-svar felt=jobberPåBåt svar-type="ja-nei" }}

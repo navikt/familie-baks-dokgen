@@ -8,12 +8,10 @@
 
         {{> soknad/sporsmal-med-svar felt=harSamboerNå svar-type="ja-nei" }}
         {{#if nåværendeSamboer}}
-            {{#with nåværendeSamboer.verdi}}
-                {{> soknad/sporsmal-med-svar felt=navn svar-type="normal" }}
-                {{> soknad/sporsmal-med-svar felt=ident svar-type="normal" }}
-                {{> soknad/sporsmal-med-svar felt=fødselsdato svar-type="dato" }}
-                {{> soknad/sporsmal-med-svar felt=samboerFraDato svar-type="dato" }}
-            {{/with}}
+                {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.navn svar-type="normal" }}
+                {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.ident svar-type="normal" }}
+                {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.fødselsdato svar-type="dato" }}
+                {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.samboerFraDato svar-type="dato" }}
         {{/if}}
 
         <div class="soknad-sporsmal-med-svar">
@@ -30,15 +28,11 @@
                     (replace @root.teksterUtenomSpørsmål.[pdf.dinlivssituasjon.tidligeresamboer.seksjonstittel] "{x}" "%s") as | fstring |}}
             <p class="periode-tittel">{{stringFormat fstring (add @index 1)}}</p>
             {{/with}}
-
-            {{#with tidligereSamboer.verdi}}
-                {{> soknad/sporsmal-med-svar felt=navn svar-type="normal" }}
-                {{> soknad/sporsmal-med-svar felt=ident svar-type="normal" }}
-                {{> soknad/sporsmal-med-svar felt=fødselsdato svar-type="dato" }}
-                {{> soknad/sporsmal-med-svar felt=samboerFraDato svar-type="dato" }}
-                {{> soknad/sporsmal-med-svar felt=samboerTilDato svar-type="dato" }}
-            {{/with}}
-
+                {{> soknad/sporsmal-med-svar felt=tidligereSamboer.navn svar-type="normal" }}
+                {{> soknad/sporsmal-med-svar felt=tidligereSamboer.ident svar-type="normal" }}
+                {{> soknad/sporsmal-med-svar felt=tidligereSamboer.fødselsdato svar-type="dato" }}
+                {{> soknad/sporsmal-med-svar felt=tidligereSamboer.samboerFraDato svar-type="dato" }}
+                {{> soknad/sporsmal-med-svar felt=tidligereSamboer.samboerTilDato svar-type="dato" }}
         {{/each}}
 
         {{> soknad/sporsmal-med-svar felt=erAsylsøker svar-type="ja-nei" }}

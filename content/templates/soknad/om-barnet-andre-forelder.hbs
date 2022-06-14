@@ -1,41 +1,32 @@
 {{#if andreForelder}}
-{{#*inline "ja-nei-barnenavn"}}
-{{#> soknad/ja-nei label=(replace label "{navn}" (upper navn.verdi)) }}
-{{> @partial-block }}
-{{/soknad/ja-nei}}
-{{/inline}}
-
 <h4>{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h4>
-{{#table columns=2}}
-{{#with andreForelder }}
-{{> soknad/felt-celle navn }}
-{{#if fnr.verdi}}
-{{#> soknad/felt-celle-med-oppfølging fnr }}
-{{#if fødselsdato.verdi}}
-{{> soknad/oppfolging-dato fødselsdato}}
-{{/if}}
-{{/soknad/felt-celle-med-oppfølging}}
-{{/if}}
-{{#if arbeidUtlandet.verdi}}
-{{#> ja-nei-barnenavn arbeidUtlandet oppfølgingCondition="JA" }}
-{{/ja-nei-barnenavn}}
-{{/if}}
-{{#each arbeidsperioderUtland as | arbeidsperiode | }}
-<td>
-<h5>{{ arbeidsperiode.label }}</h5>
-{{> soknad/arbeidsperiode arbeidsperiode.verdi }}
-</td>
-{{/each}}
-{{#if pensjonUtland.verdi}}
-{{#> soknad/ja-nei pensjonUtland oppfølgingCondition="JA" }}
-{{/soknad/ja-nei}}
-{{/if}}
-{{#each pensjonsperioderUtland as | pensjonsperiode | }}
-<td>
-<h5>{{ pensjonsperiode.label }}</h5>
-{{> soknad/pensjonsperiode pensjonsperiode.verdi }}
-</td>
-{{/each}}
+{{#eq andreForelder.kanIkkeGiOpplysninger.verdi "JA"}}
+<p class="soknad-sporsmal">{{andreForelder.kanIkkeGiOpplysninger.label}}</p>
+{{/eq}}
+{{> soknad/sporsmal-med-svar felt=andreForelder.navn svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=andreForelder.fnr svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=andreForelder.fødselsdato svar-type="dato" }}
+
+{{> soknad/sporsmal-med-svar felt=andreForelder.arbeidUtlandet svar-type="ja-nei" }}
+{{#each andreForelder.arbeidsperioderUtland as | arbeidsperiode | }}
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=arbeidsperiodeland svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
 {{/with}}
-{{/table}}
+{{/each}}
+
+{{> soknad/sporsmal-med-svar felt=andreForelder.pensjonUtland svar-type="ja-nei" }}
+{{#each andreForelder.pensjonsperioderUtland as | pensjonsperiode | }}
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+{{> soknad/sporsmal-med-svar felt=pensjonsland svar-type="normal" }}
+{{> soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+{{/with}}
+{{/each}}
 {{/if}}

@@ -10,10 +10,10 @@
     {{/with}}
 
     {{#if nåværendeSamboer}}
-        {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.navn svar-type="normal" }}
-        {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.ident svar-type="normal" }}
-        {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.fødselsdato svar-type="dato" }}
-        {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.samboerFraDato svar-type="dato" }}
+        {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.verdi.navn svar-type="normal" }}
+        {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.verdi.ident svar-type="normal" }}
+        {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.verdi.fødselsdato svar-type="dato" }}
+        {{> soknad/sporsmal-med-svar felt=nåværendeSamboer.verdi.samboerFraDato svar-type="dato" }}
     {{/if}}
 
     <div class="soknad-sporsmal-med-svar">
@@ -30,11 +30,11 @@
                 (replace @root.teksterUtenomSpørsmål.[pdf.dinlivssituasjon.tidligeresamboer.seksjonstittel] "{x}" "%s") as | fstring |}}
             <p class="periode-tittel">{{stringFormat fstring (add @index 1)}}</p>
         {{/with}}
-        {{> soknad/sporsmal-med-svar felt=tidligereSamboer.navn svar-type="normal" }}
-        {{> soknad/sporsmal-med-svar felt=tidligereSamboer.ident svar-type="normal" }}
-        {{> soknad/sporsmal-med-svar felt=tidligereSamboer.fødselsdato svar-type="dato" }}
-        {{> soknad/sporsmal-med-svar felt=tidligereSamboer.samboerFraDato svar-type="dato" }}
-        {{> soknad/sporsmal-med-svar felt=tidligereSamboer.samboerTilDato svar-type="dato" }}
+        {{> soknad/sporsmal-med-svar felt=tidligereSamboer.verdi.navn svar-type="normal" }}
+        {{> soknad/sporsmal-med-svar felt=tidligereSamboer.verdi.ident svar-type="normal" }}
+        {{> soknad/sporsmal-med-svar felt=tidligereSamboer.verdi.fødselsdato svar-type="dato" }}
+        {{> soknad/sporsmal-med-svar felt=tidligereSamboer.verdi.samboerFraDato svar-type="dato" }}
+        {{> soknad/sporsmal-med-svar felt=tidligereSamboer.verdi.samboerTilDato svar-type="dato" }}
     {{/each}}
 
     {{#with spørsmål}}

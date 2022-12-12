@@ -1,0 +1,10 @@
+<section class="soknad-section">
+<h3>{{add @index section-number-start }}. {{ replace "Om {navn}" "{navn}" (upper navn.verdi)}}</h3>
+{{!-- {{> soknad/om-barnet-info }} --}}
+{{> kontantstotte-soknad/om-barnet-andre-forelder }}
+
+{{! Om barnet bosted}}
+<h4>Bosted</h4>
+{{> kontantstotte-soknad/sporsmal-med-svar felt=borFastMedSøker svar-type="ja-nei" }}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.skriftligAvtaleOmDeltBosted svar-type="ja-nei" }}
+</section>

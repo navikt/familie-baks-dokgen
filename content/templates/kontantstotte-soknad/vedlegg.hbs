@@ -1,4 +1,4 @@
-<div class="soknad-section">
+<section class="soknad-section">
 <h3>{{section-number}}. Vedlegg</h3>
 {{#each dokumentasjon }}
 <div class="soknad-sporsmal-med-svar">
@@ -11,7 +11,7 @@
 <p>
 {{#if harSendtInn}}
 {{@root.teksterTilPdf.[dokumentasjon.har-sendt-inn.spm]}}
-{{ else }}
+{{else}}
 {{#with (replace @root.teksterTilPdf.[pdf.vedlegg.lastet-opp-antall] "{antall}" "%s") as | fstring | }}
 {{stringFormat fstring opplastedeVedlegg.length }}
 {{/with}}
@@ -19,4 +19,4 @@
 </p>
 </div>
 {{/each}}
-</div>
+</section>

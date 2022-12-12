@@ -1,0 +1,152 @@
+{{!-- {{#> soknad/seksjon seksjon-nummer=(add @index seksjon-nummer-start) tittel=(replace @root.teksterUtenomSpørsmål.[eøs-om-barn.sidetittel] "{barn}" (upper navn.verdi)) }} --}}
+<section class="soknad-section">
+    <h3>{{add @index section-number-start }}. {{ @root.teksterTilPdf.[eoesForBarnTittel] }}</h3>
+    {{#each idNummer }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
+    {{/each}}
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=søkersSlektsforhold svar-type="normal" }}
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=søkersSlektsforholdSpesifisering svar-type="normal" }}
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=borMedAndreForelder svar-type="ja-nei" }}
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=borMedOmsorgsperson svar-type="ja-nei" }}
+
+    {{#if omsorgsperson}}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.navn svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.slektsforhold svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.slektsforholdSpesifisering svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.idNummer svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.adresse svar-type="normal" }}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.arbeidUtland svar-type="ja-nei" }}
+        {{#each omsorgsperson.arbeidsperioderUtland as | arbeidsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsperiodeland svar-type="normal" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.arbeidNorge svar-type="ja-nei" }}
+        {{#each omsorgsperson.arbeidsperioderNorge as | arbeidsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.pensjonUtland svar-type="ja-nei" }}
+        {{#each omsorgsperson.pensjonsperioderUtland as | pensjonsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonsland svar-type="normal" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.pensjonNorge svar-type="ja-nei" }}
+        {{#each omsorgsperson.pensjonsperioderNorge as | pensjonsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.andreUtbetalinger svar-type="ja-nei" }}
+        {{#each omsorgsperson.andreUtbetalingsperioder as | utbetalingsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=fårUtbetalingNå svar-type="ja-nei" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetalingLand svar-type="normal" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetalingFraDato svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetalingTilDato svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.pågåendeSøknadFraAnnetEøsLand svar-type="ja-nei" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.pågåendeSøknadHvilketLand svar-type="normal" }}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=omsorgsperson.barnetrygdFraEøs svar-type="ja-nei" }}
+        {{#each omsorgsperson.eøsBarnetrygdsperioder as | eos-barnetrygdsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=mottarEøsBarnetrygdNå svar-type="ja-nei" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=barnetrygdsland svar-type="normal" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=fraDatoBarnetrygdperiode svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=tilDatoBarnetrygdperiode svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=månedligBeløp svar-type="normal" }}
+            {{/with}}
+        {{/each}}
+    {{/if}}
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=adresse svar-type="normal" }}
+
+    {{#if andreForelder }}
+        {{#eq andreForelder.kanIkkeGiOpplysninger.verdi "NEI"}}
+            <h3 class="soknad-seksjon-undertittel">{{ @root.teksterTilPdf.[pdf.andreforelder.seksjonstittel]}}</h3>
+        {{/eq}}
+        {{#each andreForelder.idNummer as | idNummer | }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
+        {{/each}}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.adresse svar-type="normal" }}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.arbeidNorge svar-type="ja-nei" }}
+        {{#each andreForelder.arbeidsperioderNorge as | arbeidsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.pensjonNorge svar-type="ja-nei" }}
+        {{#each andreForelder.pensjonsperioderNorge as | pensjonsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.andreUtbetalinger svar-type="ja-nei" }}
+        {{#each andreForelder.andreUtbetalingsperioder as | utbetalingsperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=fårUtbetalingNå svar-type="ja-nei" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetalingLand svar-type="normal" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetalingFraDato svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetalingTilDato svar-type="dato" }}
+            {{/with}}
+        {{/each}}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.pågåendeSøknadFraAnnetEøsLand svar-type="ja-nei" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.pågåendeSøknadHvilketLand svar-type="normal" }}
+
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.kontantstøtteFraEøs svar-type="ja-nei" }}
+        {{#each andreForelder.eøsKontantstøttePerioder as | eos-kontantstotteperiode | }}
+            <p class="periode-tittel">{{label}}</p>
+            {{#with verdi}}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=mottarEøsKontantstøtteNå svar-type="ja-nei" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=kontantstøtteLand svar-type="normal" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=fraDatoKontantstøttePeriode svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=tilDatoKontantstøttePeriode svar-type="dato" }}
+                {{> kontantstotte-soknad/sporsmal-med-svar felt=månedligBeløp svar-type="normal" }}
+            {{/with}}
+        {{/each}}
+    {{/if}}
+</section>

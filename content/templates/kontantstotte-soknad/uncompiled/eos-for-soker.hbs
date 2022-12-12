@@ -1,7 +1,9 @@
 <section class="soknad-section">
-    <h3>{{add @index section-number-start }}. {{ @root.teksterTilPdf.[eoesForSoekerTittel] }}</h3>
+    {{#with (capitalizeFirst @root.teksterTilPdf.eoesForSoekerTittel) as | tittel |}}
+        <h3>{{ section-number-start }}. {{ tittel }}</h3>
+    {{/with}}
 
-    {{#each idNummer}
+    {{#each idNummer as | idNummer |}}
         {{> kontantstotte-soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
     {{/each}}
     {{> kontantstotte-soknad/sporsmal-med-svar felt=adresseISøkeperiode svar-type="normal" }}
@@ -17,7 +19,7 @@
         {{/with}}
     {{/each}}
 
-    {{> soknad/sporsmal-med-svar felt=pensjonNorge svar-type="ja-nei" }}
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonNorge svar-type="ja-nei" }}
     {{#each pensjonsperioderNorge as | pensjonsperiode | }}
         <p class="periode-tittel">{{label}}</p>
         {{#with verdi}}

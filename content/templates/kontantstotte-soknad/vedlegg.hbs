@@ -1,5 +1,4 @@
-<section class="soknad-section">
-<h3>{{section-number}}. {{ @root.teksterTilPdf.vedlegg }}</h3>
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.vedlegg}}
 {{#each dokumentasjon }}
 <div class="soknad-sporsmal-med-svar">
 <p class="soknad-sporsmal">
@@ -14,4 +13,4 @@
 </p>
 </div>
 {{/each}}
-</section>
+{{/kontantstotte-soknad/seksjon}}

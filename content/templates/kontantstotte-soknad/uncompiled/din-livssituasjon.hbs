@@ -1,6 +1,4 @@
-<section class="soknad-section">
-    <h3>{{section-number}}. {{@root.teksterTilPdf.[dinLivssituasjonTittel]}}</h3>
-
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.dinLivssituasjonTittel}}
     {{> kontantstotte-soknad/sporsmal-med-svar felt=erAsylsøker svar-type="ja-nei" }}
 
     {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidIUtlandet svar-type="ja-nei" }}
@@ -25,4 +23,4 @@
             {{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
         {{/with}}
     {{/each}}
-</section>
+{{/kontantstotte-soknad/seksjon}}

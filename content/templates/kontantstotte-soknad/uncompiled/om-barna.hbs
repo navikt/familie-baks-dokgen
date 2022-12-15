@@ -22,8 +22,7 @@
     {{/with}}
 {{/inline}}
 
-<section class="soknad-section">
-    <h3>{{section-number}}. {{@root.teksterTilPdf.[omBarnaTittel]}}</h3>
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.omBarnaTittel}}
     {{> oppsamlingspørsmål oppsamling="erNoenAvBarnaFosterbarn" barnFelt="erFosterbarn" }}
     {{> oppsamlingspørsmål oppsamling="oppholderBarnSegIInstitusjon" barnFelt="oppholderSegIInstitusjon" }}
     {{> oppsamlingspørsmål oppsamling="erBarnAdoptert" barnFelt="erAdoptert" }}
@@ -35,5 +34,4 @@
     {{/eq}}
     {{> oppsamlingspørsmål oppsamling="mottarKontantstøtteForBarnFraAnnetEøsland" barnFelt="kontantstøtteFraAnnetEøsland" }}
     {{> oppsamlingspørsmål oppsamling="harEllerTildeltBarnehageplass" barnFelt="harBarnehageplass" }}
-</section>
-
+{{/kontantstotte-soknad/seksjon}}

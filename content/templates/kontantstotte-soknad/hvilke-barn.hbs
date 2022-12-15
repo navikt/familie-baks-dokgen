@@ -1,5 +1,4 @@
-<section class="soknad-section">
-<h3>{{section-number}}. {{@root.teksterTilPdf.[velgBarnTittel]}}</h3>
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.velgBarnTittel}}
 {{#each barn}}
 {{> kontantstotte-soknad/sporsmal-med-svar felt=navn svar-type="normal" }}
 {{> kontantstotte-soknad/sporsmal-med-svar felt=alder svar-type="normal" }}
@@ -22,4 +21,4 @@
 </div>
 {{/neq}}
 {{/each}}
-</section>
+{{/kontantstotte-soknad/seksjon}}

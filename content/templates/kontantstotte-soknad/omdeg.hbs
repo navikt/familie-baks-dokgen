@@ -1,5 +1,4 @@
-<section class="soknad-section">
-<h3>{{section-number}}. {{@root.teksterTilPdf.[omDegTittel]}}</h3>
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.omDegTittel}}
 {{> kontantstotte-soknad/sporsmal-med-svar felt=ident svar-type="normal" }}
 
 <div class="soknad-sporsmal-med-svar">
@@ -52,4 +51,4 @@
 {{/each}}
 
 {{> kontantstotte-soknad/sporsmal-med-svar felt=yrkesaktivFemÅr svar-type="ja-nei" }}
-</section>
+{{/kontantstotte-soknad/seksjon}}

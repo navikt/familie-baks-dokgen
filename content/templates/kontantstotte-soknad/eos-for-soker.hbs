@@ -1,8 +1,4 @@
-<section class="soknad-section">
-{{#with (capitalizeFirst @root.teksterTilPdf.eoesForSoekerTittel) as | tittel |}}
-<h3>{{ section-number-start }}. {{ tittel }}</h3>
-{{/with}}
-
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number-start tittel=(capitalizeFirst @root.teksterTilPdf.eoesForSoekerTittel)}}
 {{#each idNummer as | idNummer |}}
 {{> kontantstotte-soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
 {{/each}}
@@ -39,4 +35,4 @@
 {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetalingTilDato svar-type="dato" }}
 {{/with}}
 {{/each}}
-</section>
+{{/kontantstotte-soknad/seksjon}}

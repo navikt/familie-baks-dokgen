@@ -1,0 +1,45 @@
+{{#*inline "titteltekst"}}
+    {{#with (lookup teksterTilPdf klammeTekstId) as | tekst | }}
+        <div class="soknad-sporsmal-med-svar">
+            <p class="soknad-sporsmal">
+                {{~ tekst ~}}
+            </p>
+        </div>
+    {{/with}}
+{{/inline}}
+
+{{#eq boddMindreEnn12MndINorge.verdi "JA"}}
+    {{> titteltekst klammeTekstId="opplystBarnOppholdUtenforNorge" }}
+{{/eq}}
+
+{{#each utenlandsperioder as | utenlandsperiode | }}
+    <p class="periode-tittel">{{label}}</p>
+    {{#with verdi}}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=utenlandsoppholdÅrsak svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdsland svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdslandFraDato svar-type="dato" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdslandTilDato svar-type="dato" }}
+    {{/with}}
+{{/each}}
+
+{{> kontantstotte-soknad/sporsmal-med-svar felt=planleggerÅBoINorge12Mnd svar-type="ja-nei" }}
+
+
+{{#eq kontantstøtteFraAnnetEøsland.verdi "JA"}}
+    {{> titteltekst klammeTekstId="opplystFaarHarFaattEllerSoektYtelse" }}
+{{/eq}}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=pågåendeSøknadFraAnnetEøsLand svar-type="ja-nei" }}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=pågåendeSøknadHvilketLand svar-type="normal" }}
+
+{{> soknad/sporsmal-med-svar felt=mottarEllerMottokEøsKontantstøtte svar-type="ja-nei" }}
+{{#each eøsKontantstøttePerioder }}
+    <p class="periode-tittel">{{label}}</p>
+    {{#with verdi}}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=mottarEøsKontantstøtteNå svar-type="ja-nei" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=kontantstøtteLand svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=fraDatoKontantstøttePeriode svar-type="dato" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=tilDatoKontantstøttePeriode svar-type="dato" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=månedligBeløp svar-type="normal" }}
+    {{/with}}
+{{/each}}
+

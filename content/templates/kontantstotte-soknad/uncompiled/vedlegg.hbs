@@ -1,20 +1,15 @@
 <section class="soknad-section">
-    <h3>{{section-number}}. Vedlegg</h3>
+    <h3>{{section-number}}. {{ @root.teksterTilPdf.vedlegg }}</h3>
     {{#each dokumentasjon }}
         <div class="soknad-sporsmal-med-svar">
-            <!-- Eneste måten jeg fant som lot meg putte en java Integer inn i en String på... -->
-            {{#with (replace (replace @root.teksterTilPdf.[pdf.vedlegg.nummerering] "{x}" "%s") "{total}" "%s") as | fstring | }}
                 <p class="soknad-sporsmal">
-                {{stringFormat fstring (add @index 1) dokumentasjon.length}}: {{ dokumentasjonSpråkTittel }}
+                {{ add @index 1 }} {{ @root.teksterTilPdf.av }} {{ dokumentasjon.length }}: {{ dokumentasjonSpråkTittel }}
                 </p>
-            {{/with}}
             <p>
             {{#if harSendtInn}}
-                {{@root.teksterTilPdf.[dokumentasjon.har-sendt-inn.spm]}}
+                {{@root.teksterTilPdf.sendtInnTidligere}}
                 {{else}}
-                {{#with (replace @root.teksterTilPdf.[pdf.vedlegg.lastet-opp-antall] "{antall}" "%s") as | fstring | }}
-                    {{stringFormat fstring opplastedeVedlegg.length }}
-                {{/with}}
+                    {{ opplastedeVedlegg.length }}
             {{/if}}
             </p>
         </div>

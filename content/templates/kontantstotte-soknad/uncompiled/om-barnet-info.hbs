@@ -8,6 +8,10 @@
     {{/with}}
 {{/inline}}
 
+
+{{#if utbetaltForeldrepengerEllerEngangsstønad}}
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetaltForeldrepengerEllerEngangsstønad svar-type="ja-nei" }}
+{{/if}}
 {{#eq boddMindreEnn12MndINorge.verdi "JA"}}
     {{> titteltekst klammeTekstId="opplystBarnOppholdUtenforNorge" }}
 {{/eq}}
@@ -31,7 +35,7 @@
 {{> kontantstotte-soknad/sporsmal-med-svar felt=pågåendeSøknadFraAnnetEøsLand svar-type="ja-nei" }}
 {{> kontantstotte-soknad/sporsmal-med-svar felt=pågåendeSøknadHvilketLand svar-type="normal" }}
 
-{{> soknad/sporsmal-med-svar felt=mottarEllerMottokEøsKontantstøtte svar-type="ja-nei" }}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=mottarEllerMottokEøsKontantstøtte svar-type="ja-nei" }}
 {{#each eøsKontantstøttePerioder }}
     <p class="periode-tittel">{{label}}</p>
     {{#with verdi}}
@@ -40,6 +44,19 @@
         {{> kontantstotte-soknad/sporsmal-med-svar felt=fraDatoKontantstøttePeriode svar-type="dato" }}
         {{> kontantstotte-soknad/sporsmal-med-svar felt=tilDatoKontantstøttePeriode svar-type="dato" }}
         {{> kontantstotte-soknad/sporsmal-med-svar felt=månedligBeløp svar-type="normal" }}
+    {{/with}}
+{{/each}}
+
+{{#each barnehageplassPerioder }}
+    <p class="periode-tittel">{{label}}</p>
+    {{#with verdi}}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=barnehageplassPeriodeBeskrivelse svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=barnehageplassUtlandet svar-type="ja-nei" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=barnehageplassLand svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=offentligStøtte svar-type="ja-nei" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=antallTimer svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=startetIBarnehagen svar-type="dato" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=slutterIBarnehagen svar-type="dato" }}
     {{/with}}
 {{/each}}
 

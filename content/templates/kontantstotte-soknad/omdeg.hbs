@@ -1,0 +1,54 @@
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.omDegTittel}}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=ident svar-type="normal" }}
+
+<div class="soknad-sporsmal-med-svar">
+<p class="soknad-sporsmal">{{ statsborgerskap.label }}</p>
+<p>
+{{#each statsborgerskap.verdi }}
+{{~ this}}{{#if @last}}{{else}}, {{/if}}
+{{/each}}
+</p>
+</div>
+
+<div class="soknad-sporsmal-med-svar">
+<p class="soknad-sporsmal">{{ sivilstand.label }}</p>
+<p>
+{{#with (join "sivilstand" (capitalize(lower sivilstand.verdi)) "") as | sivilstandkode | }}
+{{ lookup @root.teksterTilPdf sivilstandkode }}
+{{/with}}
+</p>
+</div>
+
+<div class="soknad-sporsmal-med-svar">
+<p class="soknad-sporsmal">{{ adresse.label }}</p>
+{{#if adresse.verdi}}
+{{#with adresse.verdi}}
+<p>
+{{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
+{{~join postnummer poststed " "}}
+</p>
+{{/with}}
+{{else}}
+{{#if adressebeskyttelse }}
+<p>{{teksterTilPdf.[omdeg.personopplysninger.adressesperre.alert]}}</p>
+{{else}}
+<p>{{teksterTilPdf.[omdeg.personopplysninger.ikke-registrert.alert]}}</p>
+{{/if}}
+{{/if}}
+</div>
+
+{{> kontantstotte-soknad/sporsmal-med-svar felt=borPåRegistrertAdresse svar-type="ja-nei" }}
+
+{{> kontantstotte-soknad/sporsmal-med-svar felt=værtINorgeITolvMåneder svar-type="ja-nei" }}
+{{#each utenlandsperioder as | utenlandsperiode | }}
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=utenlandsoppholdÅrsak svar-type="normal" }}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdsland svar-type="normal" }}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdslandFraDato svar-type="dato" }}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdslandTilDato svar-type="dato" }}
+{{/with}}
+{{/each}}
+
+{{> kontantstotte-soknad/sporsmal-med-svar felt=yrkesaktivFemÅr svar-type="ja-nei" }}
+{{/kontantstotte-soknad/seksjon}}

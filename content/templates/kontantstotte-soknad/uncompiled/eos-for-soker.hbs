@@ -1,0 +1,38 @@
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number-start tittel=(capitalizeFirst @root.teksterTilPdf.eoesForSoekerTittel)}}
+    {{#each idNummer as | idNummer |}}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
+    {{/each}}
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=adresseISøkeperiode svar-type="normal" }}
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidINorge svar-type="ja-nei" }}
+    {{#each arbeidsperioderNorge as | arbeidsperiode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+        {{/with}}
+    {{/each}}
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonNorge svar-type="ja-nei" }}
+    {{#each pensjonsperioderNorge as | pensjonsperiode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+        {{/with}}
+    {{/each}}
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=andreUtbetalinger svar-type="ja-nei" }}
+    {{#each andreUtbetalingsperioder as | utbetalingsperiode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=fårUtbetalingNå svar-type="ja-nei" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetalingLand svar-type="normal" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetalingFraDato svar-type="dato" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=utbetalingTilDato svar-type="dato" }}
+        {{/with}}
+    {{/each}}
+{{/kontantstotte-soknad/seksjon}}

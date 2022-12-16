@@ -1,0 +1,38 @@
+{{#*inline "oppsamling-oppfølging"}}
+<div class="soknad-sporsmal-med-svar">
+{{#each barn }}
+{{#with (lookup this barnFelt) as | barnFelt |}}
+{{#if @first }}
+<p class="soknad-sporsmal">{{ barnFelt.label }}</p>
+{{/if}}
+{{#eq barnFelt.verdi "JA"}}
+<p>{{ navn.verdi }}</p>
+{{/eq}}
+{{/with}}
+{{/each}}
+</div>
+{{/inline}}
+
+{{#*inline "oppsamlingspørsmål"}}
+{{#with (lookup this oppsamling) as | oppsamling |}}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=oppsamling svar-type="ja-nei" }}
+{{#eq oppsamling.verdi "JA"}}
+{{> oppsamling-oppfølging barnFelt=barnFelt }}
+{{/eq}}
+{{/with}}
+{{/inline}}
+
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.omBarnaTittel}}
+{{> oppsamlingspørsmål oppsamling="erNoenAvBarnaFosterbarn" barnFelt="erFosterbarn" }}
+{{> oppsamlingspørsmål oppsamling="oppholderBarnSegIInstitusjon" barnFelt="oppholderSegIInstitusjon" }}
+{{> oppsamlingspørsmål oppsamling="erBarnAdoptert" barnFelt="erAdoptert" }}
+{{> oppsamlingspørsmål oppsamling="søktAsylForBarn" barnFelt="erAsylsøker" }}
+{{! Den eneste med reversert condition, behandles for seg selv }}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=barnOppholdtSegTolvMndSammenhengendeINorge svar-type="ja-nei" }}
+{{#eq barnOppholdtSegTolvMndSammenhengendeINorge.verdi "NEI"}}
+{{> oppsamling-oppfølging barnFelt="boddMindreEnn12MndINorge" }}
+{{/eq}}
+{{> oppsamlingspørsmål oppsamling="mottarKontantstøtteForBarnFraAnnetEøsland" barnFelt="kontantstøtteFraAnnetEøsland" }}
+{{> oppsamlingspørsmål oppsamling="harEllerTildeltBarnehageplass" barnFelt="harBarnehageplass" }}
+{{> kontantstotte-soknad/sporsmal-med-svar felt=erAvdødPartnerForelder svar-type="ja-nei" }}
+{{/kontantstotte-soknad/seksjon}}

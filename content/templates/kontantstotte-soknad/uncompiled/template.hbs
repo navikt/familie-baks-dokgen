@@ -1,0 +1,29 @@
+<section class="soknad-seksjon">
+    <h2 class="soknad-seksjon-tittel">{{ teksterTilPdf.soeker}}</h2>
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=søker.navn svar-type="normal" }}
+    <div class="soknad-sporsmal-med-svar">
+        <p class="soknad-sporsmal">{{ teksterTilPdf.bekreftelsesboksBroedtekst }}</p>
+        <p>{{ teksterTilPdf.bekreftelsesboksErklaering }}</p>
+    <div>
+</section>
+
+{{> kontantstotte-soknad/omdeg søker section-number=1 }}
+{{> kontantstotte-soknad/din-livssituasjon søker section-number=2 }}
+{{> kontantstotte-soknad/hvilke-barn barn section-number=3 }}
+{{> kontantstotte-soknad/om-barna barn section-number=4 }}
+
+{{#each barn}}
+    {{> kontantstotte-soknad/om-barnet barn section-number-start=5 }}
+{{/each}}
+
+{{#if søker.harEøsSteg}}
+    {{> kontantstotte-soknad/eos-for-soker søker section-number-start=(add barn.length 5) }}
+{{/if}}
+
+{{#each barn as | enkeltBarn |}}
+    {{#if enkeltBarn.harEøsSteg}}
+        {{> kontantstotte-soknad/eos-for-barn enkeltBarn section-number-start=(add (add barn.length 5) 1) }}
+    {{/if}}
+{{/each}}
+
+{{> kontantstotte-soknad/vedlegg section-number=(add (add antallEøsSteg barn.length) 5) }}

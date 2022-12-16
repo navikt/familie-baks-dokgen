@@ -1,0 +1,24 @@
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.velgBarnTittel}}
+    {{#each barn}}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=navn svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=alder svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=ident svar-type="normal" }}
+
+        {{#neq registrertBostedType.verdi "IKKE_FYLT_INN"}}
+            <div class="soknad-sporsmal-med-svar">
+                <p class="soknad-sporsmal">{{ registrertBostedType.label }}</p>
+                {{#switch registrertBostedType.verdi}}
+                    {{#case "REGISTRERT_SOKERS_ADRESSE" }}
+                        <p>{{@root.teksterTilPdf.[registrertPaaAdressenDin]}}</p>
+                    {{/case}}
+                    {{#case "REGISTRERT_ANNEN_ADRESSE"}}
+                        <p>{{@root.teksterTilPdf.[ikkeRegistrertPaaAdressenDin]}}</p>
+                    {{/case}}
+                    {{#case "ADRESSESPERRE"}}
+                        <p>{{@root.teksterTilPdf.[registrertMedAdressesperre]}}</p>
+                    {{/case}}
+                {{/switch}}
+            </div>
+        {{/neq}}
+    {{/each}}
+{{/kontantstotte-soknad/seksjon}}

@@ -1,0 +1,16 @@
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.vedlegg}}
+{{#each dokumentasjon }}
+<div class="soknad-sporsmal-med-svar">
+<p class="soknad-sporsmal">
+{{ add @index 1 }} {{ @root.teksterTilPdf.av }} {{ dokumentasjon.length }}: {{ dokumentasjonSpråkTittel }}
+</p>
+<p>
+{{#if harSendtInn}}
+{{@root.teksterTilPdf.sendtInnTidligere}}
+{{else}}
+{{ opplastedeVedlegg.length }}
+{{/if}}
+</p>
+</div>
+{{/each}}
+{{/kontantstotte-soknad/seksjon}}

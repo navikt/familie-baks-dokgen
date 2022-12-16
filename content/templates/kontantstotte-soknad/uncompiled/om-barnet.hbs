@@ -1,0 +1,8 @@
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=(add @index section-number-start) tittel=teksterTilPdf.omBarnetTittel}}
+    {{> kontantstotte-soknad/om-barnet-info }}
+    {{> kontantstotte-soknad/om-barnet-andre-forelder }}
+
+    <h3 class="soknad-seksjon-undertittel">{{ teksterTilPdf.bosted }}</h3>
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=borFastMedSøker svar-type="ja-nei" }}
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.skriftligAvtaleOmDeltBosted svar-type="ja-nei" }}
+{{/kontantstotte-soknad/seksjon}}

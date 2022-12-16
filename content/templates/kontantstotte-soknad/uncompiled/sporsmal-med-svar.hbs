@@ -1,0 +1,20 @@
+{{#if felt.verdi}}
+    {{#with felt }}
+        <div class="soknad-sporsmal-med-svar">
+            <p class="soknad-sporsmal">{{ label }}</p>
+            {{#switch svar-type}}
+                {{#case "ja-nei"}}
+                    {{#with (lower verdi) as | svarkey |}}
+                        <p>{{ lookup @root.teksterTilPdf svarkey }}</p>
+                    {{/with}}
+                {{/case}}
+                {{#case "dato"}}
+                    <p>{{norwegian-date verdi}}</p>
+                {{/case}}
+                {{#case "normal"}}
+                    <p>{{verdi}}</p>
+                {{/case}}
+            {{/switch}}
+        </div>
+    {{/with}}
+{{/if}}

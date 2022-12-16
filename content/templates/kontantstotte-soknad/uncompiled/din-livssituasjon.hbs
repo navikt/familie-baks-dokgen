@@ -1,0 +1,26 @@
+{{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.dinLivssituasjonTittel}}
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=erAsylsøker svar-type="ja-nei" }}
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidIUtlandet svar-type="ja-nei" }}
+    {{#each arbeidsperioderUtland as | arbeidsperiode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsperiodeland svar-type="normal" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+        {{/with}}
+    {{/each}}
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=mottarUtenlandspensjon svar-type="ja-nei" }}
+    {{#each pensjonsperioderUtland as | pensjonsperiode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+            {{> soknad/sporsmal-med-svar felt=pensjonsland svar-type="normal" }}
+            {{> soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+            {{> soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+        {{/with}}
+    {{/each}}
+{{/kontantstotte-soknad/seksjon}}

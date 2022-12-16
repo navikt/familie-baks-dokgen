@@ -1,0 +1,34 @@
+{{#if andreForelder}}
+    <h3 class="soknad-seksjon-undertittel">{{teksterTilPdf.barnetsAndreForelder}}</h3>
+    {{#eq andreForelder.kanIkkeGiOpplysninger.verdi "JA"}}
+        <p class="soknad-sporsmal">{{andreForelder.kanIkkeGiOpplysninger.label}}</p>
+    {{/eq}}
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.navn svar-type="normal" }}
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.fnr svar-type="normal" }}
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.fødselsdato svar-type="dato" }}
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.yrkesaktivFemÅr svar-type="ja-nei" }}
+
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.arbeidUtlandet svar-type="ja-nei" }}
+    {{#each andreForelder.arbeidsperioderUtland as | arbeidsperiode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsperiodeAvsluttet svar-type="ja-nei" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsgiver svar-type="normal" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidsperiodeland svar-type="normal" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=fraDatoArbeidsperiode svar-type="dato" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=tilDatoArbeidsperiode svar-type="dato" }}
+        {{/with}}
+    {{/each}}
+
+    {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.pensjonUtland svar-type="ja-nei" }}
+    {{#each andreForelder.pensjonsperioderUtland as | pensjonsperiode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=mottarPensjonNå svar-type="ja-nei" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonsland svar-type="normal" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonFra svar-type="dato" }}
+            {{> kontantstotte-soknad/sporsmal-med-svar felt=pensjonTil svar-type="dato" }}
+        {{/with}}
+    {{/each}}
+{{/if}}

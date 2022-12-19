@@ -47,6 +47,9 @@
 {{/with}}
 {{/each}}
 
+{{#eq harBarnehageplass.verdi "JA"}}
+{{> titteltekst klammeTekstId="opplystBarnehageplass" }}
+{{/eq}}
 {{#each barnehageplassPerioder }}
 <p class="periode-tittel">{{label}}</p>
 {{#with verdi}}

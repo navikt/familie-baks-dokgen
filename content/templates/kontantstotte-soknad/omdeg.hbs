@@ -10,14 +10,7 @@
 </p>
 </div>
 
-<div class="soknad-sporsmal-med-svar">
-<p class="soknad-sporsmal">{{ sivilstand.label }}</p>
-<p>
-{{#with (join "sivilstand" (capitalize(lower sivilstand.verdi)) "") as | sivilstandkode | }}
-{{ lookup @root.teksterTilPdf sivilstandkode }}
-{{/with}}
-</p>
-</div>
+{{> kontantstotte-soknad/sivilstand sivilstand }}
 
 <div class="soknad-sporsmal-med-svar">
 <p class="soknad-sporsmal">{{ adresse.label }}</p>

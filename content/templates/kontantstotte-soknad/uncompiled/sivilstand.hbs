@@ -1,0 +1,37 @@
+<div class="soknad-sporsmal-med-svar">
+    <p class="soknad-sporsmal">{{ sivilstand.label }}</p>
+    <p>
+    {{#switch sivilstand.verdi}}
+        {{#case 'GIFT'}}
+            {{ lookup @root.teksterTilPdf 'sivilstandGift' }}
+        {{/case}}
+        {{#case 'ENKE_ELLER_ENKEMANN'}}
+            {{ lookup @root.teksterTilPdf 'sivilstandEnkeEnkemann' }}
+        {{/case}}
+        {{#case 'SKILT'}}
+            {{ lookup @root.teksterTilPdf 'sivilstandSkilt' }}
+        {{/case}}
+        {{#case 'SEPARERT'}}
+            {{ lookup @root.teksterTilPdf 'sivilstandSeparert' }}
+        {{/case}}
+        {{#case 'REGISTRERT_PARTNER'}}
+            {{ lookup @root.teksterTilPdf 'sivilstandRegistrertPartner' }}
+        {{/case}}
+        {{#case 'SEPARERT_PARTNER'}}
+            {{ lookup @root.teksterTilPdf 'sivilstandSeparertPartner' }}
+        {{/case}}
+        {{#case 'SKILT_PARTNER'}}
+            {{ lookup @root.teksterTilPdf 'sivilstandSkiltPartner' }}
+        {{/case}}
+        {{#case 'GJENLEVENDE_PARTNER'}}
+            {{ lookup @root.teksterTilPdf 'sivilstandGjenlevendePartner' }}
+        {{/case}}
+        {{#case 'UGIFT'}}
+            {{ lookup @root.teksterTilPdf 'sivilstandUgift' }}
+        {{/case}}
+        {{#case 'UOPPGITT'}}
+            {{ lookup @root.teksterTilPdf 'sivilstandUoppgitt' }}
+        {{/case}}
+    {{/switch}}
+    </p>
+</div>

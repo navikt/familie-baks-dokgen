@@ -4,9 +4,15 @@
             <p class="soknad-sporsmal">{{ label }}</p>
             {{#switch svar-type}}
                 {{#case "ja-nei"}}
-                    {{#with (lower verdi) as | svarkey |}}
-                        <p>{{ lookup @root.teksterTilPdf svarkey }}</p>
-                    {{/with}}
+                    {{#eq verdi "VET_IKKE"}}
+                        <p>{{@root.teksterTilPdf.[jegVetIkke]}}</p>
+                    {{/eq}}
+                    {{#eq verdi "JA"}}
+                        <p>{{@root.teksterTilPdf.[ja]}}</p>
+                    {{/eq}}
+                    {{#eq verdi "NEI"}}
+                        <p>{{@root.teksterTilPdf.[nei]}}</p>
+                    {{/eq}}
                 {{/case}}
                 {{#case "dato"}}
                     <p>{{norwegian-date verdi}}</p>

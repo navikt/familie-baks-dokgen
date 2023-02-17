@@ -274,7 +274,7 @@
         "label": "Er du asylsøkar?",
         "verdi": "NEI"
       },
-      "jobberPåBåt": {
+      "arbeidIUtlandet": {
         "label": "Arbeidar du i utlandet, på utanlandsk skip eller på utanlandsk kontinentalsokkel?",
         "verdi": "JA"
       },

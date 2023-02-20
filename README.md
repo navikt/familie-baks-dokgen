@@ -1,9 +1,9 @@
-# familie-ba-maler
+# familie-baks-dokgen
 Brevmaler for barnetrygd
 
-Url dev: https://familie-ba-dokgen.dev-adeo.no/
+Url dev: https://familie-baks-dokgen.dev-adeo.no/
 
-Url prod: https://familie-ba-dokgen.adeo.no/
+Url prod: https://familie-baks-dokgen.adeo.no/
 
 ##Kjøring lokalt
 Kjør `up.sh`, eller `docker-compose up -d`.

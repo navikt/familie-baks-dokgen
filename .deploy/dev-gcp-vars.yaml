@@ -5,4 +5,4 @@ resources:
   requests:
     cpu: "50m"
 ingresses:
-  - https://familie-ba-dokgen.dev.intern.nav.no
+  - https://familie-baks-dokgen.dev.intern.nav.no

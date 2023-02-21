@@ -5,8 +5,8 @@ on:
     branches:
       - master         # Push events on master branch
 env:
-  IMAGE: ghcr.io/${{ github.repository }}/familie-ba-dokgen:${{ github.sha }}
-  IMAGE_TAG_LATEST: ghcr.io/${{ github.repository }}/familie-ba-dokgen:latest
+  IMAGE: ghcr.io/${{ github.repository }}/familie-baks-dokgen:${{ github.sha }}
+  IMAGE_TAG_LATEST: ghcr.io/${{ github.repository }}/familie-baks-dokgen:latest
 
 jobs:
   build:

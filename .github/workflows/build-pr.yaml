@@ -3,7 +3,7 @@ name: Bygg og deploy PR
 on: [pull_request]
 
 env:
-  IMAGE: ghcr.io/${{ github.repository }}/familie-ba-dokgen:${{ github.event.pull_request.head.sha }}
+  IMAGE: ghcr.io/${{ github.repository }}/familie-baks-dokgen:${{ github.event.pull_request.head.sha }}
 
 jobs:
   build:

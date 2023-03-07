@@ -66,14 +66,6 @@
           "label": "Have you ever lived with the other parent?",
           "verdi": "NEI"
         },
-        "søkerForTidsromStartdato": {
-          "label": "From",
-          "verdi": "Not provided"
-        },
-        "søkerForTidsromSluttdato": {
-          "label": "Up to and including ",
-          "verdi": "Not provided"
-        },
         "søkerFlyttetFraAndreForelderDato": {
           "label": "When did you move apart?",
           "verdi": ""
@@ -244,7 +236,6 @@
     "pdf.omdeg.seksjonstittel": "About you",
     "pdf.bosted.seksjonstittel": "Place of residence",
     "pdf.ombarna.seksjonstittel": "About your children",
-    "pdf.søker-for-tidsrom.seksjonstittel": "Are you applying for a specific time period for {navn}?",
     "pdf.søker.seksjonstittel": "Applicant",
     "pdf.vedlegg.seksjonstittel": "List of attachments",
     "pdf.vedlegg.lastet-opp-antall": "Uploaded {antall} attachments",

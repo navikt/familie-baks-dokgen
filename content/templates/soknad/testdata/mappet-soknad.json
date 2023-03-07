@@ -66,14 +66,6 @@
           "label": "Do you and the other parent have a written agreement on dual\n residence for Barn Barnessen III?",
           "verdi": "NEI"
         },
-        "søkerForTidsromStartdato": {
-          "label": "From",
-          "verdi": "Not provided"
-        },
-        "søkerForTidsromSluttdato": {
-          "label": "Up to and including ",
-          "verdi": "Not provided"
-        },
         "søkerFlyttetFraAndreForelderDato": {
           "label": "When did you move apart?",
           "verdi": ""
@@ -233,7 +225,6 @@
     "pdf.omdeg.seksjonstittel": "About you",
     "pdf.bosted.seksjonstittel": "Place of residence",
     "pdf.ombarna.seksjonstittel": "About your children",
-    "pdf.søker-for-tidsrom.seksjonstittel": "Are you applying for a specific time period for {navn}?",
     "pdf.søker.seksjonstittel": "Applicant",
     "pdf.vedlegg.seksjonstittel": "List of attachments",
     "dokumentasjon.har-sendt-inn.spm": "I have already submitted this documentation to NAV in the past",

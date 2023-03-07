@@ -42,7 +42,7 @@ spec:
       rules:
         - application: familie-baks-mottak
           namespace: teamfamilie
-          cluster: dev-gcp
+          cluster: {{ cluster }}
   logformat: accesslog
   logtransform: dns_loglevel
   ingresses:

@@ -6,3 +6,4 @@ resources:
     cpu: "50m"
 ingresses:
   - https://familie-baks-dokgen.dev.intern.nav.no
+cluster: dev-gcp

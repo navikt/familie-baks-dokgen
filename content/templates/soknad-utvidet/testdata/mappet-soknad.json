@@ -110,14 +110,6 @@
           "label": "Når flytta de frå kvarandre?",
           "verdi": "Vi bor sammen nå"
         },
-        "søkerForTidsromStartdato": {
-          "label": "Frå og med",
-          "verdi": "Ikke oppgitt"
-        },
-        "søkerForTidsromSluttdato": {
-          "label": "Til og med ",
-          "verdi": "Ikke oppgitt"
-        },
         "andreForelderNavn": {
           "label": "Namn ",
           "verdi": "Heieieie"
@@ -377,7 +369,6 @@
     "pdf.omdeg.seksjonstittel": "Om deg",
     "pdf.bosted.seksjonstittel": "Bosted",
     "pdf.ombarna.seksjonstittel": "Om barna dine",
-    "pdf.søker-for-tidsrom.seksjonstittel": "Søker du barnetrygd for et spesielt tidsrom for {navn}?",
     "pdf.søker.seksjonstittel": "Søker",
     "pdf.vedlegg.seksjonstittel": "Liste over vedlegg",
     "pdf.vedlegg.lastet-opp-antall": "Lastet opp {antall} vedlegg",

@@ -83,14 +83,6 @@
     "skriftligAvtaleOmDeltBosted": {
       "label": "Har du og den andre forelderen skriftlig avtale om delt \nbosted for {navn}?",
       "verdi": "NEI"
-    },
-    "søkerForTidsromStartdato": {
-      "label": "Fra og med (format dd.mm.åååå)",
-      "verdi": "UKJENT"
-    },
-    "søkerForTidsromSluttdato": {
-      "label": "Til og med (format dd.mm.åååå)",
-      "verdi": "UKJENT"
     }
   }
 }

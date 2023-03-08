@@ -6,3 +6,4 @@ resources:
     cpu: "100m"
 ingresses:
   - https://familie-baks-dokgen.intern.nav.no
+cluster: prod-gcp

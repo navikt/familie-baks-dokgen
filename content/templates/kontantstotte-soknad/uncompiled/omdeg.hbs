@@ -33,15 +33,6 @@
     {{> kontantstotte-soknad/sporsmal-med-svar felt=borPåRegistrertAdresse svar-type="ja-nei" }}
 
     {{> kontantstotte-soknad/sporsmal-med-svar felt=værtINorgeITolvMåneder svar-type="ja-nei" }}
-    {{#each utenlandsperioder as | utenlandsperiode | }}
-        <p class="periode-tittel">{{label}}</p>
-        {{#with verdi}}
-            {{> kontantstotte-soknad/sporsmal-med-svar felt=utenlandsoppholdÅrsak svar-type="normal" }}
-            {{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdsland svar-type="normal" }}
-            {{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdslandFraDato svar-type="dato" }}
-            {{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdslandTilDato svar-type="dato" }}
-        {{/with}}
-    {{/each}}
 
     {{> kontantstotte-soknad/sporsmal-med-svar felt=planleggerÅBoINorgeTolvMnd svar-type="ja-nei" }}
 

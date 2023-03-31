@@ -16,15 +16,7 @@
 {{> titteltekst klammeTekstId="opplystBarnOppholdUtenforNorge" }}
 {{/eq}}
 
-{{#each utenlandsperioder as | utenlandsperiode | }}
-<p class="periode-tittel">{{label}}</p>
-{{#with verdi}}
-{{> kontantstotte-soknad/sporsmal-med-svar felt=utenlandsoppholdÅrsak svar-type="normal" }}
-{{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdsland svar-type="normal" }}
-{{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdslandFraDato svar-type="dato" }}
-{{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdslandTilDato svar-type="dato" }}
-{{/with}}
-{{/each}}
+{{> kontantstotte-soknad/utenlandsperioder perioder=utenlandsperioder }}
 
 {{> kontantstotte-soknad/sporsmal-med-svar felt=planleggerÅBoINorge12Mnd svar-type="ja-nei" }}
 

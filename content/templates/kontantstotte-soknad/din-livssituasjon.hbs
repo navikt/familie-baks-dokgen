@@ -1,9 +1,6 @@
 {{#> kontantstotte-soknad/seksjon seksjon-nummer=section-number tittel=@root.teksterTilPdf.dinLivssituasjonTittel}}
 {{> kontantstotte-soknad/sporsmal-med-svar felt=erAsylsøker svar-type="ja-nei" }}
 
-{{> kontantstotte-soknad/sporsmal-med-svar felt=utenlandsoppholdUtenArbeid svar-type="ja-nei" }}
-{{> kontantstotte-soknad/utenlandsperioder perioder=utenlandsperioder}}
-
 {{> kontantstotte-soknad/sporsmal-med-svar felt=arbeidIUtlandet svar-type="ja-nei" }}
 {{#each arbeidsperioderUtland as | arbeidsperiode | }}
 <p class="periode-tittel">{{label}}</p>

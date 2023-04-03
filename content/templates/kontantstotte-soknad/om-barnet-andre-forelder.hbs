@@ -8,10 +8,6 @@
 {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.fødselsdato svar-type="dato" }}
 {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.yrkesaktivFemÅr svar-type="ja-nei" }}
 
-{{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.utenlandsoppholdUtenArbeid svar-type="ja-nei" }}
-{{> kontantstotte-soknad/utenlandsperioder perioder=andreForelder.utenlandsperioder}}
-
-
 {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.arbeidUtlandet svar-type="ja-nei" }}
 {{#each andreForelder.arbeidsperioderUtland as | arbeidsperiode | }}
 <p class="periode-tittel">{{label}}</p>
@@ -24,6 +20,9 @@
 {{> kontantstotte-soknad/sporsmal-med-svar felt=verdi.adresse svar-type="normal" }}
 {{/with}}
 {{/each}}
+
+{{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.utenlandsoppholdUtenArbeid svar-type="ja-nei" }}
+{{> kontantstotte-soknad/utenlandsperioder perioder=andreForelder.utenlandsperioder}}
 
 {{> kontantstotte-soknad/sporsmal-med-svar felt=andreForelder.pensjonUtland svar-type="ja-nei" }}
 {{#each andreForelder.pensjonsperioderUtland as | pensjonsperiode | }}

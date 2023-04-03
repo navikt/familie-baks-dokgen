@@ -1,0 +1,10 @@
+{{#each perioder }}
+    <p class="periode-tittel">{{label}}</p>
+    {{#with verdi}}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=utenlandsoppholdÅrsak svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdsland svar-type="normal" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdslandFraDato svar-type="dato" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=oppholdslandTilDato svar-type="dato" }}
+        {{> kontantstotte-soknad/sporsmal-med-svar felt=adresse svar-type="normal" }}
+    {{/with}}
+{{/each}}

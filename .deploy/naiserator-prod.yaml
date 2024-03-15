@@ -1,0 +1,53 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+
+metadata:
+  name: familie-baks-dokgen
+  namespace: teamfamilie
+  labels:
+    team: teamfamilie
+
+spec:
+  image: {{ image }}
+  port: 8080
+  liveness:
+    path: /actuator/info
+    initialDelay: 30
+    timeout: 5
+    periodSeconds: 10
+    failureThreshold: 27
+  readiness:
+    path: /actuator/health
+    initialDelay: 30
+    timeout: 5
+    periodSeconds: 10
+    failureThreshold: 27
+  replicas:
+    min: 2
+    max: 3
+    cpuThresholdPercentage: 80
+  leaderElection: false
+  prometheus:
+    enabled: true
+    path: /actuator/metrics/prometheus
+  resources:
+    limits:
+      memory: "1024Mi"
+    requests:
+      cpu: "50m"
+      memory: "1024Mi"
+  accessPolicy:
+    inbound:
+      rules:
+        - application: familie-baks-mottak
+          namespace: teamfamilie
+          cluster: prod-gcp
+  logformat: accesslog
+  logtransform: dns_loglevel
+  ingresses:
+    - https://familie-baks-dokgen.intern.nav.no
+  env:
+    - name: APP_TEAM
+      value: teamfamilie
+  secureLogs:
+    enabled: true

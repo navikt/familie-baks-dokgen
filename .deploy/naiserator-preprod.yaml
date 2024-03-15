@@ -23,8 +23,8 @@ spec:
     periodSeconds: 10
     failureThreshold: 27
   replicas:
-    min: {{replicas.min}}
-    max: {{replicas.max}}
+    min: 1
+    max: 2
     cpuThresholdPercentage: 80
   leaderElection: false
   prometheus:
@@ -35,20 +35,18 @@ spec:
       cpu: "1000m"
       memory: "2048Mi"
     requests:
-      cpu: {{resources.requests.cpu}}
+      cpu: "50m"
       memory: "1024Mi"
   accessPolicy:
     inbound:
       rules:
         - application: familie-baks-mottak
           namespace: teamfamilie
-          cluster: {{ cluster }}
+          cluster: dev-gcp
   logformat: accesslog
   logtransform: dns_loglevel
   ingresses:
-  {{#each ingresses as |url|}}
-     - {{url}}
-  {{/each}}
+    - https://familie-baks-dokgen.intern.dev.nav.no
   env:
     - name: APP_TEAM
       value: teamfamilie

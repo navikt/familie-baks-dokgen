@@ -4,59 +4,61 @@ on:
   push:
     branches:
       - master         # Push events on master branch
-env:
-  IMAGE: ghcr.io/${{ github.repository }}/familie-baks-dokgen:${{ github.sha }}
-  IMAGE_TAG_LATEST: ghcr.io/${{ github.repository }}/familie-baks-dokgen:latest
 
 jobs:
-  build:
+  bygg:
+    name: Bygg app/image og push til GitHub
     runs-on: ubuntu-latest
-    name: "Bygg docker image"
+    permissions:
+      contents: "read"
+      id-token: "write"
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Login to ghcr
-        uses: docker/login-action@v1
+      - uses: nais/docker-build-push@v0
+        id: docker-push
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Bygg og push docker-image
-        uses: docker/build-push-action@v2
-        with:
-          tags: |
-            ${{ env.IMAGE }}
-            ${{ env.IMAGE_TAG_LATEST }}
-          pull: true
-          push: true
-
+          team: teamfamilie
+          push_image: true
+          dockerfile: Dockerfile
+          docker_context: .
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+    outputs:
+      image: ${{ steps.docker-push.outputs.image }}
   deploy-preprod:
+    name: Deploy til dev-gcp
+    needs:
+      - bygg
     runs-on: ubuntu-latest
-    name: Deploy to preprod
-    needs: build
+    permissions:
+      contents: "read"
+      id-token: "write"
     steps:
-      - uses: actions/checkout@v1
-
-      - name: Deploy to GCP dev
-        uses: nais/deploy/actions/deploy@v1
+      - uses: actions/checkout@v4
+      - name: Deploy til dev-gcp team namespace
+        uses: nais/deploy/actions/deploy@v2
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
-          RESOURCE: .deploy/nais.yaml
-          VARS: .deploy/dev-gcp-vars.yaml
+          RESOURCE: .deploy/naiserator-preprod.yaml
+          IMAGE: ${{ needs.bygg.outputs.image }}
 
   deploy-prod:
+    name: Deploy til prod-gcp
+    needs:
+      - bygg
     runs-on: ubuntu-latest
-    name: Deploy to prod
-    needs: build
+    permissions:
+      contents: "read"
+      id-token: "write"
     steps:
-      - uses: actions/checkout@v1
-
-      - name: Deploy to GCP PROD
-        uses: nais/deploy/actions/deploy@v1
+      - uses: actions/checkout@v4
+      - name: Deploy til prod-gcp team namespace
+        uses: nais/deploy/actions/deploy@v2
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-gcp
-          RESOURCE: .deploy/nais.yaml
-          VARS: .deploy/prod-gcp-vars.yaml
+          RESOURCE: .deploy/naiserator-prod.yaml
+          IMAGE: ${{ needs.bygg.outputs.image }}

@@ -1,14 +1,5 @@
 <section class="soknad-section">
 <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[dinlivssituasjon.sidetittel]}}</h3>
-{{#with spørsmål}}
-{{> soknad/sporsmal-med-svar felt=harSamboerNå svar-type="ja-nei" }}
-{{/with}}
-{{#if nåværendeSamboer}}
-{{> soknad/sporsmal-med-svar felt=nåværendeSamboer.verdi.navn svar-type="normal" }}
-{{> soknad/sporsmal-med-svar felt=nåværendeSamboer.verdi.ident svar-type="normal" }}
-{{> soknad/sporsmal-med-svar felt=nåværendeSamboer.verdi.fødselsdato svar-type="dato" }}
-{{> soknad/sporsmal-med-svar felt=nåværendeSamboer.verdi.samboerFraDato svar-type="dato" }}
-{{/if}}
 
 {{#with spørsmål}}
 {{> soknad/sporsmal-med-svar felt=erAsylsøker svar-type="ja-nei" }}

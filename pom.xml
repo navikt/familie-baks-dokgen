@@ -4,10 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>no.nav</groupId>
-    <packaging>jar</packaging>
-    <artifactId>familie-baks-dokgen</artifactId>
+    <groupId>no.nav.familie</groupId>
+    <artifactId>baks-dokgen</artifactId>
+    <name>baks dokgen</name>
     <version>${revision}${sha1}${changelist}</version>
+    <packaging>jar</packaging>
+    <description>Html-maler for barnetrygd- og kontantstøttesøknader</description>
+    <url>https://github.com/navikt/familie-baks-dokgen</url>
 
     <properties>
         <revision>1.0</revision>
@@ -45,7 +48,7 @@
         <dependency>
             <groupId>com.github.everit-org.json-schema</groupId>
             <artifactId>org.everit.json.schema</artifactId>
-            <version>1.14.1</version>
+            <version>1.14.4</version>
         </dependency>
         <dependency>
             <groupId>org.jsoup</groupId>
@@ -80,8 +83,46 @@
     <build>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
-        <finalName>${project.artifactId}</finalName>
 
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.3.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                    <configuration>
+                        <release>21</release>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <configuration>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <useReleaseProfile>true</useReleaseProfile>
+                        <releaseProfiles>release</releaseProfiles>
+                        <goals>deploy</goals>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
@@ -115,4 +156,85 @@
         </resources>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub navikt Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/navikt/familie-baks-dokgen</url>
+        </repository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <activation>
+                <property>
+                    <name>release</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <!--create source jar-->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!--create empty javadoc jar-->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>empty-javadoc-jar</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                                <configuration>
+                                    <classifier>javadoc</classifier>
+                                    <classesDirectory>${basedir}/src/main/javadoc</classesDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <organization>
+        <name>no.nav</name>
+        <url>https://github.com/navikt</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <organization>NAV (Arbeids- og velferdsdirektoratet) - The Norwegian Labour and Welfare Administration
+            </organization>
+            <organizationUrl>https://www.nav.no</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <developerConnection>scm:git:https://github.com/navikt/familie-baks-dokgen.git</developerConnection>
+        <connection>scm:git:https://github.com/navikt/familie-baks-dokgen.git</connection>
+        <url>https://github.com/navikt/familie-baks-dokgen</url>
+        <tag>HEAD</tag>
+    </scm>
 </project>

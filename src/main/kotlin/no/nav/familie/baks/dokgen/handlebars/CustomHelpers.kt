@@ -4,9 +4,6 @@ import com.github.jknack.handlebars.Context
 import com.github.jknack.handlebars.Helper
 import com.github.jknack.handlebars.Options
 import java.io.IOException
-import java.text.DecimalFormat
-import java.text.NumberFormat
-import java.util.*
 
 internal interface CustomHelpers {
 
@@ -157,20 +154,6 @@ internal interface CustomHelpers {
     class NorwegianDateHelper(): Helper<String> {
         override fun apply(isoFormattedDate: String, options: Options): Any {
             return isoFormattedDate.split('-').reversed().joinToString(separator = ".")
-        }
-    }
-
-    /**
-     * Format an int with thousand seperator, ex: 10000 will be 10 000
-     */
-    @Deprecated("Do not use, use ThousandSeperatorHelper.class instead")
-    class FormatKronerHelper : Helper<Int> {
-        override fun apply(kroner: Int, options: Options?): Any {
-            val formatter = NumberFormat.getInstance(Locale.US) as DecimalFormat
-            val symbols = formatter.decimalFormatSymbols
-            symbols.groupingSeparator = ' '
-            formatter.decimalFormatSymbols = symbols
-            return formatter.format(kroner)
         }
     }
 }

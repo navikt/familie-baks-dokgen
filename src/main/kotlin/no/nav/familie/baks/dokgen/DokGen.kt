@@ -24,7 +24,6 @@ import org.json.JSONTokener
 import org.jsoup.Jsoup
 import kotlin.text.Charsets.UTF_8
 
-
 class DokGen {
     private val handlebars: Handlebars = opprettHandlebarsKonfigurasjon()
     private val htmlRenderer: HtmlRenderer

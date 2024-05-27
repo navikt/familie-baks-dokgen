@@ -6,7 +6,6 @@ import com.github.jknack.handlebars.Options
 import java.io.IOException
 
 internal interface CustomHelpers {
-
     /**
      * Allows using switch/case in hbs templates
      *
@@ -20,10 +19,12 @@ internal interface CustomHelpers {
      *      {{/case}}
      *  {{/switch}}
      */
-    class SwitchHelper() : Helper<Any> {
-
+    class SwitchHelper : Helper<Any> {
         @Throws(IOException::class)
-        override fun apply(variable: Any, options: Options): Any? {
+        override fun apply(
+            variable: Any,
+            options: Options,
+        ): Any? {
             val variabelNavn: MutableList<String> = ArrayList()
             val variabelVerdier: MutableList<Any> = ArrayList()
             variabelNavn.add("__condition_fulfilled")
@@ -44,21 +45,21 @@ internal interface CustomHelpers {
     /**
      * @see SwitchHelper
      */
-    class CaseHelper() : Helper<Any> {
-        private val CONDITION_VARIABLE = "__condition_variable"
-        private val CONDITION_FULFILLED = "__condition_fulfilled"
-
+    class CaseHelper : Helper<Any> {
         @Throws(IOException::class)
-        override fun apply(caseKonstant: Any, options: Options): Any? {
+        override fun apply(
+            caseKonstant: Any,
+            options: Options,
+        ): Any? {
             val konstant = if (options.hash.isEmpty()) caseKonstant else options.hash
             val model = options.context.model() as MutableMap<String, Any>
-            val condition_variable = model[CONDITION_VARIABLE]
+            val conditionVariable = model["__condition_variable"]
             if (caseKonstant is Iterable<*>) {
-                if ((caseKonstant as List<*>).contains(condition_variable)) {
+                if ((caseKonstant as List<*>).contains(conditionVariable)) {
                     incrementConditionFulfilledCounter(model)
                     return options.fn()
                 }
-            } else if (konstant == condition_variable) {
+            } else if (konstant == conditionVariable) {
                 incrementConditionFulfilledCounter(model)
                 return options.fn()
             }
@@ -66,11 +67,10 @@ internal interface CustomHelpers {
         }
 
         private fun incrementConditionFulfilledCounter(model: MutableMap<String, Any>) {
-            var antall = model[CONDITION_FULFILLED] as Int
-            model[CONDITION_FULFILLED] = ++antall
+            var antall = model["__condition_fulfilled"] as Int
+            model["__condition_fulfilled"] = ++antall
         }
     }
-
 
     /**
      * Allows to create a table with a set number of columns from only td cells
@@ -95,15 +95,18 @@ internal interface CustomHelpers {
      * You can also supply an optional class parameter to the helper which will be added to the table.
      *
      */
-    class TableHelper() : Helper<Any> {
-
-        override fun apply(context: Any, options: Options): Any {
+    class TableHelper : Helper<Any> {
+        override fun apply(
+            context: Any,
+            options: Options,
+        ): Any {
             val columnCount = options.hash<Int>("columns", 2)
             val tableContents = options.fn(context)
-            val cells = tableContents.trim()
-                .split("</td>")
-                .filter { it.isNotEmpty() }
-                .map { "$it</td>" }
+            val cells =
+                tableContents.trim()
+                    .split("</td>")
+                    .filter { it.isNotEmpty() }
+                    .map { "$it</td>" }
 
             val wrappedInRows = mutableListOf("<tr>")
             cells.forEachIndexed { index, cell ->
@@ -125,7 +128,7 @@ internal interface CustomHelpers {
 
             val classParam = options.hash<String>("class", "")
             val classString = if (classParam.isNotEmpty()) "class=$classParam" else ""
-            return "<table ${classString}>${wrappedInRows.joinToString("")}</table>"
+            return "<table $classString>${wrappedInRows.joinToString("")}</table>"
         }
     }
 
@@ -140,8 +143,11 @@ internal interface CustomHelpers {
      *
      * Will print every question prompt in an array of unknown size along with its index incremented by 1
      */
-    class AdditionHelper(): Helper<Int> {
-        override fun apply(leftOperand: Int, options: Options): Any {
+    class AdditionHelper : Helper<Int> {
+        override fun apply(
+            leftOperand: Int,
+            options: Options,
+        ): Any {
             return leftOperand + options.param<Int>(0)
         }
     }
@@ -151,8 +157,11 @@ internal interface CustomHelpers {
      *
      * {{norwegian-date 2020-02-01}} prints 01.02.2020
      */
-    class NorwegianDateHelper(): Helper<String> {
-        override fun apply(isoFormattedDate: String, options: Options): Any {
+    class NorwegianDateHelper : Helper<String> {
+        override fun apply(
+            isoFormattedDate: String,
+            options: Options,
+        ): Any {
             return isoFormattedDate.split('-').reversed().joinToString(separator = ".")
         }
     }

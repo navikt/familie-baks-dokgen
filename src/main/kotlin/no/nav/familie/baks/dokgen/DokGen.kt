@@ -9,12 +9,12 @@ import com.github.jknack.handlebars.helper.ConditionalHelpers
 import com.github.jknack.handlebars.helper.StringHelpers
 import com.github.jknack.handlebars.io.ClassPathTemplateLoader
 import no.nav.familie.baks.dokgen.DocFormat.PDF
-import no.nav.familie.baks.dokgen.handlebars.CustomHelpers
-import no.nav.familie.baks.dokgen.ResourceUtil.getStylesheet
 import no.nav.familie.baks.dokgen.ResourceUtil.getFooter
 import no.nav.familie.baks.dokgen.ResourceUtil.getHeader
 import no.nav.familie.baks.dokgen.ResourceUtil.getSchemaJsonAsString
+import no.nav.familie.baks.dokgen.ResourceUtil.getStylesheet
 import no.nav.familie.baks.dokgen.ResourceUtil.getTemplateContent
+import no.nav.familie.baks.dokgen.handlebars.CustomHelpers
 import org.commonmark.ext.gfm.tables.TablesExtension
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
@@ -36,16 +36,20 @@ class DokGen {
         }
     }
 
-    fun lagHtmlTilPdf(templateNavn: String, inputData: Map<String, Any>): String {
+    fun lagHtmlTilPdf(
+        templateNavn: String,
+        inputData: Map<String, Any>,
+    ): String {
         val (template, data) = validerOgKompiler(templateNavn, inputData)
 
-        val styledDocument = with(htmlRenderer) {
-            val content = template.apply(data)
-            Jsoup.parse("<div id=\"content\">${render(content.let(parser::parse))}</div>")
-        }.apply {
-            head().append("<meta charset=\"UTF-8\">")
-            head().append("<style>" + getStylesheet(PDF) + "</style>")
-        }
+        val styledDocument =
+            with(htmlRenderer) {
+                val content = template.apply(data)
+                Jsoup.parse("<div id=\"content\">${render(content.let(parser::parse))}</div>")
+            }.apply {
+                head().append("<meta charset=\"UTF-8\">")
+                head().append("<style>" + getStylesheet(PDF) + "</style>")
+            }
 
         val header = handlebars.compileInline(getHeader(PDF)).apply(data)
         val body = styledDocument.body()
@@ -57,10 +61,14 @@ class DokGen {
         return styledDocument.html()
     }
 
-    private fun validerOgKompiler(templateName: String, input: Map<String, Any>): Pair<Template, Context> {
-        val validationSchemes = listOf(getSchemaJsonAsString(templateName), getSchemaJsonAsString(PDF)).map {
-            SchemaLoader.load(JSONObject(JSONTokener(it)))
-        }
+    private fun validerOgKompiler(
+        templateName: String,
+        input: Map<String, Any>,
+    ): Pair<Template, Context> {
+        val validationSchemes =
+            listOf(getSchemaJsonAsString(templateName), getSchemaJsonAsString(PDF)).map {
+                SchemaLoader.load(JSONObject(JSONTokener(it)))
+            }
         for (schema in validationSchemes) {
             schema.validate(JSONObject(input))
         }
@@ -102,4 +110,3 @@ class DokGen {
         }
     }
 }
-

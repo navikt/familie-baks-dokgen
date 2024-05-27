@@ -1,11 +1,30 @@
 name: Build-Deploy
 on:
+  pull_request:
+    types: [ opened, synchronize, reopened, ready_for_review, closed ]
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
+  ktlint:
+    name: Ktlint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: 'temurin'
+          cache: 'maven'
+      - name: Kjør ktlint
+        env:
+          GITHUB_USERNAME: x-access-token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mvn antrun:run@ktlint
   build-and-deploy-artifact:
     name: Build and deploy to github package
     runs-on: ubuntu-latest
@@ -28,6 +47,7 @@ jobs:
         run: mvn clean install
 
       - name: Setting version
+        if: github.base_ref == 'main' && github.event.pull_request.merged == true
         run: |
           export GIT_COMMIT_HASH=$(git log -n 1 --pretty=format:'%h')
           export GIT_COMMIT_DATE=$(git log -1 --pretty='%ad' --date=format:'%Y%m%d%H%M%S')
@@ -37,6 +57,7 @@ jobs:
           mvn versions:commit
 
       - name: Deploy to Github Package
+        if: github.base_ref == 'main' && github.event.pull_request.merged == true
         env:
           GITHUB_USERNAME: x-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -6,7 +6,5 @@ internal enum class DocFormat {
     EMAIL,
     ;
 
-    override fun toString(): String {
-        return name.lowercase()
-    }
+    override fun toString(): String = name.lowercase()
 }

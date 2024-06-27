@@ -103,7 +103,8 @@ internal interface CustomHelpers {
             val columnCount = options.hash<Int>("columns", 2)
             val tableContents = options.fn(context)
             val cells =
-                tableContents.trim()
+                tableContents
+                    .trim()
                     .split("</td>")
                     .filter { it.isNotEmpty() }
                     .map { "$it</td>" }
@@ -147,9 +148,7 @@ internal interface CustomHelpers {
         override fun apply(
             leftOperand: Int,
             options: Options,
-        ): Any {
-            return leftOperand + options.param<Int>(0)
-        }
+        ): Any = leftOperand + options.param<Int>(0)
     }
 
     /**
@@ -161,8 +160,6 @@ internal interface CustomHelpers {
         override fun apply(
             isoFormattedDate: String,
             options: Options,
-        ): Any {
-            return isoFormattedDate.split('-').reversed().joinToString(separator = ".")
-        }
+        ): Any = isoFormattedDate.split('-').reversed().joinToString(separator = ".")
     }
 }

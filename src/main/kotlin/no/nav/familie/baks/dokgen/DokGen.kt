@@ -78,12 +78,11 @@ class DokGen {
         return Pair(template, context)
     }
 
-    private fun mapTilContext(data: Map<String, Any>): Context {
-        return Context
+    private fun mapTilContext(data: Map<String, Any>): Context =
+        Context
             .newBuilder(data)
             .resolver(MapValueResolver.INSTANCE, JavaBeanValueResolver.INSTANCE)
             .build()
-    }
 
     private fun opprettHandlebarsKonfigurasjon(): Handlebars {
         val loader =

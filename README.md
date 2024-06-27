@@ -1,16 +1,12 @@
 # familie-baks-dokgen
-Brevmaler for barnetrygd
+Html-generator for barnetrygd- og kontantstøttesøknader
 
-Url dev: https://familie-baks-dokgen.dev-adeo.no/
+Importeres av familie-baks-mottak som en dependency for å generere html fra en av malene under [content/templates](content/templates) ved mottak av søknader, før konvertering til PDF for arkivering.
 
-Url prod: https://familie-baks-dokgen.adeo.no/
+### Bygging lokalt
+`mvn verify`
 
-##Kjøring lokalt
-Kjør `up.sh`, eller `docker-compose up -d`.
-
-Merk at docker-compose-konfigen lar deg oppdatere templates uten å restarte containere.
-
-##Quirks/kompilering
+### Quirks/kompilering
 dokgen sliter med whitespace i hbs-templates, spesielt indentering. [Ref slack](https://nav-it.slack.com/archives/CJN0STWB0/p1619430956095800)
 
 For å løse dette kan man skrive templates med ønsket indentering under `content/templates/{prosjekt}/uncompiled/{template}.hbs`,

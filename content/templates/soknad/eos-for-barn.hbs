@@ -18,8 +18,6 @@
 {{> soknad/sporsmal-med-svar felt=omsorgsperson.idNummer svar-type="normal" }}
 {{> soknad/sporsmal-med-svar felt=omsorgsperson.adresse svar-type="normal" }}
 
-{{!-- TODO Fjerne check når v8 er lansert --}}
-{{#eq @root.kontraktVersjon 8}}
 {{> soknad/sporsmal-med-svar felt=omsorgsperson.arbeidUtland svar-type="ja-nei" }}
 {{#each omsorgsperson.arbeidsperioderUtland as | arbeidsperiode | }}
 <p class="periode-tittel">{{label}}</p>
@@ -89,7 +87,6 @@
 {{> soknad/sporsmal-med-svar felt=månedligBeløp svar-type="normal" }}
 {{/with}}
 {{/each}}
-{{/eq}}
 {{/if}}
 
 {{> soknad/sporsmal-med-svar felt=adresse svar-type="normal" }}
@@ -136,8 +133,6 @@
 {{/with}}
 {{/each}}
 
-{{!-- TODO Fjerne check når v8 er lansert --}}
-{{#eq @root.kontraktVersjon 8}}
 {{> soknad/sporsmal-med-svar felt=andreForelder.pågåendeSøknadFraAnnetEøsLand svar-type="ja-nei" }}
 {{> soknad/sporsmal-med-svar felt=andreForelder.pågåendeSøknadHvilketLand svar-type="normal" }}
 
@@ -152,7 +147,6 @@
 {{> soknad/sporsmal-med-svar felt=månedligBeløp svar-type="normal" }}
 {{/with}}
 {{/each}}
-{{/eq}}
 {{/if}}
 {{/with}}
 {{/soknad/seksjon}}

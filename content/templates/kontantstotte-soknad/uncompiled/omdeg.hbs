@@ -14,19 +14,23 @@
 
     <div class="soknad-sporsmal-med-svar">
         <p class="soknad-sporsmal">{{ adresse.label }}</p>
-        {{#if adresse.verdi}}
-            {{#with adresse.verdi}}
-                <p>
-                {{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
-                {{~join postnummer poststed " "}}
-                </p>
-            {{/with}}
-            {{else}}
-                {{#if adressebeskyttelse }}
-                    <p>{{teksterTilPdf.[soekerAdressesperre]}}</p>
+        {{#if (lookup @root.finnesPersonMedAdressebeskyttelse)}}
+            <p>{{@root.teksterTilPdf.skjermetAdresse}}</p>
+        {{else}}
+            {{#if adresse.verdi}}
+                {{#with adresse.verdi}}
+                    <p>
+                    {{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
+                    {{~join postnummer poststed " "}}
+                    </p>
+                {{/with}}
                 {{else}}
-                    <p>{{teksterTilPdf.[ikkeRegistrertAdresse]}}</p>
-                {{/if}}
+                    {{#if adressebeskyttelse }}
+                        <p>{{teksterTilPdf.[soekerAdressesperre]}}</p>
+                    {{else}}
+                        <p>{{teksterTilPdf.[ikkeRegistrertAdresse]}}</p>
+                    {{/if}}
+            {{/if}}
         {{/if}}
     </div>
 

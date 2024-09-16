@@ -22,18 +22,22 @@
 
     <div class="soknad-sporsmal-med-svar">
         <p class="soknad-sporsmal">{{ adresse.label }}</p>
-            {{#if adresse.verdi}}
-                {{#with adresse.verdi}}
-                    <p>
-                        {{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
-                        {{~join postnummer poststed " "}}
-                    </p>
-                {{/with}}
+            {{#if (lookup @root.finnesPersonMedAdressebeskyttelse) }}
+                <p>{{@root.teksterUtenomSpørsmål.skjermetAdresse}}</p>
             {{else}}
-                {{#if adressebeskyttelse }}
-                    <p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.adressesperre.alert]}}</p>
+                {{#if adresse.verdi}}
+                    {{#with adresse.verdi}}
+                        <p>
+                            {{~join adressenavn husnummer husbokstav bruksenhetsnummer " "}}<br/>
+                            {{~join postnummer poststed " "}}
+                        </p>
+                    {{/with}}
                 {{else}}
-                    <p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.ikke-registrert.alert]}}</p>
+                    {{#if adressebeskyttelse }}
+                        <p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.adressesperre.alert]}}</p>
+                    {{else}}
+                        <p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.ikke-registrert.alert]}}</p>
+                    {{/if}}
                 {{/if}}
             {{/if}}
     </div>

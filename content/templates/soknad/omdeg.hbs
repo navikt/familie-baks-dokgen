@@ -43,7 +43,17 @@
 </div>
 
 {{> soknad/sporsmal-med-svar felt=spørsmål.borPåRegistrertAdresse svar-type="ja-nei" }}
+</section>
 
+<section class="soknad-section">
+{{> soknad/sporsmal-med-svar felt=spørsmål.borPåSvalbard svar-type="ja-nei" }}
+{{#each svalbardOppholdPerioder as | svalbardOppholdPeriode | }}
+<p class="periode-tittel">{{label}}</p>
+{{#with verdi}}
+{{> soknad/sporsmal-med-svar felt=fraDatoSvalbardOpphold svar-type="dato" }}
+{{> soknad/sporsmal-med-svar felt=tilDatoSvalbardOpphold svar-type="dato" }}
+{{/with}}
+{{/each}}
 </section>
 
 <section class="soknad-section">

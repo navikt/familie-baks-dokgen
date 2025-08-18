@@ -44,21 +44,6 @@
         "label": "Bor du på Svalbard?",
         "verdi": "JA"
       },
-      "svalbardOppholdPerioder": [
-        {
-          "label": "Opphold på Svalbard 1",
-          "verdi": {
-            "fraDatoSvalbardOpphold": {
-              "label": "Når startet oppholdet?",
-              "verdi": "2022-06-01"
-            },
-            "tilDatoSvalbardOpphold": {
-              "label": "Når avsluttes oppholdet?",
-              "verdi": "Jeg vet ikke når oppholdet avsluttes"
-            }
-          }
-        }
-      ],
       "værtINorgeITolvMåneder": {
         "label": "Har du oppholdt deg sammenhengende i Norge de siste tolv månedene?",
         "verdi": "NEI"
@@ -122,6 +107,21 @@
       }
     },
     "tidligereSamboere": [],
+    "svalbardOppholdPerioder": [
+      {
+        "label": "Opphold på Svalbard 1",
+        "verdi": {
+          "fraDatoSvalbardOpphold": {
+            "label": "Når startet oppholdet?",
+            "verdi": "2022-06-01"
+          },
+          "tilDatoSvalbardOpphold": {
+            "label": "Når avsluttes oppholdet?",
+            "verdi": "Jeg vet ikke når oppholdet avsluttes"
+          }
+        }
+      }
+    ],
     "utenlandsperioder": [
       {
         "label": "Utenlandsopphold 1",

@@ -35,8 +35,6 @@
     {{/eq}}
     {{> oppsamlingspørsmål oppsamling="mottarBarnetrygdForBarnFraAnnetEøsland" barnFelt="barnetrygdFraAnnetEøsland" }}
     {{> oppsamlingspørsmål oppsamling="erAvdødPartnerForelder" barnFelt="andreForelderErDød" }}
-    {{#eq @root.søker.spørsmål.borPåSvalbard.verdi "JA"}}
-        {{> oppsamlingspørsmål oppsamling="harNoenAvBarnaBoddPåSvalbard" barnFelt="harBoddPåSvalbard" }}
-    {{/eq}}
+    {{> oppsamlingspørsmål oppsamling="harNoenAvBarnaBoddPåSvalbard" barnFelt="harBoddPåSvalbard" }}
 </section>
 

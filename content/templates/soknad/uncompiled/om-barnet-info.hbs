@@ -57,17 +57,15 @@
     {{/with}}
 {{/each}}
 
-{{#eq @root.søker.spørsmål.borPåSvalbard.verdi "JA"}}
-    {{#eq spørsmål.harBoddPåSvalbard.verdi "JA"}}
-        {{> titteltekst klammeTekstId="[ombarnet.svalbard]" }}
-        {{#each svalbardOppholdPerioder as | svalbardOppholdPeriode | }}
-            <p class="periode-tittel">{{label}}</p>
-            {{#with verdi}}
-                {{> soknad/sporsmal-med-svar felt=fraDatoSvalbardOpphold svar-type="dato" }}
-                {{> soknad/sporsmal-med-svar felt=tilDatoSvalbardOpphold svar-type="dato" }}
-            {{/with}}
-        {{/each}}
-    {{/eq}}
+{{#eq spørsmål.harBoddPåSvalbard.verdi "JA"}}
+    {{> titteltekst klammeTekstId="[ombarnet.svalbard]" }}
+    {{#each svalbardOppholdPerioder as | svalbardOppholdPeriode | }}
+        <p class="periode-tittel">{{label}}</p>
+        {{#with verdi}}
+            {{> soknad/sporsmal-med-svar felt=fraDatoSvalbardOpphold svar-type="dato" }}
+            {{> soknad/sporsmal-med-svar felt=tilDatoSvalbardOpphold svar-type="dato" }}
+        {{/with}}
+    {{/each}}
 {{/eq}}
 
 

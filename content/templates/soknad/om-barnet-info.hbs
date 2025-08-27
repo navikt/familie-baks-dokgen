@@ -57,7 +57,6 @@
 {{/with}}
 {{/each}}
 
-{{#eq @root.søker.spørsmål.borPåSvalbard.verdi "JA"}}
 {{#eq spørsmål.harBoddPåSvalbard.verdi "JA"}}
 {{> titteltekst klammeTekstId="[ombarnet.svalbard]" }}
 {{#each svalbardOppholdPerioder as | svalbardOppholdPeriode | }}
@@ -67,7 +66,6 @@
 {{> soknad/sporsmal-med-svar felt=tilDatoSvalbardOpphold svar-type="dato" }}
 {{/with}}
 {{/each}}
-{{/eq}}
 {{/eq}}
 
 

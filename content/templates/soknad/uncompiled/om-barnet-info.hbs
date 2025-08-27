@@ -58,7 +58,8 @@
 {{/each}}
 
 {{#eq spørsmål.harBoddPåSvalbard.verdi "JA"}}
-    {{> titteltekst klammeTekstId="[ombarnet.svalbard]" }}
+    {{> titteltekst klammeTekstId="[ombarnet.opplystBoddPaaSvalbard]" }}
+    {{> titteltekst klammeTekstId="[ombarnet.naarBoddPaaSvalbard]" }}
     {{#each svalbardOppholdPerioder as | svalbardOppholdPeriode | }}
         <p class="periode-tittel">{{label}}</p>
         {{#with verdi}}

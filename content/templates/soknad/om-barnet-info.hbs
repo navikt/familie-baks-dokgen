@@ -1,9 +1,11 @@
 {{#*inline "titteltekst"}}
 {{#with @root.teksterUtenomSpørsmål as | titteltekster | }}
 {{#with (lookup titteltekster klammeTekstId) as | tekst | }}
+<div class="soknad-sporsmal-med-svar">
 <p class="soknad-sporsmal">
 {{~ replace tekst "{navn}" navn.verdi ~}}
 </p>
+</div>
 {{/with}}
 {{/with }}
 {{/inline}}

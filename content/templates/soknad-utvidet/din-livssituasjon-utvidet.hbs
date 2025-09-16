@@ -1,5 +1,5 @@
 <section class="soknad-section">
-<h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[dinlivssituasjon.sidetittel]}}</h3>
+<h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[dinLivssituasjonTittel]}}</h3>
 {{#with spørsmål}}
 {{> soknad/sporsmal-med-svar felt=årsak svar-type="normal" }}
 {{> soknad/sporsmal-med-svar felt=separertEnkeSkilt svar-type="ja-nei" }}
@@ -19,15 +19,15 @@
 <div class="soknad-sporsmal-med-svar">
 <p class="soknad-sporsmal">{{ @root.teksterUtenomSpørsmål.[omdeg.annensamboer.spm] }}</p>
 {{#if tidligereSamboere.length}}
-<p>{{ @root.teksterUtenomSpørsmål.[felles.svaralternativ.ja] }}</p>
+<p>{{ @root.teksterUtenomSpørsmål.[ja] }}</p>
 {{else}}
-<p>{{ @root.teksterUtenomSpørsmål.[felles.svaralternativ.nei] }}</p>
+<p>{{ @root.teksterUtenomSpørsmål.[nei] }}</p>
 {{/if}}
 </div>
 
 {{#each tidligereSamboere as | tidligereSamboer | }}
 {{# with
-(replace @root.teksterUtenomSpørsmål.[pdf.dinlivssituasjon.tidligeresamboer.seksjonstittel] "{x}" "%s") as | fstring |}}
+(replace @root.teksterUtenomSpørsmål.[oppsummeringstittel] "{antall}" "%s") as | fstring |}}
 <p class="periode-tittel">{{stringFormat fstring (add @index 1)}}</p>
 {{/with}}
 {{> soknad/sporsmal-med-svar felt=tidligereSamboer.verdi.navn svar-type="normal" }}

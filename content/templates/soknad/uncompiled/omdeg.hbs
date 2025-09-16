@@ -1,5 +1,5 @@
 <section class="soknad-section">
-    <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[pdf.omdeg.seksjonstittel]}}</h3>
+    <h3>{{section-number}}. {{@root.teksterUtenomSpørsmål.[omDegTittel]}}</h3>
     {{> soknad/sporsmal-med-svar felt=ident svar-type="normal" }}
 
     <div class="soknad-sporsmal-med-svar">
@@ -34,9 +34,9 @@
                     {{/with}}
                 {{else}}
                     {{#if adressebeskyttelse }}
-                        <p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.adressesperre.alert]}}</p>
+                        <p>{{teksterUtenomSpørsmål.[soekerAdressesperre]}}</p>
                     {{else}}
-                        <p>{{teksterUtenomSpørsmål.[omdeg.personopplysninger.ikke-registrert.alert]}}</p>
+                        <p>{{teksterUtenomSpørsmål.[ikkeRegistrertAdresse]}}</p>
                     {{/if}}
                 {{/if}}
             {{/if}}

@@ -11,14 +11,7 @@
        </p>
     </div>
 
-    <div class="soknad-sporsmal-med-svar">
-        <p class="soknad-sporsmal">{{ sivilstand.label }}</p>
-        <p>
-            {{# with (join "felles.sivilstatus.kode" sivilstand.verdi "." prefix='[' suffix=']') as | sivilstandkode | }}
-                {{ lookup @root.teksterUtenomSpørsmål sivilstandkode }}
-            {{/with}}
-        </p>
-    </div>
+    {{> soknad/sivilstand sivilstand }}
 
     <div class="soknad-sporsmal-med-svar">
         <p class="soknad-sporsmal">{{ adresse.label }}</p>

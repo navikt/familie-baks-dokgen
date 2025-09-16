@@ -211,8 +211,6 @@
     "registrertMedAdressesperre": "The child is registered with a blocked address.",
     "opplystFosterbarn": "You have stated that {navn} is a foster child",
     "opplystInstitusjon": "You have stated that {navn} is currently living in an institution.",
-    "ombarnet.oppholdutland": "You have stated that {navn} is currently living abroad",
-    "ombarnet.sammenhengende-opphold": "You have stated that {navn} has not lived\n in Norway continuously for the past 12 months",
     "opplystFaarHarFaattEllerSoektYtelse": "You have stated that you are receiving or have applied for child benefit\n for {navn} from another EEA country.",
     "barnetsAndreForelder": "Child's other parent",
     "velgBarnTittel": "Which children are you applying for?",

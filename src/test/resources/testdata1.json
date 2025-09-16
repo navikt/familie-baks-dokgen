@@ -728,7 +728,7 @@
     "opplystFaarHarFaattEllerSoektYtelse": "Du har opplyst at du får eller har søkt om barnetrygd for {navn} fra et annet EØS land.",
     "opplystBoddPaaSvalbard": "Du har opplyst at {navn} har oppholdt seg på Svalbard sammen med deg",
     "naarBoddPaaSvalbardSpm": "Når bodde {navn} på Svalbard?",
-    "omdeg.annensamboer.spm": "Har du hatt samboer tidligere i perioden du søker barnetrygd for?",
+    "hattAnnenSamboerForSoektPeriode.sporsmal": "Har du hatt samboer tidligere i perioden du søker barnetrygd for?",
     "soekerAdressesperre": "Du er registrert med adressesperre",
     "ikkeRegistrertAdresse": "Du er ikke registrert med bostedsadresse i Norge",
     "barnetsAndreForelder": "Barnets andre forelder",

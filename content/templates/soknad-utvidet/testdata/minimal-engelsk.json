@@ -222,7 +222,7 @@
     "opplystFosterbarn": "You have stated that {navn} is a foster child",
     "opplystInstitusjon": "You have stated that {navn} is currently living in an institution.",
     "opplystFaarHarFaattEllerSoektYtelse": "You have stated that you are receiving or have applied for child benefit\n for {navn} from another EEA country.",
-    "omdeg.annensamboer.spm": "Have you had a cohabiting partner during the period for which you are applying for child benefit?",
+    "hattAnnenSamboerForSoektPeriode.sporsmal": "Have you had a cohabiting partner during the period for which you are applying for child benefit?",
     "barnetsAndreForelder": "Child's other parent",
     "velgBarnTittel": "Which children are you applying for?",
     "registrertPaaAdressenDin": "Registered on applicant's address",

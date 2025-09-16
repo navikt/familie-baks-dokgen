@@ -355,7 +355,7 @@
     "opplystFosterbarn": "Du har opplyst at {navn} er fosterbarn",
     "opplystInstitusjon": "Du har opplyst at {navn} oppheld seg i institusjon.",
     "opplystFaarHarFaattEllerSoektYtelse": "Du har opplyst at du får eller har søkt om barnetrygd\nfor {navn} frå eit anna EØS land.",
-    "omdeg.annensamboer.spm": "Har du hatt sambuar tidligare i perioden du søker barnetrygd for?",
+    "hattAnnenSamboerForSoektPeriode.sporsmal": "Har du hatt sambuar tidligare i perioden du søker barnetrygd for?",
     "barnetsAndreForelder": "Barnets andre forelder",
     "velgBarnTittel": "Hvilke barn søker du for?",
     "registrertPaaAdressenDin": "Registrert på søkers adresse",

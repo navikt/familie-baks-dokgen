@@ -1,4 +1,4 @@
-{{#> soknad/seksjon seksjon-nummer=(add @index seksjon-nummer-start) tittel=(replace @root.teksterUtenomSpørsmål.[eøs-om-barn.sidetittel] "{barn}" (upper navn.verdi)) }}
+{{#> soknad/seksjon seksjon-nummer=(add @index seksjon-nummer-start) tittel=(replace @root.teksterUtenomSpørsmål.[eoesForBarnTittel] "{navn}" (upper navn.verdi)) }}
     {{#with spørsmål }}
         {{#each idNummer as | idNummer | }}
             {{> soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}
@@ -93,7 +93,7 @@
 
         {{#if andreForelder }}
             {{#eq andreForelder.kanIkkeGiOpplysninger.verdi "NEI"}}
-                <h3 class="soknad-seksjon-undertittel">{{ @root.teksterUtenomSpørsmål.[pdf.andreforelder.seksjonstittel]}}</h3>
+                <h3 class="soknad-seksjon-undertittel">{{ @root.teksterUtenomSpørsmål.[barnetsAndreForelder]}}</h3>
             {{/eq}}
             {{#each andreForelder.idNummer as | idNummer | }}
                 {{> soknad/sporsmal-med-svar felt=idNummer.verdi.idNummer svar-type="normal" }}

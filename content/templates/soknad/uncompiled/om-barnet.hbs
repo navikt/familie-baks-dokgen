@@ -1,10 +1,10 @@
 <section class="soknad-section">
-    <h3>{{add @index section-number-start }}. {{ replace @root.teksterUtenomSpørsmål.[pdf.ombarnet.seksjonstittel] "{navn}" (upper navn.verdi)}}</h3>
+    <h3>{{add @index section-number-start }}. {{ replace @root.teksterUtenomSpørsmål.[omBarnetTittel] "{navn}" (upper navn.verdi)}}</h3>
     {{> soknad/om-barnet-info }}
     {{> soknad/om-barnet-andre-forelder }}
 
     {{! Om barnet bosted}}
-    <h4>{{ @root.teksterUtenomSpørsmål.[pdf.bosted.seksjonstittel] }}</h4>
+    <h4>{{ @root.teksterUtenomSpørsmål.[bosted] }}</h4>
     {{> soknad/sporsmal-med-svar felt=spørsmål.borFastMedSøker svar-type="ja-nei" }}
     {{> soknad/sporsmal-med-svar felt=andreForelder.skriftligAvtaleOmDeltBosted svar-type="ja-nei" }}
     {{! Gjelder utvidet}}

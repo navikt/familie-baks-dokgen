@@ -11,11 +11,11 @@
 {{/inline}}
 
 {{#eq spørsmål.erFosterbarn.verdi "JA"}}
-{{> titteltekst klammeTekstId="[ombarnet.fosterbarn]" }}
+{{> titteltekst klammeTekstId="[opplystFosterbarn]" }}
 {{/eq}}
 
 {{#eq spørsmål.oppholderSegIInstitusjon.verdi "JA"}}
-{{> titteltekst klammeTekstId="[ombarnet.institusjon]" }}
+{{> titteltekst klammeTekstId="[opplystInstitusjon]" }}
 {{#eq spørsmål.institusjonIUtland.verdi "JA"}}
 <p class="soknad-sporsmal">{{spørsmål.institusjonIUtland.label}}</p>
 {{/eq}}
@@ -27,7 +27,7 @@
 {{/eq}}
 
 {{#eq spørsmål.boddMindreEnn12MndINorge.verdi "JA"}}
-{{> titteltekst klammeTekstId="[ombarnet.opplystatbarnutlandopphold.info]" }}
+{{> titteltekst klammeTekstId="[opplystBarnOppholdUtenforNorge]" }}
 {{/eq}}
 {{#each utenlandsperioder as | utenlandsperiode | }}
 <p class="periode-tittel">{{label}}</p>
@@ -42,7 +42,7 @@
 
 
 {{#eq spørsmål.barnetrygdFraAnnetEøsland.verdi "JA"}}
-{{> titteltekst klammeTekstId="[ombarnet.barnetrygd-eøs]" }}
+{{> titteltekst klammeTekstId="[opplystFaarHarFaattEllerSoektYtelse]" }}
 {{/eq}}
 {{> soknad/sporsmal-med-svar felt=spørsmål.pågåendeSøknadFraAnnetEøsLand svar-type="ja-nei" }}
 {{> soknad/sporsmal-med-svar felt=spørsmål.pågåendeSøknadHvilketLand svar-type="normal" }}
@@ -60,8 +60,8 @@
 {{/each}}
 
 {{#eq spørsmål.harBoddPåSvalbard.verdi "JA"}}
-{{> titteltekst klammeTekstId="[ombarnet.opplystBoddPaaSvalbard]" }}
-{{> titteltekst klammeTekstId="[ombarnet.naarBoddPaaSvalbard]" }}
+{{> titteltekst klammeTekstId="[opplystBoddPaaSvalbard]" }}
+{{> titteltekst klammeTekstId="[naarBoddPaaSvalbardSpm]" }}
 {{#each svalbardOppholdPerioder as | svalbardOppholdPeriode | }}
 <p class="periode-tittel">{{label}}</p>
 {{#with verdi}}

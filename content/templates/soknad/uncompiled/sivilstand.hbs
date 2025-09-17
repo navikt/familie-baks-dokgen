@@ -1,0 +1,37 @@
+<div class="soknad-sporsmal-med-svar">
+    <p class="soknad-sporsmal">{{ sivilstand.label }}</p>
+    <p>
+    {{#switch sivilstand.verdi}}
+        {{#case 'GIFT'}}
+            {{ lookup @root.teksterUtenomSpørsmål 'sivilstandGift' }}
+        {{/case}}
+        {{#case 'ENKE_ELLER_ENKEMANN'}}
+            {{ lookup @root.teksterUtenomSpørsmål 'sivilstandEnkeEnkemann' }}
+        {{/case}}
+        {{#case 'SKILT'}}
+            {{ lookup @root.teksterUtenomSpørsmål 'sivilstandSkilt' }}
+        {{/case}}
+        {{#case 'SEPARERT'}}
+            {{ lookup @root.teksterUtenomSpørsmål 'sivilstandSeparert' }}
+        {{/case}}
+        {{#case 'REGISTRERT_PARTNER'}}
+            {{ lookup @root.teksterUtenomSpørsmål 'sivilstandRegistrertPartner' }}
+        {{/case}}
+        {{#case 'SEPARERT_PARTNER'}}
+            {{ lookup @root.teksterUtenomSpørsmål 'sivilstandSeparertPartner' }}
+        {{/case}}
+        {{#case 'SKILT_PARTNER'}}
+            {{ lookup @root.teksterUtenomSpørsmål 'sivilstandSkiltPartner' }}
+        {{/case}}
+        {{#case 'GJENLEVENDE_PARTNER'}}
+            {{ lookup @root.teksterUtenomSpørsmål 'sivilstandGjenlevendePartner' }}
+        {{/case}}
+        {{#case 'UGIFT'}}
+            {{ lookup @root.teksterUtenomSpørsmål 'sivilstandUgift' }}
+        {{/case}}
+        {{#case 'UOPPGITT'}}
+            {{ lookup @root.teksterUtenomSpørsmål 'sivilstandUoppgitt' }}
+        {{/case}}
+    {{/switch}}
+    </p>
+</div>

@@ -58,17 +58,3 @@
         {{> soknad/sporsmal-med-svar felt=månedligBeløp svar-type="normal" }}
     {{/with}}
 {{/each}}
-
-{{#eq spørsmål.harBoddPåSvalbard.verdi "JA"}}
-    {{> titteltekst klammeTekstId="[opplystBoddPaaSvalbard]" }}
-    {{> titteltekst klammeTekstId="[naarBoddPaaSvalbardSpm]" }}
-    {{#each svalbardOppholdPerioder as | svalbardOppholdPeriode | }}
-        <p class="periode-tittel">{{label}}</p>
-        {{#with verdi}}
-            {{> soknad/sporsmal-med-svar felt=fraDatoSvalbardOpphold svar-type="dato" }}
-            {{> soknad/sporsmal-med-svar felt=tilDatoSvalbardOpphold svar-type="dato" }}
-        {{/with}}
-    {{/each}}
-{{/eq}}
-
-

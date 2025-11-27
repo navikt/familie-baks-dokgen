@@ -4,11 +4,17 @@ updates:
     directory: "/"
     schedule:
       interval: daily
+    cooldown:
+      default-days: 4
+      exclude:
+        - "no.nav.familie*"
     open-pull-requests-limit: 10
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 4
     groups:
       workflows:
         patterns:

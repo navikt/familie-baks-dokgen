@@ -1,5 +1,15 @@
 package no.nav.familie.baks.dokgen
 
+import com.github.erosb.jsonsKema.JsonArray
+import com.github.erosb.jsonsKema.JsonBoolean
+import com.github.erosb.jsonsKema.JsonNull
+import com.github.erosb.jsonsKema.JsonNumber
+import com.github.erosb.jsonsKema.JsonObject
+import com.github.erosb.jsonsKema.JsonString
+import com.github.erosb.jsonsKema.JsonValue
+import com.github.erosb.jsonsKema.SchemaLoader
+import com.github.erosb.jsonsKema.ValidationFailure
+import com.github.erosb.jsonsKema.Validator
 import com.github.jknack.handlebars.Context
 import com.github.jknack.handlebars.Handlebars
 import com.github.jknack.handlebars.Template
@@ -18,9 +28,6 @@ import no.nav.familie.baks.dokgen.handlebars.CustomHelpers
 import org.commonmark.ext.gfm.tables.TablesExtension
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
-import org.everit.json.schema.loader.SchemaLoader
-import org.json.JSONObject
-import org.json.JSONTokener
 import org.jsoup.Jsoup
 import kotlin.text.Charsets.UTF_8
 
@@ -67,16 +74,63 @@ class DokGen {
     ): Pair<Template, Context> {
         val validationSchemes =
             listOf(getSchemaJsonAsString(templateName), getSchemaJsonAsString(PDF)).map {
-                SchemaLoader.load(JSONObject(JSONTokener(it)))
+                SchemaLoader(it)
             }
+
+        // Convert input Map to JSON using json-sKema types
+        val inputJson = mapToJsonValue(input)
+
         for (schema in validationSchemes) {
-            schema.validate(JSONObject(input))
+            val validator: Validator = Validator.forSchema(schema.load())
+            val validationResult = validator.validate(inputJson)
+
+            if (validationResult is ValidationFailure) {
+                throw IllegalArgumentException("Input validation failed: $validationResult")
+            }
         }
+
         val template = handlebars.compileInline(getTemplateContent(templateName))
         val context = mapTilContext(input + Pair("templateName", templateName))
 
         return Pair(template, context)
     }
+
+    private fun mapToJsonValue(value: Any?): JsonValue =
+        when (value) {
+            null -> {
+                JsonNull()
+            }
+
+            is Boolean -> {
+                JsonBoolean(value)
+            }
+
+            is Number -> {
+                JsonNumber(value)
+            }
+
+            is String -> {
+                JsonString(value)
+            }
+
+            is Map<*, *> -> {
+                val properties = mutableMapOf<JsonString, JsonValue>()
+                @Suppress("UNCHECKED_CAST")
+                (value as Map<String, Any?>).forEach { (k, v) ->
+                    properties[JsonString(k)] = mapToJsonValue(v)
+                }
+                JsonObject(properties)
+            }
+
+            is List<*> -> {
+                val items = value.map { mapToJsonValue(it) }
+                JsonArray(items)
+            }
+
+            else -> {
+                JsonString(value.toString())
+            }
+        }
 
     private fun mapTilContext(data: Map<String, Any>): Context =
         Context

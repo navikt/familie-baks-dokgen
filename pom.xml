@@ -47,8 +47,8 @@
         </dependency>
         <dependency>
             <groupId>com.github.erosb</groupId>
-            <artifactId>everit-json-schema</artifactId>
-            <version>1.14.6</version>
+            <artifactId>json-sKema</artifactId>
+            <version>0.28.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-collections</groupId>

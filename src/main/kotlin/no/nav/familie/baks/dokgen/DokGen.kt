@@ -5,9 +5,11 @@ import com.github.erosb.jsonsKema.JsonBoolean
 import com.github.erosb.jsonsKema.JsonNull
 import com.github.erosb.jsonsKema.JsonNumber
 import com.github.erosb.jsonsKema.JsonObject
+import com.github.erosb.jsonsKema.JsonParser
 import com.github.erosb.jsonsKema.JsonString
 import com.github.erosb.jsonsKema.JsonValue
 import com.github.erosb.jsonsKema.SchemaLoader
+import com.github.erosb.jsonsKema.SchemaLoaderConfig
 import com.github.erosb.jsonsKema.ValidationFailure
 import com.github.erosb.jsonsKema.Validator
 import com.github.jknack.handlebars.Context
@@ -19,6 +21,7 @@ import com.github.jknack.handlebars.helper.ConditionalHelpers
 import com.github.jknack.handlebars.helper.StringHelpers
 import com.github.jknack.handlebars.io.ClassPathTemplateLoader
 import no.nav.familie.baks.dokgen.DocFormat.PDF
+import no.nav.familie.baks.dokgen.ResourceUtil.getDraft07SchemaAsString
 import no.nav.familie.baks.dokgen.ResourceUtil.getFooter
 import no.nav.familie.baks.dokgen.ResourceUtil.getHeader
 import no.nav.familie.baks.dokgen.ResourceUtil.getSchemaJsonAsString
@@ -29,6 +32,7 @@ import org.commonmark.ext.gfm.tables.TablesExtension
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
 import org.jsoup.Jsoup
+import java.net.URI
 import kotlin.text.Charsets.UTF_8
 
 class DokGen {
@@ -72,21 +76,19 @@ class DokGen {
         templateName: String,
         input: Map<String, Any>,
     ): Pair<Template, Context> {
-        val validationSchemes =
-            listOf(getSchemaJsonAsString(templateName), getSchemaJsonAsString(PDF)).map {
-                SchemaLoader(it)
-            }
+        val config: SchemaLoaderConfig =
+            preregistrerJsonSchemaDraft07()
 
-        // Convert input Map to JSON using json-sKema types
+        val schemaJson = hentSchemaForPDf()
+
+        val validatorForPdfSchema: Validator = Validator.forSchema(SchemaLoader(schemaJson, config).load())
+
         val inputJson = mapToJsonValue(input)
 
-        for (schema in validationSchemes) {
-            val validator: Validator = Validator.forSchema(schema.load())
-            val validationResult = validator.validate(inputJson)
+        val validationResult = validatorForPdfSchema.validate(inputJson)
 
-            if (validationResult is ValidationFailure) {
-                throw IllegalArgumentException("Input validation failed: $validationResult")
-            }
+        if (validationResult is ValidationFailure) {
+            throw IllegalArgumentException("Input validation failed: $validationResult")
         }
 
         val template = handlebars.compileInline(getTemplateContent(templateName))
@@ -94,6 +96,21 @@ class DokGen {
 
         return Pair(template, context)
     }
+
+    private fun hentSchemaForPDf(): JsonValue = JsonParser(getSchemaJsonAsString(PDF)).parse()
+
+    /**
+     * Denne gjør at når schema peker på draft 07, så bruker den en lokal versjon i stedet for å laste ned
+     */
+    private fun preregistrerJsonSchemaDraft07(): SchemaLoaderConfig =
+        SchemaLoaderConfig.createDefaultConfig(
+            mapOf(
+                Pair(
+                    URI("http://json-schema.org/draft-07/schema#"),
+                    getDraft07SchemaAsString(),
+                ),
+            ),
+        )
 
     private fun mapToJsonValue(value: Any?): JsonValue =
         when (value) {

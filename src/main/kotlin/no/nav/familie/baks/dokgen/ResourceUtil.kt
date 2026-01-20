@@ -17,4 +17,6 @@ internal object ResourceUtil {
     fun getStylesheet(format: DocFormat): String = getResource("/formats/$format/style.css").readText()
 
     private fun getResource(location: String): URL = this::class.java.getResource(location) ?: throw FileNotFoundException(location)
+
+    fun getDraft07SchemaAsString(): String = getResource("/formats/draft-schema7.json").readText()
 }

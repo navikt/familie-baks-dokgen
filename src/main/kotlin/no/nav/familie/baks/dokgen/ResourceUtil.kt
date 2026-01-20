@@ -6,8 +6,6 @@ import java.net.URL
 internal object ResourceUtil {
     fun getTemplateContent(templateName: String): String = getResource("/templates/$templateName/template.hbs").readText()
 
-    fun getSchemaJsonAsString(templateName: String): String = getResource("/templates/$templateName/schema.json").readText()
-
     fun getSchemaJsonAsString(format: DocFormat): String = getResource("/formats/$format/schema.json").readText()
 
     fun getHeader(format: DocFormat): String = getResource("/formats/$format/header.html").readText()

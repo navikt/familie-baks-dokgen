@@ -1,0 +1,29 @@
+name: Pull request
+on:
+  workflow_dispatch:
+  merge_group:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  ktlint:
+    name: Ktlint
+    if: github.event_name != 'merge_group'
+    permissions:
+      contents: read
+    uses: navikt/familie-baks-gha-workflows/.github/workflows/ktlint.yaml@main # ratchet:exclude
+    with:
+      java-version: 21
+    secrets: inherit
+  test:
+    name: Test
+    permissions:
+      contents: read
+    uses: navikt/familie-baks-gha-workflows/.github/workflows/pull-request-maven.yaml@main # ratchet:exclude
+    with:
+      java-version: 21
+    secrets: inherit

@@ -9,6 +9,15 @@ updates:
       exclude:
         - "no.nav.familie*"
     open-pull-requests-limit: 10
+    groups:
+      production:
+        dependency-type: "production"
+        patterns:
+          - "*"
+      test:
+        dependency-type: "development"
+        patterns:
+          - "*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

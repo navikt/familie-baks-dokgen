@@ -17,7 +17,7 @@
         <sha1/>
         <changelist>-SNAPSHOT</changelist>
         <kotlin.version>2.3.21</kotlin.version>
-        <handlebar.version>4.3.1</handlebar.version>
+        <handlebar.version>4.5.5</handlebar.version>
         <commonmark.version>0.28.0</commonmark.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -42,7 +42,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.jknack</groupId>
-            <artifactId>handlebars-jackson2</artifactId>
+            <artifactId>handlebars-jackson3</artifactId>
             <version>${handlebar.version}</version>
         </dependency>
         <dependency>

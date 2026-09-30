@@ -14,6 +14,10 @@
 {{> titteltekst klammeTekstId="[opplystFosterbarn]" }}
 {{/eq}}
 
+{{#eq spørsmål.erIBeredskapshjem.verdi "JA"}}
+{{> titteltekst klammeTekstId="[opplystBeredskapshjem]" }}
+{{/eq}}
+
 {{#eq spørsmål.oppholderSegIInstitusjon.verdi "JA"}}
 {{> titteltekst klammeTekstId="[opplystInstitusjon]" }}
 {{#eq spørsmål.institusjonIUtland.verdi "JA"}}

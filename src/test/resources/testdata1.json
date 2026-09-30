@@ -262,7 +262,7 @@
       },
       "spørsmål": {
         "erFosterbarn": {
-          "label": "Hvem av barna er fosterbarn?",
+          "label": "Hvem av barna bor i fosterhjem?",
           "verdi": "NEI"
         },
         "erIBeredskapshjem": {
@@ -612,7 +612,7 @@
   ],
   "spørsmål": {
     "erNoenAvBarnaFosterbarn": {
-      "label": "Er noen av barna fosterbarn?",
+      "label": "Bor noen av barna i fosterhjem?",
       "verdi": "NEI"
     },
     "erNoenAvBarnaIBeredskapshjem": {
@@ -676,7 +676,7 @@
   ],
   "teksterUtenomSpørsmål": {
     "registrertMedAdressesperre": "Barnet er registrert med adressesperre.",
-    "opplystFosterbarn": "Du har opplyst at {navn} er fosterbarn",
+    "opplystFosterbarn": "Du har opplyst at {navn} bor i fosterhjem",
     "opplystBeredskapshjem": "Du har opplyst at {navn} bor i beredskapshjem",
     "opplystInstitusjon": "Du har opplyst at {navn} er i institusjon",
     "opplystBarnOppholdUtenforNorge": "Du har opplyst at {navn} har oppholdt seg utenfor Norge i løpet av de siste tolv månedene",

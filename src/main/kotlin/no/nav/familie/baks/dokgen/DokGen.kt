@@ -1,5 +1,6 @@
 package no.nav.familie.baks.dokgen
 
+import com.github.erosb.jsonsKema.IJsonString
 import com.github.erosb.jsonsKema.JsonArray
 import com.github.erosb.jsonsKema.JsonBoolean
 import com.github.erosb.jsonsKema.JsonNull
@@ -131,7 +132,7 @@ class DokGen {
             }
 
             is Map<*, *> -> {
-                val properties = mutableMapOf<JsonString, JsonValue>()
+                val properties = mutableMapOf<IJsonString, JsonValue>()
                 @Suppress("UNCHECKED_CAST")
                 (value as Map<String, Any?>).forEach { (k, v) ->
                     properties[JsonString(k)] = mapToJsonValue(v)

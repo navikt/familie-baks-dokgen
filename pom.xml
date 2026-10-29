@@ -18,7 +18,7 @@
         <changelist>-SNAPSHOT</changelist>
         <kotlin.version>2.4.21</kotlin.version>
         <handlebar.version>4.5.5</handlebar.version>
-        <commonmark.version>0.30.1</commonmark.version>
+        <commonmark.version>0.31.0</commonmark.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 

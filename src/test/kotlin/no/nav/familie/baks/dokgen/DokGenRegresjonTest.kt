@@ -1,5 +1,6 @@
 package no.nav.familie.baks.dokgen
 
+import com.github.jknack.handlebars.HandlebarsException
 import org.jsoup.Jsoup
 import org.junit.jupiter.api.Test
 import kotlin.test.assertContains
@@ -59,6 +60,15 @@ class DokGenRegresjonTest {
 
         assertEquals(listOf("Navn", "Antall"), tabell?.select("th")?.map { it.text() })
         assertEquals(listOf("Test", "3"), tabell?.select("td")?.map { it.text() })
+    }
+
+    @Test
+    fun `stringFormat kan ikke brukes i maler`() {
+        // Act
+        val feil = assertFailsWith<HandlebarsException> { dokGen.lagHtmlTilPdf("stringformat", gyldigInput()) }
+
+        // Assert
+        assertContains(feil.message.orEmpty(), "Helperen 'stringFormat' er ikke tillatt i maler")
     }
 
     private fun gyldigInput(): Map<String, Any> =

@@ -162,4 +162,29 @@ internal interface CustomHelpers {
             options: Options,
         ): Any = isoFormattedDate.split('-').reversed().joinToString(separator = ".")
     }
+
+    /**
+     * Setter inn verdier for plassholdere på formen {navn} i en tekst. Teksten tolkes ikke som formatstreng,
+     * så den kan komme fra søknaden.
+     *
+     * {{erstatt "Vedlegg {antall} av {totalAntall}" antall=1 totalAntall=3}} gir "Vedlegg 1 av 3"
+     */
+    class ErstattHelper : Helper<Any> {
+        override fun apply(
+            tekst: Any?,
+            options: Options,
+        ): Any =
+            options.hash.entries.fold(tekst?.toString() ?: "") { resultat, (plassholder, verdi) ->
+                resultat.replace("{$plassholder}", verdi?.toString().orEmpty())
+            }
+    }
+
+    class IkkeTillattHelper(
+        private val navn: String,
+    ) : Helper<Any> {
+        override fun apply(
+            context: Any?,
+            options: Options,
+        ): Any = throw UnsupportedOperationException("Helperen '$navn' er ikke tillatt i maler")
+    }
 }

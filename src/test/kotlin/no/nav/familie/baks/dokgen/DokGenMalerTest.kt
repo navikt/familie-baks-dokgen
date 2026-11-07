@@ -96,6 +96,56 @@ class DokGenMalerTest {
         assertTrue(overskrifter.any { it.text().contains("Kontantstøtte etter EØS-reglene - Om barnet") })
     }
 
+    @Test
+    fun `vedleggstekster fra søknaden settes inn som ren tekst og tolkes ikke som formatstreng`() {
+        // Arrange
+        val grunnlag = testdata("soknad/testdata/minimal-bokmal.json")
+        val tekster =
+            (grunnlag["teksterUtenomSpørsmål"] as Map<*, *>) +
+                mapOf(
+                    "vedleggXavY" to "Vedlegg %1\$s %20s {antall} av {totalAntall}",
+                    "lastetOppAntall" to "Lastet opp %d {antall} vedlegg",
+                )
+        val data =
+            grunnlag +
+                dokumentfelter("Ordinær barnetrygd") +
+                mapOf("antallEøsSteg" to 0, "teksterUtenomSpørsmål" to tekster)
+
+        // Act
+        val dokument = Jsoup.parse(dokGen.lagHtmlTilPdf("soknad", data))
+
+        // Assert
+        val innhold = dokument.select("#content").text()
+        assertTrue(innhold.contains("Vedlegg %1\$s %20s 1 av 1: Annen dokumentasjon"))
+        assertTrue(innhold.contains("Lastet opp %d 0 vedlegg"))
+    }
+
+    @Test
+    fun `tittel for tidligere samboer settes inn som ren tekst og tolkes ikke som formatstreng`() {
+        // Arrange
+        val grunnlag = testdata("soknad-utvidet/testdata/minimal-engelsk.json")
+        val søker =
+            (grunnlag["søker"] as Map<*, *>) +
+                ("tidligereSamboere" to testdata("soknad-utvidet/testdata/tidligereSamboere.json")["tidligereSamboere"])
+        val tekster =
+            (grunnlag["teksterUtenomSpørsmål"] as Map<*, *>) +
+                ("oppsummeringstittel" to "Former cohabitant %20s {antall}")
+        val barn =
+            (grunnlag["barn"] as List<*>).map {
+                (it as Map<*, *>) + ("registrertBostedType" to felt("IKKE_FYLT_INN", "Address"))
+            }
+        val data =
+            grunnlag +
+                dokumentfelter("Extended child benefit") +
+                mapOf("barn" to barn, "antallEøsSteg" to 0, "søker" to søker, "teksterUtenomSpørsmål" to tekster)
+
+        // Act
+        val dokument = Jsoup.parse(dokGen.lagHtmlTilPdf("soknad-utvidet", data))
+
+        // Assert
+        assertEquals("Former cohabitant %20s 1", dokument.selectFirst("p.periode-tittel")?.text())
+    }
+
     private fun kontantstotteData(): Map<String, Any> =
         dokumentfelter("Kontantstøtte") +
             mapOf(

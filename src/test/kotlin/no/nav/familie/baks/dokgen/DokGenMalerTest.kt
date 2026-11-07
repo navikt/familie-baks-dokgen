@@ -98,7 +98,6 @@ class DokGenMalerTest {
 
     @Test
     fun `vedleggstekster fra søknaden settes inn som ren tekst og tolkes ikke som formatstreng`() {
-        // Arrange
         val grunnlag = testdata("soknad/testdata/minimal-bokmal.json")
         val tekster =
             (grunnlag["teksterUtenomSpørsmål"] as Map<*, *>) +
@@ -111,10 +110,8 @@ class DokGenMalerTest {
                 dokumentfelter("Ordinær barnetrygd") +
                 mapOf("antallEøsSteg" to 0, "teksterUtenomSpørsmål" to tekster)
 
-        // Act
         val dokument = Jsoup.parse(dokGen.lagHtmlTilPdf("soknad", data))
 
-        // Assert
         val innhold = dokument.select("#content").text()
         assertTrue(innhold.contains("Vedlegg %1\$s %20s 1 av 1: Annen dokumentasjon"))
         assertTrue(innhold.contains("Lastet opp %d 0 vedlegg"))
@@ -122,7 +119,6 @@ class DokGenMalerTest {
 
     @Test
     fun `tittel for tidligere samboer settes inn som ren tekst og tolkes ikke som formatstreng`() {
-        // Arrange
         val grunnlag = testdata("soknad-utvidet/testdata/minimal-engelsk.json")
         val søker =
             (grunnlag["søker"] as Map<*, *>) +
@@ -139,10 +135,8 @@ class DokGenMalerTest {
                 dokumentfelter("Extended child benefit") +
                 mapOf("barn" to barn, "antallEøsSteg" to 0, "søker" to søker, "teksterUtenomSpørsmål" to tekster)
 
-        // Act
         val dokument = Jsoup.parse(dokGen.lagHtmlTilPdf("soknad-utvidet", data))
 
-        // Assert
         assertEquals("Former cohabitant %20s 1", dokument.selectFirst("p.periode-tittel")?.text())
     }
 

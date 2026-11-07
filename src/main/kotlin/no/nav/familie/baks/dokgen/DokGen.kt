@@ -179,7 +179,6 @@ class DokGen {
             registerHelper("norwegian-date", CustomHelpers.NorwegianDateHelper())
             registerHelper("erstatt", CustomHelpers.ErstattHelper())
             registerHelpers(StringHelpers::class.java)
-            // Malene får data fra søknaden, og String.format på slike data kan bruke opp minnet.
             registerHelper(StringHelpers.stringFormat.name, CustomHelpers.IkkeTillattHelper(StringHelpers.stringFormat.name))
         }
     }

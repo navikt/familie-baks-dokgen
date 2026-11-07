@@ -64,10 +64,8 @@ class DokGenRegresjonTest {
 
     @Test
     fun `stringFormat kan ikke brukes i maler`() {
-        // Act
         val feil = assertFailsWith<HandlebarsException> { dokGen.lagHtmlTilPdf("stringformat", gyldigInput()) }
 
-        // Assert
         assertContains(feil.message.orEmpty(), "Helperen 'stringFormat' er ikke tillatt i maler")
     }
 

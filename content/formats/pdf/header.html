@@ -55,7 +55,7 @@
     </div>
 
     <div style="margin-bottom: 1em;">
-        <h2 id="overskrift">{{> (stringFormat "%s/%s" (lookup . 'templateName') "headline")}}</h2>
+        <h2 id="overskrift">{{> (erstatt "{mal}/headline" mal=(lookup . 'templateName'))}}</h2>
 
         <div>
             <span class="personinfo personinfo_small">{{#eq maalform "NB" }}Navn:{{else}}Namn:{{/eq}} </span>

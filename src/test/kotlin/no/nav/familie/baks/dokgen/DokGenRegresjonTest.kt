@@ -1,5 +1,8 @@
 package no.nav.familie.baks.dokgen
 
+import com.github.jknack.handlebars.Handlebars
+import com.github.jknack.handlebars.HandlebarsException
+import no.nav.familie.baks.dokgen.handlebars.CustomHelpers
 import org.jsoup.Jsoup
 import org.junit.jupiter.api.Test
 import kotlin.test.assertContains
@@ -59,6 +62,25 @@ class DokGenRegresjonTest {
 
         assertEquals(listOf("Navn", "Antall"), tabell?.select("th")?.map { it.text() })
         assertEquals(listOf("Test", "3"), tabell?.select("td")?.map { it.text() })
+    }
+
+    @Test
+    fun `stringFormat kan ikke brukes i maler`() {
+        val feil = assertFailsWith<HandlebarsException> { dokGen.lagHtmlTilPdf("stringformat", gyldigInput()) }
+
+        assertContains(feil.message.orEmpty(), "could not find helper: 'stringFormat'")
+    }
+
+    @Test
+    fun `erstatt setter inn verdiene i én gjennomgang og lar ukjente plassholdere stå`() {
+        val handlebars = Handlebars().registerHelper("erstatt", CustomHelpers.ErstattHelper())
+
+        val resultat =
+            handlebars
+                .compileInline("{{erstatt tekst antall=verdi totalAntall=3 tom=mangler}}")
+                .apply(mapOf("tekst" to "{antall} av {totalAntall}{tom} {ukjent}", "verdi" to "{totalAntall}"))
+
+        assertEquals("{totalAntall} av 3 {ukjent}", resultat)
     }
 
     private fun gyldigInput(): Map<String, Any> =

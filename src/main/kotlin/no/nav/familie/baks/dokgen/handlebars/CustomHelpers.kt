@@ -162,4 +162,29 @@ internal interface CustomHelpers {
             options: Options,
         ): Any = isoFormattedDate.split('-').reversed().joinToString(separator = ".")
     }
+
+    /**
+     * Setter inn verdier for plassholdere på formen {nøkkel} i en tekst. Teksten tolkes ikke som formatstreng,
+     * så den kan komme fra søknaden. Verdiene gjøres om til tekst, så tall kan brukes direkte. Alle plassholdere
+     * erstattes i én gjennomgang, så innsatte verdier leses ikke på nytt. En tekst eller verdi som er null, gir tom
+     * tekst. Plassholdere som ikke er gitt som argument, blir stående.
+     *
+     * {{erstatt "Vedlegg {antall} av {totalAntall}" antall=1 totalAntall=3}} gir "Vedlegg 1 av 3"
+     */
+    class ErstattHelper : Helper<Any> {
+        override fun apply(
+            tekst: Any?,
+            options: Options,
+        ): Any =
+            PLASSHOLDER.replace(tekst?.toString().orEmpty()) { treff ->
+                options.hash
+                    .getOrDefault(treff.groupValues[1], treff.value)
+                    ?.toString()
+                    .orEmpty()
+            }
+
+        private companion object {
+            val PLASSHOLDER = Regex("""\{([\p{L}\p{N}_]+)}""")
+        }
+    }
 }

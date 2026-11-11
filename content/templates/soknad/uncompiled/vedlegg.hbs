@@ -3,32 +3,15 @@
     {{@root.teksterUtenomSpørsmål.listeOverVedlegg}}</h3>
   {{#each dokumentasjon}}
     <div class='soknad-sporsmal-med-svar'>
-      <!-- Eneste måten jeg fant som lot meg putte en java Integer inn i en String på... -->
-      {{#with
-        (replace
-          (replace @root.teksterUtenomSpørsmål.vedleggXavY '{antall}' '%s')
-          '{totalAntall}'
-          '%s'
-        )
-        as |fstring|
-      }}
-        <p class='soknad-sporsmal'>
-          {{stringFormat fstring (add @index 1) dokumentasjon.length}}:
-          {{dokumentasjonSpråkTittel}}
-        </p>
-      {{/with}}
+      <p class='soknad-sporsmal'>
+        {{erstatt @root.teksterUtenomSpørsmål.vedleggXavY antall=(add @index 1) totalAntall=dokumentasjon.length}}:
+        {{dokumentasjonSpråkTittel}}
+      </p>
       <p>
         {{#if harSendtInn}}
           {{@root.teksterUtenomSpørsmål.sendtInnTidligere}}
         {{else}}
-          {{#with
-            (replace
-              @root.teksterUtenomSpørsmål.lastetOppAntall '{antall}' '%s'
-            )
-            as |fstring|
-          }}
-            {{stringFormat fstring opplastedeVedlegg.length}}
-          {{/with}}
+          {{erstatt @root.teksterUtenomSpørsmål.lastetOppAntall antall=opplastedeVedlegg.length}}
         {{/if}}
       </p>
     </div>

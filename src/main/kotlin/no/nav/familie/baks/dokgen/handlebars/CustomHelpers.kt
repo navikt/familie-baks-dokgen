@@ -164,8 +164,10 @@ internal interface CustomHelpers {
     }
 
     /**
-     * Setter inn verdier for plassholdere på formen {navn} i en tekst. Teksten tolkes ikke som formatstreng,
-     * så den kan komme fra søknaden.
+     * Setter inn verdier for plassholdere på formen {nøkkel} i en tekst. Teksten tolkes ikke som formatstreng,
+     * så den kan komme fra søknaden. Verdiene gjøres om til tekst, så tall kan brukes direkte. Alle plassholdere
+     * erstattes i én gjennomgang, så innsatte verdier leses ikke på nytt. En tekst eller verdi som er null, gir tom
+     * tekst. Plassholdere som ikke er gitt som argument, blir stående.
      *
      * {{erstatt "Vedlegg {antall} av {totalAntall}" antall=1 totalAntall=3}} gir "Vedlegg 1 av 3"
      */
@@ -174,17 +176,15 @@ internal interface CustomHelpers {
             tekst: Any?,
             options: Options,
         ): Any =
-            options.hash.entries.fold(tekst?.toString() ?: "") { resultat, (plassholder, verdi) ->
-                resultat.replace("{$plassholder}", verdi?.toString().orEmpty())
+            PLASSHOLDER.replace(tekst?.toString().orEmpty()) { treff ->
+                options.hash
+                    .getOrDefault(treff.groupValues[1], treff.value)
+                    ?.toString()
+                    .orEmpty()
             }
-    }
 
-    class IkkeTillattHelper(
-        private val navn: String,
-    ) : Helper<Any> {
-        override fun apply(
-            context: Any?,
-            options: Options,
-        ): Any = throw UnsupportedOperationException("Helperen '$navn' er ikke tillatt i maler")
+        private companion object {
+            val PLASSHOLDER = Regex("""\{([\p{L}\p{N}_]+)}""")
+        }
     }
 }

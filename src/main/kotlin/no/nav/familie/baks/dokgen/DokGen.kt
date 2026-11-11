@@ -178,8 +178,10 @@ class DokGen {
             registerHelper("add", CustomHelpers.AdditionHelper())
             registerHelper("norwegian-date", CustomHelpers.NorwegianDateHelper())
             registerHelper("erstatt", CustomHelpers.ErstattHelper())
-            registerHelpers(StringHelpers::class.java)
-            registerHelper(StringHelpers.stringFormat.name, CustomHelpers.IkkeTillattHelper(StringHelpers.stringFormat.name))
+            // Registrerer bare string-helperne malene bruker. Flere av de andre tolker et argument som
+            // formatmønster eller lengde, og det argumentet må ikke komme fra søknaden.
+            listOf(StringHelpers.capitalizeFirst, StringHelpers.join, StringHelpers.replace, StringHelpers.upper)
+                .forEach { registerHelper(it.name, it) }
         }
     }
 }

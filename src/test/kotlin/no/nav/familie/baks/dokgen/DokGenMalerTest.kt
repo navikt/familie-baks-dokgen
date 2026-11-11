@@ -103,7 +103,7 @@ class DokGenMalerTest {
             (grunnlag["teksterUtenomSpørsmål"] as Map<*, *>) +
                 mapOf(
                     "vedleggXavY" to "Vedlegg %1\$s %20s {antall} av {totalAntall}",
-                    "lastetOppAntall" to "Lastet opp %d {antall} vedlegg",
+                    "lastetOppAntall" to "Lastet opp <b>%d</b> {antall} vedlegg",
                 )
         val data =
             grunnlag +
@@ -114,7 +114,7 @@ class DokGenMalerTest {
 
         val innhold = dokument.select("#content").text()
         assertTrue(innhold.contains("Vedlegg %1\$s %20s 1 av 1: Annen dokumentasjon"))
-        assertTrue(innhold.contains("Lastet opp %d 0 vedlegg"))
+        assertTrue(innhold.contains("Lastet opp <b>%d</b> 0 vedlegg"))
     }
 
     @Test

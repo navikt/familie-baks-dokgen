@@ -26,10 +26,7 @@
 </div>
 
 {{#each tidligereSamboere as | tidligereSamboer | }}
-{{# with
-(replace @root.teksterUtenomSpørsmål.[oppsummeringstittel] "{antall}" "%s") as | fstring |}}
-<p class="periode-tittel">{{stringFormat fstring (add @index 1)}}</p>
-{{/with}}
+<p class="periode-tittel">{{erstatt @root.teksterUtenomSpørsmål.[oppsummeringstittel] antall=(add @index 1)}}</p>
 {{> soknad/sporsmal-med-svar felt=tidligereSamboer.verdi.navn svar-type="normal" }}
 {{> soknad/sporsmal-med-svar felt=tidligereSamboer.verdi.ident svar-type="normal" }}
 {{> soknad/sporsmal-med-svar felt=tidligereSamboer.verdi.fødselsdato svar-type="dato" }}

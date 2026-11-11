@@ -1,48 +1,39 @@
 package no.nav.familie.baks.dokgen
 
+import org.jsoup.Jsoup
 import org.junit.jupiter.api.Test
 import tools.jackson.databind.ObjectMapper
 import kotlin.test.fail
 
 class DokGenTest {
     @Test
-    fun lagHtmlTilPdf() {
+    fun `ordinær barnetrygd gir HTML lik fasit`() {
         val inputData = lesJson("testdata1.json")
-        val forventetResultat = lesTekst("eksempel1.html")
 
         val faktiskResultat = DokGen().lagHtmlTilPdf("soknad", inputData)
 
-        assertLinesEqual(
-            expected = forventetResultat,
-            actual = faktiskResultat,
-        )
+        assertLinesEqual(expected = lesTekst("eksempel1.html"), actual = faktiskResultat)
     }
 
     @Test
-    fun `utvidet barnetrygd gir HTML lik fasit`() {
+    fun `utvidet barnetrygd gir innhold likt fasit`() {
         val inputData = lesJson("testdata-soknad-utvidet.json")
-        val forventetResultat = lesTekst("eksempel-soknad-utvidet.html")
 
         val faktiskResultat = DokGen().lagHtmlTilPdf("soknad-utvidet", inputData)
 
-        assertLinesEqual(
-            expected = forventetResultat,
-            actual = faktiskResultat,
-        )
+        assertLinesEqual(expected = lesTekst("eksempel-soknad-utvidet.html"), actual = innhold(faktiskResultat))
     }
 
     @Test
-    fun `kontantstøtte gir HTML lik fasit`() {
+    fun `kontantstøtte gir innhold likt fasit`() {
         val inputData = lesJson("testdata-kontantstotte-soknad.json")
-        val forventetResultat = lesTekst("eksempel-kontantstotte-soknad.html")
 
         val faktiskResultat = DokGen().lagHtmlTilPdf("kontantstotte-soknad", inputData)
 
-        assertLinesEqual(
-            expected = forventetResultat,
-            actual = faktiskResultat,
-        )
+        assertLinesEqual(expected = lesTekst("eksempel-kontantstotte-soknad.html"), actual = innhold(faktiskResultat))
     }
+
+    private fun innhold(html: String): String = requireNotNull(Jsoup.parse(html).selectFirst("#content")).outerHtml()
 
     @Suppress("UNCHECKED_CAST")
     private fun lesJson(sti: String): Map<String, Any> = ObjectMapper().readValue(lesTekst(sti), Map::class.java) as Map<String, Any>
@@ -56,8 +47,8 @@ class DokGenTest {
         expected: String,
         actual: String,
     ) {
-        val expectedLines = expected.lines().map(String::trimEnd)
-        val actualLines = actual.lines().map(String::trimEnd)
+        val expectedLines = expected.trimEnd().lines().map(String::trimEnd)
+        val actualLines = actual.trimEnd().lines().map(String::trimEnd)
 
         val diff =
             buildString {

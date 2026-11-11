@@ -1,0 +1,314 @@
+{
+  "antallEøsSteg": 0,
+  "barn": [
+    {
+      "adresse": null,
+      "alder": {
+        "label": "Alder",
+        "verdi": "1"
+      },
+      "andreForelder": {
+        "adresse": null,
+        "andreUtbetalinger": null,
+        "andreUtbetalingsperioder": [],
+        "arbeidNorge": null,
+        "arbeidUtlandet": null,
+        "arbeidsperioderNorge": [],
+        "arbeidsperioderUtland": [],
+        "eøsKontantstøttePerioder": [],
+        "fnr": null,
+        "fødselsdato": null,
+        "idNummer": [],
+        "kanIkkeGiOpplysninger": {
+          "label": "Jeg kan ikke gi opplysninger om den andre forelderen",
+          "verdi": "JA"
+        },
+        "kontantstøtteFraEøs": null,
+        "navn": null,
+        "pensjonNorge": null,
+        "pensjonUtland": null,
+        "pensjonsperioderNorge": [],
+        "pensjonsperioderUtland": [],
+        "pågåendeSøknadFraAnnetEøsLand": null,
+        "pågåendeSøknadHvilketLand": null,
+        "utenlandsoppholdUtenArbeid": null,
+        "utenlandsperioder": [],
+        "yrkesaktivFemÅr": null
+      },
+      "andreForelderErDød": {
+        "label": "Hvem av barna er din tidligere ektefelle forelder til?",
+        "verdi": "NEI"
+      },
+      "barnehageplassPerioder": [
+        {
+          "label": "Periode med barnehageplass 1",
+          "verdi": {
+            "antallTimer": {
+              "label": "Antall tildelte timer på deltidsplass:",
+              "verdi": "40"
+            },
+            "barnehageplassLand": null,
+            "barnehageplassPeriodeBeskrivelse": {
+              "label": "Hva beskriver perioden barnet har hatt barnehageplass best?",
+              "verdi": "Barnet har fått tildelt barnehageplass med oppstart senere"
+            },
+            "barnehageplassUtlandet": {
+              "label": "Er barnehagen utenfor Norge?",
+              "verdi": "NEI"
+            },
+            "harHeltidDeltidBarnehageplass": {
+              "label": "Har barnet heltid eller deltid i barnehagen?",
+              "verdi": "Full-time (33 hours or more per week)"
+            },
+            "offentligStøtte": null,
+            "slutterIBarnehagen": {
+              "label": "Når slutter barnet i barnehagen?",
+              "verdi": "Det er ikke avtalt når barnet skal slutte i barnehagen"
+            },
+            "startetIBarnehagen": {
+              "label": "Når har barnet fått tildelt barnehageplass fra?",
+              "verdi": "2025-02-17"
+            }
+          }
+        }
+      ],
+      "boddMindreEnn12MndINorge": {
+        "label": "Hvem av barna har oppholdt seg utenfor Norge i løpet av de siste tolv månedene?",
+        "verdi": "NEI"
+      },
+      "borFastMedSøker": {
+        "label": "Bor TROVERDIG DETALJ fast sammen med deg?",
+        "verdi": "JA"
+      },
+      "borMedAndreForelder": null,
+      "borMedOmsorgsperson": null,
+      "erAdoptert": {
+        "label": "Hvem av barna er adoptert?",
+        "verdi": "NEI"
+      },
+      "erAsylsøker": {
+        "label": "Hvem av barna er det søkt om asyl for?",
+        "verdi": "NEI"
+      },
+      "erFosterbarn": {
+        "label": "Hvem av barna er fosterbarn?",
+        "verdi": "NEI"
+      },
+      "eøsKontantstøttePerioder": [],
+      "fnr": "12345678901",
+      "foreldreBorSammen": {
+        "label": "Bor du sammen med den andre forelderen til TROVERDIG DETALJ?",
+        "verdi": "NEI"
+      },
+      "harBarnehageplass": {
+        "label": "Hvem av barna har barnehageplass nå, har hatt plass tidligere, eller har fått tildelt en barnehageplass i framtiden?",
+        "verdi": "JA"
+      },
+      "harEøsSteg": false,
+      "idNummer": [],
+      "ident": {
+        "label": "Fødselsnummer",
+        "verdi": "12345678901"
+      },
+      "kontantstøtteFraAnnetEøsland": {
+        "label": "Hvem av barna får du, har du fått eller har du søkt om kontantstøtte for?",
+        "verdi": "NEI"
+      },
+      "mottarEllerMottokEøsKontantstøtte": null,
+      "navn": {
+        "label": "Barnets navn",
+        "verdi": "TROVERDIG DETALJ"
+      },
+      "omsorgsperson": null,
+      "oppholderSegIInstitusjon": {
+        "label": "Hvem av barna er i institusjon?",
+        "verdi": "NEI"
+      },
+      "planleggerÅBoINorge12Mnd": null,
+      "pågåendeSøknadFraAnnetEøsLand": null,
+      "pågåendeSøknadHvilketLand": null,
+      "registrertBostedType": {
+        "label": "Registrert bosted",
+        "verdi": "REGISTRERT_SOKERS_ADRESSE"
+      },
+      "søkerDeltKontantstøtte": {
+        "label": "Søker du om delt kontantstøtte for TROVERDIG DETALJ?",
+        "verdi": "NEI"
+      },
+      "søkersSlektsforhold": null,
+      "søkersSlektsforholdSpesifisering": null,
+      "teksterTilPdf": {
+        "opplystAdoptert": "Du har opplyst at TROVERDIG DETALJ er adoptert.",
+        "opplystBarnOppholdUtenforNorge": "Du har opplyst at TROVERDIG DETALJ har oppholdt seg utenfor Norge i løpet av de siste tolv månedene",
+        "opplystFaarHarFaattEllerSoektYtelse": "Du har opplyst at du får, har fått eller har søkt om kontantstøtte\nfor TROVERDIG DETALJ fra et annet EØS-land.",
+        "opplystBarnehageplass": "Du har opplyst at TROVERDIG DETALJ har barnehageplass nå, har hatt plass tidligere, eller har fått tildelt en barnehageplass i framtiden",
+        "barnetsAndreForelder": "Barnets andre forelder",
+        "omBarnetTittel": "Om TROVERDIG DETALJ",
+        "bosted": "Bosted",
+        "eoesForBarnTittel": "kontantstøtte etter EØS-reglene - Om TROVERDIG DETALJ"
+      },
+      "utbetaltForeldrepengerEllerEngangsstønad": null,
+      "utenlandsperioder": []
+    }
+  ],
+  "barnOppholdtSegTolvMndSammenhengendeINorge": {
+    "label": "Har barna oppholdt seg sammenhengende i Norge de siste tolv månedene?",
+    "verdi": "JA"
+  },
+  "dokumentasjon": [
+    {
+      "dokumentasjonSpråkTittel": "Bekreftelse på barnehageplass",
+      "dokumentasjonsbehov": "BEKREFTELESE_PÅ_BARNEHAGEPLASS",
+      "harSendtInn": false,
+      "opplastedeVedlegg": []
+    },
+    {
+      "dokumentasjonSpråkTittel": "Annen dokumentasjon",
+      "dokumentasjonsbehov": "ANNEN_DOKUMENTASJON",
+      "harSendtInn": false,
+      "opplastedeVedlegg": []
+    }
+  ],
+  "erAvdødPartnerForelder": null,
+  "erBarnAdoptert": {
+    "label": "Er noen av barna adoptert?",
+    "verdi": "NEI"
+  },
+  "erNoenAvBarnaFosterbarn": {
+    "label": "Er noen av barna fosterbarn?",
+    "verdi": "NEI"
+  },
+  "finnesPersonMedAdressebeskyttelse": false,
+  "harEllerTildeltBarnehageplass": {
+    "label": "Har noen av barna barnehageplass nå, har de hatt plass tidligere, eller har de fått tildelt en barnehageplass i framtiden?",
+    "verdi": "JA"
+  },
+  "kontraktVersjon": 6,
+  "mottarKontantstøtteForBarnFraAnnetEøsland": {
+    "label": "Får du, har du fått eller har du søkt om kontantstøtte for noen av barna fra et annet EØS-land?",
+    "verdi": "NEI"
+  },
+  "oppholderBarnSegIInstitusjon": {
+    "label": "Er noen av barna i barnverninstitusjon?",
+    "verdi": "NEI"
+  },
+  "originalSpråk": "nb",
+  "søker": {
+    "adresse": {
+      "label": "Adresse",
+      "verdi": {
+        "adressenavn": "Testveien",
+        "bruksenhetsnummer": null,
+        "husbokstav": null,
+        "husnummer": "1",
+        "postnummer": "5003",
+        "poststed": "OSLO"
+      }
+    },
+    "adresseISøkeperiode": null,
+    "adressebeskyttelse": false,
+    "andreUtbetalinger": null,
+    "andreUtbetalingsperioder": [],
+    "arbeidINorge": null,
+    "arbeidIUtlandet": {
+      "label": "Arbeider eller har du arbeidet utenfor Norge, på utenlandsk skip eller på utenlandsk kontinentalsokkel?",
+      "verdi": "NEI"
+    },
+    "arbeidsperioderNorge": [],
+    "arbeidsperioderUtland": [],
+    "borPåRegistrertAdresse": {
+      "label": "Bor du på denne adressen?",
+      "verdi": "JA"
+    },
+    "erAsylsøker": {
+      "label": "Er du asylsøker?",
+      "verdi": "NEI"
+    },
+    "fnr": "12345678900",
+    "harEøsSteg": false,
+    "idNummer": [],
+    "ident": {
+      "label": "Fødselsnummer eller d-nummer",
+      "verdi": "12345678900"
+    },
+    "mottarUtenlandspensjon": {
+      "label": "Får eller har du fått pensjon fra utlandet?",
+      "verdi": "NEI"
+    },
+    "navn": {
+      "label": "Navn",
+      "verdi": "KULTURELL HELDIGGRIS"
+    },
+    "pensjonNorge": null,
+    "pensjonsperioderNorge": [],
+    "pensjonsperioderUtland": [],
+    "planleggerÅBoINorgeTolvMnd": {
+      "label": "Planlegger du å bo sammenhengende i Norge i mer enn tolv måneder?",
+      "verdi": "JA"
+    },
+    "sivilstand": {
+      "label": "Sivilstatus",
+      "verdi": "UGIFT"
+    },
+    "statsborgerskap": {
+      "label": "Statsborgerskap",
+      "verdi": [
+        "Norge"
+      ]
+    },
+    "utenlandsoppholdUtenArbeid": {
+      "label": "Oppholder du deg, eller har du oppholdt deg, utenfor Norge uten å arbeide?",
+      "verdi": "NEI"
+    },
+    "utenlandsperioder": [],
+    "værtINorgeITolvMåneder": {
+      "label": "Har du oppholdt deg sammenhengende i Norge de siste tolv månedene?",
+      "verdi": "JA"
+    },
+    "yrkesaktivFemÅr": {
+      "label": "Har du bodd eller vært yrkesaktiv i Norge eller et annet EØS-land i minst fem år?",
+      "verdi": "JA"
+    }
+  },
+  "søktAsylForBarn": {
+    "label": "Er det søkt om asyl i Norge for noen av barna?",
+    "verdi": "NEI"
+  },
+  "teksterTilPdf": {
+    "sivilstandGift": "Gift",
+    "sivilstandEnkeEnkemann": "Enke/enkemann",
+    "sivilstandSkilt": "Skilt",
+    "sivilstandSeparert": "Separert",
+    "sivilstandRegistrertPartner": "Registrert partner",
+    "sivilstandSeparertPartner": "Separert partner",
+    "sivilstandSkiltPartner": "Skilt partner",
+    "sivilstandGjenlevendePartner": "Gjenlevende partner",
+    "sivilstandUgift": "Ugift",
+    "sivilstandUoppgitt": "Ikke oppgitt",
+    "bekreftelsesboksBroedtekst": "Det er viktig at du gir oss riktige opplysninger slik at vi kan behandle saken din. Les mer om viktigheten av å gi riktige opplysninger (åpnes i nytt vindu).",
+    "bekreftelsesboksErklaering": "Jeg vil svare så godt jeg kan på spørsmålene i søknaden.",
+    "soekerAdressesperre": "Du er registrert med adressesperre",
+    "ikkeRegistrertAdresse": "Du er ikke registrert med bostedsadresse i Norge",
+    "skjermetAdresse": "Skjermet adresse",
+    "omDegTittel": "Om deg",
+    "dinLivssituasjonTittel": "Livssituasjonen din",
+    "registrertMedAdressesperre": "Barnet er registrert med adressesperre.",
+    "velgBarnTittel": "Hvilke barn søker du for?",
+    "registrertPaaAdressenDin": "Registrert på adressen din",
+    "ikkeRegistrertPaaAdressenDin": "Ikke registrert på adressen din",
+    "omBarnaTittel": "Om barna dine",
+    "eoesForSoekerTittel": "kontantstøtte etter EØS-reglene - Om deg",
+    "vedlegg": "Vedlegg",
+    "av": "av",
+    "soeker": "Søker",
+    "sendtInnTidligere": "Jeg har sendt inn denne dokumentasjonen til NAV tidligere",
+    "ja": "Ja",
+    "nei": "Nei",
+    "jegVetIkke": "Jeg vet ikke"
+  },
+  "dokumentDato": "01.01.2026",
+  "navn": "KULTURELL HELDIGGRIS",
+  "fodselsnummer": "12345678900",
+  "label": "Søknad om kontantstøtte",
+  "maalform": "NB"
+}

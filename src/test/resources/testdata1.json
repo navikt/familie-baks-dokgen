@@ -6,7 +6,7 @@
     "harEøsSteg": true,
     "ident": {
       "label": "Ident",
-      "verdi": "23058518298"
+      "verdi": "12345678901"
     },
     "navn": {
       "label": "Navn",
@@ -718,7 +718,7 @@
   "originalSpråk": "nb",
   "dokumentDato": "15.05.2024",
   "navn": "Voksen Voksnessen",
-  "fodselsnummer": "23058518298",
+  "fodselsnummer": "12345678901",
   "label": "Søknad om ordinær barnetrygd",
   "maalform": "NB"
 }

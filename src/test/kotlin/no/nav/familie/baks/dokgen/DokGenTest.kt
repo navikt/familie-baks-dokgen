@@ -7,19 +7,50 @@ import kotlin.test.fail
 class DokGenTest {
     @Test
     fun lagHtmlTilPdf() {
-        val templateNavn = "soknad"
-        val inputData =
-            javaClass.classLoader.getResource("testdata1.json")!!.readText().let {
-                ObjectMapper().readValue(it, Map::class.java) as Map<String, Any>
-            }
-        val forventetResultat = javaClass.classLoader.getResource("eksempel1.html")!!.readText()
-        val faktiskResultat = DokGen().lagHtmlTilPdf(templateNavn, inputData)
+        val inputData = lesJson("testdata1.json")
+        val forventetResultat = lesTekst("eksempel1.html")
+
+        val faktiskResultat = DokGen().lagHtmlTilPdf("soknad", inputData)
 
         assertLinesEqual(
             expected = forventetResultat,
             actual = faktiskResultat,
         )
     }
+
+    @Test
+    fun `utvidet barnetrygd gir HTML lik fasit`() {
+        val inputData = lesJson("testdata-soknad-utvidet.json")
+        val forventetResultat = lesTekst("eksempel-soknad-utvidet.html")
+
+        val faktiskResultat = DokGen().lagHtmlTilPdf("soknad-utvidet", inputData)
+
+        assertLinesEqual(
+            expected = forventetResultat,
+            actual = faktiskResultat,
+        )
+    }
+
+    @Test
+    fun `kontantstøtte gir HTML lik fasit`() {
+        val inputData = lesJson("testdata-kontantstotte-soknad.json")
+        val forventetResultat = lesTekst("eksempel-kontantstotte-soknad.html")
+
+        val faktiskResultat = DokGen().lagHtmlTilPdf("kontantstotte-soknad", inputData)
+
+        assertLinesEqual(
+            expected = forventetResultat,
+            actual = faktiskResultat,
+        )
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    private fun lesJson(sti: String): Map<String, Any> = ObjectMapper().readValue(lesTekst(sti), Map::class.java) as Map<String, Any>
+
+    private fun lesTekst(sti: String): String =
+        requireNotNull(javaClass.classLoader.getResource(sti)) {
+            "Mangler testressurs: $sti"
+        }.readText()
 
     private fun assertLinesEqual(
         expected: String,

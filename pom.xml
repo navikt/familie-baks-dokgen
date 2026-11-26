@@ -17,8 +17,8 @@
         <sha1/>
         <changelist>-SNAPSHOT</changelist>
         <kotlin.version>2.4.21</kotlin.version>
-        <handlebar.version>4.5.5</handlebar.version>
-        <commonmark.version>0.30.1</commonmark.version>
+        <handlebar.version>4.5.8</handlebar.version>
+        <commonmark.version>0.32.0</commonmark.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -59,7 +59,7 @@
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
-            <version>1.23.2</version>
+            <version>1.24.1</version>
         </dependency>
         <dependency>
             <groupId>org.commonmark</groupId>
